@@ -1,0 +1,57 @@
+# 基礎R- 系統環境設定
+
+## 系統環境查詢
+
+1.  使用`sessionInfo()`可以查詢目前R運行的詳細情形，包含R版本號、R套件清單與版本號、語系
+
+```{r echo=TRUE}
+##查詢目前系統環境
+sessionInfo()
+```
+
+2.  查詢或設定環境目錄
+
+使用`setwd`，可以指定某個資料夾為當前環境目錄，`getwd`可以查詢目前的環境目錄。
+
+```{r echo=TRUE}
+##設定當前目錄
+setwd("C:/github/basicRnotes")
+##查詢當前目錄
+getwd() 
+```
+
+如果懶得打指令，也可以透過RStudio視窗中的選項按鈕來執行，*Set As Working Directory* 等同於`setwd`指令， *Go To Working Directory*等同於`getwd`指令。 ![環境目錄設定](images/1-setwd.png){width="640"}
+
+## 環境設定函數
+
+環境設定函數為`options()`，用`options()`指令可以設定一些環境變量，使用help(options)可以查看詳細的參數資訊，常見操作如下:
+
+1.  數字位數的設置，options(digits=n)，n一般預設是7位，但實際上的範圍是1\~22，可以隨意設定位數。
+
+```{r echo=TRUE}
+     #這個指令，可以把R的整數表示能力設為10位元。
+      options(digits=10)
+```
+
+2.  套件的安裝，使用下面的命令，可以指定預備下載端點。
+
+```{r echo=TRUE,eval=FALSE}
+      options(CRAN="http://cran.r-project.org")
+      install.packages("套件名稱")
+```
+
+3.  設定游標類型(prompt參數設定)。
+
+```{r echo=TRUE}
+       ##游標開始預設為 >
+       options(prompt="$")
+```
+
+4.  設置 忽略警告(或錯誤)訊息出現
+
+```{r echo=TRUE}
+       ##忽略任何警告，不顯示
+       options(warn=-1)
+       ##顯示警告(預設)
+       options(warn=1)
+```
