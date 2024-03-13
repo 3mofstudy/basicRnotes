@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R程式語言-基礎篇</title>
-  <meta name="description" content="R程式語言-基礎篇" />
+  <title>Chapter 4 初級R- 資料結構 | R程式語言-基礎篇</title>
+  <meta name="description" content="Chapter 4 初級R- 資料結構 | R程式語言-基礎篇" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R程式語言-基礎篇" />
+  <meta property="og:title" content="Chapter 4 初級R- 資料結構 | R程式語言-基礎篇" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R程式語言-基礎篇" />
+  <meta name="twitter:title" content="Chapter 4 初級R- 資料結構 | R程式語言-基礎篇" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="初級r--系統環境設定.html"/>
+<link rel="prev" href="初級r--資料abc.html"/>
+<link rel="next" href="初級r--資料轉換與查詢.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -162,59 +162,33 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R程式語言-基礎篇</h1>
-<p class="author"><em>Lucy</em></p>
-<p class="date"><em>2024-03-13</em></p>
+<div id="初級r--資料結構" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 初級R- 資料結構<a href="初級r--資料結構.html#初級r--資料結構" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="一維資料結構-vector" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 一維資料結構 (vector)<a href="初級r--資料結構.html#一維資料結構-vector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R語言中最簡單的資料結構，通常用c 來集合</p>
 </div>
-<div id="關於" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> 關於<a href="index.html#關於" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="關於作者" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> 關於作者<a href="index.html#關於作者" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>跨領域的我，早年是在醫院及大學從事研究助理，協助教授或醫師收集臨床試驗的病人，在漫長工作生涯中，發現收集臨床資料，進行統計分析，是個人最喜歡的工作項目。早年學校習得高等統計知識及SPSS軟體應用後，到自己出社會以後自學R，在資料分析的路上越走越遠，但仍感謝過去工作實務經驗讓自己即使跨領域，轉行投入氣象數據分析，也不至於讓自己窘迫。</p>
+<div id="二維資料結構" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> 二維資料結構<a href="初級r--資料結構.html#二維資料結構" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="資料型態相同-matrix" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> 資料型態相同 (matrix)<a href="初級r--資料結構.html#資料型態相同-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="本書的定位" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> 本書的定位<a href="index.html#本書的定位" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>網路上其實很多免費的線上R教學，基礎教學偏多，而稍複雜一點Code常常散落各地，雖然自身有用Nation隨時進行筆記摘錄，但是隨著筆記越來越多時，便有了想統整一份專屬自己學習後的內化筆記，而當這想法開始縈繞在我心中時，便有了開始撰寫這本線上電子書念頭。本書定位為起始筆記第一個敲門磚，未來會逐步加強充實內容，預計會寫下列幾個系列筆記，第一部分<strong>R程式語言(基礎、中階及高階)</strong>，不太涉及統計原理方面知識，而是單純介紹R程式語言，此部分算是R的最基本功，往往運用在資料前處理時各種資料轉換，第二部分 <strong>統計學與R操作</strong>，側重在統計學觀念的釐清及如何應用R來進行統計分析，此部分教學，會與SPSS進行搭配輔助說明，其目的是讓有一定統計知識且慣用SPSS的統計人員，能利用過去分析經驗來銜接，輔助有心轉換分析跑道的學者能快速使用R來進行統計。<strong>第三部分 介紹時下最流行大數據工具</strong>，第四部份重點在於<strong>精進R分析者工作技能</strong>，例如用R來 收信及寄信，用R串聯google文件、google活頁簿及如何用R進行網路爬蟲蒐集資料。</p>
-<ol style="list-style-type: decimal">
-<li>R程式語言
-<ul>
-<li>基礎R程式</li>
-<li>中階R程式</li>
-<li>高階R程式</li>
-</ul></li>
-<li>統計學與R操作
-<ul>
-<li>描述性統計</li>
-<li>推論性統計</li>
-</ul></li>
-<li>大數據分析與R
-<ul>
-<li>非監督式學習</li>
-<li>監督式學習</li>
-</ul></li>
-<li>R及RStudio專章性學習
-<ul>
-<li>RStudio與git、GitHub 互動</li>
-<li>R程式與文書處理</li>
-<li>網路爬蟲與R程式</li>
-</ul></li>
-</ol>
+<div id="資料型態不同-data.frame-data.table" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> 資料型態不同 (data.frame /data.table)<a href="初級r--資料結構.html#資料型態不同-data.frame-data.table" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
-<div id="參考資料" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> 參考資料<a href="index.html#參考資料" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="線上中文資源" class="section level3 hasAnchor" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> 線上中文資源<a href="index.html#線上中文資源" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><a href="https://yijutseng.github.io/DataScienceRBook/">曾意儒 –資料科學與R語言</a></li>
-<li><a href="https://bookdown.org/tonykuoyj/eloquentr/">郭耀仁 –認識R的美好</a></li>
-<li><a href="https://bookdown.org/jefflinmd38/r4biost/">林建甫 –R資料科學與統計</a></li>
-</ul>
 </div>
-<div id="中文書籍" class="section level3 hasAnchor" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> 中文書籍<a href="index.html#中文書籍" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="三維以上資料結構" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> 三維以上資料結構<a href="初級r--資料結構.html#三維以上資料結構" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="資料型態相同-array" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> 資料型態相同 (array)<a href="初級r--資料結構.html#資料型態相同-array" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="資料型態不同-list" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> 資料型態不同 (list)<a href="初級r--資料結構.html#資料型態不同-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="特殊資料結構" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> 特殊資料結構<a href="初級r--資料結構.html#特殊資料結構" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
-</div>
 </div>
 </div>
             </section>
@@ -222,8 +196,8 @@
           </div>
         </div>
       </div>
-
-<a href="初級r--系統環境設定.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="初級r--資料abc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="初級r--資料轉換與查詢.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -254,7 +228,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/index.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/03_資料結構.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -262,7 +236,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/index.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/03_資料結構.Rmd",
 "text": null
 },
 "download": null,
