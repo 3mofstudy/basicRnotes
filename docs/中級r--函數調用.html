@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 中級R- 函數調用 | R程式語言-基礎篇</title>
+  <meta name="description" content="Chapter 6 中級R- 函數調用 | R程式語言-基礎篇" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 中級R- 函數調用 | R程式語言-基礎篇" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 中級R- 函數調用 | R程式語言-基礎篇" />
+  
+  
+  
+
+<meta name="author" content="Lucy" />
+
+
+<meta name="date" content="2024-03-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="基礎r--資料轉換與查詢.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R語言自我筆記(基礎篇)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#本書的定位"><i class="fa fa-check"></i><b>1.2</b> 本書的定位</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.3</b> 參考資料</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#線上中文資源"><i class="fa fa-check"></i><b>1.3.1</b> 線上中文資源</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#中文書籍"><i class="fa fa-check"></i><b>1.3.2</b> 中文書籍</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="基礎r--系統環境設定.html"><a href="基礎r--系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 基礎R- 系統環境設定</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="基礎r--系統環境設定.html"><a href="基礎r--系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
+<li class="chapter" data-level="2.2" data-path="基礎r--系統環境設定.html"><a href="基礎r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html"><i class="fa fa-check"></i><b>3</b> 基礎R- 資料ABC</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
+<li class="chapter" data-level="3.2" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#常見資料型態"><i class="fa fa-check"></i><b>3.2</b> 常見資料型態</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#字串character"><i class="fa fa-check"></i><b>3.2.1</b> 字串(character)</a></li>
+<li class="chapter" data-level="3.2.2" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#數值numeric"><i class="fa fa-check"></i><b>3.2.2</b> 數值(numeric)</a></li>
+<li class="chapter" data-level="3.2.3" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#日期時間-datetime"><i class="fa fa-check"></i><b>3.2.3</b> 日期/時間 (Date/Time)</a></li>
+<li class="chapter" data-level="3.2.4" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#布林值logic"><i class="fa fa-check"></i><b>3.2.4</b> 布林值(logic)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#特殊資料型態"><i class="fa fa-check"></i><b>3.3</b> 特殊資料型態</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#因素factor"><i class="fa fa-check"></i><b>3.3.1</b> 因素(factor)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="基礎r--資料abc.html"><a href="基礎r--資料abc.html#資料運算子"><i class="fa fa-check"></i><b>3.4</b> 資料運算子</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html"><i class="fa fa-check"></i><b>4</b> 基礎R- 資料結構</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#一維資料結構-vector"><i class="fa fa-check"></i><b>4.1</b> 一維資料結構 (vector)</a></li>
+<li class="chapter" data-level="4.2" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#二維資料結構"><i class="fa fa-check"></i><b>4.2</b> 二維資料結構</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#資料型態相同-matrix"><i class="fa fa-check"></i><b>4.2.1</b> 資料型態相同 (matrix)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#資料型態不同-data.frame-data.table"><i class="fa fa-check"></i><b>4.2.2</b> 資料型態不同 (data.frame /data.table)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#三維以上資料結構"><i class="fa fa-check"></i><b>4.3</b> 三維以上資料結構</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#資料型態相同-array"><i class="fa fa-check"></i><b>4.3.1</b> 資料型態相同 (array)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#資料型態不同-list"><i class="fa fa-check"></i><b>4.3.2</b> 資料型態不同 (list)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="基礎r--資料結構.html"><a href="基礎r--資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.4</b> 特殊資料結構</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="基礎r--資料轉換與查詢.html"><a href="基礎r--資料轉換與查詢.html"><i class="fa fa-check"></i><b>5</b> 基礎R- 資料轉換與查詢</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="基礎r--資料轉換與查詢.html"><a href="基礎r--資料轉換與查詢.html#資料查詢"><i class="fa fa-check"></i><b>5.1</b> - 資料查詢</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="基礎r--資料轉換與查詢.html"><a href="基礎r--資料轉換與查詢.html#向量查詢"><i class="fa fa-check"></i><b>5.1.1</b> 向量查詢</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="基礎r--資料轉換與查詢.html"><a href="基礎r--資料轉換與查詢.html#資料轉換"><i class="fa fa-check"></i><b>5.2</b> - 資料轉換</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html"><i class="fa fa-check"></i><b>6</b> 中級R- 函數調用</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#do.call-及call"><i class="fa fa-check"></i><b>6.1</b> do.call 及call</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#do.call-基本用途"><i class="fa fa-check"></i><b>6.1.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="6.1.2" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#do.call-亦常運用於data.frame的子元素"><i class="fa fa-check"></i><b>6.1.2</b> 2. do.call 亦常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="6.1.3" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>6.1.3</b> call 與 do.call的差異</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#參考資料-1"><i class="fa fa-check"></i><b>6.2</b> 參考資料</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#線上資源"><i class="fa fa-check"></i><b>6.2.1</b> 1.線上資源</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R程式語言-基礎篇</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="中級r--函數調用" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> 中級R- 函數調用<a href="中級r--函數調用.html#中級r--函數調用" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="do.call-及call" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> do.call 及call<a href="中級r--函數調用.html#do.call-及call" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="do.call-基本用途" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> 1. do.call 基本用途<a href="中級r--函數調用.html#do.call-基本用途" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>雖然R語言有型別很豐富的資料結構，但很多時候資料結構比較複雜，那麼基本上就會用到list這種結構的資料型態。 但是list物件很難以文字的形式導出，因此需要一個函數能快速地將複雜的list結構扁平化成向量(vector)或資料框(data.frame) 。 這裡要介紹的是do.call函數。</p>
+<p>簡單的講，do.call 的功能就是執行一個函數，而這個函數的參數呢，放在一個list裡面, 是list的每個子元素，見下列範例:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="中級r--函數調用.html#cb1-1" tabindex="-1"></a>一心營業額 <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;北區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">10000</span>,<span class="dv">27000</span>,<span class="dv">68500</span>,<span class="dv">34000</span>)),</span>
+<span id="cb1-2"><a href="中級r--函數調用.html#cb1-2" tabindex="-1"></a>                  <span class="st">&quot;中區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">9000</span>,<span class="dv">10400</span>,<span class="dv">59400</span>,<span class="dv">48000</span>)),</span>
+<span id="cb1-3"><a href="中級r--函數調用.html#cb1-3" tabindex="-1"></a>                  <span class="st">&quot;南區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">8000</span>,<span class="dv">96000</span>,<span class="dv">70400</span>,<span class="dv">63500</span>)))</span>
+<span id="cb1-4"><a href="中級r--函數調用.html#cb1-4" tabindex="-1"></a><span class="fu">do.call</span>(rbind,一心營業額)</span></code></pre></div>
+<pre><code>##        月份 銷售額
+## 北區.1    7  10000
+## 北區.2    8  27000
+## 北區.3    9  68500
+## 北區.4   10  34000
+## 中區.1    7   9000
+## 中區.2    8  10400
+## 中區.3    9  59400
+## 中區.4   10  48000
+## 南區.1    7   8000
+## 南區.2    8  96000
+## 南區.3    9  70400
+## 南區.4   10  63500</code></pre>
+<p>do.call的第一個參數(what)預備執行的函數名稱,第二個參數(args)放list格式包起來的資料及相關函數設定，如下列範例:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="中級r--函數調用.html#cb3-1" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">9</span>,<span class="cn">NA</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">74</span>,<span class="dv">36</span>,<span class="cn">NA</span>,<span class="dv">55</span>)</span>
+<span id="cb3-2"><a href="中級r--函數調用.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="中級r--函數調用.html#cb3-3" tabindex="-1"></a><span class="fu">do.call</span>(mean, <span class="fu">list</span>(vec1)) <span class="do">##輸出NA，因為無設定第二個參數值</span></span></code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="中級r--函數調用.html#cb5-1" tabindex="-1"></a><span class="fu">do.call</span>(mean, <span class="fu">list</span>(vec1,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="do">##排除遺失值後，計算平均值</span></span></code></pre></div>
+<pre><code>## [1] 28.28571</code></pre>
+</div>
+<div id="do.call-亦常運用於data.frame的子元素" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> 2. do.call 亦常運用於data.frame的子元素<a href="中級r--函數調用.html#do.call-亦常運用於data.frame的子元素" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>data.frame 和 list 最大差別是data.frame屬於<strong>二維資料</strong>，而list屬於<strong>三維資料</strong>，do.call能處理三維資料的list格式，其實就像是作業系統(eg. Windows系統 macOS系統)往往也向下相容更低版次的OS系統，而事實上，do.call函數比起運用在list格式，實務上更常用do.call來處理data.frame格式的函數調用</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="中級r--函數調用.html#cb7-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&#39;letter&#39;</span> <span class="ot">=</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], <span class="st">&#39;number&#39;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">&#39;value&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;+&#39;</span>,<span class="st">&#39;-&#39;</span>))</span>
+<span id="cb7-2"><a href="中級r--函數調用.html#cb7-2" tabindex="-1"></a>dt[[<span class="dv">1</span>]]</span></code></pre></div>
+<pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="中級r--函數調用.html#cb9-1" tabindex="-1"></a>dt[[<span class="dv">2</span>]]</span></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="中級r--函數調用.html#cb11-1" tabindex="-1"></a>dt[[<span class="dv">3</span>]]</span></code></pre></div>
+<pre><code>##  [1] &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="中級r--函數調用.html#cb13-1" tabindex="-1"></a><span class="fu">do.call</span>(paste0,dt)</span></code></pre></div>
+<pre><code>##  [1] &quot;a1+&quot;  &quot;b2-&quot;  &quot;c3+&quot;  &quot;d4-&quot;  &quot;e5+&quot;  &quot;f6-&quot;  &quot;g7+&quot;  &quot;h8-&quot;  &quot;i9+&quot;  &quot;j10-&quot;</code></pre>
+</div>
+<div id="call-與-do.call的差異" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> call 與 do.call的差異<a href="中級r--函數調用.html#call-與-do.call的差異" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>call 和 do.call很像，兩者主要差異:</p>
+<ol style="list-style-type: decimal">
+<li>do.call() 執行某個已知現存的函數，例如內建函數<code>sum()</code>、<code>mean()</code>等，需將參數以<strong>列表的形式</strong>傳遞給函數後，才能正常運作。</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="中級r--函數調用.html#cb15-1" tabindex="-1"></a><span class="co">#自創一個能計算BMI的函數</span></span>
+<span id="cb15-2"><a href="中級r--函數調用.html#cb15-2" tabindex="-1"></a>BMI <span class="ot">&lt;-</span> <span class="cf">function</span>(ht, wt) {</span>
+<span id="cb15-3"><a href="中級r--函數調用.html#cb15-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> wt <span class="sc">/</span> (ht <span class="sc">/</span> <span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb15-4"><a href="中級r--函數調用.html#cb15-4" tabindex="-1"></a><span class="fu">return</span>(x)</span>
+<span id="cb15-5"><a href="中級r--函數調用.html#cb15-5" tabindex="-1"></a>}</span>
+<span id="cb15-6"><a href="中級r--函數調用.html#cb15-6" tabindex="-1"></a><span class="co"># 建立一個有身高及體重資料集</span></span>
+<span id="cb15-7"><a href="中級r--函數調用.html#cb15-7" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;ht&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">155</span>, <span class="dv">168</span>, <span class="dv">159</span>), <span class="st">&quot;wt&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">48</span>))</span>
+<span id="cb15-8"><a href="中級r--函數調用.html#cb15-8" tabindex="-1"></a><span class="co"># 使用 do.call 將列表作為參數傳遞給 BMI 函數</span></span>
+<span id="cb15-9"><a href="中級r--函數調用.html#cb15-9" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">do.call</span>(BMI, <span class="fu">list</span>(<span class="at">ht =</span> DT<span class="sc">$</span>ht, <span class="at">wt =</span> DT<span class="sc">$</span>wt))</span>
+<span id="cb15-10"><a href="中級r--函數調用.html#cb15-10" tabindex="-1"></a><span class="co"># 印出結果</span></span>
+<span id="cb15-11"><a href="中級r--函數調用.html#cb15-11" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<pre><code>## [1] 33.29865 21.25850 18.98659</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>call() 以動態的方式生成函數呼叫，再用<strong><code>eval</code></strong>函數執行呼叫</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="中級r--函數調用.html#cb17-1" tabindex="-1"></a><span class="co">#自創一個能計算BMI的函數</span></span>
+<span id="cb17-2"><a href="中級r--函數調用.html#cb17-2" tabindex="-1"></a>BMI <span class="ot">&lt;-</span> <span class="cf">function</span>(ht, wt) {</span>
+<span id="cb17-3"><a href="中級r--函數調用.html#cb17-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> wt <span class="sc">/</span> (ht <span class="sc">/</span> <span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb17-4"><a href="中級r--函數調用.html#cb17-4" tabindex="-1"></a><span class="fu">return</span>(x)</span>
+<span id="cb17-5"><a href="中級r--函數調用.html#cb17-5" tabindex="-1"></a>}</span>
+<span id="cb17-6"><a href="中級r--函數調用.html#cb17-6" tabindex="-1"></a><span class="co"># 建立一個有身高及體重資料集</span></span>
+<span id="cb17-7"><a href="中級r--函數調用.html#cb17-7" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;ht&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">155</span>, <span class="dv">168</span>, <span class="dv">159</span>), <span class="st">&quot;wt&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">48</span>))</span>
+<span id="cb17-8"><a href="中級r--函數調用.html#cb17-8" tabindex="-1"></a><span class="co"># 使用call函數動態生成函數呼叫</span></span>
+<span id="cb17-9"><a href="中級r--函數調用.html#cb17-9" tabindex="-1"></a>my_call <span class="ot">&lt;-</span> <span class="fu">call</span>(<span class="st">&quot;BMI&quot;</span>, <span class="at">ht =</span> DT<span class="sc">$</span>ht, <span class="at">wt =</span> DT<span class="sc">$</span>wt)</span>
+<span id="cb17-10"><a href="中級r--函數調用.html#cb17-10" tabindex="-1"></a><span class="co"># 以eval函數執行生成的函數呼叫</span></span>
+<span id="cb17-11"><a href="中級r--函數調用.html#cb17-11" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">eval</span>(my_call)</span>
+<span id="cb17-12"><a href="中級r--函數調用.html#cb17-12" tabindex="-1"></a><span class="co"># 印出結果</span></span>
+<span id="cb17-13"><a href="中級r--函數調用.html#cb17-13" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<pre><code>## [1] 33.29865 21.25850 18.98659</code></pre>
+<p>由上面兩段程式碼可以看出來，<code>call</code>函數還需要搭配<code>eval</code>函數執行後續的呼叫，所以實務上，<strong><code>do.call</code></strong>往往更常被使用，而另一個快速調用函數的方法則是<strong><code>apply</code></strong>家族</p>
+</div>
+</div>
+<div id="參考資料-1" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> 參考資料<a href="中級r--函數調用.html#參考資料-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="線上資源" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> 1.線上資源<a href="中級r--函數調用.html#線上資源" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><a href="https://blog.csdn.net/neweastsun/article/details/122397987">R do.call &amp; call 函数教程</a></li>
+<li><a href="https://www.twblogs.net/a/5d42ed0ebd9eee5327fb25a7">R語言中eval和do.call的用法</a></li>
+<li><a href="https://www.cnblogs.com/Demo1589/p/6984537.html">R語言do.call 函數用法詳解</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="基礎r--資料轉換與查詢.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/11_函數調用.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/11_函數調用.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

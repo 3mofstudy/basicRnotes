@@ -1,9 +1,11 @@
---- 
-title: "R程式語言自我筆記(基礎篇)"
+---
+title: "R程式語言-基礎篇"
 author: "Lucy"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
+
+# 關於
 
 ## 關於作者
 
@@ -37,5 +39,3 @@ site: bookdown::bookdown_site
 -   [林建甫 --R資料科學與統計](https://bookdown.org/jefflinmd38/r4biost/)
 
 ### 中文書籍
-
-
