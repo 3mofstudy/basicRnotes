@@ -13,7 +13,7 @@ sessionInfo()
 
 使用`setwd`，可以指定某個資料夾為當前環境目錄，`getwd`可以查詢目前的環境目錄。
 
-```{r echo=TRUE}
+```{r eval=FALSE}
 ##設定當前目錄
 setwd("C:/github/basicRnotes")
 ##查詢當前目錄

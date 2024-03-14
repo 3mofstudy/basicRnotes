@@ -2,8 +2,22 @@
 
 資料查詢可根據資料類型來分類
 
-## - 資料查詢
+## 屬性查詢與轉換
 
-### 向量查詢
+`class`可以查詢某物件的屬性，如下圖所示
 
-## - 資料轉換
+```{r, echo=TRUE}
+a <- "dog"
+class(a)  ##屬性 純文字 (character)
+
+b <- 380
+class(b) ##屬性 數字 (numeric)
+
+c <-  TRUE
+class(c) ##屬性 邏輯值 (logical)
+
+d <- Sys.time()
+class(d) ##屬性 日期時間 ("POSIXct" "POSIXt")
+```
+
+## 內容查詢

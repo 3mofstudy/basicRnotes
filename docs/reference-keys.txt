@@ -37,3 +37,7 @@ do.call-亦常運用於data.frame的子元素
 call-與-do.call的差異
 參考資料-1
 線上資源
+屬性查詢與轉換
+內容查詢
+二維資料結構-matrixdata.frame
+資料型態不同-data.frame
