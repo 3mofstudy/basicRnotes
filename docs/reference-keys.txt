@@ -41,3 +41,5 @@ call-與-do.call的差異
 內容查詢
 二維資料結構-matrixdata.frame
 資料型態不同-data.frame
+本書的理解
+寫書的起源
