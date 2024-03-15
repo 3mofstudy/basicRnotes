@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 初級R- 資料轉換與查詢 | R程式語言-基礎篇</title>
-  <meta name="description" content="Chapter 5 初級R- 資料轉換與查詢 | R程式語言-基礎篇" />
+  <title>Chapter 5 初級R- 資料轉換與查詢 | R語言程式設計</title>
+  <meta name="description" content="Chapter 5 初級R- 資料轉換與查詢 | R語言程式設計" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 初級R- 資料轉換與查詢 | R程式語言-基礎篇" />
+  <meta property="og:title" content="Chapter 5 初級R- 資料轉換與查詢 | R語言程式設計" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 初級R- 資料轉換與查詢 | R程式語言-基礎篇" />
+  <meta name="twitter:title" content="Chapter 5 初級R- 資料轉換與查詢 | R語言程式設計" />
   
   
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Lucy" />
 
 
-<meta name="date" content="2024-03-14" />
+<meta name="date" content="2024-03-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -143,12 +143,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#本書的定位"><i class="fa fa-check"></i><b>1.2</b> 本書的定位</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.3</b> 參考資料</a>
-<ul>
-<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#線上中文資源"><i class="fa fa-check"></i><b>1.3.1</b> 線上中文資源</a></li>
-<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#中文書籍"><i class="fa fa-check"></i><b>1.3.2</b> 中文書籍</a></li>
-</ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 初級R- 系統環境設定</a>
 <ul>
@@ -158,26 +155,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html"><i class="fa fa-check"></i><b>3</b> 初級R- 資料ABC</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
-<li class="chapter" data-level="3.2" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#常見資料型態"><i class="fa fa-check"></i><b>3.2</b> 常見資料型態</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#字串character"><i class="fa fa-check"></i><b>3.2.1</b> 字串(character)</a></li>
-<li class="chapter" data-level="3.2.2" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#數值numeric"><i class="fa fa-check"></i><b>3.2.2</b> 數值(numeric)</a></li>
-<li class="chapter" data-level="3.2.3" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#日期時間-datetime"><i class="fa fa-check"></i><b>3.2.3</b> 日期/時間 (Date/Time)</a></li>
-<li class="chapter" data-level="3.2.4" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#布林值logic"><i class="fa fa-check"></i><b>3.2.4</b> 布林值(logic)</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#特殊資料型態"><i class="fa fa-check"></i><b>3.3</b> 特殊資料型態</a>
-<ul>
-<li class="chapter" data-level="3.3.1" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#因素factor"><i class="fa fa-check"></i><b>3.3.1</b> 因素(factor)</a></li>
-</ul></li>
-<li class="chapter" data-level="3.4" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#資料運算子"><i class="fa fa-check"></i><b>3.4</b> 資料運算子</a></li>
+<li class="chapter" data-level="3.2" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a></li>
+<li class="chapter" data-level="3.3" data-path="初級r--資料abc.html"><a href="初級r--資料abc.html#運算子"><i class="fa fa-check"></i><b>3.3</b> 運算子</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html"><i class="fa fa-check"></i><b>4</b> 初級R- 資料結構</a>
 <ul>
 <li class="chapter" data-level="4.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#一維資料結構-vector"><i class="fa fa-check"></i><b>4.1</b> 一維資料結構 (vector)</a></li>
-<li class="chapter" data-level="4.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#二維資料結構"><i class="fa fa-check"></i><b>4.2</b> 二維資料結構</a>
+<li class="chapter" data-level="4.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#二維資料結構-matrixdata.frame"><i class="fa fa-check"></i><b>4.2</b> 二維資料結構 (matrix/data.frame)</a>
 <ul>
 <li class="chapter" data-level="4.2.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態相同-matrix"><i class="fa fa-check"></i><b>4.2.1</b> 資料型態相同 (matrix)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態不同-data.frame-data.table"><i class="fa fa-check"></i><b>4.2.2</b> 資料型態不同 (data.frame /data.table)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態不同-data.frame"><i class="fa fa-check"></i><b>4.2.2</b> 資料型態不同 (data.frame)</a></li>
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#三維以上資料結構"><i class="fa fa-check"></i><b>4.3</b> 三維以上資料結構</a>
 <ul>
@@ -215,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R程式語言-基礎篇</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R語言程式設計</a>
           </h1>
         </div>
 
@@ -229,17 +216,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="屬性查詢與轉換" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> 屬性查詢與轉換<a href="初級r--資料轉換與查詢.html#屬性查詢與轉換" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><code>class</code>可以查詢某物件的屬性，如下圖所示</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="初級r--資料轉換與查詢.html#cb1-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">&quot;dog&quot;</span></span>
-<span id="cb1-2"><a href="初級r--資料轉換與查詢.html#cb1-2" tabindex="-1"></a><span class="fu">class</span>(a)  <span class="do">##屬性 純文字 (character)</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="初級r--資料轉換與查詢.html#cb5-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">&quot;dog&quot;</span></span>
+<span id="cb5-2"><a href="初級r--資料轉換與查詢.html#cb5-2" tabindex="-1"></a><span class="fu">class</span>(a)  <span class="do">##屬性 純文字 (character)</span></span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="初級r--資料轉換與查詢.html#cb3-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">380</span></span>
-<span id="cb3-2"><a href="初級r--資料轉換與查詢.html#cb3-2" tabindex="-1"></a><span class="fu">class</span>(b) <span class="do">##屬性 數字 (numeric)</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="初級r--資料轉換與查詢.html#cb7-1" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="dv">380</span></span>
+<span id="cb7-2"><a href="初級r--資料轉換與查詢.html#cb7-2" tabindex="-1"></a><span class="fu">class</span>(b) <span class="do">##屬性 數字 (numeric)</span></span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="初級r--資料轉換與查詢.html#cb5-1" tabindex="-1"></a>c <span class="ot">&lt;-</span>  <span class="cn">TRUE</span></span>
-<span id="cb5-2"><a href="初級r--資料轉換與查詢.html#cb5-2" tabindex="-1"></a><span class="fu">class</span>(c) <span class="do">##屬性 邏輯值 (logical)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="初級r--資料轉換與查詢.html#cb9-1" tabindex="-1"></a>c <span class="ot">&lt;-</span>  <span class="cn">TRUE</span></span>
+<span id="cb9-2"><a href="初級r--資料轉換與查詢.html#cb9-2" tabindex="-1"></a><span class="fu">class</span>(c) <span class="do">##屬性 邏輯值 (logical)</span></span></code></pre></div>
 <pre><code>## [1] &quot;logical&quot;</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="初級r--資料轉換與查詢.html#cb7-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb7-2"><a href="初級r--資料轉換與查詢.html#cb7-2" tabindex="-1"></a><span class="fu">class</span>(d) <span class="do">##屬性 日期時間 (&quot;POSIXct&quot; &quot;POSIXt&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="初級r--資料轉換與查詢.html#cb11-1" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb11-2"><a href="初級r--資料轉換與查詢.html#cb11-2" tabindex="-1"></a><span class="fu">class</span>(d) <span class="do">##屬性 日期時間 (&quot;POSIXct&quot; &quot;POSIXt&quot;)</span></span></code></pre></div>
 <pre><code>## [1] &quot;POSIXct&quot; &quot;POSIXt&quot;</code></pre>
 </div>
 <div id="內容查詢" class="section level2 hasAnchor" number="5.2">
