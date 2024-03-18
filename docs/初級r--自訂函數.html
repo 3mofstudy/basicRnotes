@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 初級R- 系統環境設定 | R語言程式設計</title>
-  <meta name="description" content="Chapter 2 初級R- 系統環境設定 | R語言程式設計" />
+  <title>Chapter 6 初級R- 自訂函數 | R語言程式設計</title>
+  <meta name="description" content="Chapter 6 初級R- 自訂函數 | R語言程式設計" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 初級R- 系統環境設定 | R語言程式設計" />
+  <meta property="og:title" content="Chapter 6 初級R- 自訂函數 | R語言程式設計" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 初級R- 系統環境設定 | R語言程式設計" />
+  <meta name="twitter:title" content="Chapter 6 初級R- 自訂函數 | R語言程式設計" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="初級r--元素介紹.html"/>
+<link rel="prev" href="初級r--流程控制.html"/>
+<link rel="next" href="初級r--資料輸入與輸出.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -223,72 +223,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="初級r--系統環境設定" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> 初級R- 系統環境設定<a href="初級r--系統環境設定.html#初級r--系統環境設定" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="系統環境查詢" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> 系統環境查詢<a href="初級r--系統環境設定.html#系統環境查詢" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li>使用<code>sessionInfo()</code>可以查詢目前R運行的詳細情形，包含R版本號、R套件清單與版本號、語系</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="初級r--系統環境設定.html#cb1-1" tabindex="-1"></a><span class="do">##查詢目前系統環境</span></span>
-<span id="cb1-2"><a href="初級r--系統環境設定.html#cb1-2" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 4.2.3 (2023-03-15 ucrt)
-## Platform: x86_64-w64-mingw32/x64 (64-bit)
-## Running under: Windows 10 x64 (build 22621)
-## 
-## Matrix products: default
-## 
-## locale:
-## [1] LC_COLLATE=Chinese (Traditional)_Taiwan.utf8 
-## [2] LC_CTYPE=Chinese (Traditional)_Taiwan.utf8   
-## [3] LC_MONETARY=Chinese (Traditional)_Taiwan.utf8
-## [4] LC_NUMERIC=C                                 
-## [5] LC_TIME=Chinese (Traditional)_Taiwan.utf8    
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
-## loaded via a namespace (and not attached):
-##  [1] bookdown_0.38   digest_0.6.29   R6_2.5.1        jsonlite_1.8.0 
-##  [5] evaluate_0.16   cachem_1.0.6    rlang_1.1.0     cli_3.6.1      
-##  [9] rstudioapi_0.14 jquerylib_0.1.4 bslib_0.4.0     rmarkdown_2.26 
-## [13] tools_4.2.3     xfun_0.42       yaml_2.3.5      fastmap_1.1.0  
-## [17] compiler_4.2.3  htmltools_0.5.5 knitr_1.45      sass_0.4.5</code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>查詢或設定環境目錄</li>
-</ol>
-<p>使用<code>setwd</code>，可以指定某個資料夾為當前環境目錄，<code>getwd</code>可以查詢目前的環境目錄。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="初級r--系統環境設定.html#cb3-1" tabindex="-1"></a><span class="do">##設定當前目錄</span></span>
-<span id="cb3-2"><a href="初級r--系統環境設定.html#cb3-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/github/basicRnotes&quot;</span>)</span>
-<span id="cb3-3"><a href="初級r--系統環境設定.html#cb3-3" tabindex="-1"></a><span class="do">##查詢當前目錄</span></span>
-<span id="cb3-4"><a href="初級r--系統環境設定.html#cb3-4" tabindex="-1"></a><span class="fu">getwd</span>() </span></code></pre></div>
-<p>如果懶得打指令，也可以透過RStudio視窗中的選項按鈕來執行，<em>Set As Working Directory</em> 等同於<code>setwd</code>指令， <em>Go To Working Directory</em>等同於<code>getwd</code>指令。 <img src="images/1-setwd.png" width="640" alt="環境目錄設定" /></p>
+<div id="初級r--自訂函數" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> 初級R- 自訂函數<a href="初級r--自訂函數.html#初級r--自訂函數" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="自訂函數介紹" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> 自訂函數介紹<a href="初級r--自訂函數.html#自訂函數介紹" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="環境設定函數" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> 環境設定函數<a href="初級r--系統環境設定.html#環境設定函數" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>環境設定函數為<code>options()</code>，用<code>options()</code>指令可以設定一些環境變量，使用help(options)可以查看詳細的參數資訊，常見操作如下:</p>
-<ol style="list-style-type: decimal">
-<li>數字位數的設置，options(digits=n)，n一般預設是7位，但實際上的範圍是1~22，可以隨意設定位數。</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="初級r--系統環境設定.html#cb4-1" tabindex="-1"></a>     <span class="co">#這個指令，可以把R的整數表示能力設為10位元。</span></span>
-<span id="cb4-2"><a href="初級r--系統環境設定.html#cb4-2" tabindex="-1"></a>      <span class="fu">options</span>(<span class="at">digits=</span><span class="dv">10</span>)</span></code></pre></div>
-<ol start="2" style="list-style-type: decimal">
-<li>套件的安裝，使用下面的命令，可以指定預備下載端點。</li>
-</ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="初級r--系統環境設定.html#cb5-1" tabindex="-1"></a>      <span class="fu">options</span>(<span class="at">CRAN=</span><span class="st">&quot;http://cran.r-project.org&quot;</span>)</span>
-<span id="cb5-2"><a href="初級r--系統環境設定.html#cb5-2" tabindex="-1"></a>      <span class="fu">install.packages</span>(<span class="st">&quot;套件名稱&quot;</span>)</span></code></pre></div>
-<ol start="3" style="list-style-type: decimal">
-<li>設定游標類型(prompt參數設定)。</li>
-</ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="初級r--系統環境設定.html#cb6-1" tabindex="-1"></a>       <span class="do">##游標開始預設為 &gt;</span></span>
-<span id="cb6-2"><a href="初級r--系統環境設定.html#cb6-2" tabindex="-1"></a>       <span class="fu">options</span>(<span class="at">prompt=</span><span class="st">&quot;$&quot;</span>)</span></code></pre></div>
-<ol start="4" style="list-style-type: decimal">
-<li>設置 忽略警告(或錯誤)訊息出現</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="初級r--系統環境設定.html#cb7-1" tabindex="-1"></a>       <span class="do">##忽略任何警告，不顯示</span></span>
-<span id="cb7-2"><a href="初級r--系統環境設定.html#cb7-2" tabindex="-1"></a>       <span class="fu">options</span>(<span class="at">warn=</span><span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb7-3"><a href="初級r--系統環境設定.html#cb7-3" tabindex="-1"></a>       <span class="do">##顯示警告(預設)</span></span>
-<span id="cb7-4"><a href="初級r--系統環境設定.html#cb7-4" tabindex="-1"></a>       <span class="fu">options</span>(<span class="at">warn=</span><span class="dv">1</span>)</span></code></pre></div>
+<div id="函數與if判斷搭配" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> 函數與if判斷搭配<a href="初級r--自訂函數.html#函數與if判斷搭配" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="函數與for迴圈搭配" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> 函數與for迴圈搭配<a href="初級r--自訂函數.html#函數與for迴圈搭配" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -297,8 +241,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="初級r--元素介紹.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="初級r--流程控制.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="初級r--資料輸入與輸出.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -329,7 +273,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/01_環境設定.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/05_自定義函數.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -337,7 +281,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/01_環境設定.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/05_自定義函數.Rmd",
 "text": null
 },
 "download": null,

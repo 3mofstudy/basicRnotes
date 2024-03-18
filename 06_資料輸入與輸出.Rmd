@@ -1,0 +1,23 @@
+# 初級R- 資料輸入與輸出
+
+## 複製及貼上
+
+```{r eval=FALSE}
+#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 
+text <-clipr::read_clip() ##轉換成純文字向量(適合單行貼上) 
+DT <-clipr::read_clip_tbl() ##轉換成data.frame(適合表格貼上)
+
+#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)
+
+clipr::write_clip(text)
+
+```
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+#另一個好用套件
+library(psychTools) 
+text<-psychTools::read.clipboard() 
+text<-psychTools::read.clipboard.tab()
+```
+
+## 鍵入到R
