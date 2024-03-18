@@ -21,7 +21,7 @@ a+b
 | 布林值(logic)                    | 地圖格式(sp, sf) |
 | 日期/時間 (Date/ POSIXct POSIXt) | 其他( eg..)      |
 
-**1.字串**
+### 字串
 
 字串可用單引號或雙引號包起來代表，何時使用單引號或雙引號其實是隨意，只是需要注意一點，當單引號亦視為字串中內容時，外圍則須用雙引號包起來，反之亦然
 
@@ -34,7 +34,7 @@ sentences <- "I'm an adult"   #單引號需包在雙引號內
 print(sentences)
 ```
 
-**2.數值**
+### 數值
 
 數學的**數**包含***實數(numeric)***和***複數(complex)***，R是專為計算數學相關領域而發展的程式語言，數的型態多於其他程式語言，R能處理實數(numeric)與複數(complex)， 實數又包括整數（沒有小數點）與浮點數（有小數點）的數值，所以在R的數值中，通常分成三種，分別為:
 
@@ -62,7 +62,7 @@ class(5L)
 class(3i) 
 ```
 
-**3.布林值**
+### 布林值
 
 布林值又稱為邏輯值((logic)，用於邏輯判斷，可使用大寫`TRUE`或`T`代表真，大寫`FALSE`或`F`代表假，此外布林值可以進行加減運算， TRUE =1 ，FALSE =0
 
@@ -76,7 +76,91 @@ class(B)
 print(A+B+C)
 ```
 
-**4.日期/時間**
+### 日期/時間
+
+**(1) 取得當下時間資訊**
+
+R內建有幾個函數，可以查詢當下系統的日期、時間及時區資訊
+
+```{r,include=T}
+Sys.Date()  #當前日期  類似lubridate::today()     
+date()      #當前系統日期和時間  
+Sys.time()  #當前系統日期和時間  lubridate::now()
+Sys.timezone() #有關時區的信息將返回當前時區的名稱
+```
+
+**(2) as.Date 函數(文字轉日期)**
+
+`as.Date` 可以將文字或數字格式轉換成日期格式，使用時，第一個參數若放文字格式，後面,tryFormats參數輸入相對應的原文字格式
+
+```{r,include=TRUE}
+ 
+as.Date("2024-01-05",tryFormats="%Y-%m-%d")  
+as.Date("2024/01/06",tryFormats="%Y/%m/%d") 
+as.Date("20240107",tryFormats="%Y%m%d")  
+```
+
+**(3) as.Date 函數(數字轉日期)**
+
+```{r,include=TRUE}
+as.Date(31) 
+as.Date(31,origin="2024-01-01")  
+```
+
+**(4) 擷取特定日期格式**
+
+```{r,include=TRUE}
+#輸出年份：
+format(Sys.Date(),format="%Y")   
+format(Sys.Date(),format="%y")  
+#輸出月份：
+format(Sys.Date(),format="%m")
+format(Sys.Date(),format="%b")   
+format(Sys.Date(),format="%B")
+#輸出日期：
+format(Sys.Date(),format="%d") 
+#輸出星期：
+format(Sys.Date(),format="%A") 
+format(Sys.Date(),format="%a")
+format(Sys.Date(),format="%u")
+#輸出週數：
+format(as.Date("2024-02-01"),format="%w")
+format(as.Date("2024-02-01"),format="%W")
+```
+
+**(5) 時間處理**
+
+```{r}
+#as.POSIXlt()  
+# 如果只有年月日的計算就是上面那種as.DATE格式 可是如果包含到時分秒 就要用到下列轉換
+#as.POSIXct()   
+#從1970年1月1日以後開始計算秒數
+
+D1 <- as.POSIXlt("2023-08-01 03:00:00" ,tryFormats = c("%Y-%m-%d %H:%M:%S"))
+D2 <- as.POSIXlt("2023-08-02 08:00:00" ,tryFormats = c("%Y-%m-%d %H:%M:%S"))
+```
+
+**(6) 擷取特定時間格式**
+
+```{r,include=TRUE}
+format(Sys.time(),format="%H") #輸出小時
+format(Sys.time(),format="%M") #輸出分鐘
+format(Sys.time(),format="%S") #輸出秒數
+format(Sys.Date(),format="%Y年%m月%d日") 
+format(Sys.Date(),format="西元%Y年%m月%d日")  
+```
+
+**(7) 日期時間的加減**
+
+```{r}
+
+#單純加秒數
+D1+1
+#兩個日期時間相加減
+D2-D1   # Time difference of 1.208333 days
+difftime(D2,D1, units = "mins") #Time difference of 1740 mins
+
+```
 
 ## 屬性查詢與轉換
 
@@ -95,7 +179,5 @@ class(c) ##屬性 邏輯值 (logical)
 d <- Sys.time()
 class(d) ##屬性 日期時間 ("POSIXct" "POSIXt")
 ```
-
-## 內容查詢
 
 ## 運算子
