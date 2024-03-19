@@ -1,5 +1,19 @@
 # 初級R- 資料輸入與輸出
 
+## 資料鍵入與印出
+
+### 資料鍵入
+
+1.  `scan()`
+
+2.  `readline("請輸入字串:")`
+
+### 資料印出
+
+1.  `print()`
+
+2.  `cat()`
+
 ## 複製及貼上
 
 ```{r eval=FALSE}
@@ -19,5 +33,3 @@ library(psychTools)
 text<-psychTools::read.clipboard() 
 text<-psychTools::read.clipboard.tab()
 ```
-
-## 鍵入到R
