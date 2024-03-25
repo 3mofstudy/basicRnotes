@@ -1,0 +1,92 @@
+# 中級r- 文字處理
+
+在R中，有需多內建的文字處理函數，可以對文字進行搜尋、取代、切割或擷取，除此之外，R在文字處理亦有一個套件 library(stringr)，可以彌補內建函數部分不足之處，而與文字處裡息息相關的正則表達式，將放在高級篇中再介紹
+
+## 內建文字函數(base)
+
+**1. 大小寫切換**
+
+```{r echo=TRUE}
+# 全部轉小寫之函數
+tolower("HAPPLY DAY")
+
+# 全部轉大寫之函數
+toupper("happly day")
+```
+
+**2. 文字搜尋**
+
+```{r eval=FALSE}
+# 找出符合條件的向量內位置
+grep(pattern, x, ignore.case = FALSE, perl = FALSE, value = FALSE,
+     fixed = FALSE, useBytes = FALSE, invert = FALSE)
+
+# 找出符合條件之邏輯判斷(TRUE FALSE)
+grepl(pattern, x, ignore.case = FALSE, perl = FALSE,
+      fixed = FALSE, useBytes = FALSE)
+```
+
+**3. 文字取代**
+
+```{r eval=FALSE}
+# 只替换第一次匹配的字串
+sub(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
+    fixed = FALSE, useBytes = FALSE)
+
+# 替换所有匹配的字串
+gsub(pattern, replacement, x, ignore.case = FALSE, perl = FALSE,
+     fixed = FALSE, useBytes = FALSE)
+```
+
+**4. 使用位址擷取**
+
+```{r eval=FALSE}
+# 根據起始位址和結束位址，擷取出特定文字
+substr(x, start, stop)
+
+# 根據起始位址和結束位址，擷取出特定文字，但結束位置可以向量化
+substring(x, first, last)
+
+```
+
+**5. 符合條件下之位址搜尋**
+
+```{r eval=FALSE}
+# 找出符合條件的字串向量的起始位置
+regexpr(pattern, text, ignore.case = FALSE, perl = FALSE,
+        fixed = FALSE, useBytes = FALSE)
+
+# 找出符合條件的字串向量的起始位置,各自列表化
+gregexpr(pattern, text, ignore.case = FALSE, perl = FALSE,
+         fixed = FALSE, useBytes = FALSE)
+
+```
+
+與`gregexpr`類似的函數，還有`regexec`、`gregexec`，差異不大，只是輸出方式不同，筆者認為以後續處理方便性而言，`gregexpr`是比較值得學習的函數
+
+## stringr套件
+
+```{r eval=FALSE}
+library(stringr)
+# 首字母轉換成大寫字母
+str_to_title("jack")
+
+#1.字串分割(可割多句)   #輸出格式list
+str_split(string, pattern, n = Inf, simplify = FALSE)
+
+#2.字串分割(只割一句)
+str_split_1(string, pattern)
+
+#3.字串分割(指定割出多少詞)   #輸出格式matrix
+str_split_fixed(string, pattern, n)
+
+#4.字串分割(指定割出後，輸出第i個字串)   #輸出格式matrix
+str_split_i(string, pattern, i)
+
+fool=  c("蘋果and橘子and香蕉and西瓜","豬肉and牛肉and雞肉")
+str_split_i(fool, "and",3)
+
+#5.比對 (想找包含 西瓜 在內的字串)   #類似 grepl
+str_detect(fool, pattern = "西瓜" )
+grepl("西瓜", fool)
+```

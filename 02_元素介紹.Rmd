@@ -103,7 +103,7 @@ as.Date("20240107",tryFormats="%Y%m%d")
 **(3) as.Date 函數(數字轉日期)**
 
 ```{r,include=TRUE}
-as.Date(31) 
+#as.Date(31) 
 as.Date(31,origin="2024-01-01")  
 ```
 

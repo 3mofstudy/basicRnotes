@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 初級R- 資料結構 | R語言程式設計</title>
-  <meta name="description" content="Chapter 4 初級R- 資料結構 | R語言程式設計" />
+  <title>Chapter 8 中級r- 文字處理 | R語言程式設計</title>
+  <meta name="description" content="Chapter 8 中級r- 文字處理 | R語言程式設計" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 初級R- 資料結構 | R語言程式設計" />
+  <meta property="og:title" content="Chapter 8 中級r- 文字處理 | R語言程式設計" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 初級R- 資料結構 | R語言程式設計" />
+  <meta name="twitter:title" content="Chapter 8 中級r- 文字處理 | R語言程式設計" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="初級r--元素介紹.html"/>
-<link rel="next" href="初級r--流程控制.html"/>
+<link rel="prev" href="初級r--資料輸入與輸出.html"/>
+<link rel="next" href="中級r--函數調用.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -202,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html"><i class="fa fa-check"></i><b>8</b> 中級r- 文字處理</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#常用base內建文字函數"><i class="fa fa-check"></i><b>8.1</b> 常用base內建文字函數</a></li>
+<li class="chapter" data-level="8.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#內建文字函數base"><i class="fa fa-check"></i><b>8.1</b> 內建文字函數(base)</a></li>
 <li class="chapter" data-level="8.2" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#stringr套件"><i class="fa fa-check"></i><b>8.2</b> stringr套件</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html"><i class="fa fa-check"></i><b>9</b> 中級R- 函數調用</a>
@@ -237,38 +237,75 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="初級r--資料結構" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> 初級R- 資料結構<a href="初級r--資料結構.html#初級r--資料結構" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="一維資料結構-vector" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> 一維資料結構 (vector)<a href="初級r--資料結構.html#一維資料結構-vector" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>R語言中最簡單的資料結構，通常用c 來集合</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="初級r--資料結構.html#cb1-1" tabindex="-1"></a>tel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0912370456</span>,<span class="dv">0954310641</span>,<span class="dv">0965120744</span>)</span>
-<span id="cb1-2"><a href="初級r--資料結構.html#cb1-2" tabindex="-1"></a><span class="fu">print</span>(tel)</span></code></pre></div>
-<pre><code>## [1] 912370456 954310641 965120744</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="初級r--資料結構.html#cb3-1" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;王小名&quot;</span>,<span class="st">&quot;張大同&quot;</span>)</span>
-<span id="cb3-2"><a href="初級r--資料結構.html#cb3-2" tabindex="-1"></a><span class="fu">print</span>(name)</span></code></pre></div>
-<pre><code>## [1] &quot;王小名&quot; &quot;張大同&quot;</code></pre>
+<div id="中級r--文字處理" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> 中級r- 文字處理<a href="中級r--文字處理.html#中級r--文字處理" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>在R中，有需多內建的文字處理函數，可以對文字進行搜尋、取代、切割或擷取，除此之外，R在文字處理亦有一個套件 library(stringr)，可以彌補內建函數部分不足之處，而與文字處裡息息相關的正則表達式，將放在高級篇中再介紹</p>
+<div id="內建文字函數base" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> 內建文字函數(base)<a href="中級r--文字處理.html#內建文字函數base" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1. 大小寫切換</strong></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="中級r--文字處理.html#cb7-1" tabindex="-1"></a><span class="co"># 全部轉小寫之函數</span></span>
+<span id="cb7-2"><a href="中級r--文字處理.html#cb7-2" tabindex="-1"></a><span class="fu">tolower</span>(<span class="st">&quot;HAPPLY DAY&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;happly day&quot;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="中級r--文字處理.html#cb9-1" tabindex="-1"></a><span class="co"># 全部轉大寫之函數</span></span>
+<span id="cb9-2"><a href="中級r--文字處理.html#cb9-2" tabindex="-1"></a><span class="fu">toupper</span>(<span class="st">&quot;happly day&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;HAPPLY DAY&quot;</code></pre>
+<p><strong>2. 文字搜尋</strong></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="中級r--文字處理.html#cb11-1" tabindex="-1"></a><span class="co"># 找出符合條件的向量內位置</span></span>
+<span id="cb11-2"><a href="中級r--文字處理.html#cb11-2" tabindex="-1"></a><span class="fu">grep</span>(pattern, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>, <span class="at">value =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-3"><a href="中級r--文字處理.html#cb11-3" tabindex="-1"></a>     <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>, <span class="at">invert =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-4"><a href="中級r--文字處理.html#cb11-4" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="中級r--文字處理.html#cb11-5" tabindex="-1"></a><span class="co"># 找出符合條件之邏輯判斷(TRUE FALSE)</span></span>
+<span id="cb11-6"><a href="中級r--文字處理.html#cb11-6" tabindex="-1"></a><span class="fu">grepl</span>(pattern, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-7"><a href="中級r--文字處理.html#cb11-7" tabindex="-1"></a>      <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><strong>3. 文字取代</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="中級r--文字處理.html#cb12-1" tabindex="-1"></a><span class="co"># 只替换第一次匹配的字串</span></span>
+<span id="cb12-2"><a href="中級r--文字處理.html#cb12-2" tabindex="-1"></a><span class="fu">sub</span>(pattern, replacement, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-3"><a href="中級r--文字處理.html#cb12-3" tabindex="-1"></a>    <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-4"><a href="中級r--文字處理.html#cb12-4" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="中級r--文字處理.html#cb12-5" tabindex="-1"></a><span class="co"># 替换所有匹配的字串</span></span>
+<span id="cb12-6"><a href="中級r--文字處理.html#cb12-6" tabindex="-1"></a><span class="fu">gsub</span>(pattern, replacement, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-7"><a href="中級r--文字處理.html#cb12-7" tabindex="-1"></a>     <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p><strong>4. 使用位址擷取</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="中級r--文字處理.html#cb13-1" tabindex="-1"></a><span class="co"># 根據起始位址和結束位址，擷取出特定文字</span></span>
+<span id="cb13-2"><a href="中級r--文字處理.html#cb13-2" tabindex="-1"></a><span class="fu">substr</span>(x, start, stop)</span>
+<span id="cb13-3"><a href="中級r--文字處理.html#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="中級r--文字處理.html#cb13-4" tabindex="-1"></a><span class="co"># 根據起始位址和結束位址，擷取出特定文字，但結束位置可以向量化</span></span>
+<span id="cb13-5"><a href="中級r--文字處理.html#cb13-5" tabindex="-1"></a><span class="fu">substring</span>(x, first, last)</span></code></pre></div>
+<p><strong>5. 符合條件下之位址搜尋</strong></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="中級r--文字處理.html#cb14-1" tabindex="-1"></a><span class="co"># 找出符合條件的字串向量的起始位置</span></span>
+<span id="cb14-2"><a href="中級r--文字處理.html#cb14-2" tabindex="-1"></a><span class="fu">regexpr</span>(pattern, text, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb14-3"><a href="中級r--文字處理.html#cb14-3" tabindex="-1"></a>        <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-4"><a href="中級r--文字處理.html#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="中級r--文字處理.html#cb14-5" tabindex="-1"></a><span class="co"># 找出符合條件的字串向量的起始位置,各自列表化</span></span>
+<span id="cb14-6"><a href="中級r--文字處理.html#cb14-6" tabindex="-1"></a><span class="fu">gregexpr</span>(pattern, text, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb14-7"><a href="中級r--文字處理.html#cb14-7" tabindex="-1"></a>         <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>與<code>gregexpr</code>類似的函數，還有<code>regexec</code>、<code>gregexec</code>，差異不大，只是輸出方式不同，筆者認為以後續處理方便性而言，<code>gregexpr</code>是比較值得學習的函數</p>
 </div>
-<div id="二維資料結構-matrixdata.frame" class="section level2 hasAnchor" number="4.2">
-<h2><span class="header-section-number">4.2</span> 二維資料結構 (matrix/data.frame)<a href="初級r--資料結構.html#二維資料結構-matrixdata.frame" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="資料型態相同-matrix" class="section level3 hasAnchor" number="4.2.1">
-<h3><span class="header-section-number">4.2.1</span> 資料型態相同 (matrix)<a href="初級r--資料結構.html#資料型態相同-matrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="資料型態不同-data.frame" class="section level3 hasAnchor" number="4.2.2">
-<h3><span class="header-section-number">4.2.2</span> 資料型態不同 (data.frame)<a href="初級r--資料結構.html#資料型態不同-data.frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<div id="三維以上資料結構" class="section level2 hasAnchor" number="4.3">
-<h2><span class="header-section-number">4.3</span> 三維以上資料結構<a href="初級r--資料結構.html#三維以上資料結構" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="資料型態相同-array" class="section level3 hasAnchor" number="4.3.1">
-<h3><span class="header-section-number">4.3.1</span> 資料型態相同 (array)<a href="初級r--資料結構.html#資料型態相同-array" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-<div id="資料型態不同-list" class="section level3 hasAnchor" number="4.3.2">
-<h3><span class="header-section-number">4.3.2</span> 資料型態不同 (list)<a href="初級r--資料結構.html#資料型態不同-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-</div>
-</div>
-<div id="特殊資料結構" class="section level2 hasAnchor" number="4.4">
-<h2><span class="header-section-number">4.4</span> 特殊資料結構<a href="初級r--資料結構.html#特殊資料結構" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stringr套件" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> stringr套件<a href="中級r--文字處理.html#stringr套件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="中級r--文字處理.html#cb15-1" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb15-2"><a href="中級r--文字處理.html#cb15-2" tabindex="-1"></a><span class="co"># 首字母轉換成大寫字母</span></span>
+<span id="cb15-3"><a href="中級r--文字處理.html#cb15-3" tabindex="-1"></a><span class="fu">str_to_title</span>(<span class="st">&quot;jack&quot;</span>)</span>
+<span id="cb15-4"><a href="中級r--文字處理.html#cb15-4" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="中級r--文字處理.html#cb15-5" tabindex="-1"></a><span class="co">#1.字串分割(可割多句)   #輸出格式list</span></span>
+<span id="cb15-6"><a href="中級r--文字處理.html#cb15-6" tabindex="-1"></a><span class="fu">str_split</span>(string, pattern, <span class="at">n =</span> <span class="cn">Inf</span>, <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb15-7"><a href="中級r--文字處理.html#cb15-7" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="中級r--文字處理.html#cb15-8" tabindex="-1"></a><span class="co">#2.字串分割(只割一句)</span></span>
+<span id="cb15-9"><a href="中級r--文字處理.html#cb15-9" tabindex="-1"></a><span class="fu">str_split_1</span>(string, pattern)</span>
+<span id="cb15-10"><a href="中級r--文字處理.html#cb15-10" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="中級r--文字處理.html#cb15-11" tabindex="-1"></a><span class="co">#3.字串分割(指定割出多少詞)   #輸出格式matrix</span></span>
+<span id="cb15-12"><a href="中級r--文字處理.html#cb15-12" tabindex="-1"></a><span class="fu">str_split_fixed</span>(string, pattern, n)</span>
+<span id="cb15-13"><a href="中級r--文字處理.html#cb15-13" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="中級r--文字處理.html#cb15-14" tabindex="-1"></a><span class="co">#4.字串分割(指定割出後，輸出第i個字串)   #輸出格式matrix</span></span>
+<span id="cb15-15"><a href="中級r--文字處理.html#cb15-15" tabindex="-1"></a><span class="fu">str_split_i</span>(string, pattern, i)</span>
+<span id="cb15-16"><a href="中級r--文字處理.html#cb15-16" tabindex="-1"></a></span>
+<span id="cb15-17"><a href="中級r--文字處理.html#cb15-17" tabindex="-1"></a>fool<span class="ot">=</span>  <span class="fu">c</span>(<span class="st">&quot;蘋果and橘子and香蕉and西瓜&quot;</span>,<span class="st">&quot;豬肉and牛肉and雞肉&quot;</span>)</span>
+<span id="cb15-18"><a href="中級r--文字處理.html#cb15-18" tabindex="-1"></a><span class="fu">str_split_i</span>(fool, <span class="st">&quot;and&quot;</span>,<span class="dv">3</span>)</span>
+<span id="cb15-19"><a href="中級r--文字處理.html#cb15-19" tabindex="-1"></a></span>
+<span id="cb15-20"><a href="中級r--文字處理.html#cb15-20" tabindex="-1"></a><span class="co">#5.比對 (想找包含 西瓜 在內的字串)   #類似 grepl</span></span>
+<span id="cb15-21"><a href="中級r--文字處理.html#cb15-21" tabindex="-1"></a><span class="fu">str_detect</span>(fool, <span class="at">pattern =</span> <span class="st">&quot;西瓜&quot;</span> )</span>
+<span id="cb15-22"><a href="中級r--文字處理.html#cb15-22" tabindex="-1"></a></span>
+<span id="cb15-23"><a href="中級r--文字處理.html#cb15-23" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;西瓜&quot;</span>, fool)</span></code></pre></div>
 
 </div>
 </div>
@@ -277,8 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="初級r--元素介紹.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="初級r--流程控制.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="初級r--資料輸入與輸出.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="中級r--函數調用.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -309,7 +346,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/03_資料結構.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/10_文字處理.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -317,7 +354,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/03_資料結構.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/10_文字處理.Rmd",
 "text": null
 },
 "download": null,
