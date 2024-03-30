@@ -20,7 +20,7 @@ setwd("C:/github/basicRnotes")
 getwd() 
 ```
 
-如果懶得打指令，也可以透過RStudio視窗中的選項按鈕來執行，*Set As Working Directory* 等同於`setwd`指令， *Go To Working Directory*等同於`getwd`指令。 ![環境目錄設定](images/1-setwd.png){width="640"}
+如果懶得打指令，也可以透過RStudio視窗中的選項按鈕來執行，*Set As Working Directory* 等同於`setwd`指令， *Go To Working Directory*等同於`getwd`指令。
 
 ## 環境設定函數
 
@@ -58,13 +58,15 @@ getwd()
 
 ## 更改環境語系
 
-1.  用 `Sys.setlocale()`查看當前語系
+1. 用 `Sys.setlocale()`查看當前語系
 
 ```{r echo=TRUE}
 Sys.setlocale()  #Sys.setlocale (category = "LC_ALL", locale = "")
 format(Sys.Date(), "%A")  
 ```
+
 2. 將中文語系改為英文語系
+
 ```{r echo=TRUE}
 Sys.setlocale("LC_TIME", locale ="English") #(此方法是暫時，重開R時，語系會返回最初設定)
 format(Sys.Date(), "%A") #星期
@@ -72,21 +74,24 @@ format(Sys.Date(), "%B") #月
 format(Sys.Date(), "%b") #月
 ```
 
-3.將英文語系變回中文語系
+3. 將英文語系變回中文語系
+
 ```{r echo=TRUE}
 Sys.setlocale("LC_TIME", locale ="zh_TW.UTF-8")
 format(Sys.Date(), "%A") #星期
 format(Sys.Date(), "%B") #月
 ```
 
+4. 變成日本語系
 
-4.變成日本語系
 ```{r echo=TRUE}
 Sys.setlocale("LC_TIME", locale ="ja_JP.UTF-8")
 format(Sys.Date(), "%A") #星期
 format(Sys.Date(), "%B") #月
 ```
-5. 變成韓國語系
+
+5.變成韓國語系
+
 ```{r echo=TRUE}
 Sys.setlocale("LC_TIME", locale ="ko_KR.UTF-8")
 format(Sys.Date(), "%A") #星期
