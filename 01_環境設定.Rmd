@@ -58,23 +58,24 @@ getwd()
 
 ## 更改環境語系
 
-1. 用 `Sys.setlocale()`查看當前語系
+1.  用`Sys.setlocale()`查看當前語系(預設中文)，調整`locale`參數可暫時修改語系，但重開R時，語系會返回預設值。
 
 ```{r echo=TRUE}
 Sys.setlocale()  #Sys.setlocale (category = "LC_ALL", locale = "")
 format(Sys.Date(), "%A")  
 ```
 
-2. 將中文語系改為英文語系
+2.  將中文語系改為英文語系(暫時性)
 
 ```{r echo=TRUE}
-Sys.setlocale("LC_TIME", locale ="English") #(此方法是暫時，重開R時，語系會返回最初設定)
+Sys.setlocale("LC_TIME", locale ="English")
+Sys.setlocale("LC_TIME", locale ="en.UTF-8") # 也可以用 en.UTF-8
 format(Sys.Date(), "%A") #星期
 format(Sys.Date(), "%B") #月
 format(Sys.Date(), "%b") #月
 ```
 
-3. 將英文語系變回中文語系
+3.  將英文語系變回中文語系
 
 ```{r echo=TRUE}
 Sys.setlocale("LC_TIME", locale ="zh_TW.UTF-8")
@@ -82,7 +83,7 @@ format(Sys.Date(), "%A") #星期
 format(Sys.Date(), "%B") #月
 ```
 
-4. 變成日本語系
+4.  變成日本語系
 
 ```{r echo=TRUE}
 Sys.setlocale("LC_TIME", locale ="ja_JP.UTF-8")
