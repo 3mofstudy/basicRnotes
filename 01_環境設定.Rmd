@@ -28,7 +28,7 @@ getwd()
 
 1.  數字位數的設置，options(digits=n)，n一般預設是7位，但實際上的範圍是1\~22，可以隨意設定位數。
 
-```{r echo=TRUE}
+```{r eval=FALSE}
      #這個指令，可以把R的整數表示能力設為10位元。
       options(digits=10)
 ```
@@ -42,14 +42,14 @@ getwd()
 
 3.  設定游標類型(prompt參數設定)。
 
-```{r echo=TRUE}
+```{r eval=FALSE}
        ##游標開始預設為 >
        options(prompt="$")
 ```
 
 4.  設置 忽略警告(或錯誤)訊息出現
 
-```{r echo=TRUE}
+```{r eval=FALSE}
        ##忽略任何警告，不顯示
        options(warn=-1)
        ##顯示警告(預設)
@@ -61,7 +61,7 @@ getwd()
 1.  用`Sys.setlocale()`查看當前語系(預設中文)，調整`locale`參數可暫時修改語系，但重開R時，語系會返回預設值。
 
 ```{r echo=TRUE}
-Sys.setlocale()  #Sys.setlocale (category = "LC_ALL", locale = "")
+Sys.setlocale()  
 format(Sys.Date(), "%A")  
 ```
 
@@ -97,4 +97,28 @@ format(Sys.Date(), "%B") #月
 Sys.setlocale("LC_TIME", locale ="ko_KR.UTF-8")
 format(Sys.Date(), "%A") #星期
 format(Sys.Date(), "%B") #月
+```
+
+6.  其他語系
+
+```{r echo=TRUE}
+#設置語言為德語
+Sys.setlocale("LC_TIME", locale ="de_DE.UTF-8") 
+format(Sys.Date(), "%A")
+
+#設置語言為俄語
+Sys.setlocale("LC_TIME", "ru_RU.UTF-8") 
+format(Sys.Date(), "%A")
+
+#設置語言為西班牙語
+Sys.setlocale("LC_TIME", "es_ES.UTF-8") 
+format(Sys.Date(), "%A")
+
+#設置語言泰語
+Sys.setlocale("LC_TIME", "th_TH.UTF-8")
+format(Sys.Date(), "%A")
+
+#設置越南語
+Sys.setlocale("LC_TIME", "vi_VN.UTF-8")
+format(Sys.Date(), "%A")
 ```
