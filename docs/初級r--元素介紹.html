@@ -151,6 +151,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="2.1" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
 <li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+<li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
 <ul>
@@ -163,7 +164,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.4" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
-<li class="chapter" data-level="3.4" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a></li>
+<li class="chapter" data-level="3.4" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
+<li class="chapter" data-level="3.4.2" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html"><i class="fa fa-check"></i><b>4</b> 初級R- 資料結構</a>
 <ul>
@@ -202,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html"><i class="fa fa-check"></i><b>8</b> 中級r- 文字處理</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#常用base內建文字函數"><i class="fa fa-check"></i><b>8.1</b> 常用base內建文字函數</a></li>
+<li class="chapter" data-level="8.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#內建文字函數base"><i class="fa fa-check"></i><b>8.1</b> 內建文字函數(base)</a></li>
 <li class="chapter" data-level="8.2" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#stringr套件"><i class="fa fa-check"></i><b>8.2</b> stringr套件</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html"><i class="fa fa-check"></i><b>9</b> 中級R- 函數調用</a>
@@ -327,11 +332,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>(1) 取得當下時間資訊</strong></p>
 <p>R內建有幾個函數，可以查詢當下系統的日期、時間及時區資訊</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="初級r--元素介紹.html#cb23-1" tabindex="-1"></a><span class="fu">Sys.Date</span>()  <span class="co">#當前日期  類似lubridate::today()     </span></span></code></pre></div>
-<pre><code>## [1] &quot;2024-03-25&quot;</code></pre>
+<pre><code>## [1] &quot;2024-04-09&quot;</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="初級r--元素介紹.html#cb25-1" tabindex="-1"></a><span class="fu">date</span>()      <span class="co">#當前系統日期和時間  </span></span></code></pre></div>
-<pre><code>## [1] &quot;Mon Mar 25 11:04:24 2024&quot;</code></pre>
+<pre><code>## [1] &quot;Tue Apr  9 11:17:56 2024&quot;</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="初級r--元素介紹.html#cb27-1" tabindex="-1"></a><span class="fu">Sys.time</span>()  <span class="co">#當前系統日期和時間  lubridate::now()</span></span></code></pre></div>
-<pre><code>## [1] &quot;2024-03-25 11:04:24 CST&quot;</code></pre>
+<pre><code>## [1] &quot;2024-04-09 11:17:56 CST&quot;</code></pre>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="初級r--元素介紹.html#cb29-1" tabindex="-1"></a><span class="fu">Sys.timezone</span>() <span class="co">#有關時區的信息將返回當前時區的名稱</span></span></code></pre></div>
 <pre><code>## [1] &quot;Asia/Taipei&quot;</code></pre>
 <p><strong>(2) as.Date 函數(文字轉日期)</strong></p>
@@ -354,21 +359,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;24&quot;</code></pre>
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="初級r--元素介紹.html#cb43-1" tabindex="-1"></a><span class="co">#輸出月份：</span></span>
 <span id="cb43-2"><a href="初級r--元素介紹.html#cb43-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%m&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;03&quot;</code></pre>
+<pre><code>## [1] &quot;04&quot;</code></pre>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="初級r--元素介紹.html#cb45-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%b&quot;</span>)   </span></code></pre></div>
-<pre><code>## [1] &quot;三月&quot;</code></pre>
+<pre><code>## [1] &quot;四月&quot;</code></pre>
 <div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="初級r--元素介紹.html#cb47-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%B&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;三月&quot;</code></pre>
+<pre><code>## [1] &quot;四月&quot;</code></pre>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="初級r--元素介紹.html#cb49-1" tabindex="-1"></a><span class="co">#輸出日期：</span></span>
 <span id="cb49-2"><a href="初級r--元素介紹.html#cb49-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%d&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;25&quot;</code></pre>
+<pre><code>## [1] &quot;09&quot;</code></pre>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="初級r--元素介紹.html#cb51-1" tabindex="-1"></a><span class="co">#輸出星期：</span></span>
 <span id="cb51-2"><a href="初級r--元素介紹.html#cb51-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%A&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;星期一&quot;</code></pre>
+<pre><code>## [1] &quot;星期二&quot;</code></pre>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="初級r--元素介紹.html#cb53-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%a&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;週一&quot;</code></pre>
+<pre><code>## [1] &quot;週二&quot;</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="初級r--元素介紹.html#cb55-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%u&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;1&quot;</code></pre>
+<pre><code>## [1] &quot;2&quot;</code></pre>
 <div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="初級r--元素介紹.html#cb57-1" tabindex="-1"></a><span class="co">#輸出週數：</span></span>
 <span id="cb57-2"><a href="初級r--元素介紹.html#cb57-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2024-02-01&quot;</span>),<span class="at">format=</span><span class="st">&quot;%w&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;4&quot;</code></pre>
@@ -386,13 +391,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="初級r--元素介紹.html#cb62-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%H&quot;</span>) <span class="co">#輸出小時</span></span></code></pre></div>
 <pre><code>## [1] &quot;11&quot;</code></pre>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="初級r--元素介紹.html#cb64-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%M&quot;</span>) <span class="co">#輸出分鐘</span></span></code></pre></div>
-<pre><code>## [1] &quot;04&quot;</code></pre>
+<pre><code>## [1] &quot;17&quot;</code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="初級r--元素介紹.html#cb66-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%S&quot;</span>) <span class="co">#輸出秒數</span></span></code></pre></div>
-<pre><code>## [1] &quot;24&quot;</code></pre>
+<pre><code>## [1] &quot;57&quot;</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="初級r--元素介紹.html#cb68-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%Y年%m月%d日&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;2024年03月25日&quot;</code></pre>
+<pre><code>## [1] &quot;2024年04月09日&quot;</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="初級r--元素介紹.html#cb70-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;西元%Y年%m月%d日&quot;</span>)  </span></code></pre></div>
-<pre><code>## [1] &quot;西元2024年03月25日&quot;</code></pre>
+<pre><code>## [1] &quot;西元2024年04月09日&quot;</code></pre>
 <p><strong>(7) 日期時間的加減</strong></p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="初級r--元素介紹.html#cb72-1" tabindex="-1"></a><span class="co">#單純加秒數</span></span>
 <span id="cb72-2"><a href="初級r--元素介紹.html#cb72-2" tabindex="-1"></a>D1<span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
@@ -422,7 +427,211 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="運算子" class="section level2 hasAnchor" number="3.4">
 <h2><span class="header-section-number">3.4</span> 運算子<a href="初級r--元素介紹.html#運算子" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>運算子一般分成二類，第一類為常見用於加減乘除的算術運算子，第二類為邏輯運算子，通常根據所判斷的規則，輸出結果為TRUE 或FALSE，常與條件控制(if-else)搭配使用。</p>
+<div id="算術運算子" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> 算術運算子<a href="初級r--元素介紹.html#算術運算子" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>1.一般算術運算子</p>
+<table>
+<thead>
+<tr class="header">
+<th>符號</th>
+<th>意義</th>
+<th>範例指令</th>
+<th>範例結果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>加</td>
+<td>3+4</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>減</td>
+<td>10-8</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>乘</td>
+<td>5*6</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td>除</td>
+<td>130/5</td>
+<td>26</td>
+</tr>
+<tr class="odd">
+<td>^</td>
+<td>指數乘冪</td>
+<td>2^4</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>%%</td>
+<td>餘數</td>
+<td>78%%10</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>%/%</td>
+<td>商數</td>
+<td>78%/%10</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>2.特殊算術運算子</p>
+<pre><code>有些算術運算子，適用於矩陣的計算</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>符號</th>
+<th>意義</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>%*%</td>
+<td>矩陣內積乘法</td>
+</tr>
+<tr class="even">
+<td>%o%</td>
+<td>矩陣外積乘法</td>
+</tr>
+<tr class="odd">
+<td>%x%</td>
+<td>矩陣Kronecker乘法</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="初級r--元素介紹.html#cb87-1" tabindex="-1"></a>A <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dv">2</span>),<span class="at">nrow =</span> <span class="dv">2</span>,<span class="at">byrow=</span>F)</span>
+<span id="cb87-2"><a href="初級r--元素介紹.html#cb87-2" tabindex="-1"></a><span class="fu">print</span> (A)</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    3    2
+## [2,]    2    1    3</code></pre>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="初級r--元素介紹.html#cb89-1" tabindex="-1"></a>B <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dv">2</span>),<span class="at">nrow =</span> <span class="dv">3</span>,<span class="at">byrow=</span>T)</span>
+<span id="cb89-2"><a href="初級r--元素介紹.html#cb89-2" tabindex="-1"></a><span class="fu">print</span> (B)</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    1
+## [3,]    2    3</code></pre>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="初級r--元素介紹.html#cb91-1" tabindex="-1"></a><span class="co">#矩陣內積乘法</span></span>
+<span id="cb91-2"><a href="初級r--元素介紹.html#cb91-2" tabindex="-1"></a>A <span class="sc">%*%</span> B</span></code></pre></div>
+<pre><code>##      [,1] [,2]
+## [1,]   14   11
+## [2,]   11   14</code></pre>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="初級r--元素介紹.html#cb93-1" tabindex="-1"></a><span class="co">#矩陣外積乘法</span></span>
+<span id="cb93-2"><a href="初級r--元素介紹.html#cb93-2" tabindex="-1"></a>A <span class="sc">%o%</span> B</span></code></pre></div>
+<pre><code>## , , 1, 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    3    2
+## [2,]    2    1    3
+## 
+## , , 2, 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    3    9    6
+## [2,]    6    3    9
+## 
+## , , 3, 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    2    6    4
+## [2,]    4    2    6
+## 
+## , , 1, 2
+## 
+##      [,1] [,2] [,3]
+## [1,]    2    6    4
+## [2,]    4    2    6
+## 
+## , , 2, 2
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    3    2
+## [2,]    2    1    3
+## 
+## , , 3, 2
+## 
+##      [,1] [,2] [,3]
+## [1,]    3    9    6
+## [2,]    6    3    9</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="初級r--元素介紹.html#cb95-1" tabindex="-1"></a><span class="co">#矩陣 Kronecker 乘法</span></span>
+<span id="cb95-2"><a href="初級r--元素介紹.html#cb95-2" tabindex="-1"></a>A <span class="sc">%x%</span> B</span></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    2    3    6    2    4
+## [2,]    3    1    9    3    6    2
+## [3,]    2    3    6    9    4    6
+## [4,]    2    4    1    2    3    6
+## [5,]    6    2    3    1    9    3
+## [6,]    4    6    2    3    6    9</code></pre>
+</div>
+<div id="邏輯運算子" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> 邏輯運算子<a href="初級r--元素介紹.html#邏輯運算子" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>1.一般邏輯運算子</p>
+<table>
+<thead>
+<tr class="header">
+<th>符號</th>
+<th>意義</th>
+<th>範例指令</th>
+<th>範例結果</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>小於</td>
+<td>3&lt;4</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>&gt;</td>
+<td>大於</td>
+<td>10&gt;8</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>等於</td>
+<td>5==6</td>
+<td>FALSE</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>不等於</td>
+<td>5!=6</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td>&gt;=</td>
+<td>大於等於</td>
+<td>10&gt;=8</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>&lt; =</td>
+<td>小於等於</td>
+<td>10&lt;=8</td>
+<td>FALSE</td>
+</tr>
+<tr class="odd">
+<td>!</td>
+<td>邏輯反轉</td>
+<td>!5==4</td>
+<td>TRUE</td>
+</tr>
+</tbody>
+</table>
+<p>2.特殊邏輯運算子</p>
 
+</div>
 </div>
 </div>
             </section>
