@@ -1,0 +1,11 @@
+# 中級R- 資料前處理
+
+## 處理遺失值
+
+### 1. 使用平均值、中位數、眾數來取代
+
+```{r eval=FALSE}
+library(Hmisc)
+#補齊遺漏值
+DT$StnPres <- round(as.numeric(impute(c0c700$StnPres, mean)),1) 
+```
