@@ -255,9 +255,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">10.1</span> 處理遺失值<a href="中級r--資料前處理.html#處理遺失值" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="使用平均值中位數眾數來取代" class="section level3 hasAnchor" number="10.1.1">
 <h3><span class="header-section-number">10.1.1</span> 1. 使用平均值、中位數、眾數來取代<a href="中級r--資料前處理.html#使用平均值中位數眾數來取代" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="中級r--資料前處理.html#cb7-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
-<span id="cb7-2"><a href="中級r--資料前處理.html#cb7-2" tabindex="-1"></a><span class="co">#補齊遺漏值</span></span>
-<span id="cb7-3"><a href="中級r--資料前處理.html#cb7-3" tabindex="-1"></a>DT<span class="sc">$</span>StnPres <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(<span class="fu">impute</span>(c0c700<span class="sc">$</span>StnPres, mean)),<span class="dv">1</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="中級r--資料前處理.html#cb5-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb5-2"><a href="中級r--資料前處理.html#cb5-2" tabindex="-1"></a><span class="co">#補齊遺漏值</span></span>
+<span id="cb5-3"><a href="中級r--資料前處理.html#cb5-3" tabindex="-1"></a>DT<span class="sc">$</span>StnPres <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(<span class="fu">impute</span>(c0c700<span class="sc">$</span>StnPres, mean)),<span class="dv">1</span>) </span></code></pre></div>
 
 </div>
 </div>

@@ -20,3 +20,14 @@ ifelse(num>=10,">=10","<10")
 if-else敘述使用在邏輯判斷，若需要依條件改變需要執行的程式碼，就會使用if-else，若if後所接邏輯判斷為真(TRUE)，就會執行if下方之程式碼，若為偽(FALSE)，則執行else下方之程式碼，若程式中沒有else片段，則不執行任何程式碼。
 
 ## for 迴圈
+
+```{r ,echo=TRUE}
+for(i in c("蘋果","香蕉","西瓜")){
+  
+    text <-  paste("這是",i )
+  
+  print (text)
+  
+}
+
+```
