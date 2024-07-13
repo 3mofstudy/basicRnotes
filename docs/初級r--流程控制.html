@@ -193,8 +193,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html"><i class="fa fa-check"></i><b>6</b> 初級R- 自訂函數</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#自訂函數介紹"><i class="fa fa-check"></i><b>6.1</b> 自訂函數介紹</a></li>
-<li class="chapter" data-level="6.2" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#函數與if判斷搭配"><i class="fa fa-check"></i><b>6.2</b> 函數與if判斷搭配</a></li>
-<li class="chapter" data-level="6.3" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#函數與for迴圈搭配"><i class="fa fa-check"></i><b>6.3</b> 函數與for迴圈搭配</a></li>
+<li class="chapter" data-level="6.2" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-及call"><i class="fa fa-check"></i><b>6.2</b> do.call 及call</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-基本用途"><i class="fa fa-check"></i><b>6.2.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="6.2.2" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>6.2.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="6.2.3" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>6.2.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
+<li class="chapter" data-level="6.2.4" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>6.2.4</b> call 與 do.call的差異</a></li>
+<li class="chapter" data-level="6.2.5" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#線上資源"><i class="fa fa-check"></i><b>6.2.5</b> 1.線上資源</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html"><i class="fa fa-check"></i><b>7</b> 初級R- 資料輸入與輸出</a>
 <ul>
@@ -212,16 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html"><i class="fa fa-check"></i><b>9</b> 中級R- 函數調用</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#do.call-及call"><i class="fa fa-check"></i><b>9.1</b> do.call 及call</a>
-<ul>
-<li class="chapter" data-level="9.1.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#do.call-基本用途"><i class="fa fa-check"></i><b>9.1.1</b> 1. do.call 基本用途</a></li>
-<li class="chapter" data-level="9.1.2" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#do.call-亦常運用於data.frame的子元素"><i class="fa fa-check"></i><b>9.1.2</b> 2. do.call 亦常運用於data.frame的子元素</a></li>
-<li class="chapter" data-level="9.1.3" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>9.1.3</b> call 與 do.call的差異</a></li>
-</ul></li>
-<li class="chapter" data-level="9.2" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#參考資料-1"><i class="fa fa-check"></i><b>9.2</b> 參考資料</a>
-<ul>
-<li class="chapter" data-level="9.2.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#線上資源"><i class="fa fa-check"></i><b>9.2.1</b> 1.線上資源</a></li>
-</ul></li>
+<li class="chapter" data-level="9.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#參考資料-1"><i class="fa fa-check"></i><b>9.1</b> 參考資料</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html"><i class="fa fa-check"></i><b>10</b> 中級R- 資料前處理</a>
 <ul>
@@ -265,18 +262,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="2" style="list-style-type: decimal">
 <li>if() 或 if()-else()</li>
 </ol>
-<p>雖然ifelse很好用，但僅適用於單行邏輯判斷或執行，當預計執行程式碼較為複雜，無法用一行程式碼來執行，就必須考慮 使用if</p>
+<p>雖然ifelse很好用，但僅適用於單行邏輯判斷或執行，當預計執行程式碼較為複雜，無法用一行程式碼來執行，就必須考慮 使用if 及 else()</p>
 <p>if-else敘述使用在邏輯判斷，若需要依條件改變需要執行的程式碼，就會使用if-else，若if後所接邏輯判斷為真(TRUE)，就會執行if下方之程式碼，若為偽(FALSE)，則執行else下方之程式碼，若程式中沒有else片段，則不執行任何程式碼。</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="初級r--流程控制.html#cb7-1" tabindex="-1"></a>X <span class="ot">=</span><span class="dv">30</span></span>
+<span id="cb7-2"><a href="初級r--流程控制.html#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="初級r--流程控制.html#cb7-3" tabindex="-1"></a><span class="cf">if</span>(X<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
+<span id="cb7-4"><a href="初級r--流程控制.html#cb7-4" tabindex="-1"></a>  <span class="fu">print</span>( <span class="st">&quot;及格&quot;</span>  )</span>
+<span id="cb7-5"><a href="初級r--流程控制.html#cb7-5" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb7-6"><a href="初級r--流程控制.html#cb7-6" tabindex="-1"></a>  <span class="fu">print</span>( <span class="st">&quot;不及格&quot;</span>)    </span>
+<span id="cb7-7"><a href="初級r--流程控制.html#cb7-7" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;不及格&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>if- else if -else</li>
+</ol>
+<p>當條件判斷是超過三個以上，中間條件判斷可以使用 else if 來判斷，最後一個則用else即可</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="初級r--流程控制.html#cb9-1" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>,<span class="dv">1</span>)</span>
+<span id="cb9-2"><a href="初級r--流程控制.html#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="初級r--流程控制.html#cb9-3" tabindex="-1"></a><span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb9-4"><a href="初級r--流程控制.html#cb9-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;,春天&quot;</span>))</span>
+<span id="cb9-5"><a href="初級r--流程控制.html#cb9-5" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>){</span>
+<span id="cb9-6"><a href="初級r--流程控制.html#cb9-6" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;夏天&quot;</span>))</span>
+<span id="cb9-7"><a href="初級r--流程控制.html#cb9-7" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">9</span><span class="sc">:</span><span class="dv">11</span>){</span>
+<span id="cb9-8"><a href="初級r--流程控制.html#cb9-8" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;秋天&quot;</span>))  </span>
+<span id="cb9-9"><a href="初級r--流程控制.html#cb9-9" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span> (X <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">12</span>)){</span>
+<span id="cb9-10"><a href="初級r--流程控制.html#cb9-10" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;冬天&quot;</span>))</span>
+<span id="cb9-11"><a href="初級r--流程控制.html#cb9-11" tabindex="-1"></a>}<span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;請輸入1-12數字&quot;</span>))}</span></code></pre></div>
+<pre><code>## [1] &quot;X= 30 請輸入1-12數字&quot;</code></pre>
 </div>
 <div id="for-迴圈" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> for 迴圈<a href="初級r--流程控制.html#for-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="初級r--流程控制.html#cb7-1" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">&quot;蘋果&quot;</span>,<span class="st">&quot;香蕉&quot;</span>,<span class="st">&quot;西瓜&quot;</span>)){</span>
-<span id="cb7-2"><a href="初級r--流程控制.html#cb7-2" tabindex="-1"></a>  </span>
-<span id="cb7-3"><a href="初級r--流程控制.html#cb7-3" tabindex="-1"></a>    text <span class="ot">&lt;-</span>  <span class="fu">paste</span>(<span class="st">&quot;這是&quot;</span>,i )</span>
-<span id="cb7-4"><a href="初級r--流程控制.html#cb7-4" tabindex="-1"></a>  </span>
-<span id="cb7-5"><a href="初級r--流程控制.html#cb7-5" tabindex="-1"></a>  <span class="fu">print</span> (text)</span>
-<span id="cb7-6"><a href="初級r--流程控制.html#cb7-6" tabindex="-1"></a>  </span>
-<span id="cb7-7"><a href="初級r--流程控制.html#cb7-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="初級r--流程控制.html#cb11-1" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">&quot;蘋果&quot;</span>,<span class="st">&quot;香蕉&quot;</span>,<span class="st">&quot;西瓜&quot;</span>)){</span>
+<span id="cb11-2"><a href="初級r--流程控制.html#cb11-2" tabindex="-1"></a>  </span>
+<span id="cb11-3"><a href="初級r--流程控制.html#cb11-3" tabindex="-1"></a>    text <span class="ot">&lt;-</span>  <span class="fu">paste</span>(<span class="st">&quot;這是&quot;</span>,i )</span>
+<span id="cb11-4"><a href="初級r--流程控制.html#cb11-4" tabindex="-1"></a>  </span>
+<span id="cb11-5"><a href="初級r--流程控制.html#cb11-5" tabindex="-1"></a>  <span class="fu">print</span> (text)</span>
+<span id="cb11-6"><a href="初級r--流程控制.html#cb11-6" tabindex="-1"></a>  </span>
+<span id="cb11-7"><a href="初級r--流程控制.html#cb11-7" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;這是 蘋果&quot;
 ## [1] &quot;這是 香蕉&quot;
 ## [1] &quot;這是 西瓜&quot;</code></pre>

@@ -15,9 +15,39 @@ ifelse(num>=10,">=10","<10")
 
 2.  if() 或 if()-else()
 
-雖然ifelse很好用，但僅適用於單行邏輯判斷或執行，當預計執行程式碼較為複雜，無法用一行程式碼來執行，就必須考慮 使用if
+雖然ifelse很好用，但僅適用於單行邏輯判斷或執行，當預計執行程式碼較為複雜，無法用一行程式碼來執行，就必須考慮 使用if 及 else()
 
 if-else敘述使用在邏輯判斷，若需要依條件改變需要執行的程式碼，就會使用if-else，若if後所接邏輯判斷為真(TRUE)，就會執行if下方之程式碼，若為偽(FALSE)，則執行else下方之程式碼，若程式中沒有else片段，則不執行任何程式碼。
+
+```{r ,echo=TRUE}
+X =30
+
+if(X>=60){
+  print( "及格"  )
+}else{
+  print( "不及格")    
+}
+
+```
+
+3.  if- else if -else
+
+當條件判斷是超過三個以上，中間條件判斷可以使用 else if 來判斷，最後一個則用else即可
+
+```{r ,echo=TRUE}
+X=sample(1:30,1)
+
+if(X %in% 3:5){
+  print(paste("X=",X,",春天"))
+  }else if(X %in% 6:8){
+    print(paste ("X=",X,"夏天"))
+  }else if(X %in% 9:11){
+    print(paste ("X=",X,"秋天"))  
+  }else if (X %in% c(1,2,12)){
+    print(paste("X=",X,"冬天"))
+}else {print(paste ("X=",X,"請輸入1-12數字"))}
+
+```
 
 ## for 迴圈
 

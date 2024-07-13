@@ -16,6 +16,8 @@
 
 ## 複製及貼上
 
+有兩個套件，可以輕鬆將R輸出結果轉化到剪貼簿後，就可以直接拿到Excel或Word中複製貼上，相當方便，clipr 套件基本不用再安裝，因為已經常規預設安中好
+
 ```{r eval=FALSE}
 #A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 
 text <-clipr::read_clip() ##轉換成純文字向量(適合單行貼上) 
@@ -26,7 +28,7 @@ DT <-clipr::read_clip_tbl() ##轉換成data.frame(適合表格貼上)
 clipr::write_clip(text)
 
 ```
-
+另一個好用套件是psychTools
 ```{r eval=FALSE, message=FALSE, warning=FALSE}
 #另一個好用套件
 library(psychTools) 

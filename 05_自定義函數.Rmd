@@ -1,5 +1,140 @@
 # 初級R- 自訂函數
 
 ## 自訂函數介紹
-## 函數與if判斷搭配
-## 函數與for迴圈搭配
+
+在 R 語言中，自定義函數（Custom Functions）是用戶可以根據自己的需求編寫並使用的函數。這些函數可以執行任何你想要的任務，從簡單的計算到複雜的數據處理。以下是一個簡單的例子，說明如何創建和使用自定義函數。 自定義函數的基本結構 自定義函數的一般形式如下：
+
+```{r}
+function_name <- function(arguments) {
+  # 函數主體
+  # 這裡是函數要執行的代碼
+  return(value)
+}
+```
+
+範例1: 簡單加法函數
+
+```{r}
+add_numbers <- function(a, b) {
+  sum <- a + b
+  return(sum)
+}
+#使用這個函數
+result <- add_numbers(3, 5)
+print(result)  # 輸出：8
+
+```
+
+範例2: 計算圓的面積
+
+```{r}
+calculate_area <- function(radius) {
+  area <- pi * radius^2
+  return(area)
+}
+#使用這個函數
+circle_area <- calculate_area(4)
+print(circle_area)  # 輸出：50.26548
+
+```
+
+範例3: 處理數據框的函數
+
+```{r}
+column_means <- function(dataframe) {
+  means <- sapply(dataframe, mean, na.rm = TRUE)
+  return(means)
+}
+
+# 創建示例數據框
+data <- data.frame(
+  x = c(1, 2, 3, 4, 5),
+  y = c(6, 7, 8, 9, 10),
+  z = c(11, 12, 13, 14, 15)
+)
+
+# 計算每列的平均值
+means <- column_means(data)
+print(means)  # 輸出： x y z 
+              #        3 8 13
+
+```
+
+## do.call 及call
+
+### 1. do.call 基本用途
+
+簡單的講，do.call 的功能就是執行一個函數，而這個函數的參數呢，放在一個list裡面, 是list的每個子元素，見下列範例: do.call的第一個參數(what)預備執行的函數名稱,第二個參數(args)放list格式包起來的資料及相關函數設定，如下列範例:
+
+```{r}
+vec1 <- c(4,9,NA,8,12,74,36,NA,55)
+
+do.call(mean, list(vec1)) ##輸出NA，因為無設定第二個參數值
+
+do.call(mean, list(vec1,na.rm = TRUE)) ##排除遺失值後，計算平均值
+```
+
+### 2. do.call 常運用於data.frame的子元素
+
+```{r}
+dt <- data.frame('letter' = letters[1:10], 'number' = 1:10, 'value' = c('+','-'))
+dt[[1]]
+dt[[2]]
+dt[[3]]
+do.call(paste0,dt)
+```
+
+### 3. do.call 亦可運用於list 資料格式
+
+```{r}
+一心營業額 = list("北區"=data.frame("月份"= c(7,8,9,10) ,"銷售額"=c(10000,27000,68500,34000)),
+                  "中區"=data.frame("月份"= c(7,8,9,10) ,"銷售額"=c(9000,10400,59400,48000)),
+                  "南區"=data.frame("月份"= c(7,8,9,10) ,"銷售額"=c(8000,96000,70400,63500)))
+do.call(rbind,一心營業額)
+```
+
+### call 與 do.call的差異
+
+call 和 do.call很像，兩者主要差異:
+
+1.  do.call() 執行某個已知現存的函數，例如內建函數`sum()`、`mean()`等，需將參數以**列表的形式**傳遞給函數後，才能正常運作。
+
+```{r}
+#自創一個能計算BMI的函數
+BMI <- function(ht, wt) {
+x <- wt / (ht / 100)^2
+return(x)
+}
+# 建立一個有身高及體重資料集
+DT <- data.frame("ht" = c(155, 168, 159), "wt" = c(80, 60, 48))
+# 使用 do.call 將列表作為參數傳遞給 BMI 函數
+result <- do.call(BMI, list(ht = DT$ht, wt = DT$wt))
+# 印出結果
+print(result)
+```
+
+2.  call() 以動態的方式生成函數呼叫，再用**`eval`**函數執行呼叫
+
+```{r}
+#自創一個能計算BMI的函數
+BMI <- function(ht, wt) {
+x <- wt / (ht / 100)^2
+return(x)
+}
+# 建立一個有身高及體重資料集
+DT <- data.frame("ht" = c(155, 168, 159), "wt" = c(80, 60, 48))
+# 使用call函數動態生成函數呼叫
+my_call <- call("BMI", ht = DT$ht, wt = DT$wt)
+# 以eval函數執行生成的函數呼叫
+result <- eval(my_call)
+# 印出結果
+print(result)
+```
+
+由上面兩段程式碼可以看出來，`call`函數還需要搭配`eval`函數執行後續的呼叫，所以實務上，**`do.call`**往往更常被使用，而另一個快速調用函數的方法則是**`apply`**家族
+
+### 1.線上資源
+
+-   [R do.call & call 函数教程](https://blog.csdn.net/neweastsun/article/details/122397987)
+-   [R語言中eval和do.call的用法](https://www.twblogs.net/a/5d42ed0ebd9eee5327fb25a7)
+-   [R語言do.call 函數用法詳解](https://www.cnblogs.com/Demo1589/p/6984537.html)
