@@ -321,8 +321,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>正則表達式（Regular Expressions）是一種用來匹配字串模式的工具。以下是一些在 R 中常用的正則表達式，分成五大類</p>
 <table>
 <colgroup>
-<col width="17%" />
-<col width="82%" />
+<col width="16%" />
+<col width="83%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -382,10 +382,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td><ol start="5" style="list-style-type: decimal">
 <li>轉義字符</li>
 </ol></td>
-<td><p><code>\\</code>：用來轉義特殊字符，使其變為普通字符。</p>
+<td><p><code>\</code>：用來轉義特殊字符，使其變為普通字符。</p>
 <ul>
-<li><code>\\n</code>：換行符。</li>
-<li><code>\\t</code>：製表符</li>
+<li><code>\n</code>：換行符，將游標移到下一行的開頭</li>
+<li><code>\t</code>：製表符，插入一個水平製表符，用於對齊文本(Tab鍵)</li>
+<li><code>\r</code>：回車符，將游標移到行首，不移到下一行</li>
+<li><code>\b</code>：退格符 (backspace)，將游標移到前一個字符的位置，但不刪除該字符</li>
 </ul></td>
 </tr>
 </tbody>
