@@ -319,11 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="正則表達式" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> 正則表達式<a href="中級r--文字處理.html#正則表達式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>正則表達式（Regular Expressions）是一種用來匹配字串模式的工具，正規表達式有 <code>. ^ $ * + ? \ | []() {}</code> 保留字元。正規表示式從左到右進行計算，並遵循優先順序，這與算術表達式非常類似。相同優先權的從左到右進行運算，不同優先權的運算先高後低，下表為相同優先權等級說明</p>
-<table style="width:86%;">
-<colgroup>
-<col width="55%" />
-<col width="30%" />
-</colgroup>
+<table>
 <thead>
 <tr class="header">
 <th>運算符</th>
@@ -357,8 +353,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <table style="width:99%;">
 <colgroup>
 <col width="13%" />
-<col width="13%" />
-<col width="70%" />
+<col width="10%" />
+<col width="74%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -491,11 +487,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>stringr套件總共提供30個字串處理函數，其中大部分皆可支援正規表示式應用，包內所有以str_開頭函數，後面單字用來說明該函數意義。 stringr套件中的函數在使用正則表達式時(例如<code>str_detect</code>)，與基本文字搜尋<code>grep</code>函數不同，可以匹配許多萬國字元，搭配<code>[]使用</code>，能夠比對多個特定字元，屬於字元集合，例如比對任意大寫字母可以用<code>[A-Z]</code>，或者<code>[:upper:]</code> ，下列整理</p>
-<table style="width:99%;">
+<table>
 <colgroup>
 <col width="9%" />
-<col width="76%" />
-<col width="13%" />
+<col width="77%" />
+<col width="12%" />
 </colgroup>
 <thead>
 <tr class="header">

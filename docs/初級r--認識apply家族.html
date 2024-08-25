@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 初級R- 認識apply家族 | R語言程式設計</title>
+  <meta name="description" content="Chapter 8 初級R- 認識apply家族 | R語言程式設計" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 初級R- 認識apply家族 | R語言程式設計" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 初級R- 認識apply家族 | R語言程式設計" />
+  
+  
+  
+
+<meta name="author" content="露西Lucy" />
+
+
+<meta name="date" content="2024-03-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="初級r--資料輸入與輸出.html"/>
+<link rel="next" href="中級r--文字處理.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R語言自我筆記(基礎篇)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 初級R- 系統環境設定</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
+<li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+<li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
+<li class="chapter" data-level="3.2" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#字串"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
+<li class="chapter" data-level="3.2.2" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#數值"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
+<li class="chapter" data-level="3.2.3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#布林值"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
+<li class="chapter" data-level="3.2.4" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
+<li class="chapter" data-level="3.4" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
+<li class="chapter" data-level="3.4.2" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html"><i class="fa fa-check"></i><b>4</b> 初級R- 資料結構</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態相同"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#一維結構vector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#二維結構matrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#三維結構-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態不同"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#二維結構-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#三維結構-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="初級r--流程控制.html"><a href="初級r--流程控制.html"><i class="fa fa-check"></i><b>5</b> 初級R- 流程控制</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="初級r--流程控制.html"><a href="初級r--流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>5.1</b> if -else 邏輯判斷</a></li>
+<li class="chapter" data-level="5.2" data-path="初級r--流程控制.html"><a href="初級r--流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>5.2</b> for 迴圈</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html"><i class="fa fa-check"></i><b>6</b> 初級R- 自訂函數</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#自訂函數介紹"><i class="fa fa-check"></i><b>6.1</b> 自訂函數介紹</a></li>
+<li class="chapter" data-level="6.2" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-及call"><i class="fa fa-check"></i><b>6.2</b> do.call 及call</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-基本用途"><i class="fa fa-check"></i><b>6.2.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="6.2.2" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>6.2.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="6.2.3" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>6.2.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
+<li class="chapter" data-level="6.2.4" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>6.2.4</b> call 與 do.call的差異</a></li>
+<li class="chapter" data-level="6.2.5" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#線上資源"><i class="fa fa-check"></i><b>6.2.5</b> 1.線上資源</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html"><i class="fa fa-check"></i><b>7</b> 初級R- 資料輸入與輸出</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#資料鍵入與印出"><i class="fa fa-check"></i><b>7.1</b> 資料鍵入與印出</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#資料鍵入"><i class="fa fa-check"></i><b>7.1.1</b> 資料鍵入</a></li>
+<li class="chapter" data-level="7.1.2" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#資料印出"><i class="fa fa-check"></i><b>7.1.2</b> 資料印出</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#複製及貼上"><i class="fa fa-check"></i><b>7.2</b> 複製及貼上</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html"><i class="fa fa-check"></i><b>8</b> 初級R- 認識apply家族</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html#apply系列家族應用情境"><i class="fa fa-check"></i><b>8.1</b> apply系列家族應用情境</a></li>
+<li class="chapter" data-level="8.2" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html#apply用法"><i class="fa fa-check"></i><b>8.2</b> apply用法</a></li>
+<li class="chapter" data-level="8.3" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html#sapplylapply用法"><i class="fa fa-check"></i><b>8.3</b> sapply/lapply用法</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html"><i class="fa fa-check"></i><b>9</b> 中級r- 文字處理</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#內建文字函數base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
+<li class="chapter" data-level="9.2" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#stringr套件"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
+<li class="chapter" data-level="9.3" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#正則表達式"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html"><i class="fa fa-check"></i><b>10</b> 中級R- 函數調用</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#參考資料-1"><i class="fa fa-check"></i><b>10.1</b> 參考資料</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html"><i class="fa fa-check"></i><b>11</b> 中級R- 資料前處理</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html#處理遺失值"><i class="fa fa-check"></i><b>11.1</b> 處理遺失值</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html#使用平均值中位數眾數來取代"><i class="fa fa-check"></i><b>11.1.1</b> 1. 使用平均值、中位數、眾數來取代</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R語言程式設計</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="初級r--認識apply家族" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> 初級R- 認識apply家族<a href="初級r--認識apply家族.html#初級r--認識apply家族" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>apply家族主要功能是將所設定的函數應用到指定物件的每一個欄或列，基本使用格式如下: <code>apply(x,MARGIN,FUN,...)</code></p>
+<ul>
+<li><p>x: 可以是矩陣(Matrix)、陣列(Array)、數據框(data.frame)</p></li>
+<li><p>MARGIN:1代表每一列,2代表每一欄</p></li>
+<li><p>FUN: 預計使用的函數</p></li>
+<li><p>. . . : FUN函數所需的額外參數，例如na.rm=TRUE</p></li>
+</ul>
+<div id="apply系列家族應用情境" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> apply系列家族應用情境<a href="初級r--認識apply家族.html#apply系列家族應用情境" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table style="width:98%;">
+<colgroup>
+<col width="9%" />
+<col width="27%" />
+<col width="39%" />
+<col width="22%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>函數名稱</th>
+<th>特色</th>
+<th>x的類型(輸入的資料結構)</th>
+<th>y的類型(輸出的資料結構)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>apply</td>
+<td><p>接受<strong>矩陣</strong>輸入</p>
+<p>行或列皆可處理</p>
+<p>1:行;2:欄</p></td>
+<td><strong>矩陣(Matrix)</strong>、陣列(Array)、數據框(data.frame)</td>
+<td>向量(Vector), Named numeric</td>
+</tr>
+<tr class="even">
+<td><p><strong>s</strong>apply</p>
+<p><strong>l</strong>apply</p></td>
+<td>只能處理欄，接受向量輸入</td>
+<td>向量(Vector)、串列(List)、數據框(data.frame)</td>
+<td><p>sapply:向量(Vector)</p>
+<p>lapply:串列(List)</p></td>
+</tr>
+<tr class="odd">
+<td><strong>m</strong>apply</td>
+<td>同時處理多個向量、串列的輸入</td>
+<td>向量(Vector)、串列(List)，</td>
+<td><p>SIMPLIFY = TRUE: 輸出向量</p>
+<p>SIMPLIFY = FALSE: 輸出串列</p></td>
+</tr>
+<tr class="even">
+<td><strong>t</strong>apply</td>
+<td>有2個X輸入，其中一個X為factor輸入</td>
+<td><p>x1: 通常是向量(Vector)</p>
+<p>x2: 因子(factor)，或分類的文字向量或因子串列</p></td>
+<td>向量(Vector)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="apply用法" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> apply用法<a href="初級r--認識apply家族.html#apply用法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>1.apply函數，輸入Matrix資料結構，輸出numeric向量</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="初級r--認識apply家族.html#cb1-1" tabindex="-1"></a>  <span class="co"># 輸入Matrix資料結構，輸出numeric向量</span></span>
+<span id="cb1-2"><a href="初級r--認識apply家族.html#cb1-2" tabindex="-1"></a>  DT <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">6</span>, <span class="dv">8</span>), <span class="at">ncol=</span><span class="dv">3</span>)</span>
+<span id="cb1-3"><a href="初級r--認識apply家族.html#cb1-3" tabindex="-1"></a>  <span class="fu">colnames</span>(DT) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;獅子&quot;</span>,<span class="st">&quot;斑馬&quot;</span>,<span class="st">&quot;熊貓&quot;</span>)</span>
+<span id="cb1-4"><a href="初級r--認識apply家族.html#cb1-4" tabindex="-1"></a>  <span class="fu">rownames</span>(DT) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Day 1&quot;</span>, <span class="st">&quot;Day 2&quot;</span>, <span class="st">&quot;Day 3&quot;</span>)</span>
+<span id="cb1-5"><a href="初級r--認識apply家族.html#cb1-5" tabindex="-1"></a>  <span class="fu">print</span>(DT)</span>
+<span id="cb1-6"><a href="初級r--認識apply家族.html#cb1-6" tabindex="-1"></a>  Vec <span class="ot">&lt;-</span>  <span class="fu">apply</span>(DT, <span class="dv">2</span>, max)</span>
+<span id="cb1-7"><a href="初級r--認識apply家族.html#cb1-7" tabindex="-1"></a>  <span class="fu">class</span>(Vec)</span></code></pre></div>
+<p>apply函數輸出如下</p>
+<pre><code>##       獅子 斑馬 熊貓
+## Day 1    8    5   10
+## Day 2    9    7    6
+## Day 3    6    2    8</code></pre>
+<pre><code>## 獅子 斑馬 熊貓 
+##    9    7   10</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<p>2.apply函數，輸入data.frame資料結構，輸出numeric向量</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="初級r--認識apply家族.html#cb5-1" tabindex="-1"></a>  <span class="co"># 輸入data.frame資料結構，輸出numeric向量</span></span>
+<span id="cb5-2"><a href="初級r--認識apply家族.html#cb5-2" tabindex="-1"></a>  DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;獅子&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">2</span>),<span class="st">&quot;斑馬&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">2</span>),<span class="st">&quot;熊貓&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">6</span>,<span class="dv">8</span>))</span>
+<span id="cb5-3"><a href="初級r--認識apply家族.html#cb5-3" tabindex="-1"></a>  <span class="fu">print</span>(DT)</span>
+<span id="cb5-4"><a href="初級r--認識apply家族.html#cb5-4" tabindex="-1"></a>  (Vec <span class="ot">&lt;-</span>  <span class="fu">apply</span>(DT, <span class="dv">2</span>, max))</span>
+<span id="cb5-5"><a href="初級r--認識apply家族.html#cb5-5" tabindex="-1"></a>  <span class="fu">class</span>(Vec)</span></code></pre></div>
+<p>apply函數輸出如下</p>
+<pre><code>##   獅子 斑馬 熊貓
+## 1    8    5   10
+## 2    9    7    6
+## 3    2    2    8</code></pre>
+<pre><code>## 獅子 斑馬 熊貓 
+##    9    7   10</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+</div>
+<div id="sapplylapply用法" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> sapply/lapply用法<a href="初級r--認識apply家族.html#sapplylapply用法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>lapply 和 sapply 是 R 語言中常用的函數，兩者都是用來將一個函數應用到列表或向量的每個元素上，但它們在結果的返回形式上有所不同。以下是它們的主要差異及範例：</p>
+<ul>
+<li><p>lapply()總是返回一個list，不管輸入的複雜程度如何。</p></li>
+<li><p>sapply()則嘗試簡化輸出結果，盡可能將其化簡為向量或矩陣。</p></li>
+</ul>
+<p>1.lapply處理向量，輸出list</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="初級r--認識apply家族.html#cb9-1" tabindex="-1"></a><span class="co"># 使用 lapply 計算每個元素的平方</span></span>
+<span id="cb9-2"><a href="初級r--認識apply家族.html#cb9-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>  <span class="co"># 定義一個數組向量</span></span>
+<span id="cb9-3"><a href="初級r--認識apply家族.html#cb9-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">lapply</span>(x, <span class="cf">function</span>(num) num<span class="sc">^</span><span class="dv">2</span>) <span class="co"># 使用 lapply 計算每個元素的平方</span></span>
+<span id="cb9-4"><a href="初級r--認識apply家族.html#cb9-4" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] 1
+## 
+## [[2]]
+## [1] 4
+## 
+## [[3]]
+## [1] 9
+## 
+## [[4]]
+## [1] 16
+## 
+## [[5]]
+## [1] 25</code></pre>
+<p>2.lapply處理list，輸出list</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="初級r--認識apply家族.html#cb11-1" tabindex="-1"></a><span class="co"># 使用 lapply 計算每欄的總和</span></span>
+<span id="cb11-2"><a href="初級r--認識apply家族.html#cb11-2" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">c =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb11-3"><a href="初級r--認識apply家族.html#cb11-3" tabindex="-1"></a>result_lapply <span class="ot">&lt;-</span> <span class="fu">lapply</span>(my_list, sum)</span>
+<span id="cb11-4"><a href="初級r--認識apply家族.html#cb11-4" tabindex="-1"></a><span class="fu">print</span>(result_lapply)</span></code></pre></div>
+<pre><code>## $a
+## [1] 15
+## 
+## $b
+## [1] 40
+## 
+## $c
+## [1] 65</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>sapply處理向量，輸出向量</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="初級r--認識apply家族.html#cb13-1" tabindex="-1"></a><span class="co"># 使用 sapply 計算每個元素的平方</span></span>
+<span id="cb13-2"><a href="初級r--認識apply家族.html#cb13-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>  <span class="co"># 定義一個數組向量</span></span>
+<span id="cb13-3"><a href="初級r--認識apply家族.html#cb13-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x, <span class="cf">function</span>(num) num<span class="sc">^</span><span class="dv">2</span>) <span class="co"># 使用 sapply 計算每個元素的平方</span></span>
+<span id="cb13-4"><a href="初級r--認識apply家族.html#cb13-4" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<pre><code>## [1]  1  4  9 16 25</code></pre>
+<p>4.sapply處理list，輸出向量</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="初級r--認識apply家族.html#cb15-1" tabindex="-1"></a><span class="co"># 使用 sapply 計算每欄的總和</span></span>
+<span id="cb15-2"><a href="初級r--認識apply家族.html#cb15-2" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">c =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb15-3"><a href="初級r--認識apply家族.html#cb15-3" tabindex="-1"></a>result_lapply <span class="ot">&lt;-</span> <span class="fu">sapply</span>(my_list, sum)</span>
+<span id="cb15-4"><a href="初級r--認識apply家族.html#cb15-4" tabindex="-1"></a><span class="fu">print</span>(result_lapply)</span></code></pre></div>
+<pre><code>##  a  b  c 
+## 15 40 65</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="初級r--資料輸入與輸出.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="中級r--文字處理.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/07_認識apply家族.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/07_認識apply家族.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -68,3 +68,7 @@ call-與-do.call的差異-1
 二維結構-data.frame
 三維結構-list
 正則表達式
+初級r--認識apply家族
+apply系列家族應用情境
+apply用法
+sapplylapply用法
