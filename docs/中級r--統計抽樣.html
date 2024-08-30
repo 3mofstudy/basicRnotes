@@ -338,7 +338,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>範例:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="中級r--統計抽樣.html#cb1-1" tabindex="-1"></a><span class="co"># 從 1 到 100 中隨機抽取 10 個數字</span></span>
 <span id="cb1-2"><a href="中級r--統計抽樣.html#cb1-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##  [1] 90 48  8 60 66 59 80 67 82 23</code></pre>
+<pre><code>##  [1] 40 24 48 62 10 55 15 25 71 18</code></pre>
 <p><strong>2.dplyr::sample_n()</strong> :</p>
 <p>功能: dplyr 套件中的函數，用於從數據框中隨機抽取固定數量的行。</p>
 <p><code>sample_n(tbl, size, replace = FALSE, weight = NULL)</code></p>
@@ -353,11 +353,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="中級r--統計抽樣.html#cb3-2" tabindex="-1"></a><span class="co"># 從數據框 df 中隨機抽取 5 行</span></span>
 <span id="cb3-3"><a href="中級r--統計抽樣.html#cb3-3" tabindex="-1"></a>(sampled_df <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">sample_n</span>(<span class="dv">5</span>))</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1          6.7         2.5          5.8         1.8  virginica
-## 2          5.5         2.4          3.8         1.1 versicolor
-## 3          6.3         2.7          4.9         1.8  virginica
-## 4          5.9         3.2          4.8         1.8 versicolor
-## 5          6.5         3.2          5.1         2.0  virginica</code></pre>
+## 1          5.0         3.2          1.2         0.2     setosa
+## 2          5.5         2.3          4.0         1.3 versicolor
+## 3          6.6         2.9          4.6         1.3 versicolor
+## 4          7.7         3.8          6.7         2.2  virginica
+## 5          4.9         3.6          1.4         0.1     setosa</code></pre>
 <p><strong>3.dplyr::sample_frac()</strong> :</p>
 <p>功能: dplyr 套件中的函數，用於從數據框中按比例隨機抽樣。</p>
 <p><code>sample_n(tbl, size = 1, replace = FALSE, weight = NULL)</code></p>
@@ -372,21 +372,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-2"><a href="中級r--統計抽樣.html#cb5-2" tabindex="-1"></a><span class="co"># 從數據框 df 中隨機抽取 50% 的行</span></span>
 <span id="cb5-3"><a href="中級r--統計抽樣.html#cb5-3" tabindex="-1"></a>(sampled_df <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">sample_frac</span>(<span class="fl">0.1</span>))</span></code></pre></div>
 <pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1           6.7         2.5          5.8         1.8  virginica
-## 2           6.3         2.8          5.1         1.5  virginica
-## 3           4.4         3.2          1.3         0.2     setosa
-## 4           5.0         3.6          1.4         0.2     setosa
-## 5           5.1         3.3          1.7         0.5     setosa
-## 6           4.8         3.4          1.6         0.2     setosa
-## 7           4.7         3.2          1.6         0.2     setosa
-## 8           6.9         3.2          5.7         2.3  virginica
-## 9           6.3         2.7          4.9         1.8  virginica
-## 10          5.4         3.9          1.7         0.4     setosa
-## 11          4.4         3.0          1.3         0.2     setosa
-## 12          6.2         2.2          4.5         1.5 versicolor
-## 13          6.0         3.4          4.5         1.6 versicolor
-## 14          6.0         2.7          5.1         1.6 versicolor
-## 15          5.4         3.9          1.3         0.4     setosa</code></pre>
+## 1           5.0         3.4          1.6         0.4     setosa
+## 2           6.2         2.9          4.3         1.3 versicolor
+## 3           5.2         4.1          1.5         0.1     setosa
+## 4           5.0         3.2          1.2         0.2     setosa
+## 5           6.1         3.0          4.6         1.4 versicolor
+## 6           6.1         2.6          5.6         1.4  virginica
+## 7           4.9         3.0          1.4         0.2     setosa
+## 8           6.2         2.2          4.5         1.5 versicolor
+## 9           6.5         3.0          5.5         1.8  virginica
+## 10          5.1         3.7          1.5         0.4     setosa
+## 11          6.9         3.1          5.4         2.1  virginica
+## 12          6.3         2.5          4.9         1.5 versicolor
+## 13          7.7         2.8          6.7         2.0  virginica
+## 14          6.9         3.2          5.7         2.3  virginica
+## 15          6.7         2.5          5.8         1.8  virginica</code></pre>
 
 </div>
 </div>
