@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 8 中級r- 文字處理 | R語言程式設計</title>
-  <meta name="description" content="Chapter 8 中級r- 文字處理 | R語言程式設計" />
+  <title>Chapter 9 中級r- 文字處理 | R語言程式設計</title>
+  <meta name="description" content="Chapter 9 中級r- 文字處理 | R語言程式設計" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 8 中級r- 文字處理 | R語言程式設計" />
+  <meta property="og:title" content="Chapter 9 中級r- 文字處理 | R語言程式設計" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 8 中級r- 文字處理 | R語言程式設計" />
+  <meta name="twitter:title" content="Chapter 9 中級r- 文字處理 | R語言程式設計" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="初級r--資料輸入與輸出.html"/>
-<link rel="next" href="中級r--函數調用.html"/>
+<link rel="prev" href="初級r--認識apply家族.html"/>
+<link rel="next" href="中級r--統計抽樣.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -152,6 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
 <li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
 <li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+<li class="chapter" data-level="2.4" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
 <ul>
@@ -211,22 +212,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#複製及貼上"><i class="fa fa-check"></i><b>7.2</b> 複製及貼上</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html"><i class="fa fa-check"></i><b>8</b> 中級r- 文字處理</a>
+<li class="chapter" data-level="8" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html"><i class="fa fa-check"></i><b>8</b> 初級R- 認識apply家族</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#內建文字函數base"><i class="fa fa-check"></i><b>8.1</b> 內建文字函數(base)</a></li>
-<li class="chapter" data-level="8.2" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#stringr套件"><i class="fa fa-check"></i><b>8.2</b> stringr套件</a></li>
-<li class="chapter" data-level="8.3" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#正則表達式"><i class="fa fa-check"></i><b>8.3</b> 正則表達式</a></li>
+<li class="chapter" data-level="8.1" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html#apply系列家族應用情境"><i class="fa fa-check"></i><b>8.1</b> apply系列家族應用情境</a></li>
+<li class="chapter" data-level="8.2" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html#apply用法"><i class="fa fa-check"></i><b>8.2</b> apply用法</a></li>
+<li class="chapter" data-level="8.3" data-path="初級r--認識apply家族.html"><a href="初級r--認識apply家族.html#sapplylapply用法"><i class="fa fa-check"></i><b>8.3</b> sapply/lapply用法</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html"><i class="fa fa-check"></i><b>9</b> 中級R- 函數調用</a>
+<li class="chapter" data-level="9" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html"><i class="fa fa-check"></i><b>9</b> 中級r- 文字處理</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#參考資料-1"><i class="fa fa-check"></i><b>9.1</b> 參考資料</a></li>
+<li class="chapter" data-level="9.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#內建文字函數base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
+<li class="chapter" data-level="9.2" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#stringr套件"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
+<li class="chapter" data-level="9.3" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#正則表達式"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html"><i class="fa fa-check"></i><b>10</b> 中級R- 資料前處理</a>
+<li class="chapter" data-level="10" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html"><i class="fa fa-check"></i><b>10</b> 中級R- 統計抽樣</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html#處理遺失值"><i class="fa fa-check"></i><b>10.1</b> 處理遺失值</a>
-<ul>
-<li class="chapter" data-level="10.1.1" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html#使用平均值中位數眾數來取代"><i class="fa fa-check"></i><b>10.1.1</b> 1. 使用平均值、中位數、眾數來取代</a></li>
+<li class="chapter" data-level="10.1" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#常見的抽樣方法"><i class="fa fa-check"></i><b>10.1</b> 常見的抽樣方法</a></li>
+<li class="chapter" data-level="10.2" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#簡單隨機抽樣simple-random-sampling"><i class="fa fa-check"></i><b>10.2</b> 簡單隨機抽樣(Simple Random Sampling)</a></li>
+<li class="chapter" data-level="10.3" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#系統抽樣systematic-sampling"><i class="fa fa-check"></i><b>10.3</b> 系統抽樣(Systematic Sampling)</a></li>
+<li class="chapter" data-level="10.4" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#分層隨機抽樣stratified-random-sampling"><i class="fa fa-check"></i><b>10.4</b> 分層隨機抽樣(Stratified Random Sampling)</a></li>
+<li class="chapter" data-level="10.5" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#群集抽樣cluster-sampling"><i class="fa fa-check"></i><b>10.5</b> 群集抽樣(Cluster Sampling)</a></li>
+<li class="chapter" data-level="10.6" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#配對抽樣match-sampling"><i class="fa fa-check"></i><b>10.6</b> 配對抽樣(match Sampling)</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="中級r--資料前處理-處理遺失值.html"><a href="中級r--資料前處理-處理遺失值.html"><i class="fa fa-check"></i><b>11</b> 中級R- 資料前處理-處理遺失值</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="中級r--資料前處理-處理遺失值.html"><a href="中級r--資料前處理-處理遺失值.html#移除空白欄位"><i class="fa fa-check"></i><b>11.1</b> 移除空白欄位</a></li>
+<li class="chapter" data-level="11.2" data-path="中級r--資料前處理-處理遺失值.html"><a href="中級r--資料前處理-處理遺失值.html#使用平均值中位數眾數來取代"><i class="fa fa-check"></i><b>11.2</b> 使用平均值、中位數、眾數來取代</a></li>
+<li class="chapter" data-level="11.3" data-path="中級r--資料前處理-處理遺失值.html"><a href="中級r--資料前處理-處理遺失值.html#填充為上一筆非空白值"><i class="fa fa-check"></i><b>11.3</b> 填充為上一筆非空白值</a></li>
+<li class="chapter" data-level="11.4" data-path="中級r--資料前處理-處理遺失值.html"><a href="中級r--資料前處理-處理遺失值.html#向下填空白"><i class="fa fa-check"></i><b>11.4</b> 向下填空白</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -247,11 +259,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="中級r--文字處理" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">Chapter 8</span> 中級r- 文字處理<a href="中級r--文字處理.html#中級r--文字處理" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="中級r--文字處理" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapter 9</span> 中級r- 文字處理<a href="中級r--文字處理.html#中級r--文字處理" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>在R中，有需多內建的文字處理函數，可以對文字進行搜尋、取代、切割或擷取，除此之外，R在文字處理亦有一個套件 library(stringr)，可以彌補內建函數部分不足之處，而與文字處裡息息相關的正則表達式，將放在高級篇中再介紹</p>
-<div id="內建文字函數base" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> 內建文字函數(base)<a href="中級r--文字處理.html#內建文字函數base" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="內建文字函數base" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> 內建文字函數(base)<a href="中級r--文字處理.html#內建文字函數base" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>1. 大小寫切換</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="中級r--文字處理.html#cb1-1" tabindex="-1"></a><span class="co"># 全部轉小寫之函數</span></span>
 <span id="cb1-2"><a href="中級r--文字處理.html#cb1-2" tabindex="-1"></a><span class="fu">tolower</span>(<span class="st">&quot;HAPPLY DAY&quot;</span>)</span></code></pre></div>
@@ -291,8 +303,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb8-7"><a href="中級r--文字處理.html#cb8-7" tabindex="-1"></a>         <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>與<code>gregexpr</code>類似的函數，還有<code>regexec</code>、<code>gregexec</code>，差異不大，只是輸出方式不同，筆者認為以後續處理方便性而言，<code>gregexpr</code>是比較值得學習的函數</p>
 </div>
-<div id="stringr套件" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> stringr套件<a href="中級r--文字處理.html#stringr套件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stringr套件" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> stringr套件<a href="中級r--文字處理.html#stringr套件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="中級r--文字處理.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
 <span id="cb9-2"><a href="中級r--文字處理.html#cb9-2" tabindex="-1"></a><span class="co"># 首字母轉換成大寫字母</span></span>
 <span id="cb9-3"><a href="中級r--文字處理.html#cb9-3" tabindex="-1"></a><span class="fu">str_to_title</span>(<span class="st">&quot;jack&quot;</span>)</span>
@@ -316,8 +328,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-21"><a href="中級r--文字處理.html#cb9-21" tabindex="-1"></a><span class="fu">str_detect</span>(fool, <span class="at">pattern =</span> <span class="st">&quot;西瓜&quot;</span> )</span>
 <span id="cb9-22"><a href="中級r--文字處理.html#cb9-22" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;西瓜&quot;</span>, fool)</span></code></pre></div>
 </div>
-<div id="正則表達式" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> 正則表達式<a href="中級r--文字處理.html#正則表達式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="正則表達式" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> 正則表達式<a href="中級r--文字處理.html#正則表達式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>正則表達式（Regular Expressions）是一種用來匹配字串模式的工具，正規表達式有 <code>. ^ $ * + ? \ | []() {}</code> 保留字元。正規表示式從左到右進行計算，並遵循優先順序，這與算術表達式非常類似。相同優先權的從左到右進行運算，不同優先權的運算先高後低，下表為相同優先權等級說明</p>
 <table>
 <thead>
@@ -561,8 +573,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="初級r--資料輸入與輸出.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="中級r--函數調用.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="初級r--認識apply家族.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="中級r--統計抽樣.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

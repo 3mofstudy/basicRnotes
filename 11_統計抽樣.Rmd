@@ -216,4 +216,8 @@ controls <- matched_data[matched_data$disease == 0, ]
 
 head(patients)
 head(controls)
+
+#配對檢定
+#t.test(age ~ disease, data = matched_data)
+#table(matched_data$gender,matched_data$disease) %>% chisq.test()
 ```
