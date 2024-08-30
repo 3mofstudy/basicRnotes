@@ -2,7 +2,7 @@
 
 ## 常見的抽樣方法
 
-常見的抽樣方法可分為**機率抽樣法**和**非機率抽樣法**，還有結合兩者特性的配對抽樣法。 配對抽樣（matched sampling ）是一種特殊的抽樣方法，通常用於病例對照研究或其他需要匹配樣本的研究中。在這種方法中，每個目標個體（例如病例）都會被匹配到一組對照個體（例如對照組），並且這些對照個體在某些關鍵變量上與目標個體相似（例如年齡、性別）。這種方法類似於 **分層隨機抽樣（Stratified Sampling）** 和 **配額抽樣（Quota Sampling）** 的結合，但更具體地應用了配對策略
+常見的抽樣方法可分為**機率抽樣法**和**非機率抽樣法**，還有結合兩者特性的配對抽樣法。 配對抽樣（matched sampling ）是一種特殊的抽樣方法，通常用於病例對照研究或其他需要匹配樣本的研究中。在這種方法中，每個目標個體（例如病例）都會被匹配到一組以上對照個體（例如對照組），通常病例組和對照組的比例為1:4，並且這些對照個體在某些關鍵變量上與目標個體相似（例如年齡、性別）。這種方法類似於 **分層隨機抽樣（Stratified Sampling）** 和 **配額抽樣（Quota Sampling）** 的結合，但更具體地應用了配對策略
 
 +--------------------------------------------------------------------------+-----------------------------------------------------------+
 | 機率抽樣法                                                               | 非機率抽樣法                                              |
@@ -13,17 +13,17 @@
 |                                                                          |                                                           |
 | -   抽樣過程是隨機的,每個單位都有相同的機會被選為受訪者                  | -   操作簡單,成本低,但可能存在偏差                        |
 +--------------------------------------------------------------------------+-----------------------------------------------------------+
-| **分層隨機抽樣(Stratified Random Sampling)**                             | **判斷抽樣(Judgement Sampling)**                          |
+| **系統抽樣(Systematic Sampling)**                                        | **判斷抽樣(Judgement Sampling)**                          |
 |                                                                          |                                                           |
-| -   將母體劃分為幾個層次,然後在每個層次中進行簡單隨機抽樣                | -   根據研究者的判斷選擇具有代表性的對象作為樣本          |
+| -   根據一定的間隔從母體中選取單位,形成樣本                              | -   根據研究者的判斷選擇具有代表性的對象作為樣本          |
 |                                                                          |                                                           |
-| -   可以提高樣本的代表性,減少抽樣誤差                                    | -   需要研究者有豐富的經驗和專業知識                      |
+| -   抽樣過程簡單,成本較低                                                | -   需要研究者有豐富的經驗和專業知識                      |
 +--------------------------------------------------------------------------+-----------------------------------------------------------+
-| **系統抽樣(Systematic Sampling)**                                        | **配額抽樣(Quota Sampling)**                              |
+| **分層隨機抽樣(Stratified Random Sampling)**                             | **配額抽樣(Quota Sampling)**                              |
 |                                                                          |                                                           |
-| -   根據一定的間隔從母體中選取單位,形成樣本                              | -   根據母體的特徵劃分層次,然後在每個層次中按比例選取樣本 |
+| -   將母體劃分為幾個層次,然後在每個層次中進行簡單隨機抽樣                | -   根據母體的特徵劃分層次,然後在每個層次中按比例選取樣本 |
 |                                                                          |                                                           |
-| -   抽樣過程簡單,成本較低                                                | -   操作簡單,但可能存在抽樣偏差                           |
+| -   可以提高樣本的代表性,減少抽樣誤差                                    | -   操作簡單,但可能存在抽樣偏差                           |
 +--------------------------------------------------------------------------+-----------------------------------------------------------+
 | **群集抽樣(Cluster Sampling)**                                           | **滾雪球抽樣(Snowball Sampling)**                         |
 |                                                                          |                                                           |
@@ -101,4 +101,91 @@ library(dplyr)
 library(dplyr)
 # 從數據框 df 中隨機抽取 50% 的行
 (sampled_df <- iris %>% sample_frac(0.1))
+```
+
+## 系統抽樣(Systematic Sampling)
+
+善用seq()，進行產生規則rows序列，再利用資料框擷取抽樣出等距的樣本數 `seq(from, to, by, length.out, along.with, ...)` 參數:
+
+-   `from`：序列的起始值
+
+-   `to`：序列的結束值。
+
+-   `by`：序列的間隔值。
+
+-   `length.out`：序列的數量值
+
+-   `along.with`：與length.out互斥的參數，不能同時使用，along.with 參數是用來指定生成的序列應該與另一個對象（如向量）的長度相同
+
+```{r eval=T, message=FALSE, warning=FALSE}
+ind <- seq(from = 1,to=50 ,by=5)
+df  <-  iris
+df[ind,]
+```
+
+## 分層隨機抽樣(Stratified Random Sampling)
+
+**1. 使用splitstackshape套件**
+
+```{r eval=T, message=FALSE, warning=FALSE}
+library(splitstackshape)
+# 使用 splitstackshape 進行分層抽樣，每個層內抽取 5 個樣本
+stratified(iris, "Species", size = 5)
+
+# 或者按比例抽樣
+stratified(iris, "Species", size = 0.1)
+```
+
+**2. 使用dplyr::group_by() + dplyr::sample_n() 或 sample_frac()**
+
+```{r eval=T, message=FALSE, warning=FALSE}
+library(dplyr)
+
+# 分層隨機抽樣 - 每組別中抽取 5 個樣本
+iris %>%
+  group_by(Species) %>%    # 按Species分組
+  sample_n(5)             # 在每個組別中隨機抽取 5 個樣本
+
+# 或者按比例抽樣
+iris %>%
+  group_by(Species) %>%    # 按Species分組
+  sample_frac(0.1)        # 在每個組別中隨機抽取 10% 的樣本
+```
+
+## 群集抽樣(Cluster Sampling)
+
+**1. 使用dplyr::group_by+ dplyr:: filter()**
+
+```{r eval=T, message=FALSE, warning=FALSE}
+library(dplyr)
+# 假設 df 是數據框，並且它有一個變量 'cluster' 來標識群集
+df <- data.frame(cluster = rep(1:10, each = 10), value = rnorm(100))
+
+# 隨機選擇群集
+set.seed(123)  # 設置隨機種子以確保可重現性
+
+# 使用 dplyr 進行群集抽樣
+set.seed(123)
+cluster_sample <- df %>%
+  group_by(cluster) %>%
+  filter(cluster %in% sample(unique(df$cluster), size = 3))
+
+cluster_sample
+```
+
+**1. 使用 sampling 套件的 cluster() 函數**
+
+```{r eval=T, message=FALSE, warning=FALSE}
+# 安裝並載入 sampling 套件
+#install.packages("sampling")
+library(sampling)
+
+# 使用 sampling 包進行群集抽樣
+set.seed(123)
+clusters <- cluster(iris, clustername = "Species", size = 2, method = "srswor")
+
+# 獲取抽樣數據
+cluster_sample <- getdata(iris, clusters)
+
+cluster_sample
 ```

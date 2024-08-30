@@ -85,3 +85,6 @@ sapplylapply用法
 配對抽樣法
 section
 簡單隨機抽樣simple-random-sampling
+系統抽樣systematic-sampling
+分層隨機抽樣stratified-random-sampling
+群集抽樣cluster-sampling

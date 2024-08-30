@@ -228,6 +228,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="10.1" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#常見的抽樣方法"><i class="fa fa-check"></i><b>10.1</b> 常見的抽樣方法</a></li>
 <li class="chapter" data-level="10.2" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#簡單隨機抽樣simple-random-sampling"><i class="fa fa-check"></i><b>10.2</b> 簡單隨機抽樣(Simple Random Sampling)</a></li>
+<li class="chapter" data-level="10.3" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#系統抽樣systematic-sampling"><i class="fa fa-check"></i><b>10.3</b> 系統抽樣(Systematic Sampling)</a></li>
+<li class="chapter" data-level="10.4" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#分層隨機抽樣stratified-random-sampling"><i class="fa fa-check"></i><b>10.4</b> 分層隨機抽樣(Stratified Random Sampling)</a></li>
+<li class="chapter" data-level="10.5" data-path="中級r--統計抽樣.html"><a href="中級r--統計抽樣.html#群集抽樣cluster-sampling"><i class="fa fa-check"></i><b>10.5</b> 群集抽樣(Cluster Sampling)</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="中級r--資料前處理-處理遺失值.html"><a href="中級r--資料前處理-處理遺失值.html"><i class="fa fa-check"></i><b>11</b> 中級R- 資料前處理-處理遺失值</a>
 <ul>
@@ -259,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 10</span> 中級R- 統計抽樣<a href="中級r--統計抽樣.html#中級r--統計抽樣" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="常見的抽樣方法" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> 常見的抽樣方法<a href="中級r--統計抽樣.html#常見的抽樣方法" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>常見的抽樣方法可分為<strong>機率抽樣法</strong>和<strong>非機率抽樣法</strong>，還有結合兩者特性的配對抽樣法。 配對抽樣（matched sampling ）是一種特殊的抽樣方法，通常用於病例對照研究或其他需要匹配樣本的研究中。在這種方法中，每個目標個體（例如病例）都會被匹配到一組對照個體（例如對照組），並且這些對照個體在某些關鍵變量上與目標個體相似（例如年齡、性別）。這種方法類似於 <strong>分層隨機抽樣（Stratified Sampling）</strong> 和 <strong>配額抽樣（Quota Sampling）</strong> 的結合，但更具體地應用了配對策略</p>
+<p>常見的抽樣方法可分為<strong>機率抽樣法</strong>和<strong>非機率抽樣法</strong>，還有結合兩者特性的配對抽樣法。 配對抽樣（matched sampling ）是一種特殊的抽樣方法，通常用於病例對照研究或其他需要匹配樣本的研究中。在這種方法中，每個目標個體（例如病例）都會被匹配到一組以上對照個體（例如對照組），通常病例組和對照組的比例為1:4，並且這些對照個體在某些關鍵變量上與目標個體相似（例如年齡、性別）。這種方法類似於 <strong>分層隨機抽樣（Stratified Sampling）</strong> 和 <strong>配額抽樣（Quota Sampling）</strong> 的結合，但更具體地應用了配對策略</p>
 <table>
 <colgroup>
 <col width="55%" />
@@ -285,10 +288,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></td>
 </tr>
 <tr class="even">
-<td><p><strong>分層隨機抽樣(Stratified Random Sampling)</strong></p>
+<td><p><strong>系統抽樣(Systematic Sampling)</strong></p>
 <ul>
-<li><p>將母體劃分為幾個層次,然後在每個層次中進行簡單隨機抽樣</p></li>
-<li><p>可以提高樣本的代表性,減少抽樣誤差</p></li>
+<li><p>根據一定的間隔從母體中選取單位,形成樣本</p></li>
+<li><p>抽樣過程簡單,成本較低</p></li>
 </ul></td>
 <td><p><strong>判斷抽樣(Judgement Sampling)</strong></p>
 <ul>
@@ -297,10 +300,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></td>
 </tr>
 <tr class="odd">
-<td><p><strong>系統抽樣(Systematic Sampling)</strong></p>
+<td><p><strong>分層隨機抽樣(Stratified Random Sampling)</strong></p>
 <ul>
-<li><p>根據一定的間隔從母體中選取單位,形成樣本</p></li>
-<li><p>抽樣過程簡單,成本較低</p></li>
+<li><p>將母體劃分為幾個層次,然後在每個層次中進行簡單隨機抽樣</p></li>
+<li><p>可以提高樣本的代表性,減少抽樣誤差</p></li>
 </ul></td>
 <td><p><strong>配額抽樣(Quota Sampling)</strong></p>
 <ul>
@@ -338,7 +341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>範例:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="中級r--統計抽樣.html#cb1-1" tabindex="-1"></a><span class="co"># 從 1 到 100 中隨機抽取 10 個數字</span></span>
 <span id="cb1-2"><a href="中級r--統計抽樣.html#cb1-2" tabindex="-1"></a><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##  [1] 40 24 48 62 10 55 15 25 71 18</code></pre>
+<pre><code>##  [1]  3  6 46  2 62 28  4 95 44 78</code></pre>
 <p><strong>2.dplyr::sample_n()</strong> :</p>
 <p>功能: dplyr 套件中的函數，用於從數據框中隨機抽取固定數量的行。</p>
 <p><code>sample_n(tbl, size, replace = FALSE, weight = NULL)</code></p>
@@ -353,11 +356,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-2"><a href="中級r--統計抽樣.html#cb3-2" tabindex="-1"></a><span class="co"># 從數據框 df 中隨機抽取 5 行</span></span>
 <span id="cb3-3"><a href="中級r--統計抽樣.html#cb3-3" tabindex="-1"></a>(sampled_df <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">sample_n</span>(<span class="dv">5</span>))</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1          5.0         3.2          1.2         0.2     setosa
-## 2          5.5         2.3          4.0         1.3 versicolor
-## 3          6.6         2.9          4.6         1.3 versicolor
-## 4          7.7         3.8          6.7         2.2  virginica
-## 5          4.9         3.6          1.4         0.1     setosa</code></pre>
+## 1          4.8         3.0          1.4         0.1     setosa
+## 2          4.3         3.0          1.1         0.1     setosa
+## 3          5.8         2.6          4.0         1.2 versicolor
+## 4          5.0         3.4          1.5         0.2     setosa
+## 5          5.4         3.9          1.3         0.4     setosa</code></pre>
 <p><strong>3.dplyr::sample_frac()</strong> :</p>
 <p>功能: dplyr 套件中的函數，用於從數據框中按比例隨機抽樣。</p>
 <p><code>sample_n(tbl, size = 1, replace = FALSE, weight = NULL)</code></p>
@@ -372,21 +375,393 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-2"><a href="中級r--統計抽樣.html#cb5-2" tabindex="-1"></a><span class="co"># 從數據框 df 中隨機抽取 50% 的行</span></span>
 <span id="cb5-3"><a href="中級r--統計抽樣.html#cb5-3" tabindex="-1"></a>(sampled_df <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">sample_frac</span>(<span class="fl">0.1</span>))</span></code></pre></div>
 <pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 1           5.0         3.4          1.6         0.4     setosa
-## 2           6.2         2.9          4.3         1.3 versicolor
-## 3           5.2         4.1          1.5         0.1     setosa
-## 4           5.0         3.2          1.2         0.2     setosa
-## 5           6.1         3.0          4.6         1.4 versicolor
-## 6           6.1         2.6          5.6         1.4  virginica
-## 7           4.9         3.0          1.4         0.2     setosa
-## 8           6.2         2.2          4.5         1.5 versicolor
-## 9           6.5         3.0          5.5         1.8  virginica
-## 10          5.1         3.7          1.5         0.4     setosa
-## 11          6.9         3.1          5.4         2.1  virginica
-## 12          6.3         2.5          4.9         1.5 versicolor
-## 13          7.7         2.8          6.7         2.0  virginica
-## 14          6.9         3.2          5.7         2.3  virginica
-## 15          6.7         2.5          5.8         1.8  virginica</code></pre>
+## 1           5.0         3.2          1.2         0.2     setosa
+## 2           4.6         3.1          1.5         0.2     setosa
+## 3           6.0         2.7          5.1         1.6 versicolor
+## 4           5.5         2.4          3.8         1.1 versicolor
+## 5           5.0         3.4          1.5         0.2     setosa
+## 6           6.3         3.4          5.6         2.4  virginica
+## 7           6.9         3.1          5.1         2.3  virginica
+## 8           5.9         3.2          4.8         1.8 versicolor
+## 9           5.0         2.0          3.5         1.0 versicolor
+## 10          6.1         2.6          5.6         1.4  virginica
+## 11          6.0         2.9          4.5         1.5 versicolor
+## 12          7.7         2.8          6.7         2.0  virginica
+## 13          6.9         3.1          4.9         1.5 versicolor
+## 14          7.7         3.8          6.7         2.2  virginica
+## 15          6.1         2.8          4.7         1.2 versicolor</code></pre>
+</div>
+<div id="系統抽樣systematic-sampling" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> 系統抽樣(Systematic Sampling)<a href="中級r--統計抽樣.html#系統抽樣systematic-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>善用seq()，進行產生規則rows序列，再利用資料框擷取抽樣出等距的樣本數 <code>seq(from, to, by, length.out, along.with, ...)</code> 參數:</p>
+<ul>
+<li><p><code>from</code>：序列的起始值</p></li>
+<li><p><code>to</code>：序列的結束值。</p></li>
+<li><p><code>by</code>：序列的間隔值。</p></li>
+<li><p><code>length.out</code>：序列的數量值</p></li>
+<li><p><code>along.with</code>：與length.out互斥的參數，不能同時使用，along.with 參數是用來指定生成的序列應該與另一個對象（如向量）的長度相同</p></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="中級r--統計抽樣.html#cb7-1" tabindex="-1"></a>ind <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>,<span class="at">to=</span><span class="dv">50</span> ,<span class="at">by=</span><span class="dv">5</span>)</span>
+<span id="cb7-2"><a href="中級r--統計抽樣.html#cb7-2" tabindex="-1"></a>df  <span class="ot">&lt;-</span>  iris</span>
+<span id="cb7-3"><a href="中級r--統計抽樣.html#cb7-3" tabindex="-1"></a>df[ind,]</span></code></pre></div>
+<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1           5.1         3.5          1.4         0.2  setosa
+## 6           5.4         3.9          1.7         0.4  setosa
+## 11          5.4         3.7          1.5         0.2  setosa
+## 16          5.7         4.4          1.5         0.4  setosa
+## 21          5.4         3.4          1.7         0.2  setosa
+## 26          5.0         3.0          1.6         0.2  setosa
+## 31          4.8         3.1          1.6         0.2  setosa
+## 36          5.0         3.2          1.2         0.2  setosa
+## 41          5.0         3.5          1.3         0.3  setosa
+## 46          4.8         3.0          1.4         0.3  setosa</code></pre>
+</div>
+<div id="分層隨機抽樣stratified-random-sampling" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> 分層隨機抽樣(Stratified Random Sampling)<a href="中級r--統計抽樣.html#分層隨機抽樣stratified-random-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1. 使用splitstackshape套件</strong></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="中級r--統計抽樣.html#cb9-1" tabindex="-1"></a><span class="fu">library</span>(splitstackshape)</span>
+<span id="cb9-2"><a href="中級r--統計抽樣.html#cb9-2" tabindex="-1"></a><span class="co"># 使用 splitstackshape 進行分層抽樣，每個層內抽取 5 個樣本</span></span>
+<span id="cb9-3"><a href="中級r--統計抽樣.html#cb9-3" tabindex="-1"></a><span class="fu">stratified</span>(iris, <span class="st">&quot;Species&quot;</span>, <span class="at">size =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+##  1:          5.0         3.0          1.6         0.2     setosa
+##  2:          5.0         3.6          1.4         0.2     setosa
+##  3:          5.1         3.5          1.4         0.2     setosa
+##  4:          5.2         3.4          1.4         0.2     setosa
+##  5:          5.1         3.8          1.9         0.4     setosa
+##  6:          6.3         3.3          4.7         1.6 versicolor
+##  7:          5.5         2.4          3.8         1.1 versicolor
+##  8:          6.0         2.2          4.0         1.0 versicolor
+##  9:          5.5         2.4          3.7         1.0 versicolor
+## 10:          5.5         2.6          4.4         1.2 versicolor
+## 11:          7.4         2.8          6.1         1.9  virginica
+## 12:          6.4         2.7          5.3         1.9  virginica
+## 13:          5.9         3.0          5.1         1.8  virginica
+## 14:          7.7         2.8          6.7         2.0  virginica
+## 15:          6.7         3.3          5.7         2.1  virginica</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="中級r--統計抽樣.html#cb11-1" tabindex="-1"></a><span class="co"># 或者按比例抽樣</span></span>
+<span id="cb11-2"><a href="中級r--統計抽樣.html#cb11-2" tabindex="-1"></a><span class="fu">stratified</span>(iris, <span class="st">&quot;Species&quot;</span>, <span class="at">size =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+##  1:          5.7         4.4          1.5         0.4     setosa
+##  2:          5.0         3.3          1.4         0.2     setosa
+##  3:          5.4         3.9          1.3         0.4     setosa
+##  4:          5.3         3.7          1.5         0.2     setosa
+##  5:          5.4         3.9          1.7         0.4     setosa
+##  6:          6.4         3.2          4.5         1.5 versicolor
+##  7:          5.9         3.0          4.2         1.5 versicolor
+##  8:          5.9         3.2          4.8         1.8 versicolor
+##  9:          6.1         2.8          4.0         1.3 versicolor
+## 10:          5.5         2.4          3.8         1.1 versicolor
+## 11:          6.5         3.0          5.8         2.2  virginica
+## 12:          6.4         3.2          5.3         2.3  virginica
+## 13:          6.8         3.0          5.5         2.1  virginica
+## 14:          6.3         2.9          5.6         1.8  virginica
+## 15:          6.3         2.8          5.1         1.5  virginica</code></pre>
+<p><strong>2. 使用dplyr::group_by() + dplyr::sample_n() 或 sample_frac()</strong></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="中級r--統計抽樣.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-2"><a href="中級r--統計抽樣.html#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="中級r--統計抽樣.html#cb13-3" tabindex="-1"></a><span class="co"># 分層隨機抽樣 - 每組別中抽取 5 個樣本</span></span>
+<span id="cb13-4"><a href="中級r--統計抽樣.html#cb13-4" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb13-5"><a href="中級r--統計抽樣.html#cb13-5" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span>    <span class="co"># 按Species分組</span></span>
+<span id="cb13-6"><a href="中級r--統計抽樣.html#cb13-6" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>)             <span class="co"># 在每個組別中隨機抽取 5 個樣本</span></span></code></pre></div>
+<pre><code>## # A tibble: 15 × 5
+## # Groups:   Species [3]
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;     
+##  1          5           3            1.6         0.2 setosa    
+##  2          5           3.4          1.6         0.4 setosa    
+##  3          5.2         3.5          1.5         0.2 setosa    
+##  4          4.6         3.2          1.4         0.2 setosa    
+##  5          5.1         3.8          1.5         0.3 setosa    
+##  6          6.3         2.3          4.4         1.3 versicolor
+##  7          7           3.2          4.7         1.4 versicolor
+##  8          5.5         2.4          3.7         1   versicolor
+##  9          6.8         2.8          4.8         1.4 versicolor
+## 10          5.2         2.7          3.9         1.4 versicolor
+## 11          6.3         3.3          6           2.5 virginica 
+## 12          5.7         2.5          5           2   virginica 
+## 13          6.3         2.9          5.6         1.8 virginica 
+## 14          6.5         3            5.8         2.2 virginica 
+## 15          6.8         3.2          5.9         2.3 virginica</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="中級r--統計抽樣.html#cb15-1" tabindex="-1"></a><span class="co"># 或者按比例抽樣</span></span>
+<span id="cb15-2"><a href="中級r--統計抽樣.html#cb15-2" tabindex="-1"></a>iris <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="中級r--統計抽樣.html#cb15-3" tabindex="-1"></a>  <span class="fu">group_by</span>(Species) <span class="sc">%&gt;%</span>    <span class="co"># 按Species分組</span></span>
+<span id="cb15-4"><a href="中級r--統計抽樣.html#cb15-4" tabindex="-1"></a>  <span class="fu">sample_frac</span>(<span class="fl">0.1</span>)        <span class="co"># 在每個組別中隨機抽取 10% 的樣本</span></span></code></pre></div>
+<pre><code>## # A tibble: 15 × 5
+## # Groups:   Species [3]
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;     
+##  1          4.9         3.6          1.4         0.1 setosa    
+##  2          4.8         3            1.4         0.1 setosa    
+##  3          5.4         3.9          1.3         0.4 setosa    
+##  4          5.2         4.1          1.5         0.1 setosa    
+##  5          4.3         3            1.1         0.1 setosa    
+##  6          5.6         2.5          3.9         1.1 versicolor
+##  7          6.3         2.3          4.4         1.3 versicolor
+##  8          6.6         2.9          4.6         1.3 versicolor
+##  9          5.5         2.3          4           1.3 versicolor
+## 10          6.3         3.3          4.7         1.6 versicolor
+## 11          6.1         3            4.9         1.8 virginica 
+## 12          6.4         3.2          5.3         2.3 virginica 
+## 13          7.4         2.8          6.1         1.9 virginica 
+## 14          6.5         3            5.2         2   virginica 
+## 15          5.8         2.7          5.1         1.9 virginica</code></pre>
+</div>
+<div id="群集抽樣cluster-sampling" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> 群集抽樣(Cluster Sampling)<a href="中級r--統計抽樣.html#群集抽樣cluster-sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1. 使用dplyr::group_by+ dplyr:: filter()</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="中級r--統計抽樣.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb17-2"><a href="中級r--統計抽樣.html#cb17-2" tabindex="-1"></a><span class="co"># 假設 df 是數據框，並且它有一個變量 &#39;cluster&#39; 來標識群集</span></span>
+<span id="cb17-3"><a href="中級r--統計抽樣.html#cb17-3" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">cluster =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">each =</span> <span class="dv">10</span>), <span class="at">value =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>))</span>
+<span id="cb17-4"><a href="中級r--統計抽樣.html#cb17-4" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="中級r--統計抽樣.html#cb17-5" tabindex="-1"></a><span class="co"># 隨機選擇群集</span></span>
+<span id="cb17-6"><a href="中級r--統計抽樣.html#cb17-6" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># 設置隨機種子以確保可重現性</span></span>
+<span id="cb17-7"><a href="中級r--統計抽樣.html#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="中級r--統計抽樣.html#cb17-8" tabindex="-1"></a><span class="co"># 使用 dplyr 進行群集抽樣</span></span>
+<span id="cb17-9"><a href="中級r--統計抽樣.html#cb17-9" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb17-10"><a href="中級r--統計抽樣.html#cb17-10" tabindex="-1"></a>cluster_sample <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb17-11"><a href="中級r--統計抽樣.html#cb17-11" tabindex="-1"></a>  <span class="fu">group_by</span>(cluster) <span class="sc">%&gt;%</span></span>
+<span id="cb17-12"><a href="中級r--統計抽樣.html#cb17-12" tabindex="-1"></a>  <span class="fu">filter</span>(cluster <span class="sc">%in%</span> <span class="fu">sample</span>(<span class="fu">unique</span>(df<span class="sc">$</span>cluster), <span class="at">size =</span> <span class="dv">3</span>))</span>
+<span id="cb17-13"><a href="中級r--統計抽樣.html#cb17-13" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="中級r--統計抽樣.html#cb17-14" tabindex="-1"></a>cluster_sample</span></code></pre></div>
+<pre><code>## # A tibble: 20 × 2
+## # Groups:   cluster [2]
+##    cluster  value
+##      &lt;int&gt;  &lt;dbl&gt;
+##  1       2  0.383
+##  2       2  1.82 
+##  3       2 -0.201
+##  4       2  0.544
+##  5       2 -1.52 
+##  6       2 -1.56 
+##  7       2 -1.35 
+##  8       2 -1.15 
+##  9       2 -0.865
+## 10       2 -0.653
+## 11       5 -0.412
+## 12       5  0.179
+## 13       5  0.834
+## 14       5  1.61 
+## 15       5 -0.426
+## 16       5 -0.431
+## 17       5 -0.509
+## 18       5 -0.220
+## 19       5  0.171
+## 20       5  1.72</code></pre>
+<p><strong>1. 使用 sampling 套件的 cluster() 函數</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="中級r--統計抽樣.html#cb19-1" tabindex="-1"></a><span class="co"># 安裝並載入 sampling 套件</span></span>
+<span id="cb19-2"><a href="中級r--統計抽樣.html#cb19-2" tabindex="-1"></a><span class="co">#install.packages(&quot;sampling&quot;)</span></span>
+<span id="cb19-3"><a href="中級r--統計抽樣.html#cb19-3" tabindex="-1"></a><span class="fu">library</span>(sampling)</span>
+<span id="cb19-4"><a href="中級r--統計抽樣.html#cb19-4" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="中級r--統計抽樣.html#cb19-5" tabindex="-1"></a><span class="co"># 使用 sampling 包進行群集抽樣</span></span>
+<span id="cb19-6"><a href="中級r--統計抽樣.html#cb19-6" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb19-7"><a href="中級r--統計抽樣.html#cb19-7" tabindex="-1"></a>clusters <span class="ot">&lt;-</span> <span class="fu">cluster</span>(iris, <span class="at">clustername =</span> <span class="st">&quot;Species&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">method =</span> <span class="st">&quot;srswor&quot;</span>)</span>
+<span id="cb19-8"><a href="中級r--統計抽樣.html#cb19-8" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="中級r--統計抽樣.html#cb19-9" tabindex="-1"></a><span class="co"># 獲取抽樣數據</span></span>
+<span id="cb19-10"><a href="中級r--統計抽樣.html#cb19-10" tabindex="-1"></a>cluster_sample <span class="ot">&lt;-</span> <span class="fu">getdata</span>(iris, clusters)</span>
+<span id="cb19-11"><a href="中級r--統計抽樣.html#cb19-11" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="中級r--統計抽樣.html#cb19-12" tabindex="-1"></a>cluster_sample</span></code></pre></div>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width   Species ID_unit
+## 10           4.9         3.1          1.5         0.1    setosa      10
+## 8            5.0         3.4          1.5         0.2    setosa       8
+## 9            4.4         2.9          1.4         0.2    setosa       9
+## 1            5.1         3.5          1.4         0.2    setosa       1
+## 2            4.9         3.0          1.4         0.2    setosa       2
+## 3            4.7         3.2          1.3         0.2    setosa       3
+## 4            4.6         3.1          1.5         0.2    setosa       4
+## 5            5.0         3.6          1.4         0.2    setosa       5
+## 6            5.4         3.9          1.7         0.4    setosa       6
+## 7            4.6         3.4          1.4         0.3    setosa       7
+## 21           5.4         3.4          1.7         0.2    setosa      21
+## 22           5.1         3.7          1.5         0.4    setosa      22
+## 23           4.6         3.6          1.0         0.2    setosa      23
+## 24           5.1         3.3          1.7         0.5    setosa      24
+## 25           4.8         3.4          1.9         0.2    setosa      25
+## 26           5.0         3.0          1.6         0.2    setosa      26
+## 27           5.0         3.4          1.6         0.4    setosa      27
+## 28           5.2         3.5          1.5         0.2    setosa      28
+## 29           5.2         3.4          1.4         0.2    setosa      29
+## 30           4.7         3.2          1.6         0.2    setosa      30
+## 31           4.8         3.1          1.6         0.2    setosa      31
+## 32           5.4         3.4          1.5         0.4    setosa      32
+## 33           5.2         4.1          1.5         0.1    setosa      33
+## 34           5.5         4.2          1.4         0.2    setosa      34
+## 35           4.9         3.1          1.5         0.2    setosa      35
+## 36           5.0         3.2          1.2         0.2    setosa      36
+## 37           5.5         3.5          1.3         0.2    setosa      37
+## 38           4.9         3.6          1.4         0.1    setosa      38
+## 39           4.4         3.0          1.3         0.2    setosa      39
+## 40           5.1         3.4          1.5         0.2    setosa      40
+## 41           5.0         3.5          1.3         0.3    setosa      41
+## 42           4.5         2.3          1.3         0.3    setosa      42
+## 43           4.4         3.2          1.3         0.2    setosa      43
+## 44           5.0         3.5          1.6         0.6    setosa      44
+## 45           5.1         3.8          1.9         0.4    setosa      45
+## 46           4.8         3.0          1.4         0.3    setosa      46
+## 47           5.1         3.8          1.6         0.2    setosa      47
+## 48           4.6         3.2          1.4         0.2    setosa      48
+## 49           5.3         3.7          1.5         0.2    setosa      49
+## 50           5.0         3.3          1.4         0.2    setosa      50
+## 11           5.4         3.7          1.5         0.2    setosa      11
+## 12           4.8         3.4          1.6         0.2    setosa      12
+## 13           4.8         3.0          1.4         0.1    setosa      13
+## 14           4.3         3.0          1.1         0.1    setosa      14
+## 15           5.8         4.0          1.2         0.2    setosa      15
+## 16           5.7         4.4          1.5         0.4    setosa      16
+## 17           5.4         3.9          1.3         0.4    setosa      17
+## 18           5.1         3.5          1.4         0.3    setosa      18
+## 19           5.7         3.8          1.7         0.3    setosa      19
+## 20           5.1         3.8          1.5         0.3    setosa      20
+## 101          6.3         3.3          6.0         2.5 virginica     101
+## 102          5.8         2.7          5.1         1.9 virginica     102
+## 103          7.1         3.0          5.9         2.1 virginica     103
+## 104          6.3         2.9          5.6         1.8 virginica     104
+## 105          6.5         3.0          5.8         2.2 virginica     105
+## 106          7.6         3.0          6.6         2.1 virginica     106
+## 107          4.9         2.5          4.5         1.7 virginica     107
+## 108          7.3         2.9          6.3         1.8 virginica     108
+## 109          6.7         2.5          5.8         1.8 virginica     109
+## 110          7.2         3.6          6.1         2.5 virginica     110
+## 111          6.5         3.2          5.1         2.0 virginica     111
+## 112          6.4         2.7          5.3         1.9 virginica     112
+## 113          6.8         3.0          5.5         2.1 virginica     113
+## 114          5.7         2.5          5.0         2.0 virginica     114
+## 115          5.8         2.8          5.1         2.4 virginica     115
+## 116          6.4         3.2          5.3         2.3 virginica     116
+## 117          6.5         3.0          5.5         1.8 virginica     117
+## 118          7.7         3.8          6.7         2.2 virginica     118
+## 119          7.7         2.6          6.9         2.3 virginica     119
+## 120          6.0         2.2          5.0         1.5 virginica     120
+## 121          6.9         3.2          5.7         2.3 virginica     121
+## 122          5.6         2.8          4.9         2.0 virginica     122
+## 123          7.7         2.8          6.7         2.0 virginica     123
+## 124          6.3         2.7          4.9         1.8 virginica     124
+## 125          6.7         3.3          5.7         2.1 virginica     125
+## 126          7.2         3.2          6.0         1.8 virginica     126
+## 127          6.2         2.8          4.8         1.8 virginica     127
+## 128          6.1         3.0          4.9         1.8 virginica     128
+## 129          6.4         2.8          5.6         2.1 virginica     129
+## 130          7.2         3.0          5.8         1.6 virginica     130
+## 131          7.4         2.8          6.1         1.9 virginica     131
+## 132          7.9         3.8          6.4         2.0 virginica     132
+## 133          6.4         2.8          5.6         2.2 virginica     133
+## 134          6.3         2.8          5.1         1.5 virginica     134
+## 135          6.1         2.6          5.6         1.4 virginica     135
+## 136          7.7         3.0          6.1         2.3 virginica     136
+## 137          6.3         3.4          5.6         2.4 virginica     137
+## 138          6.4         3.1          5.5         1.8 virginica     138
+## 139          6.0         3.0          4.8         1.8 virginica     139
+## 140          6.9         3.1          5.4         2.1 virginica     140
+## 141          6.7         3.1          5.6         2.4 virginica     141
+## 142          6.9         3.1          5.1         2.3 virginica     142
+## 143          5.8         2.7          5.1         1.9 virginica     143
+## 144          6.8         3.2          5.9         2.3 virginica     144
+## 145          6.7         3.3          5.7         2.5 virginica     145
+## 146          6.7         3.0          5.2         2.3 virginica     146
+## 147          6.3         2.5          5.0         1.9 virginica     147
+## 148          6.5         3.0          5.2         2.0 virginica     148
+## 149          6.2         3.4          5.4         2.3 virginica     149
+## 150          5.9         3.0          5.1         1.8 virginica     150
+##          Prob
+## 10  0.6666667
+## 8   0.6666667
+## 9   0.6666667
+## 1   0.6666667
+## 2   0.6666667
+## 3   0.6666667
+## 4   0.6666667
+## 5   0.6666667
+## 6   0.6666667
+## 7   0.6666667
+## 21  0.6666667
+## 22  0.6666667
+## 23  0.6666667
+## 24  0.6666667
+## 25  0.6666667
+## 26  0.6666667
+## 27  0.6666667
+## 28  0.6666667
+## 29  0.6666667
+## 30  0.6666667
+## 31  0.6666667
+## 32  0.6666667
+## 33  0.6666667
+## 34  0.6666667
+## 35  0.6666667
+## 36  0.6666667
+## 37  0.6666667
+## 38  0.6666667
+## 39  0.6666667
+## 40  0.6666667
+## 41  0.6666667
+## 42  0.6666667
+## 43  0.6666667
+## 44  0.6666667
+## 45  0.6666667
+## 46  0.6666667
+## 47  0.6666667
+## 48  0.6666667
+## 49  0.6666667
+## 50  0.6666667
+## 11  0.6666667
+## 12  0.6666667
+## 13  0.6666667
+## 14  0.6666667
+## 15  0.6666667
+## 16  0.6666667
+## 17  0.6666667
+## 18  0.6666667
+## 19  0.6666667
+## 20  0.6666667
+## 101 0.6666667
+## 102 0.6666667
+## 103 0.6666667
+## 104 0.6666667
+## 105 0.6666667
+## 106 0.6666667
+## 107 0.6666667
+## 108 0.6666667
+## 109 0.6666667
+## 110 0.6666667
+## 111 0.6666667
+## 112 0.6666667
+## 113 0.6666667
+## 114 0.6666667
+## 115 0.6666667
+## 116 0.6666667
+## 117 0.6666667
+## 118 0.6666667
+## 119 0.6666667
+## 120 0.6666667
+## 121 0.6666667
+## 122 0.6666667
+## 123 0.6666667
+## 124 0.6666667
+## 125 0.6666667
+## 126 0.6666667
+## 127 0.6666667
+## 128 0.6666667
+## 129 0.6666667
+## 130 0.6666667
+## 131 0.6666667
+## 132 0.6666667
+## 133 0.6666667
+## 134 0.6666667
+## 135 0.6666667
+## 136 0.6666667
+## 137 0.6666667
+## 138 0.6666667
+## 139 0.6666667
+## 140 0.6666667
+## 141 0.6666667
+## 142 0.6666667
+## 143 0.6666667
+## 144 0.6666667
+## 145 0.6666667
+## 146 0.6666667
+## 147 0.6666667
+## 148 0.6666667
+## 149 0.6666667
+## 150 0.6666667</code></pre>
 
 </div>
 </div>
