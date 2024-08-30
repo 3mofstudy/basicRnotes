@@ -88,3 +88,4 @@ section
 系統抽樣systematic-sampling
 分層隨機抽樣stratified-random-sampling
 群集抽樣cluster-sampling
+配對抽樣match-sampling

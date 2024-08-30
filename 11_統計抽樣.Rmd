@@ -182,10 +182,38 @@ library(sampling)
 
 # 使用 sampling 包進行群集抽樣
 set.seed(123)
-clusters <- cluster(iris, clustername = "Species", size = 2, method = "srswor")
+clusters <- cluster(iris, clustername = "Species", size = 1, method = "srswor")
 
 # 獲取抽樣數據
 cluster_sample <- getdata(iris, clusters)
 
-cluster_sample
+```
+## 配對抽樣(match Sampling)
+
+```{r eval=T, message=FALSE, warning=FALSE}
+# 安裝並載入 MatchIt 套件
+#install.packages("MatchIt")
+library(MatchIt)
+
+#建立檔案
+health_data <- data.frame("disease"= sample(x=c(1,0), size= 1500, replace = T, prob = c(1,12)),
+                          "gender" = sample(x=c(1,0), size= 1500, replace = T, prob = c(5.5,4.5)),
+                          "age"= sample(x=c(35:70), size= 1500, replace = T))
+
+# 進行1:4的匹配
+match.out <- matchit(disease ~ age + gender, data = health_data, ratio = 4, method = "nearest")
+
+# 查看匹配後的結果
+summary(match.out)
+
+#提取匹配的對照組和患者組"
+matched_data <- match.data(match.out) %>%  select(-c("distance","weights", "subclass"))
+
+# 患者組
+patients <- matched_data[matched_data$disease == 1, ]
+# 對照組
+controls <- matched_data[matched_data$disease == 0, ]
+
+head(patients)
+head(controls)
 ```
