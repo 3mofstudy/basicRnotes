@@ -60,6 +60,7 @@ matrix(data =1:28,ncol = 7,byrow = TRUE,
 -   第三參數 dimnames 設定列名及行名等，以list資料型態來表示list[1]為列名(row),list[2]為行名(column),list[3]放第三維度以後的名稱
 
 3維的array
+
 ```{r echo=TRUE}
 array(1:24,c(3,4,2),
       dimnames = list(產品=c("紅茶","綠茶","烏龍茶"),
@@ -69,6 +70,7 @@ array(1:24,c(3,4,2),
 ```
 
 4維的array
+
 ```{r echo=TRUE}
 array(1:36,c(3,3,2,2),
       dimnames = list(產品=c("第一季","第二季","第三季"),
@@ -77,6 +79,7 @@ array(1:36,c(3,3,2,2),
                       縣市=c("台中","台北")
                       ))
 ```
+
 ## 資料型態不同
 
 ### 二維結構 (data.frame)

@@ -89,34 +89,37 @@ lapply 和 sapply 是 R 語言中常用的函數，兩者都是用來將一個�
 -   sapply()則嘗試簡化輸出結果，盡可能將其化簡為向量或矩陣。
 
 1.lapply處理向量，輸出list
+
 ```{r echo=T, eval=T}
 # 使用 lapply 計算每個元素的平方
 x <- 1:5  # 定義一個數組向量
 result <- lapply(x, function(num) num^2) # 使用 lapply 計算每個元素的平方
 print(result)
 ```
+
 2.lapply處理list，輸出list
+
 ```{r echo=T, eval=T}
 # 使用 lapply 計算每欄的總和
 my_list <- list(a = 1:5, b = 6:10, c = 11:15)
 result_lapply <- lapply(my_list, sum)
 print(result_lapply)
 ```
-3. sapply處理向量，輸出向量
+
+3.  sapply處理向量，輸出向量
+
 ```{r echo=T, eval=T}
 # 使用 sapply 計算每個元素的平方
 x <- 1:5  # 定義一個數組向量
 result <- sapply(x, function(num) num^2) # 使用 sapply 計算每個元素的平方
 print(result)
 ```
+
 4.sapply處理list，輸出向量
+
 ```{r echo=T, eval=T}
 # 使用 sapply 計算每欄的總和
 my_list <- list(a = 1:5, b = 6:10, c = 11:15)
 result_lapply <- sapply(my_list, sum)
 print(result_lapply)
 ```
-
-
-
-
