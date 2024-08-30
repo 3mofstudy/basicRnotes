@@ -78,3 +78,10 @@ sapplylapply用法
 填充為上一筆非空白值
 向下填空白
 中級r--資料前處理-處理遺失值
+中級r--統計抽樣
+常見的抽樣方法
+機率抽樣法
+非機率抽樣法
+配對抽樣法
+section
+簡單隨機抽樣simple-random-sampling
