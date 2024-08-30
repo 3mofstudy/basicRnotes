@@ -4,34 +4,32 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 7 初級R- 資料輸入與輸出 | R語言程式設計</title>
-  <meta name="description" content="Chapter 7 初級R- 資料輸入與輸出 | R語言程式設計" />
+  <title>Chapter 1 初級R- 資料輸入與輸出 | 06_資料輸入與輸出.knit</title>
+  <meta name="description" content="" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 7 初級R- 資料輸入與輸出 | R語言程式設計" />
+  <meta property="og:title" content="Chapter 1 初級R- 資料輸入與輸出 | 06_資料輸入與輸出.knit" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 7 初級R- 資料輸入與輸出 | R語言程式設計" />
+  <meta name="twitter:title" content="Chapter 1 初級R- 資料輸入與輸出 | 06_資料輸入與輸出.knit" />
   
   
   
 
-<meta name="author" content="露西Lucy" />
 
 
-<meta name="date" content="2024-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="初級r--自訂函數.html"/>
-<link rel="next" href="中級r--文字處理.html"/>
+
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -140,92 +138,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">R語言自我筆記(基礎篇)</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
+<li class="chapter" data-level="1" data-path=""><a href="#初級r--資料輸入與輸出"><i class="fa fa-check"></i><b>1</b> 初級R- 資料輸入與輸出</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
+<li class="chapter" data-level="1.1" data-path=""><a href="#資料鍵入與印出"><i class="fa fa-check"></i><b>1.1</b> 資料鍵入與印出</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#資料鍵入"><i class="fa fa-check"></i><b>1.1.1</b> 資料鍵入</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#資料印出"><i class="fa fa-check"></i><b>1.1.2</b> 資料印出</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 初級R- 系統環境設定</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
-<li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
-<li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
-<ul>
-<li class="chapter" data-level="3.1" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
-<li class="chapter" data-level="3.2" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#字串"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
-<li class="chapter" data-level="3.2.2" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#數值"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
-<li class="chapter" data-level="3.2.3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#布林值"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
-<li class="chapter" data-level="3.2.4" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
-<li class="chapter" data-level="3.4" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
-<ul>
-<li class="chapter" data-level="3.4.1" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
-<li class="chapter" data-level="3.4.2" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html"><i class="fa fa-check"></i><b>4</b> 初級R- 資料結構</a>
-<ul>
-<li class="chapter" data-level="4.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#一維資料結構"><i class="fa fa-check"></i><b>4.1</b> 一維資料結構</a></li>
-<li class="chapter" data-level="4.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#二維資料結構"><i class="fa fa-check"></i><b>4.2</b> 二維資料結構</a>
-<ul>
-<li class="chapter" data-level="4.2.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態相同-matrix"><i class="fa fa-check"></i><b>4.2.1</b> 資料型態相同 (matrix)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態不同-data.frame"><i class="fa fa-check"></i><b>4.2.2</b> 資料型態不同 (data.frame)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.3" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#三維以上資料結構"><i class="fa fa-check"></i><b>4.3</b> 三維以上資料結構</a>
-<ul>
-<li class="chapter" data-level="4.3.1" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態相同-array"><i class="fa fa-check"></i><b>4.3.1</b> 資料型態相同 (array)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#資料型態不同-list"><i class="fa fa-check"></i><b>4.3.2</b> 資料型態不同 (list)</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="初級r--資料結構.html"><a href="初級r--資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.4</b> 特殊資料結構</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="初級r--流程控制.html"><a href="初級r--流程控制.html"><i class="fa fa-check"></i><b>5</b> 初級R- 流程控制</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="初級r--流程控制.html"><a href="初級r--流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>5.1</b> if -else 邏輯判斷</a></li>
-<li class="chapter" data-level="5.2" data-path="初級r--流程控制.html"><a href="初級r--流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>5.2</b> for 迴圈</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html"><i class="fa fa-check"></i><b>6</b> 初級R- 自訂函數</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#自訂函數介紹"><i class="fa fa-check"></i><b>6.1</b> 自訂函數介紹</a></li>
-<li class="chapter" data-level="6.2" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-及call"><i class="fa fa-check"></i><b>6.2</b> do.call 及call</a>
-<ul>
-<li class="chapter" data-level="6.2.1" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-基本用途"><i class="fa fa-check"></i><b>6.2.1</b> 1. do.call 基本用途</a></li>
-<li class="chapter" data-level="6.2.2" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>6.2.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
-<li class="chapter" data-level="6.2.3" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>6.2.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
-<li class="chapter" data-level="6.2.4" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>6.2.4</b> call 與 do.call的差異</a></li>
-<li class="chapter" data-level="6.2.5" data-path="初級r--自訂函數.html"><a href="初級r--自訂函數.html#線上資源"><i class="fa fa-check"></i><b>6.2.5</b> 1.線上資源</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html"><i class="fa fa-check"></i><b>7</b> 初級R- 資料輸入與輸出</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#資料鍵入與印出"><i class="fa fa-check"></i><b>7.1</b> 資料鍵入與印出</a>
-<ul>
-<li class="chapter" data-level="7.1.1" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#資料鍵入"><i class="fa fa-check"></i><b>7.1.1</b> 資料鍵入</a></li>
-<li class="chapter" data-level="7.1.2" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#資料印出"><i class="fa fa-check"></i><b>7.1.2</b> 資料印出</a></li>
-</ul></li>
-<li class="chapter" data-level="7.2" data-path="初級r--資料輸入與輸出.html"><a href="初級r--資料輸入與輸出.html#複製及貼上"><i class="fa fa-check"></i><b>7.2</b> 複製及貼上</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html"><i class="fa fa-check"></i><b>8</b> 中級r- 文字處理</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#內建文字函數base"><i class="fa fa-check"></i><b>8.1</b> 內建文字函數(base)</a></li>
-<li class="chapter" data-level="8.2" data-path="中級r--文字處理.html"><a href="中級r--文字處理.html#stringr套件"><i class="fa fa-check"></i><b>8.2</b> stringr套件</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html"><i class="fa fa-check"></i><b>9</b> 中級R- 函數調用</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="中級r--函數調用.html"><a href="中級r--函數調用.html#參考資料-1"><i class="fa fa-check"></i><b>9.1</b> 參考資料</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html"><i class="fa fa-check"></i><b>10</b> 中級R- 資料前處理</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html#處理遺失值"><i class="fa fa-check"></i><b>10.1</b> 處理遺失值</a>
-<ul>
-<li class="chapter" data-level="10.1.1" data-path="中級r--資料前處理.html"><a href="中級r--資料前處理.html#使用平均值中位數眾數來取代"><i class="fa fa-check"></i><b>10.1.1</b> 1. 使用平均值、中位數、眾數來取代</a></li>
-</ul></li>
+<li class="chapter" data-level="1.2" data-path=""><a href="#複製及貼上"><i class="fa fa-check"></i><b>1.2</b> 複製及貼上</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -238,7 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R語言程式設計</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
           </h1>
         </div>
 
@@ -246,41 +166,51 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="初級r--資料輸入與輸出" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapter 7</span> 初級R- 資料輸入與輸出<a href="初級r--資料輸入與輸出.html#初級r--資料輸入與輸出" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="資料鍵入與印出" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> 資料鍵入與印出<a href="初級r--資料輸入與輸出.html#資料鍵入與印出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="資料鍵入" class="section level3 hasAnchor" number="7.1.1">
-<h3><span class="header-section-number">7.1.1</span> 資料鍵入<a href="初級r--資料輸入與輸出.html#資料鍵入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="初級r--資料輸入與輸出" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> 初級R- 資料輸入與輸出<a href="#初級r--資料輸入與輸出" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="資料鍵入與印出" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 資料鍵入與印出<a href="#資料鍵入與印出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="資料鍵入" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> 資料鍵入<a href="#資料鍵入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p><code>scan()</code></p></li>
 <li><p><code>readline("請輸入字串:")</code></p></li>
 </ol>
 </div>
-<div id="資料印出" class="section level3 hasAnchor" number="7.1.2">
-<h3><span class="header-section-number">7.1.2</span> 資料印出<a href="初級r--資料輸入與輸出.html#資料印出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="資料印出" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> 資料印出<a href="#資料印出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>print() 和cat()，都可以把資料打印到Console螢幕上，但是print()只能輸出一個完整文字訊息，如果想要利用print() 輸出一段話+某變數，就必須另外使用paste()或paste0()將兩個訊息結合成一個完整文字訊息才能用print()進行輸出，但cat()就沒有此問題，兩個以上訊息可以用”,” 來結合即可，範例如下:</p>
 <ol style="list-style-type: decimal">
-<li><p><code>print()</code></p></li>
-<li><p><code>cat()</code></p></li>
+<li><code>cat()</code></li>
 </ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">cat</span>( name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span> )</span></code></pre></div>
+<pre><code>## Lucy 帶狗狗去公園散步了</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><code>print()</code></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">paste</span>(name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span>)   )</span></code></pre></div>
+<pre><code>## [1] &quot;Lucy 帶狗狗去公園散步了&quot;</code></pre>
 </div>
 </div>
-<div id="複製及貼上" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> 複製及貼上<a href="初級r--資料輸入與輸出.html#複製及貼上" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="複製及貼上" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 複製及貼上<a href="#複製及貼上" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>有兩個套件，可以輕鬆將R輸出結果轉化到剪貼簿後，就可以直接拿到Excel或Word中複製貼上，相當方便，clipr 套件基本不用再安裝，因為已經常規預設安中好</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="初級r--資料輸入與輸出.html#cb1-1" tabindex="-1"></a><span class="co">#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 </span></span>
-<span id="cb1-2"><a href="初級r--資料輸入與輸出.html#cb1-2" tabindex="-1"></a>text <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip</span>() <span class="do">##轉換成純文字向量(適合單行貼上) </span></span>
-<span id="cb1-3"><a href="初級r--資料輸入與輸出.html#cb1-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip_tbl</span>() <span class="do">##轉換成data.frame(適合表格貼上)</span></span>
-<span id="cb1-4"><a href="初級r--資料輸入與輸出.html#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="初級r--資料輸入與輸出.html#cb1-5" tabindex="-1"></a><span class="co">#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)</span></span>
-<span id="cb1-6"><a href="初級r--資料輸入與輸出.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="初級r--資料輸入與輸出.html#cb1-7" tabindex="-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(text)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 </span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>text <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip</span>() <span class="do">##轉換成純文字向量(適合單行貼上) </span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip_tbl</span>() <span class="do">##轉換成data.frame(適合表格貼上)</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(text)</span></code></pre></div>
 <p>另一個好用套件是psychTools</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="初級r--資料輸入與輸出.html#cb2-1" tabindex="-1"></a><span class="co">#另一個好用套件</span></span>
-<span id="cb2-2"><a href="初級r--資料輸入與輸出.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(psychTools) </span>
-<span id="cb2-3"><a href="初級r--資料輸入與輸出.html#cb2-3" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard</span>() </span>
-<span id="cb2-4"><a href="初級r--資料輸入與輸出.html#cb2-4" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard.tab</span>()</span></code></pre></div>
-
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#另一個好用套件</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">library</span>(psychTools) </span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard</span>() </span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard.tab</span>()</span></code></pre></div>
 </div>
 </div>
             </section>
@@ -288,8 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="初級r--自訂函數.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="中級r--文字處理.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -320,7 +250,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/06_資料輸入與輸出.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/%s",
 "text": "Edit"
 },
 "history": {
@@ -328,14 +258,11 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/06_資料輸入與輸出.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/%s",
 "text": null
 },
 "download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
+"search": false,
 "toc": {
 "collapse": "subsection"
 }

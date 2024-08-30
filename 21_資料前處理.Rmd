@@ -1,11 +1,67 @@
-# 中級R- 資料前處理
+# 中級R- 資料前處理-處理遺失值
 
-## 處理遺失值
+## 移除空白欄位
+```{r eval=FALSE}
+# 移除有NA的個案
+data <-  na.omit(data)
 
-### 1. 使用平均值、中位數、眾數來取代
+#移除全是NA的欄位
+ data <- data[, colSums(is.na(data)) < nrow(data)] 
+ 
+#移除指定欄位NA的筆數
+ library(tidyr)
+ DT ->DT %>% drop_na("TX")
+ 
+```
 
+## 使用平均值、中位數、眾數來取代
 ```{r eval=FALSE}
 library(Hmisc)
 #補齊遺漏值
 DT$StnPres <- round(as.numeric(impute(c0c700$StnPres, mean)),1) 
 ```
+
+## 填充為上一筆非空白值
+
+```{r eval=FALSE}
+#填上上一筆非NA值
+# 安裝並載入tidyr包 
+#install.packages("tidyr")
+library(tidyr)
+
+# 建立範例資料框
+data <- data.frame(
+  DateTime = c(2024040115, 2024040116, 2024040117, 2024040118, 2024040119, 2024040120, 2024040121, 2024040122, 2024040123, 2024040124, 2024040125),
+  CT_SWT_PV = c(24.361, NA, NA, 24.364, NA, 24.534, NA, NA, 24.542, NA, NA),
+  CT01_INV_FB = c(30, NA, NA, 30, NA, 30, NA, NA, 30, NA, NA),
+  CT02_INV_FB = c(30, NA, NA, 30, NA, 30, NA, NA, 30, NA, NA),
+  CT03_INV_FB = c(0, NA, NA, 0, NA, 0, NA, NA, 0, NA, NA),
+  CT04_INV_FB = c(0, NA, NA, 0, NA, 0, NA, NA, 0, NA, NA),
+  CT05_INV_FB = c(30, NA, NA, 30, NA, 30, NA, NA, 30, NA, NA)
+)
+
+# 使用fill函數填充NA值
+data_filled <- data %>% fill(everything(), .direction = "down")
+
+# 顯示結果
+print(data_filled)
+
+```
+
+## 向下填空白
+
+```{r eval=FALSE}
+#步驟一：載入必要的套件
+library(dplyr)
+library(tidyr)
+
+#步驟三：使用 fill 函數填充空白值
+filled_data <- data %>%
+  group_by(Date) %>%
+  fill(ZP03_RWT, ZP03_SWT, ZP03_FLU, .direction = "downup") %>%
+  ungroup()
+#最終結果
+print(filled_data)
+```
+
+

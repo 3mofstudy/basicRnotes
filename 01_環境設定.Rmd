@@ -122,3 +122,25 @@ format(Sys.Date(), "%A")
 Sys.setlocale("LC_TIME", "vi_VN.UTF-8")
 format(Sys.Date(), "%A")
 ```
+
+## 新增專案
+
+RStudio是一個很強大IDE工具，凡是R使用者幾乎都是利用RStudio進行開發，RStudio可以輕鬆新增一個專案，為每一個專案設置專屬環境，安裝不同版本R及相關R套件，開啟新的專案可從工具列選取File -\> New Project。
+
+![2-1](https://i.postimg.cc/hts1m1vF/2-1.png)
+
+點選New Projet按鈕後，會出現三個選項，選項功能如下
+
+1.  New Directory: 建立新資料夾來新增專案
+
+2.  Existing Directory:用舊有資料夾來新增專案
+
+3.  Version Control: 建立Git/subversion版本控管的新專案 ![2-2](https://i.postimg.cc/nzGFVrT1/2-2.png)
+
+其實如想要建立有Git版本控管的新專案，可直接選擇New Directory-\> New Project， 勾選**Create a git repository** ，命名好專案名稱及選定存放位置後， 按下**Create Project**，即可建好新專案 ![2-3](https://i.postimg.cc/yYrDCSXR/2-3.png)
+
+創建好新專案後，RStudio通常會自動開啟新專案，可由RStudio右上角看到目前處於哪個專案中，在檔案目錄中，可看到以專案名稱為名稱的.Rproj檔，該檔就是專屬的R專案設定檔，若是哪一天該資料夾不再當專案使用時，只要刪除.Rproj檔即可。 ![2-4](https://i.postimg.cc/GtGcyHTM/2-4.png)
+
+設定專案有很多好處，除為每一個專案設置專屬環境，安裝不同版本R及相關R套件，工作路徑資料夾也是預設，同時RStudio的專案資料夾可以結合Git，做到新增或修改成程式碼後，就能進行版本控管，並可以同步更新到GitHub。
+
+除此之外，RStudio預設許多不同的專案範本，可以讓使用者輕鬆利用這些專案範本建立套件、電子書、部落格及互動式網頁，功能強大且齊全。 ![2-5](https://i.postimg.cc/Wpdcz9Bh/2-5.png)

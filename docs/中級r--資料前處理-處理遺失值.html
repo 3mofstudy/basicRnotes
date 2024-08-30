@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R語言程式設計</title>
-  <meta name="description" content="R語言程式設計" />
+  <title>Chapter 11 中級R- 資料前處理-處理遺失值 | R語言程式設計</title>
+  <meta name="description" content="Chapter 11 中級R- 資料前處理-處理遺失值 | R語言程式設計" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R語言程式設計" />
+  <meta property="og:title" content="Chapter 11 中級R- 資料前處理-處理遺失值 | R語言程式設計" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R語言程式設計" />
+  <meta name="twitter:title" content="Chapter 11 中級R- 資料前處理-處理遺失值 | R語言程式設計" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="中級r--函數調用.html"/>
 
-<link rel="next" href="初級r--系統環境設定.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -54,6 +54,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -190,111 +254,63 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">R語言程式設計</h1>
-<p class="author"><em>露西Lucy</em></p>
-<p class="date"><em>2024-03-18</em></p>
+<div id="中級r--資料前處理-處理遺失值" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapter 11</span> 中級R- 資料前處理-處理遺失值<a href="中級r--資料前處理-處理遺失值.html#中級r--資料前處理-處理遺失值" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="移除空白欄位" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> 移除空白欄位<a href="中級r--資料前處理-處理遺失值.html#移除空白欄位" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="中級r--資料前處理-處理遺失值.html#cb1-1" tabindex="-1"></a><span class="co"># 移除有NA的個案</span></span>
+<span id="cb1-2"><a href="中級r--資料前處理-處理遺失值.html#cb1-2" tabindex="-1"></a>data <span class="ot">&lt;-</span>  <span class="fu">na.omit</span>(data)</span>
+<span id="cb1-3"><a href="中級r--資料前處理-處理遺失值.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="中級r--資料前處理-處理遺失值.html#cb1-4" tabindex="-1"></a><span class="co">#移除全是NA的欄位</span></span>
+<span id="cb1-5"><a href="中級r--資料前處理-處理遺失值.html#cb1-5" tabindex="-1"></a> data <span class="ot">&lt;-</span> data[, <span class="fu">colSums</span>(<span class="fu">is.na</span>(data)) <span class="sc">&lt;</span> <span class="fu">nrow</span>(data)] </span>
+<span id="cb1-6"><a href="中級r--資料前處理-處理遺失值.html#cb1-6" tabindex="-1"></a> </span>
+<span id="cb1-7"><a href="中級r--資料前處理-處理遺失值.html#cb1-7" tabindex="-1"></a><span class="co">#移除指定欄位NA的筆數</span></span>
+<span id="cb1-8"><a href="中級r--資料前處理-處理遺失值.html#cb1-8" tabindex="-1"></a> <span class="fu">library</span>(tidyr)</span>
+<span id="cb1-9"><a href="中級r--資料前處理-處理遺失值.html#cb1-9" tabindex="-1"></a> DT <span class="ot">-&gt;</span>DT <span class="sc">%&gt;%</span> <span class="fu">drop_na</span>(<span class="st">&quot;TX&quot;</span>)</span></code></pre></div>
 </div>
-<div id="關於" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> 關於<a href="index.html#關於" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="關於作者" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> 關於作者<a href="index.html#關於作者" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>跨領域的我，早年是在醫院及大學從事研究助理，協助教授或醫師收集臨床試驗的病人，在漫長工作生涯中，發現收集臨床資料，進行統計分析，是個人最喜歡的工作項目。早年學校習得高等統計知識及SPSS軟體應用後，到自己出社會以後自學R，在資料分析的路上越走越遠，但仍感謝過去工作實務經驗讓自己即使跨領域，轉行投入氣象數據分析，也不至於讓自己窘迫。</p>
+<div id="使用平均值中位數眾數來取代" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> 使用平均值、中位數、眾數來取代<a href="中級r--資料前處理-處理遺失值.html#使用平均值中位數眾數來取代" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="中級r--資料前處理-處理遺失值.html#cb2-1" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
+<span id="cb2-2"><a href="中級r--資料前處理-處理遺失值.html#cb2-2" tabindex="-1"></a><span class="co">#補齊遺漏值</span></span>
+<span id="cb2-3"><a href="中級r--資料前處理-處理遺失值.html#cb2-3" tabindex="-1"></a>DT<span class="sc">$</span>StnPres <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(<span class="fu">impute</span>(c0c700<span class="sc">$</span>StnPres, mean)),<span class="dv">1</span>) </span></code></pre></div>
 </div>
-<div id="寫書的起源" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> 寫書的起源<a href="index.html#寫書的起源" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>網路上其實很多免費的線上R教學，基礎教學偏多，而稍複雜一點Code常常散落各地，雖然自身有用Nation隨時進行筆記摘錄，但是隨著筆記越來越多時，便有了想統整一份專屬自己學習後的內化筆記，而當這想法開始縈繞在我心中時，便有了開始撰寫這本線上電子書念頭。本書定位為起始筆記第一個敲門磚，未來會逐步加強充實內容，預計會寫下列幾個系列筆記，第一筆記<strong>R語言程式設計(基礎、中階及高階)</strong>，不太涉及統計原理方面知識，而是單純介紹R程式語言，屬於R的基本功，而實務上進行一項專案統計分析時，往往有70%時間都是進行資料前處理，各種資料轉換，遺失值處理、特徵轉化的步驟，這最需要就是R的基本功，熟練基本功可以讓自己工作效率大幅提升。第二筆記 <strong>統計學與R操作</strong>，側重在統計學觀念的釐清及如何應用R來進行統計分析，此部分教學，會與SPSS進行搭配輔助說明，其目的是讓有一定統計知識且慣用SPSS的統計人員，能利用過去分析經驗來銜接，輔助有心轉換分析跑道的學者能快速使用R來進行統計。<strong>第三部分 簡單介紹R資料視覺化與網路爬蟲， 第四部份介紹時下最流行大數據分析</strong>，例如非監督式學習、監督式學習，第 五部份重點在於<strong>精進R分析者工作技能</strong>，例如如何用R來 自動收信及寄信，用R串聯google文件、google活頁簿，進行線上互動。</p>
-<ol style="list-style-type: decimal">
-<li><strong><em>R語言程式設計</em></strong> (本書的重點)
-<ul>
-<li><strong>初階R程式</strong></li>
-<li><strong>中階R程式</strong></li>
-<li><strong>高階R程式</strong></li>
-</ul></li>
-<li>R統計軟體實作
-<ul>
-<li>統計與機率</li>
-<li>描述性統計</li>
-<li>推論性統計</li>
-<li>存活分析</li>
-</ul></li>
-<li>資料視覺化與網路爬蟲
-<ul>
-<li>網路爬蟲與R程式</li>
-<li>各式資料庫串接</li>
-<li>資料視覺化</li>
-</ul></li>
-<li>大數據分析與R
-<ul>
-<li>非監督式學習</li>
-<li>監督式學習</li>
-</ul></li>
-<li>R及RStudio專章性學習
-<ul>
-<li>RStudio與git、GitHub 互動</li>
-<li>串聯google文件、google活頁簿</li>
-<li>用R程式來自動收信及寄信</li>
-<li>用R及RStudio發表線上電子書</li>
-<li>用R、RStudio及Hguo建立專屬個人部落格</li>
-</ul></li>
-</ol>
+<div id="填充為上一筆非空白值" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> 填充為上一筆非空白值<a href="中級r--資料前處理-處理遺失值.html#填充為上一筆非空白值" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="中級r--資料前處理-處理遺失值.html#cb3-1" tabindex="-1"></a><span class="co">#填上上一筆非NA值</span></span>
+<span id="cb3-2"><a href="中級r--資料前處理-處理遺失值.html#cb3-2" tabindex="-1"></a><span class="co"># 安裝並載入tidyr包 </span></span>
+<span id="cb3-3"><a href="中級r--資料前處理-處理遺失值.html#cb3-3" tabindex="-1"></a><span class="co">#install.packages(&quot;tidyr&quot;)</span></span>
+<span id="cb3-4"><a href="中級r--資料前處理-處理遺失值.html#cb3-4" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb3-5"><a href="中級r--資料前處理-處理遺失值.html#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="中級r--資料前處理-處理遺失值.html#cb3-6" tabindex="-1"></a><span class="co"># 建立範例資料框</span></span>
+<span id="cb3-7"><a href="中級r--資料前處理-處理遺失值.html#cb3-7" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-8"><a href="中級r--資料前處理-處理遺失值.html#cb3-8" tabindex="-1"></a>  <span class="at">DateTime =</span> <span class="fu">c</span>(<span class="dv">2024040115</span>, <span class="dv">2024040116</span>, <span class="dv">2024040117</span>, <span class="dv">2024040118</span>, <span class="dv">2024040119</span>, <span class="dv">2024040120</span>, <span class="dv">2024040121</span>, <span class="dv">2024040122</span>, <span class="dv">2024040123</span>, <span class="dv">2024040124</span>, <span class="dv">2024040125</span>),</span>
+<span id="cb3-9"><a href="中級r--資料前處理-處理遺失值.html#cb3-9" tabindex="-1"></a>  <span class="at">CT_SWT_PV =</span> <span class="fu">c</span>(<span class="fl">24.361</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">24.364</span>, <span class="cn">NA</span>, <span class="fl">24.534</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">24.542</span>, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb3-10"><a href="中級r--資料前處理-處理遺失值.html#cb3-10" tabindex="-1"></a>  <span class="at">CT01_INV_FB =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb3-11"><a href="中級r--資料前處理-處理遺失值.html#cb3-11" tabindex="-1"></a>  <span class="at">CT02_INV_FB =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb3-12"><a href="中級r--資料前處理-處理遺失值.html#cb3-12" tabindex="-1"></a>  <span class="at">CT03_INV_FB =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">0</span>, <span class="cn">NA</span>, <span class="dv">0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb3-13"><a href="中級r--資料前處理-處理遺失值.html#cb3-13" tabindex="-1"></a>  <span class="at">CT04_INV_FB =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">0</span>, <span class="cn">NA</span>, <span class="dv">0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">0</span>, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb3-14"><a href="中級r--資料前處理-處理遺失值.html#cb3-14" tabindex="-1"></a>  <span class="at">CT05_INV_FB =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="cn">NA</span>, <span class="cn">NA</span>)</span>
+<span id="cb3-15"><a href="中級r--資料前處理-處理遺失值.html#cb3-15" tabindex="-1"></a>)</span>
+<span id="cb3-16"><a href="中級r--資料前處理-處理遺失值.html#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="中級r--資料前處理-處理遺失值.html#cb3-17" tabindex="-1"></a><span class="co"># 使用fill函數填充NA值</span></span>
+<span id="cb3-18"><a href="中級r--資料前處理-處理遺失值.html#cb3-18" tabindex="-1"></a>data_filled <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">fill</span>(<span class="fu">everything</span>(), <span class="at">.direction =</span> <span class="st">&quot;down&quot;</span>)</span>
+<span id="cb3-19"><a href="中級r--資料前處理-處理遺失值.html#cb3-19" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="中級r--資料前處理-處理遺失值.html#cb3-20" tabindex="-1"></a><span class="co"># 顯示結果</span></span>
+<span id="cb3-21"><a href="中級r--資料前處理-處理遺失值.html#cb3-21" tabindex="-1"></a><span class="fu">print</span>(data_filled)</span></code></pre></div>
 </div>
-<div id="本書的理解" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> 本書的理解<a href="index.html#本書的理解" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>猶記得剛開始自學R，是報名台大資訊訓練班假日面授課程，老師上課很快，常常基礎功稍微介紹一點後，老師就開始教導各種R好用套件，例如data.table、dplyr套件應用，但對一個小菜雞的我，即便學會這些進階套件，我仍對基礎R是一知半解，而實務上遵循老師教法使用這些套件時，常常出現一些不可預期錯誤，我完全不會解決bug，所以又只好買很多R的書籍，上了很多其他視訊課程，才慢慢把R基礎知識搞懂，現在的我才明白，不是老師教得不好，而是學海無涯，老師通常只能用最短時間講解最精華的部分，最後只能是師父引進門，修行在個人，靠大家自己不斷磨練精進自己的知識與技能。</p>
-<p>我個人學習一個新知識新技術時，往往會先理解整個大架構，再慢慢精讀每一個章節，學習R語言也是如此，所以即使data.table、dplyr或者lubridate等套件真的很有用，但是基本功的 data.frame使用 也很重要。實務上常常做各種資料轉換，有些資料凌亂無法應用這些套件，基礎功的函數雖然執行效率比較慢，但卻能應付大部分工作，不容易因格式不符而出現錯誤連連的訊息。</p>
-<p>初學者不應該先追求程式效率，而是著重於能實現心中所想要功能，所以即便初學者花100行代碼，寫了要花10秒才能執行完畢的功能，但至少是成功完成這項工作任務。往後等熟習這些程式邏輯，再練習寫更進階語法，來優化程式碼(舉例從原先100行10秒執行完畢才能完成功能，縮短到只需要50行3秒就能執行，就是優化)，下表示我整理出來程度表，本書分成初階、中階及高級，建議初學者應該先把基礎程式搞懂後，在慢慢學習中高階寫法，後面才能越來越駕輕就熟。下表以簡單例子來解釋，例如迴圈章節而言，新手用for迴圈，有點底子用apply，高手用purrr套件。</p>
-<table style="width:96%;">
-<colgroup>
-<col width="15%" />
-<col width="15%" />
-<col width="21%" />
-<col width="18%" />
-<col width="25%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>程度</th>
-<th>資料結構</th>
-<th>迴圈</th>
-<th>日期轉換</th>
-<th>資料合併</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>基礎</td>
-<td>data.frame</td>
-<td>for迴圈</td>
-<td><p>as.Date</p>
-<p>as.POSIXct</p></td>
-<td>cbind, rbind</td>
-</tr>
-<tr class="even">
-<td>中級</td>
-<td>data.table</td>
-<td>apply迴圈</td>
-<td>lubridate套件</td>
-<td>dplyr套件(join函數)</td>
-</tr>
-<tr class="odd">
-<td>高級</td>
-<td>–</td>
-<td>purrr套件泛函式</td>
-<td>綜合運用</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>最後提醒，學程式也忌諱未學會走路就急學跑步，基礎R知識未搞懂，就貿然去學習高級語法，往後日子常與Error message為伍，次數多到開始懷疑人生，懷疑自己選擇是否正確，是否要放棄R? 然而別放棄，慢慢循序漸進，基礎功打底，R的美好將逐漸向你靠近，努力加油 ，共勉之。</strong></p>
-</div>
-<div id="參考資料" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> 參考資料<a href="index.html#參考資料" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><a href="https://yijutseng.github.io/DataScienceRBook/">曾意儒 –資料科學與R語言</a></li>
-<li><a href="https://bookdown.org/tonykuoyj/eloquentr/">郭耀仁 –認識R的美好</a></li>
-<li><a href="https://bookdown.org/jefflinmd38/r4biost/">林建甫 –R資料科學與統計</a></li>
-</ul>
+<div id="向下填空白" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> 向下填空白<a href="中級r--資料前處理-處理遺失值.html#向下填空白" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="中級r--資料前處理-處理遺失值.html#cb4-1" tabindex="-1"></a><span class="co">#步驟一：載入必要的套件</span></span>
+<span id="cb4-2"><a href="中級r--資料前處理-處理遺失值.html#cb4-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-3"><a href="中級r--資料前處理-處理遺失值.html#cb4-3" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb4-4"><a href="中級r--資料前處理-處理遺失值.html#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="中級r--資料前處理-處理遺失值.html#cb4-5" tabindex="-1"></a><span class="co">#步驟三：使用 fill 函數填充空白值</span></span>
+<span id="cb4-6"><a href="中級r--資料前處理-處理遺失值.html#cb4-6" tabindex="-1"></a>filled_data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="中級r--資料前處理-處理遺失值.html#cb4-7" tabindex="-1"></a>  <span class="fu">group_by</span>(Date) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="中級r--資料前處理-處理遺失值.html#cb4-8" tabindex="-1"></a>  <span class="fu">fill</span>(ZP03_RWT, ZP03_SWT, ZP03_FLU, <span class="at">.direction =</span> <span class="st">&quot;downup&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="中級r--資料前處理-處理遺失值.html#cb4-9" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb4-10"><a href="中級r--資料前處理-處理遺失值.html#cb4-10" tabindex="-1"></a><span class="co">#最終結果</span></span>
+<span id="cb4-11"><a href="中級r--資料前處理-處理遺失值.html#cb4-11" tabindex="-1"></a><span class="fu">print</span>(filled_data)</span></code></pre></div>
 
 </div>
 </div>
@@ -303,8 +319,8 @@
           </div>
         </div>
       </div>
+<a href="中級r--函數調用.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="初級r--系統環境設定.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -335,7 +351,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/index.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/21_資料前處理.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -343,7 +359,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/index.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/21_資料前處理.Rmd",
 "text": null
 },
 "download": null,

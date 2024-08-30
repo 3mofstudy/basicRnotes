@@ -152,6 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
 <li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
 <li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+<li class="chapter" data-level="2.4" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
 <ul>
@@ -395,6 +396,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;vi_VN.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="初級r--系統環境設定.html#cb58-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;Thứ Sáu&quot;</code></pre>
+</div>
+<div id="新增專案" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> 新增專案<a href="初級r--系統環境設定.html#新增專案" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RStudio是一個很強大IDE工具，凡是R使用者幾乎都是利用RStudio進行開發，RStudio可以輕鬆新增一個專案，為每一個專案設置專屬環境，安裝不同版本R及相關R套件，開啟新的專案可從工具列選取File -&gt; New Project。</p>
+<div class="float">
+<img src="https://i.postimg.cc/hts1m1vF/2-1.png" alt="2-1" />
+<div class="figcaption">2-1</div>
+</div>
+<p>點選New Projet按鈕後，會出現三個選項，選項功能如下</p>
+<ol style="list-style-type: decimal">
+<li><p>New Directory: 建立新資料夾來新增專案</p></li>
+<li><p>Existing Directory:用舊有資料夾來新增專案</p></li>
+<li><p>Version Control: 建立Git/subversion版本控管的新專案 <img src="https://i.postimg.cc/nzGFVrT1/2-2.png" alt="2-2" /></p></li>
+</ol>
+<p>其實如想要建立有Git版本控管的新專案，可直接選擇New Directory-&gt; New Project， 勾選<strong>Create a git repository</strong> ，命名好專案名稱及選定存放位置後， 按下<strong>Create Project</strong>，即可建好新專案 <img src="https://i.postimg.cc/yYrDCSXR/2-3.png" alt="2-3" /></p>
+<p>創建好新專案後，RStudio通常會自動開啟新專案，可由RStudio右上角看到目前處於哪個專案中，在檔案目錄中，可看到以專案名稱為名稱的.Rproj檔，該檔就是專屬的R專案設定檔，若是哪一天該資料夾不再當專案使用時，只要刪除.Rproj檔即可。 <img src="https://i.postimg.cc/GtGcyHTM/2-4.png" alt="2-4" /></p>
+<p>設定專案有很多好處，除為每一個專案設置專屬環境，安裝不同版本R及相關R套件，工作路徑資料夾也是預設，同時RStudio的專案資料夾可以結合Git，做到新增或修改成程式碼後，就能進行版本控管，並可以同步更新到GitHub。</p>
+<p>除此之外，RStudio預設許多不同的專案範本，可以讓使用者輕鬆利用這些專案範本建立套件、電子書、部落格及互動式網頁，功能強大且齊全。 <img src="https://i.postimg.cc/Wpdcz9Bh/2-5.png" alt="2-5" /></p>
 
 </div>
 </div>

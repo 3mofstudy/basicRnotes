@@ -72,3 +72,9 @@ call-與-do.call的差異-1
 apply系列家族應用情境
 apply用法
 sapplylapply用法
+用rstudio新增專案
+新增專案
+移除空白欄位
+填充為上一筆非空白值
+向下填空白
+中級r--資料前處理-處理遺失值
