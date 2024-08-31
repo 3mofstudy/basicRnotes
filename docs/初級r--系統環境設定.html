@@ -153,6 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
 <li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
 <li class="chapter" data-level="2.4" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#常用快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
 <ul>
@@ -268,11 +269,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="初級r--系統環境設定.html#cb1-1" tabindex="-1"></a><span class="do">##查詢目前系統環境</span></span>
 <span id="cb1-2"><a href="初級r--系統環境設定.html#cb1-2" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
-<pre><code>## R version 4.2.3 (2023-03-15 ucrt)
+<pre><code>## R version 4.3.3 (2024-02-29 ucrt)
 ## Platform: x86_64-w64-mingw32/x64 (64-bit)
-## Running under: Windows 10 x64 (build 22631)
+## Running under: Windows 11 x64 (build 22631)
 ## 
 ## Matrix products: default
+## 
 ## 
 ## locale:
 ## [1] LC_COLLATE=Chinese (Traditional)_Taiwan.utf8 
@@ -281,15 +283,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [4] LC_NUMERIC=C                                 
 ## [5] LC_TIME=Chinese (Traditional)_Taiwan.utf8    
 ## 
+## time zone: Asia/Taipei
+## tzcode source: internal
+## 
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] bookdown_0.38   digest_0.6.29   R6_2.5.1        jsonlite_1.8.0 
-##  [5] evaluate_0.16   cachem_1.0.6    rlang_1.1.3     cli_3.6.1      
-##  [9] rstudioapi_0.14 jquerylib_0.1.4 bslib_0.4.0     rmarkdown_2.26 
-## [13] tools_4.2.3     xfun_0.42       yaml_2.3.5      fastmap_1.1.0  
-## [17] compiler_4.2.3  htmltools_0.5.5 knitr_1.45      sass_0.4.5</code></pre>
+##  [1] digest_0.6.35     R6_2.5.1          bookdown_0.38     fastmap_1.1.1    
+##  [5] xfun_0.42         cachem_1.0.8      knitr_1.45        htmltools_0.5.7  
+##  [9] rmarkdown_2.26    lifecycle_1.0.4   cli_3.6.2         sass_0.4.8       
+## [13] jquerylib_0.1.4   compiler_4.3.3    rstudioapi_0.16.0 tools_4.3.3      
+## [17] evaluate_0.23     bslib_0.6.1       yaml_2.3.8        jsonlite_1.8.8   
+## [21] rlang_1.1.3</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>查詢或設定環境目錄</li>
 </ol>
@@ -334,7 +340,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="初級r--系統環境設定.html#cb8-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>()  </span></code></pre></div>
 <pre><code>## [1] &quot;LC_COLLATE=Chinese (Traditional)_Taiwan.utf8;LC_CTYPE=Chinese (Traditional)_Taiwan.utf8;LC_MONETARY=Chinese (Traditional)_Taiwan.utf8;LC_NUMERIC=C;LC_TIME=Chinese (Traditional)_Taiwan.utf8&quot;</code></pre>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="初級r--系統環境設定.html#cb10-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>)  </span></code></pre></div>
-<pre><code>## [1] &quot;星期五&quot;</code></pre>
+<pre><code>## [1] &quot;星期六&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>將中文語系改為英文語系(暫時性)</li>
 </ol>
@@ -343,7 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="初級r--系統環境設定.html#cb14-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;en.UTF-8&quot;</span>) <span class="co"># 也可以用 en.UTF-8</span></span></code></pre></div>
 <pre><code>## [1] &quot;en.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="初級r--系統環境設定.html#cb16-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
-<pre><code>## [1] &quot;Friday&quot;</code></pre>
+<pre><code>## [1] &quot;Saturday&quot;</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="初級r--系統環境設定.html#cb18-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%B&quot;</span>) <span class="co">#月</span></span></code></pre></div>
 <pre><code>## [1] &quot;August&quot;</code></pre>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="初級r--系統環境設定.html#cb20-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%b&quot;</span>) <span class="co">#月</span></span></code></pre></div>
@@ -354,7 +360,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="初級r--系統環境設定.html#cb22-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;zh_TW.UTF-8&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;zh_TW.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="初級r--系統環境設定.html#cb24-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
-<pre><code>## [1] &quot;星期五&quot;</code></pre>
+<pre><code>## [1] &quot;星期六&quot;</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="初級r--系統環境設定.html#cb26-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%B&quot;</span>) <span class="co">#月</span></span></code></pre></div>
 <pre><code>## [1] &quot;八月&quot;</code></pre>
 <ol start="4" style="list-style-type: decimal">
@@ -363,14 +369,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="初級r--系統環境設定.html#cb28-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;ja_JP.UTF-8&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ja_JP.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="初級r--系統環境設定.html#cb30-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
-<pre><code>## [1] &quot;金曜日&quot;</code></pre>
+<pre><code>## [1] &quot;土曜日&quot;</code></pre>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="初級r--系統環境設定.html#cb32-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%B&quot;</span>) <span class="co">#月</span></span></code></pre></div>
 <pre><code>## [1] &quot;8月&quot;</code></pre>
 <p>5.變成韓國語系</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="初級r--系統環境設定.html#cb34-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;ko_KR.UTF-8&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;ko_KR.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="初級r--系統環境設定.html#cb36-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
-<pre><code>## [1] &quot;금요일&quot;</code></pre>
+<pre><code>## [1] &quot;토요일&quot;</code></pre>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="初級r--系統環境設定.html#cb38-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%B&quot;</span>) <span class="co">#月</span></span></code></pre></div>
 <pre><code>## [1] &quot;8월&quot;</code></pre>
 <ol start="6" style="list-style-type: decimal">
@@ -380,27 +386,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb40-2"><a href="初級r--系統環境設定.html#cb40-2" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;de_DE.UTF-8&quot;</span>) </span></code></pre></div>
 <pre><code>## [1] &quot;de_DE.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="初級r--系統環境設定.html#cb42-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Freitag&quot;</code></pre>
+<pre><code>## [1] &quot;Samstag&quot;</code></pre>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="初級r--系統環境設定.html#cb44-1" tabindex="-1"></a><span class="co">#設置語言為俄語</span></span>
 <span id="cb44-2"><a href="初級r--系統環境設定.html#cb44-2" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="st">&quot;ru_RU.UTF-8&quot;</span>) </span></code></pre></div>
 <pre><code>## [1] &quot;ru_RU.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="初級r--系統環境設定.html#cb46-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;пятница&quot;</code></pre>
+<pre><code>## [1] &quot;суббота&quot;</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="初級r--系統環境設定.html#cb48-1" tabindex="-1"></a><span class="co">#設置語言為西班牙語</span></span>
 <span id="cb48-2"><a href="初級r--系統環境設定.html#cb48-2" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="st">&quot;es_ES.UTF-8&quot;</span>) </span></code></pre></div>
 <pre><code>## [1] &quot;es_ES.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="初級r--系統環境設定.html#cb50-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;viernes&quot;</code></pre>
+<pre><code>## [1] &quot;sábado&quot;</code></pre>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="初級r--系統環境設定.html#cb52-1" tabindex="-1"></a><span class="co">#設置語言泰語</span></span>
 <span id="cb52-2"><a href="初級r--系統環境設定.html#cb52-2" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="st">&quot;th_TH.UTF-8&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;th_TH.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="初級r--系統環境設定.html#cb54-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;ศุกร์&quot;</code></pre>
+<pre><code>## [1] &quot;เสาร์&quot;</code></pre>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="初級r--系統環境設定.html#cb56-1" tabindex="-1"></a><span class="co">#設置越南語</span></span>
 <span id="cb56-2"><a href="初級r--系統環境設定.html#cb56-2" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="st">&quot;vi_VN.UTF-8&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;vi_VN.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="初級r--系統環境設定.html#cb58-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;Thứ Sáu&quot;</code></pre>
+<pre><code>## [1] &quot;Thứ Bảy&quot;</code></pre>
 </div>
 <div id="新增專案" class="section level2 hasAnchor" number="2.4">
 <h2><span class="header-section-number">2.4</span> 新增專案<a href="初級r--系統環境設定.html#新增專案" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -420,6 +426,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>設定專案有很多好處，除為每一個專案設置專屬環境，安裝不同版本R及相關R套件，工作路徑資料夾也是預設，同時RStudio的專案資料夾可以結合Git，做到新增或修改成程式碼後，就能進行版本控管，並可以同步更新到GitHub。</p>
 <p>除此之外，RStudio預設許多不同的專案範本，可以讓使用者輕鬆利用這些專案範本建立套件、電子書、部落格及互動式網頁，功能強大且齊全。</p>
 <p><img src="https://i.postimg.cc/Wpdcz9Bh/2-5.png" width="560" /></p>
+</div>
+<div id="常用快速鍵" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> 常用快速鍵<a href="初級r--系統環境設定.html#常用快速鍵" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="20%" />
+<col width="27%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>快速鍵</th>
+<th>說明</th>
+<th>快速鍵</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Ctrl</code> + <code>L</code></td>
+<td>清除Console</td>
+<td><code>Ctrl</code> + <code>=</code></td>
+<td>放大螢幕</td>
+</tr>
+<tr class="even">
+<td><code>Alt</code> + <code>-</code></td>
+<td>賦值 &lt;-</td>
+<td><code>Ctrl</code> + <code>-</code></td>
+<td>縮小螢幕</td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl</code> +<code>Shift</code>+ <code>C</code></td>
+<td>註解/取消註解</td>
+<td><code>Ctrl</code> + <code>Enter</code></td>
+<td>執行當前程式碼</td>
+</tr>
+<tr class="even">
+<td><code>Ctrl</code> +<code>Shift</code>+ <code>M</code></td>
+<td>串流 %&gt;%</td>
+<td><code>Ctrl</code> +<code>Alt</code> +<code>R</code></td>
+<td>執行全部程式碼</td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl</code> +<code>Shift</code>+ N</td>
+<td>新增.R檔</td>
+<td><code>Ctrl</code> +<code>Alt</code> +<code>A</code></td>
+<td>執行先前程式碼</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>

@@ -89,3 +89,5 @@ section
 分層隨機抽樣stratified-random-sampling
 群集抽樣cluster-sampling
 配對抽樣match-sampling
+常用rstudio-快速鍵
+常用快速鍵

@@ -153,6 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
 <li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
 <li class="chapter" data-level="2.4" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#常用rstudio-快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用RStudio 快速鍵</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
 <ul>
@@ -349,11 +350,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>(1) 取得當下時間資訊</strong></p>
 <p>R內建有幾個函數，可以查詢當下系統的日期、時間及時區資訊</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="初級r--元素介紹.html#cb23-1" tabindex="-1"></a><span class="fu">Sys.Date</span>()  <span class="co">#當前日期  類似lubridate::today()     </span></span></code></pre></div>
-<pre><code>## [1] &quot;2024-08-30&quot;</code></pre>
+<pre><code>## [1] &quot;2024-08-31&quot;</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="初級r--元素介紹.html#cb25-1" tabindex="-1"></a><span class="fu">date</span>()      <span class="co">#當前系統日期和時間  </span></span></code></pre></div>
-<pre><code>## [1] &quot;Fri Aug 30 17:51:39 2024&quot;</code></pre>
+<pre><code>## [1] &quot;Sat Aug 31 22:17:26 2024&quot;</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="初級r--元素介紹.html#cb27-1" tabindex="-1"></a><span class="fu">Sys.time</span>()  <span class="co">#當前系統日期和時間  lubridate::now()</span></span></code></pre></div>
-<pre><code>## [1] &quot;2024-08-30 17:51:39 CST&quot;</code></pre>
+<pre><code>## [1] &quot;2024-08-31 22:17:26 CST&quot;</code></pre>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="初級r--元素介紹.html#cb29-1" tabindex="-1"></a><span class="fu">Sys.timezone</span>() <span class="co">#有關時區的信息將返回當前時區的名稱</span></span></code></pre></div>
 <pre><code>## [1] &quot;Asia/Taipei&quot;</code></pre>
 <p><strong>(2) as.Date 函數(文字轉日期)</strong></p>
@@ -364,6 +365,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;2024-01-06&quot;</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="初級r--元素介紹.html#cb35-1" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="st">&quot;20240107&quot;</span>,<span class="at">tryFormats=</span><span class="st">&quot;%Y%m%d&quot;</span>)  </span></code></pre></div>
 <pre><code>## [1] &quot;2024-01-07&quot;</code></pre>
+<p>以下是常用日期格式符號</p>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="91%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">符號</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">%Y</td>
+<td>四位數字表示的年份（0000-9999）</td>
+</tr>
+<tr class="even">
+<td align="center">%y</td>
+<td>兩個數字表示的年份（00-99）</td>
+</tr>
+<tr class="odd">
+<td align="center">%m</td>
+<td>兩個數字月份(01-12)</td>
+</tr>
+<tr class="even">
+<td align="center">%B</td>
+<td><p>中文月份(七月、八月)</p>
+<p>英文月份全名(January、February 、March)</p></td>
+</tr>
+<tr class="odd">
+<td align="center">%b</td>
+<td><p>中文月份(七月、八月)</p>
+<p>英文月份縮寫(Jan，Feb，Ma)</p></td>
+</tr>
+<tr class="even">
+<td align="center"><p>%d</p>
+<p>%e</p></td>
+<td><p>月份中的天，取值範圍是01-31</p>
+<p>月份中的天，取值範圍是1-31</p></td>
+</tr>
+<tr class="odd">
+<td align="center">%A</td>
+<td><p>中文星期(星期六)</p>
+<p>英文星期全名(Monday, Tuesday)</p></td>
+</tr>
+<tr class="even">
+<td align="center">％a</td>
+<td><p>中文星期(週六)</p>
+<p>英文星期縮寫(Mon, Tue)</p></td>
+</tr>
+<tr class="odd">
+<td align="center">%u</td>
+<td>星期 1:星期一，7:星期日</td>
+</tr>
+<tr class="even">
+<td align="center">%w</td>
+<td>星期 1:星期一，0:星期日</td>
+</tr>
+<tr class="odd">
+<td align="center">%W</td>
+<td>一年中的第幾個完整星期，以數字表示。這個數字是從每年的第一個星期一作為第0週來計算的</td>
+</tr>
+</tbody>
+</table>
 <p><strong>(3) as.Date 函數(數字轉日期)</strong></p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="初級r--元素介紹.html#cb37-1" tabindex="-1"></a><span class="co">#as.Date(31) </span></span>
 <span id="cb37-2"><a href="初級r--元素介紹.html#cb37-2" tabindex="-1"></a><span class="fu">as.Date</span>(<span class="dv">31</span>,<span class="at">origin=</span><span class="st">&quot;2024-01-01&quot;</span>)  </span></code></pre></div>
@@ -383,18 +449,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;八月&quot;</code></pre>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="初級r--元素介紹.html#cb49-1" tabindex="-1"></a><span class="co">#輸出日期：</span></span>
 <span id="cb49-2"><a href="初級r--元素介紹.html#cb49-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%d&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;30&quot;</code></pre>
+<pre><code>## [1] &quot;31&quot;</code></pre>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="初級r--元素介紹.html#cb51-1" tabindex="-1"></a><span class="co">#輸出星期：</span></span>
 <span id="cb51-2"><a href="初級r--元素介紹.html#cb51-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%A&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;星期五&quot;</code></pre>
+<pre><code>## [1] &quot;星期六&quot;</code></pre>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="初級r--元素介紹.html#cb53-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%a&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;週五&quot;</code></pre>
+<pre><code>## [1] &quot;週六&quot;</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="初級r--元素介紹.html#cb55-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%u&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;5&quot;</code></pre>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="初級r--元素介紹.html#cb57-1" tabindex="-1"></a><span class="co">#輸出週數：</span></span>
-<span id="cb57-2"><a href="初級r--元素介紹.html#cb57-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2024-02-01&quot;</span>),<span class="at">format=</span><span class="st">&quot;%w&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;6&quot;</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="初級r--元素介紹.html#cb57-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2024-02-01&quot;</span>),<span class="at">format=</span><span class="st">&quot;%w&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;4&quot;</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="初級r--元素介紹.html#cb59-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2024-02-01&quot;</span>),<span class="at">format=</span><span class="st">&quot;%W&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="初級r--元素介紹.html#cb59-1" tabindex="-1"></a><span class="co">#輸出週數：</span></span>
+<span id="cb59-2"><a href="初級r--元素介紹.html#cb59-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2024-02-01&quot;</span>),<span class="at">format=</span><span class="st">&quot;%W&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;05&quot;</code></pre>
 <p><strong>(5) 時間處理</strong></p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="初級r--元素介紹.html#cb61-1" tabindex="-1"></a><span class="co">#as.POSIXlt()  </span></span>
@@ -404,17 +470,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb61-5"><a href="初級r--元素介紹.html#cb61-5" tabindex="-1"></a></span>
 <span id="cb61-6"><a href="初級r--元素介紹.html#cb61-6" tabindex="-1"></a>D1 <span class="ot">&lt;-</span> <span class="fu">as.POSIXlt</span>(<span class="st">&quot;2023-08-01 03:00:00&quot;</span> ,<span class="at">tryFormats =</span> <span class="fu">c</span>(<span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))</span>
 <span id="cb61-7"><a href="初級r--元素介紹.html#cb61-7" tabindex="-1"></a>D2 <span class="ot">&lt;-</span> <span class="fu">as.POSIXlt</span>(<span class="st">&quot;2023-08-02 08:00:00&quot;</span> ,<span class="at">tryFormats =</span> <span class="fu">c</span>(<span class="st">&quot;%Y-%m-%d %H:%M:%S&quot;</span>))</span></code></pre></div>
+<p>以下是常用時間格式符號</p>
+<table style="width:71%;">
+<colgroup>
+<col width="11%" />
+<col width="59%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">符號</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">%H</td>
+<td>小時（24小時制）</td>
+</tr>
+<tr class="even">
+<td align="center">%I</td>
+<td>小時（12小時制）</td>
+</tr>
+<tr class="odd">
+<td align="center">%p</td>
+<td>對於12小時制，指定上午（AM）或下午（PM）</td>
+</tr>
+<tr class="even">
+<td align="center">%M</td>
+<td>分鐘</td>
+</tr>
+<tr class="odd">
+<td align="center">%S</td>
+<td>秒</td>
+</tr>
+</tbody>
+</table>
 <p><strong>(6) 擷取特定時間格式</strong></p>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="初級r--元素介紹.html#cb62-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%H&quot;</span>) <span class="co">#輸出小時</span></span></code></pre></div>
-<pre><code>## [1] &quot;17&quot;</code></pre>
+<pre><code>## [1] &quot;22&quot;</code></pre>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="初級r--元素介紹.html#cb64-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%M&quot;</span>) <span class="co">#輸出分鐘</span></span></code></pre></div>
-<pre><code>## [1] &quot;51&quot;</code></pre>
+<pre><code>## [1] &quot;17&quot;</code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="初級r--元素介紹.html#cb66-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%S&quot;</span>) <span class="co">#輸出秒數</span></span></code></pre></div>
-<pre><code>## [1] &quot;39&quot;</code></pre>
+<pre><code>## [1] &quot;27&quot;</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="初級r--元素介紹.html#cb68-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%Y年%m月%d日&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;2024年08月30日&quot;</code></pre>
+<pre><code>## [1] &quot;2024年08月31日&quot;</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="初級r--元素介紹.html#cb70-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;西元%Y年%m月%d日&quot;</span>)  </span></code></pre></div>
-<pre><code>## [1] &quot;西元2024年08月30日&quot;</code></pre>
+<pre><code>## [1] &quot;西元2024年08月31日&quot;</code></pre>
 <p><strong>(7) 日期時間的加減</strong></p>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="初級r--元素介紹.html#cb72-1" tabindex="-1"></a><span class="co">#單純加秒數</span></span>
 <span id="cb72-2"><a href="初級r--元素介紹.html#cb72-2" tabindex="-1"></a>D1<span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
