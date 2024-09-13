@@ -84,8 +84,159 @@ array(1:36,c(3,3,2,2),
 
 ### 二維結構 (data.frame)
 
+data.frame類似excel中的活頁簿，row 為橫行，column為直列，每一個column為一個變數或一個欄位，每一個row 為一筆資料。
+
+1.  一般csv檔，可以很輕鬆用read.csv函數，將資料匯入成data.frame
+
+```{r echo=TRUE}
+DT <- read.csv("C:/github/basicRteach/Data/C0AG80-2024-09-12.csv")
+head(DT)
+```
+
+2.  可以使用data.frame() 函數，自創data.frame 資料結構
+
+```{r echo=TRUE}
+score <-  data.frame("CLASS" = rep(c("甲班","乙班","丙班"), each = 10)  ,  # 班級
+                     "SEX" = sample(c("男","女"),30,replace = T),  #性別
+                     "AREA" = sample(c("興和里","復興里","瑞興里","仁善里"),30,replace = T), #居住里
+                     "CS" = sample(30:80,30,replace = T), # 國文成績
+                     "ES" = sample(50:100,30,replace = T),# 英文成績
+                     "MS" = sample(40:90,30,replace = T)  # 數學成績
+                     )
+
+```
+
+3.前幾筆查看 /後幾筆查看
+
+用head()，可以查看前幾筆資料，預設查看前5筆;用tail()，可以查看最後幾筆資料，預設也是查看最後5筆
+
+```{r echo=TRUE}
+# 查看前5筆
+head(score)
+# 查看最後5筆
+tail(score)
+# 查看前10筆
+head(score ,n=10)
+```
+
+4.  data.frame 行與列 之 數量查詢
+
+可用nrow()查看data.frame共有多少筆數(行數)，用ncol()查看變數的數量(列數)，用dim()同時查看幾行幾列
+
+```{r echo=TRUE}
+# 查詢行數
+nrow(score)
+# 查詢列數
+ncol(score)
+# 查詢行數與列數
+dim(score)
+```
+
+5.屬性查看
+
+先前教過使用`class`可以查看某向量屬於哪種資料類型(文字、數值、日期)，但是`class`一次只能查看一種資料， 而data.frame是一個擁有很多欄位(很多屬性)的複雜物件，所以可改用str()來查看資料整體屬性。
+
+```{r echo=TRUE}
+# 查詢行數
+str(score)
+```
+
+6.查詢欄位名/行名
+
+```{r echo=TRUE}
+# 查詢欄位名  
+colnames(score) # 也可使用 names(score)
+
+# 查詢行名  
+rownames(score) 
+
+```
+
+7.變更欄位名稱
+
+```{r echo=TRUE}
+# 變更所有欄位名稱  
+colnames(score) <- c("班級","性別", "居住" , "國文", "英文","數學")
+
+# 變更某一個欄位名稱  
+colnames(score)[4] <- "國文成績"
+# 重新查看欄位名稱
+names(score)
+colnames(score)[4] <-"國文"
+```
+
+8.提取data.frame某欄某行資料
+
+data.frame，用中括弧[,]來找出行列內容,第一個引數代表rows數，第二個引數代表column數，第二個引數數字代表某欄位順序，也可以直接輸入變數名稱直接提取資料出來，此外data.frame+\$+變數名稱，可以提取整欄資料
+
+```{r echo=TRUE}
+score[3,]  #提取第三位同學整筆資料
+score[,5]  #提取第5欄資料，英文成績
+score[c(9,2,18,15),] #提取第9,2,18,15位同學整筆資料
+score[,c(1,2,5)] #提取第1,2,5欄資料(班級 性別 英文)
+score[1:2,1:4]  #指定某範圍的資料提取
+
+score[,c("班級","英文")]  # 可直接鍵入變數名稱提取某欄位完整資料
+score$班級      # $+變數名稱可以提取某變數完整資料
+
+
+```
+
+9.  資料合併
+
+rbind()可以合併有相同變數的data.frame的資料，增加筆數 cbind()可以合併有相同筆數的data.frame的資料，增加變數
+
+```{r echo=TRUE}
+#增加筆數
+addRow <- c("甲班"  , "女", "興和里" ,  "42" ,  "83" , "57")
+rbind(score,addRow)
+#增加欄位
+
+"自然" <- sample(50:100,30,replace = T)
+score <- cbind(score,自然)
+head(score)
+```
+
+善用\$和賦值，也可以新增變數
+
+```{r echo=TRUE}
+#增加欄位
+score$社會 <-  sample(50:100,30,replace = T)
+head(score)
+```
+
 ### 三維結構 (list)
 
-list 和 data.frame 最大差別是data.frame屬於**二維資料**，而list屬於**三維資料**，do.call亦能處理三維資料的list格式
+list 和 data.frame 最大差別是data.frame屬於**二維資料**，而list屬於**三維資料**，list可以儲存各種資料類型， 甚至可以儲存data.frame
+
+1.  建立list，使用list()
+
+```{r echo=TRUE}
+#建立list
+
+DT <-   list("考試日期" =Sys.Date() ,"考試類型" = "期中考試" ,Score =score[1:10,])
+```
+
+2. 資料提取 list可用$，提取每一個向度資料，亦可使用中括弧[]，提取某向度資料
+
+```{r echo=TRUE}
+
+DT[1]  #使用[]提取
+DT[2]  #使用[]提取
+DT$Score  #使用$提取
+
+```
+
+3. DT[3] 和DT[[3]] 差別，list的DT第三個向度是data.frame，若是想向下繼續擷取行列內容時，
+就需要兩個中括弧[[]]，先將data.frame提取出來，之後再用[]選擇想要行列擷取出來
+```{r echo=TRUE}
+
+
+DT[3][2]  #單個中括弧，無法擷取將data.frame內部某欄資訊
+DT[[3]][2]
+
+DT[[3]][6:10,1:5]
+```
+
 
 ## 特殊資料結構
