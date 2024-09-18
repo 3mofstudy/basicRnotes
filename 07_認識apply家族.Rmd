@@ -123,3 +123,60 @@ my_list <- list(a = 1:5, b = 6:10, c = 11:15)
 result_lapply <- sapply(my_list, sum)
 print(result_lapply)
 ```
+
+## mapply用法
+
+mapply 專門用於同時處理多個向量或列表的函數。它的主要功能是對多個輸入進行逐元素的計算，類似於 sapply，但可以處理多個參數。
+
+函數用法
+
+`mapply(FUN, ..., MoreArgs = NULL, SIMPLIFY = TRUE, USE.NAMES = TRUE)`
+
+-   FUN: 要應用的函數。
+
+-   ...: 一個或多個向量或列表。
+
+-   MoreArgs: 附加的參數，傳遞給 FUN。
+
+-   SIMPLIFY: 是否簡化輸出結果，預設為 TRUE。
+
+-   USE.NAMES: 是否使用輸入的名稱作為輸出名稱。
+
+**範例1: 計算兩個向量的總和**
+
+```{r echo=T, eval=T}
+vector1 <- c(10, 20, 30)
+vector2 <- c(1, 2, 3)
+
+total <- mapply(sum, vector1, vector2)
+print(total)
+
+```
+
+**範例2: 用身高、性別和年齡來計算尖峰呼氣流速理想值 (PEFR)**
+
+![](https://i.postimg.cc/6pqX5xhZ/S-31039529-0.png){width="565"}
+
+```{r echo=T, eval=T}
+# 設定隨機種子以便重現
+set.seed(123)
+# 步驟1: 創建資料集 DT
+DT <- data.frame(Gender = sample(c(0, 1), size = 30, replace = TRUE), # 性別變數 (0: 女性, 1: 男性), 
+                 Height = sample(150:190, size = 30, replace = TRUE), # 身高變數 (cm), 
+                 Age = sample(20:50, size = 30, replace = TRUE)) # 年齡變數 (20-50歲)) 
+
+# 步驟2: 定義 PEFR 函數
+PEFR <- function(gender, height, age) {
+  if (gender == 1) { # 男性
+    return(3.89 * height - 2.95 * age + 43.59)
+  } else { # 女性
+    return(4.10 * height - 1.61 * age - 173.55)
+  }
+}
+
+# 步驟3: 使用 mapply 計算 PEFR 預測值並新增到 DT
+DT$PEFR_Predicted <- mapply(PEFR, DT$Gender, DT$Height, DT$Age)
+
+# 顯示更新後的資料集
+head(DT)
+```

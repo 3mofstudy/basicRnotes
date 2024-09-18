@@ -91,3 +91,4 @@ section
 配對抽樣match-sampling
 常用rstudio-快速鍵
 常用快速鍵
+mapply用法
