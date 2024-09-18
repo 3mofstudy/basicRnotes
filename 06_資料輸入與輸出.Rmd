@@ -1,4 +1,4 @@
-# 初級R- 資料輸入與輸出
+# 基礎R- 資料輸入與輸出
 
 ## 資料鍵入與印出
 
@@ -13,17 +13,18 @@
 print() 和cat()，都可以把資料打印到Console螢幕上，但是print()只能輸出一個完整文字訊息，如果想要利用print() 輸出一段話+某變數，就必須另外使用paste()或paste0()將兩個訊息結合成一個完整文字訊息才能用print()進行輸出，但cat()就沒有此問題，兩個以上訊息可以用"," 來結合即可，範例如下:
 
 1.  `cat()`
+
 ```{r eval=T}
 name = "Lucy"
 cat( name ,"帶狗狗去公園散步了" )
 ```
 
 2.  `print()`
+
 ```{r eval=T}
 name = "Lucy"
 print( paste(name ,"帶狗狗去公園散步了")   )
 ```
-
 
 ## 複製及貼上
 
@@ -48,3 +49,7 @@ library(psychTools)
 text<-psychTools::read.clipboard() 
 text<-psychTools::read.clipboard.tab()
 ```
+
+## 資料匯入
+
+## 資料匯出

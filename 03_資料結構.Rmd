@@ -1,4 +1,4 @@
-# 初級R- 資料結構
+# 基礎R- 資料結構
 
 R的資料結構以維度來看，可區分成1維、2維及3維以上，以資料型態可分為資料同質與資料不同質。資料同質表示存放資料元素全部相同，如全是數字，或全都是文字。非同質表示可同時放數字、文字及日期等各種資料元素。實務上數據分析最常用到資料結構就是二維不同質的 data.frame 資料框，其次是一維同質的Vector 向量。而在網路爬蟲時，經常將下載好的JSON檔轉換成 三維不同質list 或是 二維不同質 data.frame，下表是根據維度及資料型態區分出的5個不同資料結構
 
@@ -217,7 +217,7 @@ list 和 data.frame 最大差別是data.frame屬於**二維資料**，而list屬
 DT <-   list("考試日期" =Sys.Date() ,"考試類型" = "期中考試" ,Score =score[1:10,])
 ```
 
-2. 資料提取 list可用$，提取每一個向度資料，亦可使用中括弧[]，提取某向度資料
+2.  資料提取 list可用\$，提取每一個向度資料，亦可使用中括弧[]，提取某向度資料
 
 ```{r echo=TRUE}
 
@@ -227,8 +227,8 @@ DT$Score  #使用$提取
 
 ```
 
-3. DT[3] 和DT[[3]] 差別，list的DT第三個向度是data.frame，若是想向下繼續擷取行列內容時，
-就需要兩個中括弧[[]]，先將data.frame提取出來，之後再用[]選擇想要行列擷取出來
+3.  DT[3] 和DT[[3]] 差別，list的DT第三個向度是data.frame，若是想向下繼續擷取行列內容時， 就需要兩個中括弧[[]]，先將data.frame提取出來，之後再用[]選擇想要行列擷取出來
+
 ```{r echo=TRUE}
 
 
@@ -238,5 +238,125 @@ DT[[3]][2]
 DT[[3]][6:10,1:5]
 ```
 
-
 ## 特殊資料結構
+
+### 列聯表
+
+R內建一些函數，可以計算統計意思上列聯表，也就是資料集各種分類組合的發生次數，發生百分比
+
+#### table()函數
+
+**用法** `table(X1,X2,...,Xk,dnn)`
+
+-   x1\~xk :為factor、list或data.frame變數
+
+-   dnn: 設定各維度名稱
+
+**範例1**
+
+以鳶尾花卉資料集(iris)為例，使用table()，可以查出不同花品種出現次數
+
+```{r echo=TRUE}
+# 載入資料集
+data(iris)
+
+# 查看資料集的前幾行
+head(iris)
+
+#使用 table() 函數查出不同花品種出現次數
+table(iris$Species)
+
+```
+
+**範例2**
+
+使用table()計算CO2 資料集中兩個分類組合(植物類型VS 施肥方式)的發生次數 。
+
+CO2 資料集包含以下變數：
+
+-   Plant: 植物的識別編號
+
+-   Type: 植物類型（ Quebec 和 Mississippi）
+
+-   Treatment: 施肥方式（chilled 或 nonchilled）
+
+-   conc: 二氧化碳濃度（以毫升/升為單位）
+
+-   uptake: 植物對二氧化碳的吸收量（以微克/平方厘米為單位）。
+
+```{r echo=TRUE}
+# 載入資料集
+data(CO2)
+
+# 查看資料集的前幾行
+head(CO2)
+
+# 使用 table() 函數分析植物類型和處理的關係
+tab1 <- table(CO2$Type, CO2$Treatment,dnn = c("植物類型","施肥方式"))
+tab1
+class(tab1)
+
+```
+
+#### margin.table()
+
+margin.table()，可計算列聯表的行與列個別加總，**用法** `margin.table(x, margin)`
+
+-   x: table 或 array
+
+-   margin : 1= rows邊際加總; 2= columns邊際加總
+
+```{r echo=TRUE}
+
+#rows邊際加總
+margin.table(tab1,1)  # 等同 rowSums(tab1)
+#columns邊際加總
+margin.table(tab1,2)  # 等同 colSums(tab1)
+
+```
+
+#### prop.table()
+
+prop.table()，可計算列聯表的行與列之比例，**用法** `prop.table(x, margin)`
+
+-   x: table 
+
+-   margin : 1= rows比例; 2= columns比例
+
+```{r echo=TRUE}
+
+#rows邊際比例
+prop.table(tab1,1)  
+#columns邊際比例
+prop.table(tab1,2)  
+
+```
+
+#### ftable()
+
+ftable()類似table()功能，但會依其分類變數進行扁平化，以Arthritis資料集為例，
+使用table()或ftable()處理三個分類變項時，會有不同呈現結果
+
+- Treatment : 組別 (Treated 治療組、Placebo 安慰劑組)
+
+- Sex: 性別(Male男、Female女)
+
+- Improved: 治療結果(None無改善、Some一點改善、Marked顯著改善) 
+
+
+```{r echo=TRUE}
+
+# 載入vcd套件中的Arthritis資料集
+data(Arthritis,package = "vcd")
+
+# 查看資料集的前幾行
+head(Arthritis)  
+
+# 使用table()
+table(Arthritis$Sex,Arthritis$Improved,Arthritis$Treatment ,dnn = c("性別","治療結果","組別") )
+
+# 使用ftable()
+ftable(Arthritis$Sex,Arthritis$Improved,Arthritis$Treatment,dnn = c("性別","治療結果","組別"))
+
+```
+
