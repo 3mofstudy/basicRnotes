@@ -153,6 +153,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
 <li class="chapter" data-level="2.3" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
 <li class="chapter" data-level="2.4" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="初級r--系統環境設定.html"><a href="初級r--系統環境設定.html#常用快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="初級r--元素介紹.html"><a href="初級r--元素介紹.html"><i class="fa fa-check"></i><b>3</b> 初級R- 元素介紹</a>
 <ul>
@@ -400,10 +401,309 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.2</span> 資料型態不同<a href="初級r--資料結構.html#資料型態不同" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="二維結構-data.frame" class="section level3 hasAnchor" number="4.2.1">
 <h3><span class="header-section-number">4.2.1</span> 二維結構 (data.frame)<a href="初級r--資料結構.html#二維結構-data.frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>data.frame類似excel中的活頁簿，row 為橫行，column為直列，每一個column為一個變數或一個欄位，每一個row 為一筆資料。</p>
+<ol style="list-style-type: decimal">
+<li>一般csv檔，可以很輕鬆用read.csv函數，將資料匯入成data.frame</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="初級r--資料結構.html#cb13-1" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;C:/github/basicRteach/Data/C0AG80-2024-09-12.csv&quot;</span>)</span>
+<span id="cb13-2"><a href="初級r--資料結構.html#cb13-2" tabindex="-1"></a><span class="fu">head</span>(DT)</span></code></pre></div>
+<pre><code>##   觀測時間 測站氣壓 氣溫 相對溼度 風速 風向 最大瞬間風 最大瞬間風風向 降水量
+## 1        1   1003.5 27.3       84  0.8  188        1.9            195      0
+## 2        2   1003.3 27.4       83  0.3  104        1.3            190      0
+## 3        3   1003.1 27.2       81  2.0   98        3.5            106      0
+## 4        4   1002.9 27.0       84  0.2    0        2.7             98      0
+## 5        5   1003.4 26.6       84  1.6  116        3.0            123      0
+## 6        6   1003.7 26.7       80  1.2  107        3.0             99      0</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>可以使用data.frame() 函數，自創data.frame 資料結構</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="初級r--資料結構.html#cb15-1" tabindex="-1"></a>score <span class="ot">&lt;-</span>  <span class="fu">data.frame</span>(<span class="st">&quot;CLASS&quot;</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;甲班&quot;</span>,<span class="st">&quot;乙班&quot;</span>,<span class="st">&quot;丙班&quot;</span>), <span class="at">each =</span> <span class="dv">10</span>)  ,  <span class="co"># 班級</span></span>
+<span id="cb15-2"><a href="初級r--資料結構.html#cb15-2" tabindex="-1"></a>                     <span class="st">&quot;SEX&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;男&quot;</span>,<span class="st">&quot;女&quot;</span>),<span class="dv">30</span>,<span class="at">replace =</span> T),  <span class="co">#性別</span></span>
+<span id="cb15-3"><a href="初級r--資料結構.html#cb15-3" tabindex="-1"></a>                     <span class="st">&quot;AREA&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;興和里&quot;</span>,<span class="st">&quot;復興里&quot;</span>,<span class="st">&quot;瑞興里&quot;</span>,<span class="st">&quot;仁善里&quot;</span>),<span class="dv">30</span>,<span class="at">replace =</span> T), <span class="co">#居住里</span></span>
+<span id="cb15-4"><a href="初級r--資料結構.html#cb15-4" tabindex="-1"></a>                     <span class="st">&quot;CS&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">80</span>,<span class="dv">30</span>,<span class="at">replace =</span> T), <span class="co"># 國文成績</span></span>
+<span id="cb15-5"><a href="初級r--資料結構.html#cb15-5" tabindex="-1"></a>                     <span class="st">&quot;ES&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T),<span class="co"># 英文成績</span></span>
+<span id="cb15-6"><a href="初級r--資料結構.html#cb15-6" tabindex="-1"></a>                     <span class="st">&quot;MS&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">40</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)  <span class="co"># 數學成績</span></span>
+<span id="cb15-7"><a href="初級r--資料結構.html#cb15-7" tabindex="-1"></a>                     )</span></code></pre></div>
+<p>3.前幾筆查看 /後幾筆查看</p>
+<p>用head()，可以查看前幾筆資料，預設查看前5筆;用tail()，可以查看最後幾筆資料，預設也是查看最後5筆</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="初級r--資料結構.html#cb16-1" tabindex="-1"></a><span class="co"># 查看前5筆</span></span>
+<span id="cb16-2"><a href="初級r--資料結構.html#cb16-2" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+<pre><code>##   CLASS SEX   AREA CS ES MS
+## 1  甲班  女 仁善里 35 68 76
+## 2  甲班  女 仁善里 71 63 51
+## 3  甲班  女 仁善里 55 55 88
+## 4  甲班  女 仁善里 35 85 49
+## 5  甲班  女 興和里 68 95 68
+## 6  甲班  男 瑞興里 50 94 89</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="初級r--資料結構.html#cb18-1" tabindex="-1"></a><span class="co"># 查看最後5筆</span></span>
+<span id="cb18-2"><a href="初級r--資料結構.html#cb18-2" tabindex="-1"></a><span class="fu">tail</span>(score)</span></code></pre></div>
+<pre><code>##    CLASS SEX   AREA CS ES MS
+## 25  丙班  女 瑞興里 72 81 59
+## 26  丙班  男 瑞興里 79 52 67
+## 27  丙班  女 興和里 36 60 59
+## 28  丙班  女 仁善里 68 75 84
+## 29  丙班  女 瑞興里 79 50 45
+## 30  丙班  女 仁善里 39 94 44</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="初級r--資料結構.html#cb20-1" tabindex="-1"></a><span class="co"># 查看前10筆</span></span>
+<span id="cb20-2"><a href="初級r--資料結構.html#cb20-2" tabindex="-1"></a><span class="fu">head</span>(score ,<span class="at">n=</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##    CLASS SEX   AREA CS ES MS
+## 1   甲班  女 仁善里 35 68 76
+## 2   甲班  女 仁善里 71 63 51
+## 3   甲班  女 仁善里 55 55 88
+## 4   甲班  女 仁善里 35 85 49
+## 5   甲班  女 興和里 68 95 68
+## 6   甲班  男 瑞興里 50 94 89
+## 7   甲班  男 瑞興里 79 96 75
+## 8   甲班  女 仁善里 51 60 55
+## 9   甲班  男 仁善里 61 64 68
+## 10  甲班  女 瑞興里 34 63 55</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>data.frame 行與列 之 數量查詢</li>
+</ol>
+<p>可用nrow()查看data.frame共有多少筆數(行數)，用ncol()查看變數的數量(列數)，用dim()同時查看幾行幾列</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="初級r--資料結構.html#cb22-1" tabindex="-1"></a><span class="co"># 查詢行數</span></span>
+<span id="cb22-2"><a href="初級r--資料結構.html#cb22-2" tabindex="-1"></a><span class="fu">nrow</span>(score)</span></code></pre></div>
+<pre><code>## [1] 30</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="初級r--資料結構.html#cb24-1" tabindex="-1"></a><span class="co"># 查詢列數</span></span>
+<span id="cb24-2"><a href="初級r--資料結構.html#cb24-2" tabindex="-1"></a><span class="fu">ncol</span>(score)</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="初級r--資料結構.html#cb26-1" tabindex="-1"></a><span class="co"># 查詢行數與列數</span></span>
+<span id="cb26-2"><a href="初級r--資料結構.html#cb26-2" tabindex="-1"></a><span class="fu">dim</span>(score)</span></code></pre></div>
+<pre><code>## [1] 30  6</code></pre>
+<p>5.屬性查看</p>
+<p>先前教過使用<code>class</code>可以查看某向量屬於哪種資料類型(文字、數值、日期)，但是<code>class</code>一次只能查看一種資料， 而data.frame是一個擁有很多欄位(很多屬性)的複雜物件，所以可改用str()來查看資料整體屬性。</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="初級r--資料結構.html#cb28-1" tabindex="-1"></a><span class="co"># 查詢行數</span></span>
+<span id="cb28-2"><a href="初級r--資料結構.html#cb28-2" tabindex="-1"></a><span class="fu">str</span>(score)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    30 obs. of  6 variables:
+##  $ CLASS: chr  &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; ...
+##  $ SEX  : chr  &quot;女&quot; &quot;女&quot; &quot;女&quot; &quot;女&quot; ...
+##  $ AREA : chr  &quot;仁善里&quot; &quot;仁善里&quot; &quot;仁善里&quot; &quot;仁善里&quot; ...
+##  $ CS   : int  35 71 55 35 68 50 79 51 61 34 ...
+##  $ ES   : int  68 63 55 85 95 94 96 60 64 63 ...
+##  $ MS   : int  76 51 88 49 68 89 75 55 68 55 ...</code></pre>
+<p>6.查詢欄位名/行名</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="初級r--資料結構.html#cb30-1" tabindex="-1"></a><span class="co"># 查詢欄位名  </span></span>
+<span id="cb30-2"><a href="初級r--資料結構.html#cb30-2" tabindex="-1"></a><span class="fu">colnames</span>(score) <span class="co"># 也可使用 names(score)</span></span></code></pre></div>
+<pre><code>## [1] &quot;CLASS&quot; &quot;SEX&quot;   &quot;AREA&quot;  &quot;CS&quot;    &quot;ES&quot;    &quot;MS&quot;</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="初級r--資料結構.html#cb32-1" tabindex="-1"></a><span class="co"># 查詢行名  </span></span>
+<span id="cb32-2"><a href="初級r--資料結構.html#cb32-2" tabindex="-1"></a><span class="fu">rownames</span>(score) </span></code></pre></div>
+<pre><code>##  [1] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot;  &quot;6&quot;  &quot;7&quot;  &quot;8&quot;  &quot;9&quot;  &quot;10&quot; &quot;11&quot; &quot;12&quot; &quot;13&quot; &quot;14&quot; &quot;15&quot;
+## [16] &quot;16&quot; &quot;17&quot; &quot;18&quot; &quot;19&quot; &quot;20&quot; &quot;21&quot; &quot;22&quot; &quot;23&quot; &quot;24&quot; &quot;25&quot; &quot;26&quot; &quot;27&quot; &quot;28&quot; &quot;29&quot; &quot;30&quot;</code></pre>
+<p>7.變更欄位名稱</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="初級r--資料結構.html#cb34-1" tabindex="-1"></a><span class="co"># 變更所有欄位名稱  </span></span>
+<span id="cb34-2"><a href="初級r--資料結構.html#cb34-2" tabindex="-1"></a><span class="fu">colnames</span>(score) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;班級&quot;</span>,<span class="st">&quot;性別&quot;</span>, <span class="st">&quot;居住&quot;</span> , <span class="st">&quot;國文&quot;</span>, <span class="st">&quot;英文&quot;</span>,<span class="st">&quot;數學&quot;</span>)</span>
+<span id="cb34-3"><a href="初級r--資料結構.html#cb34-3" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="初級r--資料結構.html#cb34-4" tabindex="-1"></a><span class="co"># 變更某一個欄位名稱  </span></span>
+<span id="cb34-5"><a href="初級r--資料結構.html#cb34-5" tabindex="-1"></a><span class="fu">colnames</span>(score)[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="st">&quot;國文成績&quot;</span></span>
+<span id="cb34-6"><a href="初級r--資料結構.html#cb34-6" tabindex="-1"></a><span class="co"># 重新查看欄位名稱</span></span>
+<span id="cb34-7"><a href="初級r--資料結構.html#cb34-7" tabindex="-1"></a><span class="fu">names</span>(score)</span></code></pre></div>
+<pre><code>## [1] &quot;班級&quot;     &quot;性別&quot;     &quot;居住&quot;     &quot;國文成績&quot; &quot;英文&quot;     &quot;數學&quot;</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="初級r--資料結構.html#cb36-1" tabindex="-1"></a><span class="fu">colnames</span>(score)[<span class="dv">4</span>] <span class="ot">&lt;-</span><span class="st">&quot;國文&quot;</span></span></code></pre></div>
+<p>8.提取data.frame某欄某行資料</p>
+<p>data.frame，用中括弧[,]來找出行列內容,第一個引數代表rows數，第二個引數代表column數，第二個引數數字代表某欄位順序，也可以直接輸入變數名稱直接提取資料出來，此外data.frame+$+變數名稱，可以提取整欄資料</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="初級r--資料結構.html#cb37-1" tabindex="-1"></a>score[<span class="dv">3</span>,]  <span class="co">#提取第三位同學整筆資料</span></span></code></pre></div>
+<pre><code>##   班級 性別   居住 國文 英文 數學
+## 3 甲班   女 仁善里   55   55   88</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="初級r--資料結構.html#cb39-1" tabindex="-1"></a>score[,<span class="dv">5</span>]  <span class="co">#提取第5欄資料，英文成績</span></span></code></pre></div>
+<pre><code>##  [1] 68 63 55 85 95 94 96 60 64 63 80 66 76 70 61 99 67 98 73 69 56 59 93 68 81
+## [26] 52 60 75 50 94</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="初級r--資料結構.html#cb41-1" tabindex="-1"></a>score[<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">18</span>,<span class="dv">15</span>),] <span class="co">#提取第9,2,18,15位同學整筆資料</span></span></code></pre></div>
+<pre><code>##    班級 性別   居住 國文 英文 數學
+## 9  甲班   男 仁善里   61   64   68
+## 2  甲班   女 仁善里   71   63   51
+## 18 乙班   女 興和里   58   98   89
+## 15 乙班   男 瑞興里   32   61   78</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="初級r--資料結構.html#cb43-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)] <span class="co">#提取第1,2,5欄資料(班級 性別 英文)</span></span></code></pre></div>
+<pre><code>##    班級 性別 英文
+## 1  甲班   女   68
+## 2  甲班   女   63
+## 3  甲班   女   55
+## 4  甲班   女   85
+## 5  甲班   女   95
+## 6  甲班   男   94
+## 7  甲班   男   96
+## 8  甲班   女   60
+## 9  甲班   男   64
+## 10 甲班   女   63
+## 11 乙班   男   80
+## 12 乙班   女   66
+## 13 乙班   女   76
+## 14 乙班   女   70
+## 15 乙班   男   61
+## 16 乙班   女   99
+## 17 乙班   女   67
+## 18 乙班   女   98
+## 19 乙班   女   73
+## 20 乙班   女   69
+## 21 丙班   女   56
+## 22 丙班   女   59
+## 23 丙班   女   93
+## 24 丙班   男   68
+## 25 丙班   女   81
+## 26 丙班   男   52
+## 27 丙班   女   60
+## 28 丙班   女   75
+## 29 丙班   女   50
+## 30 丙班   女   94</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="初級r--資料結構.html#cb45-1" tabindex="-1"></a>score[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co">#指定某範圍的資料提取</span></span></code></pre></div>
+<pre><code>##   班級 性別   居住 國文
+## 1 甲班   女 仁善里   35
+## 2 甲班   女 仁善里   71</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="初級r--資料結構.html#cb47-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="st">&quot;班級&quot;</span>,<span class="st">&quot;英文&quot;</span>)]  <span class="co"># 可直接鍵入變數名稱提取某欄位完整資料</span></span></code></pre></div>
+<pre><code>##    班級 英文
+## 1  甲班   68
+## 2  甲班   63
+## 3  甲班   55
+## 4  甲班   85
+## 5  甲班   95
+## 6  甲班   94
+## 7  甲班   96
+## 8  甲班   60
+## 9  甲班   64
+## 10 甲班   63
+## 11 乙班   80
+## 12 乙班   66
+## 13 乙班   76
+## 14 乙班   70
+## 15 乙班   61
+## 16 乙班   99
+## 17 乙班   67
+## 18 乙班   98
+## 19 乙班   73
+## 20 乙班   69
+## 21 丙班   56
+## 22 丙班   59
+## 23 丙班   93
+## 24 丙班   68
+## 25 丙班   81
+## 26 丙班   52
+## 27 丙班   60
+## 28 丙班   75
+## 29 丙班   50
+## 30 丙班   94</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="初級r--資料結構.html#cb49-1" tabindex="-1"></a>score<span class="sc">$</span>班級      <span class="co"># $+變數名稱可以提取某變數完整資料</span></span></code></pre></div>
+<pre><code>##  [1] &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot;
+## [11] &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot;
+## [21] &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot;</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li>資料合併</li>
+</ol>
+<p>rbind()可以合併有相同變數的data.frame的資料，增加筆數 cbind()可以合併有相同筆數的data.frame的資料，增加變數</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="初級r--資料結構.html#cb51-1" tabindex="-1"></a><span class="co">#增加筆數</span></span>
+<span id="cb51-2"><a href="初級r--資料結構.html#cb51-2" tabindex="-1"></a>addRow <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;甲班&quot;</span>  , <span class="st">&quot;女&quot;</span>, <span class="st">&quot;興和里&quot;</span> ,  <span class="st">&quot;42&quot;</span> ,  <span class="st">&quot;83&quot;</span> , <span class="st">&quot;57&quot;</span>)</span>
+<span id="cb51-3"><a href="初級r--資料結構.html#cb51-3" tabindex="-1"></a><span class="fu">rbind</span>(score,addRow)</span></code></pre></div>
+<pre><code>##    班級 性別   居住 國文 英文 數學
+## 1  甲班   女 仁善里   35   68   76
+## 2  甲班   女 仁善里   71   63   51
+## 3  甲班   女 仁善里   55   55   88
+## 4  甲班   女 仁善里   35   85   49
+## 5  甲班   女 興和里   68   95   68
+## 6  甲班   男 瑞興里   50   94   89
+## 7  甲班   男 瑞興里   79   96   75
+## 8  甲班   女 仁善里   51   60   55
+## 9  甲班   男 仁善里   61   64   68
+## 10 甲班   女 瑞興里   34   63   55
+## 11 乙班   男 瑞興里   76   80   77
+## 12 乙班   女 仁善里   67   66   59
+## 13 乙班   女 興和里   31   76   71
+## 14 乙班   女 復興里   74   70   76
+## 15 乙班   男 瑞興里   32   61   78
+## 16 乙班   女 興和里   64   99   44
+## 17 乙班   女 仁善里   54   67   46
+## 18 乙班   女 興和里   58   98   89
+## 19 乙班   女 興和里   55   73   75
+## 20 乙班   女 瑞興里   71   69   68
+## 21 丙班   女 興和里   80   56   66
+## 22 丙班   女 仁善里   40   59   70
+## 23 丙班   女 興和里   43   93   79
+## 24 丙班   男 瑞興里   46   68   75
+## 25 丙班   女 瑞興里   72   81   59
+## 26 丙班   男 瑞興里   79   52   67
+## 27 丙班   女 興和里   36   60   59
+## 28 丙班   女 仁善里   68   75   84
+## 29 丙班   女 瑞興里   79   50   45
+## 30 丙班   女 仁善里   39   94   44
+## 31 甲班   女 興和里   42   83   57</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="初級r--資料結構.html#cb53-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
+<span id="cb53-2"><a href="初級r--資料結構.html#cb53-2" tabindex="-1"></a></span>
+<span id="cb53-3"><a href="初級r--資料結構.html#cb53-3" tabindex="-1"></a><span class="st">&quot;自然&quot;</span> <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)</span>
+<span id="cb53-4"><a href="初級r--資料結構.html#cb53-4" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">cbind</span>(score,自然)</span>
+<span id="cb53-5"><a href="初級r--資料結構.html#cb53-5" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+<pre><code>##   班級 性別   居住 國文 英文 數學 自然
+## 1 甲班   女 仁善里   35   68   76   58
+## 2 甲班   女 仁善里   71   63   51   91
+## 3 甲班   女 仁善里   55   55   88   76
+## 4 甲班   女 仁善里   35   85   49   90
+## 5 甲班   女 興和里   68   95   68   76
+## 6 甲班   男 瑞興里   50   94   89   96</code></pre>
+<p>善用$和賦值，也可以新增變數</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="初級r--資料結構.html#cb55-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
+<span id="cb55-2"><a href="初級r--資料結構.html#cb55-2" tabindex="-1"></a>score<span class="sc">$</span>社會 <span class="ot">&lt;-</span>  <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)</span>
+<span id="cb55-3"><a href="初級r--資料結構.html#cb55-3" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+<pre><code>##   班級 性別   居住 國文 英文 數學 自然 社會
+## 1 甲班   女 仁善里   35   68   76   58   65
+## 2 甲班   女 仁善里   71   63   51   91   80
+## 3 甲班   女 仁善里   55   55   88   76   99
+## 4 甲班   女 仁善里   35   85   49   90   87
+## 5 甲班   女 興和里   68   95   68   76   94
+## 6 甲班   男 瑞興里   50   94   89   96  100</code></pre>
 </div>
 <div id="三維結構-list" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> 三維結構 (list)<a href="初級r--資料結構.html#三維結構-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>list 和 data.frame 最大差別是data.frame屬於<strong>二維資料</strong>，而list屬於<strong>三維資料</strong>，do.call亦能處理三維資料的list格式</p>
+<p>list 和 data.frame 最大差別是data.frame屬於<strong>二維資料</strong>，而list屬於<strong>三維資料</strong>，list可以儲存各種資料類型， 甚至可以儲存data.frame</p>
+<ol style="list-style-type: decimal">
+<li>建立list，使用list()</li>
+</ol>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="初級r--資料結構.html#cb57-1" tabindex="-1"></a><span class="co">#建立list</span></span>
+<span id="cb57-2"><a href="初級r--資料結構.html#cb57-2" tabindex="-1"></a></span>
+<span id="cb57-3"><a href="初級r--資料結構.html#cb57-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>   <span class="fu">list</span>(<span class="st">&quot;考試日期&quot;</span> <span class="ot">=</span><span class="fu">Sys.Date</span>() ,<span class="st">&quot;考試類型&quot;</span> <span class="ot">=</span> <span class="st">&quot;期中考試&quot;</span> ,<span class="at">Score =</span>score[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,])</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>資料提取 list可用$，提取每一個向度資料，亦可使用中括弧[]，提取某向度資料</li>
+</ol>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="初級r--資料結構.html#cb58-1" tabindex="-1"></a>DT[<span class="dv">1</span>]  <span class="co">#使用[]提取</span></span></code></pre></div>
+<pre><code>## $考試日期
+## [1] &quot;2024-09-14&quot;</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="初級r--資料結構.html#cb60-1" tabindex="-1"></a>DT[<span class="dv">2</span>]  <span class="co">#使用[]提取</span></span></code></pre></div>
+<pre><code>## $考試類型
+## [1] &quot;期中考試&quot;</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="初級r--資料結構.html#cb62-1" tabindex="-1"></a>DT<span class="sc">$</span>Score  <span class="co">#使用$提取</span></span></code></pre></div>
+<pre><code>##    班級 性別   居住 國文 英文 數學 自然 社會
+## 1  甲班   女 仁善里   35   68   76   58   65
+## 2  甲班   女 仁善里   71   63   51   91   80
+## 3  甲班   女 仁善里   55   55   88   76   99
+## 4  甲班   女 仁善里   35   85   49   90   87
+## 5  甲班   女 興和里   68   95   68   76   94
+## 6  甲班   男 瑞興里   50   94   89   96  100
+## 7  甲班   男 瑞興里   79   96   75   80   85
+## 8  甲班   女 仁善里   51   60   55   92   78
+## 9  甲班   男 仁善里   61   64   68  100   52
+## 10 甲班   女 瑞興里   34   63   55   72   88</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>DT[3] 和DT[[3]] 差別，list的DT第三個向度是data.frame，若是想向下繼續擷取行列內容時，
+就需要兩個中括弧[[]]，先將data.frame提取出來，之後再用[]選擇想要行列擷取出來</li>
+</ol>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="初級r--資料結構.html#cb64-1" tabindex="-1"></a>DT[<span class="dv">3</span>][<span class="dv">2</span>]  <span class="co">#單個中括弧，無法擷取將data.frame內部某欄資訊</span></span></code></pre></div>
+<pre><code>## $&lt;NA&gt;
+## NULL</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="初級r--資料結構.html#cb66-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>##    性別
+## 1    女
+## 2    女
+## 3    女
+## 4    女
+## 5    女
+## 6    男
+## 7    男
+## 8    女
+## 9    男
+## 10   女</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="初級r--資料結構.html#cb68-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>##    班級 性別   居住 國文 英文
+## 6  甲班   男 瑞興里   50   94
+## 7  甲班   男 瑞興里   79   96
+## 8  甲班   女 仁善里   51   60
+## 9  甲班   男 仁善里   61   64
+## 10 甲班   女 瑞興里   34   63</code></pre>
 </div>
 </div>
 <div id="特殊資料結構" class="section level2 hasAnchor" number="4.3">

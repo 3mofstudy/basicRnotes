@@ -341,14 +341,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;English_United States.1252&quot;</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="初級r--系統環境設定.html#cb12-1" tabindex="-1"></a><span class="co">#範例</span></span>
 <span id="cb12-2"><a href="初級r--系統環境設定.html#cb12-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
+<<<<<<< HEAD
 <pre><code>## [1] &quot;Wednesday&quot;</code></pre>
+=======
+<pre><code>## [1] &quot;Saturday&quot;</code></pre>
+>>>>>>> 77f427f6669be7e685deb01562aa9eeee9c8e20e
 <ol start="3" style="list-style-type: decimal">
 <li>將英文語系變回中文語系</li>
 </ol>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="初級r--系統環境設定.html#cb14-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;zh_TW.UTF-8&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;zh_TW.UTF-8&quot;</code></pre>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="初級r--系統環境設定.html#cb16-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
+<<<<<<< HEAD
 <pre><code>## [1] &quot;星期三&quot;</code></pre>
+=======
+<pre><code>## [1] &quot;星期六&quot;</code></pre>
+>>>>>>> 77f427f6669be7e685deb01562aa9eeee9c8e20e
 <p>4.各國語系設定</p>
 <table style="width:99%;">
 <colgroup>
