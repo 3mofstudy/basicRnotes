@@ -295,11 +295,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="一維結構vector" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> 一維結構(Vector)<a href="資料結構.html#一維結構vector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>向量(Vector)是R語言中最簡單的資料結構，語法是用c 來集合</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="資料結構.html#cb1-1" tabindex="-1"></a>tel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0912370456</span>,<span class="dv">0954310641</span>,<span class="dv">0965120744</span>)</span>
-<span id="cb1-2"><a href="資料結構.html#cb1-2" tabindex="-1"></a><span class="fu">print</span>(tel)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="資料結構.html#cb114-1" tabindex="-1"></a>tel <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0912370456</span>,<span class="dv">0954310641</span>,<span class="dv">0965120744</span>)</span>
+<span id="cb114-2"><a href="資料結構.html#cb114-2" tabindex="-1"></a><span class="fu">print</span>(tel)</span></code></pre></div>
 <pre><code>## [1] 912370456 954310641 965120744</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="資料結構.html#cb3-1" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;王小名&quot;</span>,<span class="st">&quot;張大同&quot;</span>)</span>
-<span id="cb3-2"><a href="資料結構.html#cb3-2" tabindex="-1"></a><span class="fu">print</span>(name)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="資料結構.html#cb116-1" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;王小名&quot;</span>,<span class="st">&quot;張大同&quot;</span>)</span>
+<span id="cb116-2"><a href="資料結構.html#cb116-2" tabindex="-1"></a><span class="fu">print</span>(name)</span></code></pre></div>
 <pre><code>## [1] &quot;王小名&quot; &quot;張大同&quot;</code></pre>
 </div>
 <div id="二維結構matrix" class="section level3 hasAnchor" number="4.1.2">
@@ -312,17 +312,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>第四參數 byrow 設定資料擺放順序是否依循row依序放入，預設為FALSE，表示是直行依序放入</p></li>
 <li><p>第五參數 dimnames 設定列名及行名，通常用list資料型態來表示list[1]為列名(row),list[2]為行名(column)</p></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="資料結構.html#cb5-1" tabindex="-1"></a><span class="co">#ncol為列的設定,nrow = 行設定</span></span>
-<span id="cb5-2"><a href="資料結構.html#cb5-2" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span><span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>,<span class="at">ncol =</span> <span class="dv">7</span>,<span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="資料結構.html#cb118-1" tabindex="-1"></a><span class="co">#ncol為列的設定,nrow = 行設定</span></span>
+<span id="cb118-2"><a href="資料結構.html#cb118-2" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span><span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>,<span class="at">ncol =</span> <span class="dv">7</span>,<span class="at">byrow =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7]
 ## [1,]    1    2    3    4    5    6    7
 ## [2,]    8    9   10   11   12   13   14
 ## [3,]   15   16   17   18   19   20   21
 ## [4,]   22   23   24   25   26   27   28</code></pre>
 <p>使用dimnames來設定列名與行名</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="資料結構.html#cb7-1" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span><span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>,<span class="at">ncol =</span> <span class="dv">7</span>,<span class="at">byrow =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb7-2"><a href="資料結構.html#cb7-2" tabindex="-1"></a>             <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;第1週&quot;</span>,<span class="st">&quot;第2週&quot;</span>,<span class="st">&quot;第3週&quot;</span>,<span class="st">&quot;第4週&quot;</span>),</span>
-<span id="cb7-3"><a href="資料結構.html#cb7-3" tabindex="-1"></a>                              <span class="fu">c</span>(<span class="st">&quot;星期一&quot;</span>,<span class="st">&quot;星期二&quot;</span>,<span class="st">&quot;星期三&quot;</span>,<span class="st">&quot;星期四&quot;</span>,<span class="st">&quot;星期五&quot;</span>,<span class="st">&quot;星期六&quot;</span>,<span class="st">&quot;星期日&quot;</span>) ))</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="資料結構.html#cb120-1" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span><span class="dv">1</span><span class="sc">:</span><span class="dv">28</span>,<span class="at">ncol =</span> <span class="dv">7</span>,<span class="at">byrow =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb120-2"><a href="資料結構.html#cb120-2" tabindex="-1"></a>             <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;第1週&quot;</span>,<span class="st">&quot;第2週&quot;</span>,<span class="st">&quot;第3週&quot;</span>,<span class="st">&quot;第4週&quot;</span>),</span>
+<span id="cb120-3"><a href="資料結構.html#cb120-3" tabindex="-1"></a>                              <span class="fu">c</span>(<span class="st">&quot;星期一&quot;</span>,<span class="st">&quot;星期二&quot;</span>,<span class="st">&quot;星期三&quot;</span>,<span class="st">&quot;星期四&quot;</span>,<span class="st">&quot;星期五&quot;</span>,<span class="st">&quot;星期六&quot;</span>,<span class="st">&quot;星期日&quot;</span>) ))</span></code></pre></div>
 <pre><code>##       星期一 星期二 星期三 星期四 星期五 星期六 星期日
 ## 第1週      1      2      3      4      5      6      7
 ## 第2週      8      9     10     11     12     13     14
@@ -338,11 +338,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>第三參數 dimnames 設定列名及行名等，以list資料型態來表示list[1]為列名(row),list[2]為行名(column),list[3]放第三維度以後的名稱</p></li>
 </ul>
 <p>3維的array</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="資料結構.html#cb9-1" tabindex="-1"></a><span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>,<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>),</span>
-<span id="cb9-2"><a href="資料結構.html#cb9-2" tabindex="-1"></a>      <span class="at">dimnames =</span> <span class="fu">list</span>(產品<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;紅茶&quot;</span>,<span class="st">&quot;綠茶&quot;</span>,<span class="st">&quot;烏龍茶&quot;</span>),</span>
-<span id="cb9-3"><a href="資料結構.html#cb9-3" tabindex="-1"></a>                      月份<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;1月&quot;</span>,<span class="st">&quot;2月&quot;</span>,<span class="st">&quot;3月&quot;</span>,<span class="st">&quot;4月&quot;</span>),</span>
-<span id="cb9-4"><a href="資料結構.html#cb9-4" tabindex="-1"></a>                      區域<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;東區&quot;</span>,<span class="st">&quot;西區&quot;</span>)</span>
-<span id="cb9-5"><a href="資料結構.html#cb9-5" tabindex="-1"></a>                      ))</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="資料結構.html#cb122-1" tabindex="-1"></a><span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">24</span>,<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>),</span>
+<span id="cb122-2"><a href="資料結構.html#cb122-2" tabindex="-1"></a>      <span class="at">dimnames =</span> <span class="fu">list</span>(產品<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;紅茶&quot;</span>,<span class="st">&quot;綠茶&quot;</span>,<span class="st">&quot;烏龍茶&quot;</span>),</span>
+<span id="cb122-3"><a href="資料結構.html#cb122-3" tabindex="-1"></a>                      月份<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;1月&quot;</span>,<span class="st">&quot;2月&quot;</span>,<span class="st">&quot;3月&quot;</span>,<span class="st">&quot;4月&quot;</span>),</span>
+<span id="cb122-4"><a href="資料結構.html#cb122-4" tabindex="-1"></a>                      區域<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;東區&quot;</span>,<span class="st">&quot;西區&quot;</span>)</span>
+<span id="cb122-5"><a href="資料結構.html#cb122-5" tabindex="-1"></a>                      ))</span></code></pre></div>
 <pre><code>## , , 區域 = 東區
 ## 
 ##         月份
@@ -359,12 +359,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   綠茶    14  17  20  23
 ##   烏龍茶  15  18  21  24</code></pre>
 <p>4維的array</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="資料結構.html#cb11-1" tabindex="-1"></a><span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>,<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>),</span>
-<span id="cb11-2"><a href="資料結構.html#cb11-2" tabindex="-1"></a>      <span class="at">dimnames =</span> <span class="fu">list</span>(產品<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;第一季&quot;</span>,<span class="st">&quot;第二季&quot;</span>,<span class="st">&quot;第三季&quot;</span>),</span>
-<span id="cb11-3"><a href="資料結構.html#cb11-3" tabindex="-1"></a>                      月份<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;紅茶&quot;</span>,<span class="st">&quot;綠茶&quot;</span>,<span class="st">&quot;烏龍茶&quot;</span>),</span>
-<span id="cb11-4"><a href="資料結構.html#cb11-4" tabindex="-1"></a>                      區域<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;東區&quot;</span>,<span class="st">&quot;西區&quot;</span>),</span>
-<span id="cb11-5"><a href="資料結構.html#cb11-5" tabindex="-1"></a>                      縣市<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;台中&quot;</span>,<span class="st">&quot;台北&quot;</span>)</span>
-<span id="cb11-6"><a href="資料結構.html#cb11-6" tabindex="-1"></a>                      ))</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="資料結構.html#cb124-1" tabindex="-1"></a><span class="fu">array</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">36</span>,<span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">2</span>),</span>
+<span id="cb124-2"><a href="資料結構.html#cb124-2" tabindex="-1"></a>      <span class="at">dimnames =</span> <span class="fu">list</span>(產品<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;第一季&quot;</span>,<span class="st">&quot;第二季&quot;</span>,<span class="st">&quot;第三季&quot;</span>),</span>
+<span id="cb124-3"><a href="資料結構.html#cb124-3" tabindex="-1"></a>                      月份<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;紅茶&quot;</span>,<span class="st">&quot;綠茶&quot;</span>,<span class="st">&quot;烏龍茶&quot;</span>),</span>
+<span id="cb124-4"><a href="資料結構.html#cb124-4" tabindex="-1"></a>                      區域<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;東區&quot;</span>,<span class="st">&quot;西區&quot;</span>),</span>
+<span id="cb124-5"><a href="資料結構.html#cb124-5" tabindex="-1"></a>                      縣市<span class="ot">=</span><span class="fu">c</span>(<span class="st">&quot;台中&quot;</span>,<span class="st">&quot;台北&quot;</span>)</span>
+<span id="cb124-6"><a href="資料結構.html#cb124-6" tabindex="-1"></a>                      ))</span></code></pre></div>
 <pre><code>## , , 區域 = 東區, 縣市 = 台中
 ## 
 ##         月份
@@ -406,8 +406,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>一般csv檔，可以很輕鬆用read.csv函數，將資料匯入成data.frame</li>
 </ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="資料結構.html#cb13-1" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/C0G660-2024-09-27.csv&quot;</span>)</span>
-<span id="cb13-2"><a href="資料結構.html#cb13-2" tabindex="-1"></a><span class="fu">head</span>(DT)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="資料結構.html#cb126-1" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/C0G660-2024-09-27.csv&quot;</span>)</span>
+<span id="cb126-2"><a href="資料結構.html#cb126-2" tabindex="-1"></a><span class="fu">head</span>(DT)</span></code></pre></div>
 <pre><code>##   觀測時間.hour. 測站氣壓.hPa.     氣溫... 相對溼度... 風速.m.s.
 ## 1        ObsTime       StnPres Temperature          RH        WS
 ## 2             01        1007.0        28.7         100       0.0
@@ -425,171 +425,171 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="2" style="list-style-type: decimal">
 <li>可以使用data.frame() 函數，自創data.frame 資料結構</li>
 </ol>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="資料結構.html#cb15-1" tabindex="-1"></a>score <span class="ot">&lt;-</span>  <span class="fu">data.frame</span>(<span class="st">&quot;CLASS&quot;</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;甲班&quot;</span>,<span class="st">&quot;乙班&quot;</span>,<span class="st">&quot;丙班&quot;</span>), <span class="at">each =</span> <span class="dv">10</span>)  ,  <span class="co"># 班級</span></span>
-<span id="cb15-2"><a href="資料結構.html#cb15-2" tabindex="-1"></a>                     <span class="st">&quot;SEX&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;男&quot;</span>,<span class="st">&quot;女&quot;</span>),<span class="dv">30</span>,<span class="at">replace =</span> T),  <span class="co">#性別</span></span>
-<span id="cb15-3"><a href="資料結構.html#cb15-3" tabindex="-1"></a>                     <span class="st">&quot;AREA&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;興和里&quot;</span>,<span class="st">&quot;復興里&quot;</span>,<span class="st">&quot;瑞興里&quot;</span>,<span class="st">&quot;仁善里&quot;</span>),<span class="dv">30</span>,<span class="at">replace =</span> T), <span class="co">#居住里</span></span>
-<span id="cb15-4"><a href="資料結構.html#cb15-4" tabindex="-1"></a>                     <span class="st">&quot;CS&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">80</span>,<span class="dv">30</span>,<span class="at">replace =</span> T), <span class="co"># 國文成績</span></span>
-<span id="cb15-5"><a href="資料結構.html#cb15-5" tabindex="-1"></a>                     <span class="st">&quot;ES&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T),<span class="co"># 英文成績</span></span>
-<span id="cb15-6"><a href="資料結構.html#cb15-6" tabindex="-1"></a>                     <span class="st">&quot;MS&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">40</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)  <span class="co"># 數學成績</span></span>
-<span id="cb15-7"><a href="資料結構.html#cb15-7" tabindex="-1"></a>                     )</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="資料結構.html#cb128-1" tabindex="-1"></a>score <span class="ot">&lt;-</span>  <span class="fu">data.frame</span>(<span class="st">&quot;CLASS&quot;</span> <span class="ot">=</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;甲班&quot;</span>,<span class="st">&quot;乙班&quot;</span>,<span class="st">&quot;丙班&quot;</span>), <span class="at">each =</span> <span class="dv">10</span>)  ,  <span class="co"># 班級</span></span>
+<span id="cb128-2"><a href="資料結構.html#cb128-2" tabindex="-1"></a>                     <span class="st">&quot;SEX&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;男&quot;</span>,<span class="st">&quot;女&quot;</span>),<span class="dv">30</span>,<span class="at">replace =</span> T),  <span class="co">#性別</span></span>
+<span id="cb128-3"><a href="資料結構.html#cb128-3" tabindex="-1"></a>                     <span class="st">&quot;AREA&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;興和里&quot;</span>,<span class="st">&quot;復興里&quot;</span>,<span class="st">&quot;瑞興里&quot;</span>,<span class="st">&quot;仁善里&quot;</span>),<span class="dv">30</span>,<span class="at">replace =</span> T), <span class="co">#居住里</span></span>
+<span id="cb128-4"><a href="資料結構.html#cb128-4" tabindex="-1"></a>                     <span class="st">&quot;CS&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">80</span>,<span class="dv">30</span>,<span class="at">replace =</span> T), <span class="co"># 國文成績</span></span>
+<span id="cb128-5"><a href="資料結構.html#cb128-5" tabindex="-1"></a>                     <span class="st">&quot;ES&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T),<span class="co"># 英文成績</span></span>
+<span id="cb128-6"><a href="資料結構.html#cb128-6" tabindex="-1"></a>                     <span class="st">&quot;MS&quot;</span> <span class="ot">=</span> <span class="fu">sample</span>(<span class="dv">40</span><span class="sc">:</span><span class="dv">90</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)  <span class="co"># 數學成績</span></span>
+<span id="cb128-7"><a href="資料結構.html#cb128-7" tabindex="-1"></a>                     )</span></code></pre></div>
 <p>3.前幾筆查看 /後幾筆查看</p>
 <p>用head()，可以查看前幾筆資料，預設查看前5筆;用tail()，可以查看最後幾筆資料，預設也是查看最後5筆</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="資料結構.html#cb16-1" tabindex="-1"></a><span class="co"># 查看前5筆</span></span>
-<span id="cb16-2"><a href="資料結構.html#cb16-2" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
-<pre><code>##   CLASS SEX   AREA CS ES MS
-## 1  甲班  女 復興里 49 98 55
-## 2  甲班  女 復興里 42 56 71
-## 3  甲班  女 瑞興里 75 61 76
-## 4  甲班  女 瑞興里 32 66 67
-## 5  甲班  男 瑞興里 32 50 89
-## 6  甲班  女 復興里 74 82 69</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="資料結構.html#cb18-1" tabindex="-1"></a><span class="co"># 查看最後5筆</span></span>
-<span id="cb18-2"><a href="資料結構.html#cb18-2" tabindex="-1"></a><span class="fu">tail</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="資料結構.html#cb129-1" tabindex="-1"></a><span class="co"># 查看前5筆</span></span>
+<span id="cb129-2"><a href="資料結構.html#cb129-2" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+<pre><code>##   CLASS SEX   AREA CS  ES MS
+## 1  甲班  男 復興里 65  97 61
+## 2  甲班  女 興和里 50  62 72
+## 3  甲班  男 瑞興里 63  99 58
+## 4  甲班  女 瑞興里 72 100 90
+## 5  甲班  男 興和里 40  90 86
+## 6  甲班  男 瑞興里 64  57 54</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="資料結構.html#cb131-1" tabindex="-1"></a><span class="co"># 查看最後5筆</span></span>
+<span id="cb131-2"><a href="資料結構.html#cb131-2" tabindex="-1"></a><span class="fu">tail</span>(score)</span></code></pre></div>
 <pre><code>##    CLASS SEX   AREA CS ES MS
-## 25  丙班  女 興和里 60 79 79
-## 26  丙班  女 仁善里 79 93 81
-## 27  丙班  女 仁善里 30 84 80
-## 28  丙班  女 瑞興里 52 58 53
-## 29  丙班  男 復興里 50 76 78
-## 30  丙班  男 瑞興里 64 57 46</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="資料結構.html#cb20-1" tabindex="-1"></a><span class="co"># 查看前10筆</span></span>
-<span id="cb20-2"><a href="資料結構.html#cb20-2" tabindex="-1"></a><span class="fu">head</span>(score ,<span class="at">n=</span><span class="dv">10</span>)</span></code></pre></div>
-<pre><code>##    CLASS SEX   AREA CS ES MS
-## 1   甲班  女 復興里 49 98 55
-## 2   甲班  女 復興里 42 56 71
-## 3   甲班  女 瑞興里 75 61 76
-## 4   甲班  女 瑞興里 32 66 67
-## 5   甲班  男 瑞興里 32 50 89
-## 6   甲班  女 復興里 74 82 69
-## 7   甲班  男 復興里 31 74 89
-## 8   甲班  女 瑞興里 51 61 77
-## 9   甲班  女 瑞興里 64 94 43
-## 10  甲班  男 瑞興里 63 66 46</code></pre>
+## 25  丙班  男 仁善里 60 65 58
+## 26  丙班  女 仁善里 36 68 58
+## 27  丙班  男 復興里 51 84 81
+## 28  丙班  女 興和里 40 78 74
+## 29  丙班  男 瑞興里 35 92 50
+## 30  丙班  男 興和里 45 73 83</code></pre>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="資料結構.html#cb133-1" tabindex="-1"></a><span class="co"># 查看前10筆</span></span>
+<span id="cb133-2"><a href="資料結構.html#cb133-2" tabindex="-1"></a><span class="fu">head</span>(score ,<span class="at">n=</span><span class="dv">10</span>)</span></code></pre></div>
+<pre><code>##    CLASS SEX   AREA CS  ES MS
+## 1   甲班  男 復興里 65  97 61
+## 2   甲班  女 興和里 50  62 72
+## 3   甲班  男 瑞興里 63  99 58
+## 4   甲班  女 瑞興里 72 100 90
+## 5   甲班  男 興和里 40  90 86
+## 6   甲班  男 瑞興里 64  57 54
+## 7   甲班  男 瑞興里 67  86 89
+## 8   甲班  女 復興里 79  87 72
+## 9   甲班  男 復興里 51  57 48
+## 10  甲班  男 瑞興里 37  96 90</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>data.frame 行與列 之 數量查詢</li>
 </ol>
 <p>可用nrow()查看data.frame共有多少筆數(行數)，用ncol()查看變數的數量(列數)，用dim()同時查看幾行幾列</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="資料結構.html#cb22-1" tabindex="-1"></a><span class="co"># 查詢行數</span></span>
-<span id="cb22-2"><a href="資料結構.html#cb22-2" tabindex="-1"></a><span class="fu">nrow</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="資料結構.html#cb135-1" tabindex="-1"></a><span class="co"># 查詢行數</span></span>
+<span id="cb135-2"><a href="資料結構.html#cb135-2" tabindex="-1"></a><span class="fu">nrow</span>(score)</span></code></pre></div>
 <pre><code>## [1] 30</code></pre>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="資料結構.html#cb24-1" tabindex="-1"></a><span class="co"># 查詢列數</span></span>
-<span id="cb24-2"><a href="資料結構.html#cb24-2" tabindex="-1"></a><span class="fu">ncol</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="資料結構.html#cb137-1" tabindex="-1"></a><span class="co"># 查詢列數</span></span>
+<span id="cb137-2"><a href="資料結構.html#cb137-2" tabindex="-1"></a><span class="fu">ncol</span>(score)</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="資料結構.html#cb26-1" tabindex="-1"></a><span class="co"># 查詢行數與列數</span></span>
-<span id="cb26-2"><a href="資料結構.html#cb26-2" tabindex="-1"></a><span class="fu">dim</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="資料結構.html#cb139-1" tabindex="-1"></a><span class="co"># 查詢行數與列數</span></span>
+<span id="cb139-2"><a href="資料結構.html#cb139-2" tabindex="-1"></a><span class="fu">dim</span>(score)</span></code></pre></div>
 <pre><code>## [1] 30  6</code></pre>
 <p>5.屬性查看</p>
 <p>先前教過使用<code>class</code>可以查看某向量屬於哪種資料類型(文字、數值、日期)，但是<code>class</code>一次只能查看一種資料， 而data.frame是一個擁有很多欄位(很多屬性)的複雜物件，所以可改用str()來查看資料整體屬性。</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="資料結構.html#cb28-1" tabindex="-1"></a><span class="co"># 查詢行數</span></span>
-<span id="cb28-2"><a href="資料結構.html#cb28-2" tabindex="-1"></a><span class="fu">str</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="資料結構.html#cb141-1" tabindex="-1"></a><span class="co"># 查詢行數</span></span>
+<span id="cb141-2"><a href="資料結構.html#cb141-2" tabindex="-1"></a><span class="fu">str</span>(score)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    30 obs. of  6 variables:
 ##  $ CLASS: chr  &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; ...
-##  $ SEX  : chr  &quot;女&quot; &quot;女&quot; &quot;女&quot; &quot;女&quot; ...
-##  $ AREA : chr  &quot;復興里&quot; &quot;復興里&quot; &quot;瑞興里&quot; &quot;瑞興里&quot; ...
-##  $ CS   : int  49 42 75 32 32 74 31 51 64 63 ...
-##  $ ES   : int  98 56 61 66 50 82 74 61 94 66 ...
-##  $ MS   : int  55 71 76 67 89 69 89 77 43 46 ...</code></pre>
+##  $ SEX  : chr  &quot;男&quot; &quot;女&quot; &quot;男&quot; &quot;女&quot; ...
+##  $ AREA : chr  &quot;復興里&quot; &quot;興和里&quot; &quot;瑞興里&quot; &quot;瑞興里&quot; ...
+##  $ CS   : int  65 50 63 72 40 64 67 79 51 37 ...
+##  $ ES   : int  97 62 99 100 90 57 86 87 57 96 ...
+##  $ MS   : int  61 72 58 90 86 54 89 72 48 90 ...</code></pre>
 <p>6.查詢欄位名/行名</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="資料結構.html#cb30-1" tabindex="-1"></a><span class="co"># 查詢欄位名  </span></span>
-<span id="cb30-2"><a href="資料結構.html#cb30-2" tabindex="-1"></a><span class="fu">colnames</span>(score) <span class="co"># 也可使用 names(score)</span></span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="資料結構.html#cb143-1" tabindex="-1"></a><span class="co"># 查詢欄位名  </span></span>
+<span id="cb143-2"><a href="資料結構.html#cb143-2" tabindex="-1"></a><span class="fu">colnames</span>(score) <span class="co"># 也可使用 names(score)</span></span></code></pre></div>
 <pre><code>## [1] &quot;CLASS&quot; &quot;SEX&quot;   &quot;AREA&quot;  &quot;CS&quot;    &quot;ES&quot;    &quot;MS&quot;</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="資料結構.html#cb32-1" tabindex="-1"></a><span class="co"># 查詢行名  </span></span>
-<span id="cb32-2"><a href="資料結構.html#cb32-2" tabindex="-1"></a><span class="fu">rownames</span>(score) </span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="資料結構.html#cb145-1" tabindex="-1"></a><span class="co"># 查詢行名  </span></span>
+<span id="cb145-2"><a href="資料結構.html#cb145-2" tabindex="-1"></a><span class="fu">rownames</span>(score) </span></code></pre></div>
 <pre><code>##  [1] &quot;1&quot;  &quot;2&quot;  &quot;3&quot;  &quot;4&quot;  &quot;5&quot;  &quot;6&quot;  &quot;7&quot;  &quot;8&quot;  &quot;9&quot;  &quot;10&quot; &quot;11&quot; &quot;12&quot; &quot;13&quot; &quot;14&quot; &quot;15&quot;
 ## [16] &quot;16&quot; &quot;17&quot; &quot;18&quot; &quot;19&quot; &quot;20&quot; &quot;21&quot; &quot;22&quot; &quot;23&quot; &quot;24&quot; &quot;25&quot; &quot;26&quot; &quot;27&quot; &quot;28&quot; &quot;29&quot; &quot;30&quot;</code></pre>
 <p>7.變更欄位名稱</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="資料結構.html#cb34-1" tabindex="-1"></a><span class="co"># 變更所有欄位名稱  </span></span>
-<span id="cb34-2"><a href="資料結構.html#cb34-2" tabindex="-1"></a><span class="fu">colnames</span>(score) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;班級&quot;</span>,<span class="st">&quot;性別&quot;</span>, <span class="st">&quot;居住&quot;</span> , <span class="st">&quot;國文&quot;</span>, <span class="st">&quot;英文&quot;</span>,<span class="st">&quot;數學&quot;</span>)</span>
-<span id="cb34-3"><a href="資料結構.html#cb34-3" tabindex="-1"></a></span>
-<span id="cb34-4"><a href="資料結構.html#cb34-4" tabindex="-1"></a><span class="co"># 變更某一個欄位名稱  </span></span>
-<span id="cb34-5"><a href="資料結構.html#cb34-5" tabindex="-1"></a><span class="fu">colnames</span>(score)[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="st">&quot;國文成績&quot;</span></span>
-<span id="cb34-6"><a href="資料結構.html#cb34-6" tabindex="-1"></a><span class="co"># 重新查看欄位名稱</span></span>
-<span id="cb34-7"><a href="資料結構.html#cb34-7" tabindex="-1"></a><span class="fu">names</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="資料結構.html#cb147-1" tabindex="-1"></a><span class="co"># 變更所有欄位名稱  </span></span>
+<span id="cb147-2"><a href="資料結構.html#cb147-2" tabindex="-1"></a><span class="fu">colnames</span>(score) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;班級&quot;</span>,<span class="st">&quot;性別&quot;</span>, <span class="st">&quot;居住&quot;</span> , <span class="st">&quot;國文&quot;</span>, <span class="st">&quot;英文&quot;</span>,<span class="st">&quot;數學&quot;</span>)</span>
+<span id="cb147-3"><a href="資料結構.html#cb147-3" tabindex="-1"></a></span>
+<span id="cb147-4"><a href="資料結構.html#cb147-4" tabindex="-1"></a><span class="co"># 變更某一個欄位名稱  </span></span>
+<span id="cb147-5"><a href="資料結構.html#cb147-5" tabindex="-1"></a><span class="fu">colnames</span>(score)[<span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="st">&quot;國文成績&quot;</span></span>
+<span id="cb147-6"><a href="資料結構.html#cb147-6" tabindex="-1"></a><span class="co"># 重新查看欄位名稱</span></span>
+<span id="cb147-7"><a href="資料結構.html#cb147-7" tabindex="-1"></a><span class="fu">names</span>(score)</span></code></pre></div>
 <pre><code>## [1] &quot;班級&quot;     &quot;性別&quot;     &quot;居住&quot;     &quot;國文成績&quot; &quot;英文&quot;     &quot;數學&quot;</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="資料結構.html#cb36-1" tabindex="-1"></a><span class="fu">colnames</span>(score)[<span class="dv">4</span>] <span class="ot">&lt;-</span><span class="st">&quot;國文&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="資料結構.html#cb149-1" tabindex="-1"></a><span class="fu">colnames</span>(score)[<span class="dv">4</span>] <span class="ot">&lt;-</span><span class="st">&quot;國文&quot;</span></span></code></pre></div>
 <p>8.提取data.frame某欄某行資料</p>
 <p>data.frame，用中括弧[,]來找出行列內容,第一個引數代表rows數，第二個引數代表column數，第二個引數數字代表某欄位順序，也可以直接輸入變數名稱直接提取資料出來，此外data.frame+$+變數名稱，可以提取整欄資料</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="資料結構.html#cb37-1" tabindex="-1"></a>score[<span class="dv">3</span>,]  <span class="co">#提取第三位同學整筆資料</span></span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="資料結構.html#cb150-1" tabindex="-1"></a>score[<span class="dv">3</span>,]  <span class="co">#提取第三位同學整筆資料</span></span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文 英文 數學
-## 3 甲班   女 瑞興里   75   61   76</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="資料結構.html#cb39-1" tabindex="-1"></a>score[,<span class="dv">5</span>]  <span class="co">#提取第5欄資料，英文成績</span></span></code></pre></div>
-<pre><code>##  [1]  98  56  61  66  50  82  74  61  94  66  56  85  50  78  59  72 100  67  97
-## [20]  50  80  87  88  62  79  93  84  58  76  57</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="資料結構.html#cb41-1" tabindex="-1"></a>score[<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">18</span>,<span class="dv">15</span>),] <span class="co">#提取第9,2,18,15位同學整筆資料</span></span></code></pre></div>
+## 3 甲班   男 瑞興里   63   99   58</code></pre>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="資料結構.html#cb152-1" tabindex="-1"></a>score[,<span class="dv">5</span>]  <span class="co">#提取第5欄資料，英文成績</span></span></code></pre></div>
+<pre><code>##  [1]  97  62  99 100  90  57  86  87  57  96  71  85  69  74  66  56  97  86  61
+## [20]  73  99  53  50  55  65  68  84  78  92  73</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="資料結構.html#cb154-1" tabindex="-1"></a>score[<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">18</span>,<span class="dv">15</span>),] <span class="co">#提取第9,2,18,15位同學整筆資料</span></span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文 數學
-## 9  甲班   女 瑞興里   64   94   43
-## 2  甲班   女 復興里   42   56   71
-## 18 乙班   女 興和里   63   67   40
-## 15 乙班   男 仁善里   59   59   58</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="資料結構.html#cb43-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)] <span class="co">#提取第1,2,5欄資料(班級 性別 英文)</span></span></code></pre></div>
+## 9  甲班   男 復興里   51   57   48
+## 2  甲班   女 興和里   50   62   72
+## 18 乙班   男 仁善里   36   86   51
+## 15 乙班   女 仁善里   46   66   59</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="資料結構.html#cb156-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)] <span class="co">#提取第1,2,5欄資料(班級 性別 英文)</span></span></code></pre></div>
 <pre><code>##    班級 性別 英文
-## 1  甲班   女   98
-## 2  甲班   女   56
-## 3  甲班   女   61
-## 4  甲班   女   66
-## 5  甲班   男   50
-## 6  甲班   女   82
-## 7  甲班   男   74
-## 8  甲班   女   61
-## 9  甲班   女   94
-## 10 甲班   男   66
-## 11 乙班   男   56
+## 1  甲班   男   97
+## 2  甲班   女   62
+## 3  甲班   男   99
+## 4  甲班   女  100
+## 5  甲班   男   90
+## 6  甲班   男   57
+## 7  甲班   男   86
+## 8  甲班   女   87
+## 9  甲班   男   57
+## 10 甲班   男   96
+## 11 乙班   女   71
 ## 12 乙班   女   85
-## 13 乙班   男   50
-## 14 乙班   女   78
-## 15 乙班   男   59
-## 16 乙班   女   72
-## 17 乙班   女  100
-## 18 乙班   女   67
-## 19 乙班   女   97
-## 20 乙班   女   50
-## 21 丙班   男   80
-## 22 丙班   女   87
-## 23 丙班   男   88
-## 24 丙班   女   62
-## 25 丙班   女   79
-## 26 丙班   女   93
-## 27 丙班   女   84
-## 28 丙班   女   58
-## 29 丙班   男   76
-## 30 丙班   男   57</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="資料結構.html#cb45-1" tabindex="-1"></a>score[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co">#指定某範圍的資料提取</span></span></code></pre></div>
+## 13 乙班   男   69
+## 14 乙班   女   74
+## 15 乙班   女   66
+## 16 乙班   男   56
+## 17 乙班   女   97
+## 18 乙班   男   86
+## 19 乙班   女   61
+## 20 乙班   男   73
+## 21 丙班   女   99
+## 22 丙班   男   53
+## 23 丙班   女   50
+## 24 丙班   女   55
+## 25 丙班   男   65
+## 26 丙班   女   68
+## 27 丙班   男   84
+## 28 丙班   女   78
+## 29 丙班   男   92
+## 30 丙班   男   73</code></pre>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="資料結構.html#cb158-1" tabindex="-1"></a>score[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co">#指定某範圍的資料提取</span></span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文
-## 1 甲班   女 復興里   49
-## 2 甲班   女 復興里   42</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="資料結構.html#cb47-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="st">&quot;班級&quot;</span>,<span class="st">&quot;英文&quot;</span>)]  <span class="co"># 可直接鍵入變數名稱提取某欄位完整資料</span></span></code></pre></div>
+## 1 甲班   男 復興里   65
+## 2 甲班   女 興和里   50</code></pre>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="資料結構.html#cb160-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="st">&quot;班級&quot;</span>,<span class="st">&quot;英文&quot;</span>)]  <span class="co"># 可直接鍵入變數名稱提取某欄位完整資料</span></span></code></pre></div>
 <pre><code>##    班級 英文
-## 1  甲班   98
-## 2  甲班   56
-## 3  甲班   61
-## 4  甲班   66
-## 5  甲班   50
-## 6  甲班   82
-## 7  甲班   74
-## 8  甲班   61
-## 9  甲班   94
-## 10 甲班   66
-## 11 乙班   56
+## 1  甲班   97
+## 2  甲班   62
+## 3  甲班   99
+## 4  甲班  100
+## 5  甲班   90
+## 6  甲班   57
+## 7  甲班   86
+## 8  甲班   87
+## 9  甲班   57
+## 10 甲班   96
+## 11 乙班   71
 ## 12 乙班   85
-## 13 乙班   50
-## 14 乙班   78
-## 15 乙班   59
-## 16 乙班   72
-## 17 乙班  100
-## 18 乙班   67
-## 19 乙班   97
-## 20 乙班   50
-## 21 丙班   80
-## 22 丙班   87
-## 23 丙班   88
-## 24 丙班   62
-## 25 丙班   79
-## 26 丙班   93
+## 13 乙班   69
+## 14 乙班   74
+## 15 乙班   66
+## 16 乙班   56
+## 17 乙班   97
+## 18 乙班   86
+## 19 乙班   61
+## 20 乙班   73
+## 21 丙班   99
+## 22 丙班   53
+## 23 丙班   50
+## 24 丙班   55
+## 25 丙班   65
+## 26 丙班   68
 ## 27 丙班   84
-## 28 丙班   58
-## 29 丙班   76
-## 30 丙班   57</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="資料結構.html#cb49-1" tabindex="-1"></a>score<span class="sc">$</span>班級      <span class="co"># $+變數名稱可以提取某變數完整資料</span></span></code></pre></div>
+## 28 丙班   78
+## 29 丙班   92
+## 30 丙班   73</code></pre>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="資料結構.html#cb162-1" tabindex="-1"></a>score<span class="sc">$</span>班級      <span class="co"># $+變數名稱可以提取某變數完整資料</span></span></code></pre></div>
 <pre><code>##  [1] &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot;
 ## [11] &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot;
 ## [21] &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot; &quot;丙班&quot;</code></pre>
@@ -597,64 +597,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>資料合併</li>
 </ol>
 <p>rbind()可以合併有相同變數的data.frame的資料，增加筆數 cbind()可以合併有相同筆數的data.frame的資料，增加變數</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="資料結構.html#cb51-1" tabindex="-1"></a><span class="co">#增加筆數</span></span>
-<span id="cb51-2"><a href="資料結構.html#cb51-2" tabindex="-1"></a>addRow <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;甲班&quot;</span>  , <span class="st">&quot;女&quot;</span>, <span class="st">&quot;興和里&quot;</span> ,  <span class="st">&quot;42&quot;</span> ,  <span class="st">&quot;83&quot;</span> , <span class="st">&quot;57&quot;</span>)</span>
-<span id="cb51-3"><a href="資料結構.html#cb51-3" tabindex="-1"></a><span class="fu">rbind</span>(score,addRow)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="資料結構.html#cb164-1" tabindex="-1"></a><span class="co">#增加筆數</span></span>
+<span id="cb164-2"><a href="資料結構.html#cb164-2" tabindex="-1"></a>addRow <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;甲班&quot;</span>  , <span class="st">&quot;女&quot;</span>, <span class="st">&quot;興和里&quot;</span> ,  <span class="st">&quot;42&quot;</span> ,  <span class="st">&quot;83&quot;</span> , <span class="st">&quot;57&quot;</span>)</span>
+<span id="cb164-3"><a href="資料結構.html#cb164-3" tabindex="-1"></a><span class="fu">rbind</span>(score,addRow)</span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文 數學
-## 1  甲班   女 復興里   49   98   55
-## 2  甲班   女 復興里   42   56   71
-## 3  甲班   女 瑞興里   75   61   76
-## 4  甲班   女 瑞興里   32   66   67
-## 5  甲班   男 瑞興里   32   50   89
-## 6  甲班   女 復興里   74   82   69
-## 7  甲班   男 復興里   31   74   89
-## 8  甲班   女 瑞興里   51   61   77
-## 9  甲班   女 瑞興里   64   94   43
-## 10 甲班   男 瑞興里   63   66   46
-## 11 乙班   男 瑞興里   64   56   57
-## 12 乙班   女 仁善里   30   85   80
-## 13 乙班   男 瑞興里   56   50   48
-## 14 乙班   女 興和里   37   78   44
-## 15 乙班   男 仁善里   59   59   58
-## 16 乙班   女 興和里   75   72   81
-## 17 乙班   女 仁善里   38  100   58
-## 18 乙班   女 興和里   63   67   40
-## 19 乙班   女 仁善里   68   97   42
-## 20 乙班   女 仁善里   34   50   68
-## 21 丙班   男 興和里   63   80   51
-## 22 丙班   女 復興里   43   87   51
-## 23 丙班   男 瑞興里   41   88   54
-## 24 丙班   女 興和里   58   62   62
-## 25 丙班   女 興和里   60   79   79
-## 26 丙班   女 仁善里   79   93   81
-## 27 丙班   女 仁善里   30   84   80
-## 28 丙班   女 瑞興里   52   58   53
-## 29 丙班   男 復興里   50   76   78
-## 30 丙班   男 瑞興里   64   57   46
+## 1  甲班   男 復興里   65   97   61
+## 2  甲班   女 興和里   50   62   72
+## 3  甲班   男 瑞興里   63   99   58
+## 4  甲班   女 瑞興里   72  100   90
+## 5  甲班   男 興和里   40   90   86
+## 6  甲班   男 瑞興里   64   57   54
+## 7  甲班   男 瑞興里   67   86   89
+## 8  甲班   女 復興里   79   87   72
+## 9  甲班   男 復興里   51   57   48
+## 10 甲班   男 瑞興里   37   96   90
+## 11 乙班   女 仁善里   32   71   87
+## 12 乙班   女 仁善里   58   85   90
+## 13 乙班   男 瑞興里   77   69   84
+## 14 乙班   女 仁善里   62   74   63
+## 15 乙班   女 仁善里   46   66   59
+## 16 乙班   男 復興里   54   56   72
+## 17 乙班   女 瑞興里   80   97   50
+## 18 乙班   男 仁善里   36   86   51
+## 19 乙班   女 興和里   46   61   82
+## 20 乙班   男 興和里   30   73   67
+## 21 丙班   女 瑞興里   61   99   48
+## 22 丙班   男 復興里   74   53   72
+## 23 丙班   女 復興里   59   50   86
+## 24 丙班   女 仁善里   53   55   77
+## 25 丙班   男 仁善里   60   65   58
+## 26 丙班   女 仁善里   36   68   58
+## 27 丙班   男 復興里   51   84   81
+## 28 丙班   女 興和里   40   78   74
+## 29 丙班   男 瑞興里   35   92   50
+## 30 丙班   男 興和里   45   73   83
 ## 31 甲班   女 興和里   42   83   57</code></pre>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="資料結構.html#cb53-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
-<span id="cb53-2"><a href="資料結構.html#cb53-2" tabindex="-1"></a></span>
-<span id="cb53-3"><a href="資料結構.html#cb53-3" tabindex="-1"></a><span class="st">&quot;自然&quot;</span> <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)</span>
-<span id="cb53-4"><a href="資料結構.html#cb53-4" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">cbind</span>(score,自然)</span>
-<span id="cb53-5"><a href="資料結構.html#cb53-5" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="資料結構.html#cb166-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
+<span id="cb166-2"><a href="資料結構.html#cb166-2" tabindex="-1"></a></span>
+<span id="cb166-3"><a href="資料結構.html#cb166-3" tabindex="-1"></a><span class="st">&quot;自然&quot;</span> <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)</span>
+<span id="cb166-4"><a href="資料結構.html#cb166-4" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">cbind</span>(score,自然)</span>
+<span id="cb166-5"><a href="資料結構.html#cb166-5" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文 英文 數學 自然
-## 1 甲班   女 復興里   49   98   55   89
-## 2 甲班   女 復興里   42   56   71   58
-## 3 甲班   女 瑞興里   75   61   76   85
-## 4 甲班   女 瑞興里   32   66   67   78
-## 5 甲班   男 瑞興里   32   50   89   76
-## 6 甲班   女 復興里   74   82   69   92</code></pre>
+## 1 甲班   男 復興里   65   97   61   93
+## 2 甲班   女 興和里   50   62   72   72
+## 3 甲班   男 瑞興里   63   99   58   93
+## 4 甲班   女 瑞興里   72  100   90   64
+## 5 甲班   男 興和里   40   90   86   52
+## 6 甲班   男 瑞興里   64   57   54   84</code></pre>
 <p>善用$和賦值，也可以新增變數</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="資料結構.html#cb55-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
-<span id="cb55-2"><a href="資料結構.html#cb55-2" tabindex="-1"></a>score<span class="sc">$</span>社會 <span class="ot">&lt;-</span>  <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)</span>
-<span id="cb55-3"><a href="資料結構.html#cb55-3" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="資料結構.html#cb168-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
+<span id="cb168-2"><a href="資料結構.html#cb168-2" tabindex="-1"></a>score<span class="sc">$</span>社會 <span class="ot">&lt;-</span>  <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)</span>
+<span id="cb168-3"><a href="資料結構.html#cb168-3" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文 英文 數學 自然 社會
-## 1 甲班   女 復興里   49   98   55   89   80
-## 2 甲班   女 復興里   42   56   71   58   67
-## 3 甲班   女 瑞興里   75   61   76   85   70
-## 4 甲班   女 瑞興里   32   66   67   78   82
-## 5 甲班   男 瑞興里   32   50   89   76   73
-## 6 甲班   女 復興里   74   82   69   92   99</code></pre>
+## 1 甲班   男 復興里   65   97   61   93   95
+## 2 甲班   女 興和里   50   62   72   72   52
+## 3 甲班   男 瑞興里   63   99   58   93   94
+## 4 甲班   女 瑞興里   72  100   90   64   98
+## 5 甲班   男 興和里   40   90   86   52   56
+## 6 甲班   男 瑞興里   64   57   54   84   75</code></pre>
 </div>
 <div id="三維結構-list" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> 三維結構 (list)<a href="資料結構.html#三維結構-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -662,55 +662,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li>建立list，使用list()</li>
 </ol>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="資料結構.html#cb57-1" tabindex="-1"></a><span class="co">#建立list</span></span>
-<span id="cb57-2"><a href="資料結構.html#cb57-2" tabindex="-1"></a></span>
-<span id="cb57-3"><a href="資料結構.html#cb57-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>   <span class="fu">list</span>(<span class="st">&quot;考試日期&quot;</span> <span class="ot">=</span><span class="fu">Sys.Date</span>() ,<span class="st">&quot;考試類型&quot;</span> <span class="ot">=</span> <span class="st">&quot;期中考試&quot;</span> ,<span class="at">Score =</span>score[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,])</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="資料結構.html#cb170-1" tabindex="-1"></a><span class="co">#建立list</span></span>
+<span id="cb170-2"><a href="資料結構.html#cb170-2" tabindex="-1"></a></span>
+<span id="cb170-3"><a href="資料結構.html#cb170-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>   <span class="fu">list</span>(<span class="st">&quot;考試日期&quot;</span> <span class="ot">=</span><span class="fu">Sys.Date</span>() ,<span class="st">&quot;考試類型&quot;</span> <span class="ot">=</span> <span class="st">&quot;期中考試&quot;</span> ,<span class="at">Score =</span>score[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>,])</span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>資料提取 list可用$，提取每一個向度資料，亦可使用中括弧[]，提取某向度資料</li>
 </ol>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="資料結構.html#cb58-1" tabindex="-1"></a>DT[<span class="dv">1</span>]  <span class="co">#使用[]提取</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="資料結構.html#cb171-1" tabindex="-1"></a>DT[<span class="dv">1</span>]  <span class="co">#使用[]提取</span></span></code></pre></div>
 <pre><code>## $考試日期
 ## [1] &quot;2024-09-29&quot;</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="資料結構.html#cb60-1" tabindex="-1"></a>DT[<span class="dv">2</span>]  <span class="co">#使用[]提取</span></span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="資料結構.html#cb173-1" tabindex="-1"></a>DT[<span class="dv">2</span>]  <span class="co">#使用[]提取</span></span></code></pre></div>
 <pre><code>## $考試類型
 ## [1] &quot;期中考試&quot;</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="資料結構.html#cb62-1" tabindex="-1"></a>DT<span class="sc">$</span>Score  <span class="co">#使用$提取</span></span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="資料結構.html#cb175-1" tabindex="-1"></a>DT<span class="sc">$</span>Score  <span class="co">#使用$提取</span></span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文 數學 自然 社會
-## 1  甲班   女 復興里   49   98   55   89   80
-## 2  甲班   女 復興里   42   56   71   58   67
-## 3  甲班   女 瑞興里   75   61   76   85   70
-## 4  甲班   女 瑞興里   32   66   67   78   82
-## 5  甲班   男 瑞興里   32   50   89   76   73
-## 6  甲班   女 復興里   74   82   69   92   99
-## 7  甲班   男 復興里   31   74   89   63   52
-## 8  甲班   女 瑞興里   51   61   77  100   63
-## 9  甲班   女 瑞興里   64   94   43   52   53
-## 10 甲班   男 瑞興里   63   66   46   56   60</code></pre>
+## 1  甲班   男 復興里   65   97   61   93   95
+## 2  甲班   女 興和里   50   62   72   72   52
+## 3  甲班   男 瑞興里   63   99   58   93   94
+## 4  甲班   女 瑞興里   72  100   90   64   98
+## 5  甲班   男 興和里   40   90   86   52   56
+## 6  甲班   男 瑞興里   64   57   54   84   75
+## 7  甲班   男 瑞興里   67   86   89   68   54
+## 8  甲班   女 復興里   79   87   72   68   63
+## 9  甲班   男 復興里   51   57   48   73   67
+## 10 甲班   男 瑞興里   37   96   90   72   74</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>DT[3] 和DT[[3]] 差別，list的DT第三個向度是data.frame，若是想向下繼續擷取行列內容時， 就需要兩個中括弧[[]]，先將data.frame提取出來，之後再用[]選擇想要行列擷取出來</li>
 </ol>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="資料結構.html#cb64-1" tabindex="-1"></a>DT[<span class="dv">3</span>][<span class="dv">2</span>]  <span class="co">#單個中括弧，無法擷取將data.frame內部某欄資訊</span></span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="資料結構.html#cb177-1" tabindex="-1"></a>DT[<span class="dv">3</span>][<span class="dv">2</span>]  <span class="co">#單個中括弧，無法擷取將data.frame內部某欄資訊</span></span></code></pre></div>
 <pre><code>## $&lt;NA&gt;
 ## NULL</code></pre>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="資料結構.html#cb66-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="資料結構.html#cb179-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>##    性別
-## 1    女
+## 1    男
 ## 2    女
-## 3    女
+## 3    男
 ## 4    女
 ## 5    男
-## 6    女
+## 6    男
 ## 7    男
 ## 8    女
-## 9    女
+## 9    男
 ## 10   男</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="資料結構.html#cb68-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="資料結構.html#cb181-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文
-## 6  甲班   女 復興里   74   82
-## 7  甲班   男 復興里   31   74
-## 8  甲班   女 瑞興里   51   61
-## 9  甲班   女 瑞興里   64   94
-## 10 甲班   男 瑞興里   63   66</code></pre>
+## 6  甲班   男 瑞興里   64   57
+## 7  甲班   男 瑞興里   67   86
+## 8  甲班   女 復興里   79   87
+## 9  甲班   男 復興里   51   57
+## 10 甲班   男 瑞興里   37   96</code></pre>
 </div>
 </div>
 <div id="特殊資料結構" class="section level2 hasAnchor" number="4.3">
@@ -727,11 +727,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><strong>範例1</strong></p>
 <p>以鳶尾花卉資料集(iris)為例，使用table()，可以查出不同花品種出現次數</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="資料結構.html#cb70-1" tabindex="-1"></a><span class="co"># 載入資料集</span></span>
-<span id="cb70-2"><a href="資料結構.html#cb70-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb70-3"><a href="資料結構.html#cb70-3" tabindex="-1"></a></span>
-<span id="cb70-4"><a href="資料結構.html#cb70-4" tabindex="-1"></a><span class="co"># 查看資料集的前幾行</span></span>
-<span id="cb70-5"><a href="資料結構.html#cb70-5" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="資料結構.html#cb183-1" tabindex="-1"></a><span class="co"># 載入資料集</span></span>
+<span id="cb183-2"><a href="資料結構.html#cb183-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb183-3"><a href="資料結構.html#cb183-3" tabindex="-1"></a></span>
+<span id="cb183-4"><a href="資料結構.html#cb183-4" tabindex="-1"></a><span class="co"># 查看資料集的前幾行</span></span>
+<span id="cb183-5"><a href="資料結構.html#cb183-5" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 ## 2          4.9         3.0          1.4         0.2  setosa
@@ -739,8 +739,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4          4.6         3.1          1.5         0.2  setosa
 ## 5          5.0         3.6          1.4         0.2  setosa
 ## 6          5.4         3.9          1.7         0.4  setosa</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="資料結構.html#cb72-1" tabindex="-1"></a><span class="co">#使用 table() 函數查出不同花品種出現次數</span></span>
-<span id="cb72-2"><a href="資料結構.html#cb72-2" tabindex="-1"></a><span class="fu">table</span>(iris<span class="sc">$</span>Species)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="資料結構.html#cb185-1" tabindex="-1"></a><span class="co">#使用 table() 函數查出不同花品種出現次數</span></span>
+<span id="cb185-2"><a href="資料結構.html#cb185-2" tabindex="-1"></a><span class="fu">table</span>(iris<span class="sc">$</span>Species)</span></code></pre></div>
 <pre><code>## 
 ##     setosa versicolor  virginica 
 ##         50         50         50</code></pre>
@@ -754,11 +754,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>conc: 二氧化碳濃度（以毫升/升為單位）</p></li>
 <li><p>uptake: 植物對二氧化碳的吸收量（以微克/平方厘米為單位）。</p></li>
 </ul>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="資料結構.html#cb74-1" tabindex="-1"></a><span class="co"># 載入資料集</span></span>
-<span id="cb74-2"><a href="資料結構.html#cb74-2" tabindex="-1"></a><span class="fu">data</span>(CO2)</span>
-<span id="cb74-3"><a href="資料結構.html#cb74-3" tabindex="-1"></a></span>
-<span id="cb74-4"><a href="資料結構.html#cb74-4" tabindex="-1"></a><span class="co"># 查看資料集的前幾行</span></span>
-<span id="cb74-5"><a href="資料結構.html#cb74-5" tabindex="-1"></a><span class="fu">head</span>(CO2)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="資料結構.html#cb187-1" tabindex="-1"></a><span class="co"># 載入資料集</span></span>
+<span id="cb187-2"><a href="資料結構.html#cb187-2" tabindex="-1"></a><span class="fu">data</span>(CO2)</span>
+<span id="cb187-3"><a href="資料結構.html#cb187-3" tabindex="-1"></a></span>
+<span id="cb187-4"><a href="資料結構.html#cb187-4" tabindex="-1"></a><span class="co"># 查看資料集的前幾行</span></span>
+<span id="cb187-5"><a href="資料結構.html#cb187-5" tabindex="-1"></a><span class="fu">head</span>(CO2)</span></code></pre></div>
 <pre><code>##   Plant   Type  Treatment conc uptake
 ## 1   Qn1 Quebec nonchilled   95   16.0
 ## 2   Qn1 Quebec nonchilled  175   30.4
@@ -766,14 +766,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4   Qn1 Quebec nonchilled  350   37.2
 ## 5   Qn1 Quebec nonchilled  500   35.3
 ## 6   Qn1 Quebec nonchilled  675   39.2</code></pre>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="資料結構.html#cb76-1" tabindex="-1"></a><span class="co"># 使用 table() 函數分析植物類型和處理的關係</span></span>
-<span id="cb76-2"><a href="資料結構.html#cb76-2" tabindex="-1"></a>tab1 <span class="ot">&lt;-</span> <span class="fu">table</span>(CO2<span class="sc">$</span>Type, CO2<span class="sc">$</span>Treatment,<span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;植物類型&quot;</span>,<span class="st">&quot;施肥方式&quot;</span>))</span>
-<span id="cb76-3"><a href="資料結構.html#cb76-3" tabindex="-1"></a>tab1</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="資料結構.html#cb189-1" tabindex="-1"></a><span class="co"># 使用 table() 函數分析植物類型和處理的關係</span></span>
+<span id="cb189-2"><a href="資料結構.html#cb189-2" tabindex="-1"></a>tab1 <span class="ot">&lt;-</span> <span class="fu">table</span>(CO2<span class="sc">$</span>Type, CO2<span class="sc">$</span>Treatment,<span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;植物類型&quot;</span>,<span class="st">&quot;施肥方式&quot;</span>))</span>
+<span id="cb189-3"><a href="資料結構.html#cb189-3" tabindex="-1"></a>tab1</span></code></pre></div>
 <pre><code>##              施肥方式
 ## 植物類型  nonchilled chilled
 ##   Quebec              21      21
 ##   Mississippi         21      21</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="資料結構.html#cb78-1" tabindex="-1"></a><span class="fu">class</span>(tab1)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="資料結構.html#cb191-1" tabindex="-1"></a><span class="fu">class</span>(tab1)</span></code></pre></div>
 <pre><code>## [1] &quot;table&quot;</code></pre>
 </div>
 <div id="margin.table" class="section level4 hasAnchor" number="4.3.1.2">
@@ -783,13 +783,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>x: table 或 array</p></li>
 <li><p>margin : 1= rows邊際加總; 2= columns邊際加總</p></li>
 </ul>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="資料結構.html#cb80-1" tabindex="-1"></a><span class="co">#rows邊際加總</span></span>
-<span id="cb80-2"><a href="資料結構.html#cb80-2" tabindex="-1"></a><span class="fu">margin.table</span>(tab1,<span class="dv">1</span>)  <span class="co"># 等同 rowSums(tab1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="資料結構.html#cb193-1" tabindex="-1"></a><span class="co">#rows邊際加總</span></span>
+<span id="cb193-2"><a href="資料結構.html#cb193-2" tabindex="-1"></a><span class="fu">margin.table</span>(tab1,<span class="dv">1</span>)  <span class="co"># 等同 rowSums(tab1)</span></span></code></pre></div>
 <pre><code>## 植物類型
 ##      Quebec Mississippi 
 ##          42          42</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="資料結構.html#cb82-1" tabindex="-1"></a><span class="co">#columns邊際加總</span></span>
-<span id="cb82-2"><a href="資料結構.html#cb82-2" tabindex="-1"></a><span class="fu">margin.table</span>(tab1,<span class="dv">2</span>)  <span class="co"># 等同 colSums(tab1)</span></span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="資料結構.html#cb195-1" tabindex="-1"></a><span class="co">#columns邊際加總</span></span>
+<span id="cb195-2"><a href="資料結構.html#cb195-2" tabindex="-1"></a><span class="fu">margin.table</span>(tab1,<span class="dv">2</span>)  <span class="co"># 等同 colSums(tab1)</span></span></code></pre></div>
 <pre><code>## 施肥方式
 ## nonchilled    chilled 
 ##         42         42</code></pre>
@@ -801,14 +801,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>x: table</p></li>
 <li><p>margin : 1= rows比例; 2= columns比例</p></li>
 </ul>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="資料結構.html#cb84-1" tabindex="-1"></a><span class="co">#rows邊際比例</span></span>
-<span id="cb84-2"><a href="資料結構.html#cb84-2" tabindex="-1"></a><span class="fu">prop.table</span>(tab1,<span class="dv">1</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="資料結構.html#cb197-1" tabindex="-1"></a><span class="co">#rows邊際比例</span></span>
+<span id="cb197-2"><a href="資料結構.html#cb197-2" tabindex="-1"></a><span class="fu">prop.table</span>(tab1,<span class="dv">1</span>)  </span></code></pre></div>
 <pre><code>##              施肥方式
 ## 植物類型  nonchilled chilled
 ##   Quebec             0.5     0.5
 ##   Mississippi        0.5     0.5</code></pre>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="資料結構.html#cb86-1" tabindex="-1"></a><span class="co">#columns邊際比例</span></span>
-<span id="cb86-2"><a href="資料結構.html#cb86-2" tabindex="-1"></a><span class="fu">prop.table</span>(tab1,<span class="dv">2</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="資料結構.html#cb199-1" tabindex="-1"></a><span class="co">#columns邊際比例</span></span>
+<span id="cb199-2"><a href="資料結構.html#cb199-2" tabindex="-1"></a><span class="fu">prop.table</span>(tab1,<span class="dv">2</span>)  </span></code></pre></div>
 <pre><code>##              施肥方式
 ## 植物類型  nonchilled chilled
 ##   Quebec             0.5     0.5
@@ -822,11 +822,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Sex: 性別(Male男、Female女)</p></li>
 <li><p>Improved: 治療結果(None無改善、Some一點改善、Marked顯著改善)</p></li>
 </ul>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="資料結構.html#cb88-1" tabindex="-1"></a><span class="co"># 載入vcd套件中的Arthritis資料集</span></span>
-<span id="cb88-2"><a href="資料結構.html#cb88-2" tabindex="-1"></a><span class="fu">data</span>(Arthritis,<span class="at">package =</span> <span class="st">&quot;vcd&quot;</span>)</span>
-<span id="cb88-3"><a href="資料結構.html#cb88-3" tabindex="-1"></a></span>
-<span id="cb88-4"><a href="資料結構.html#cb88-4" tabindex="-1"></a><span class="co"># 查看資料集的前幾行</span></span>
-<span id="cb88-5"><a href="資料結構.html#cb88-5" tabindex="-1"></a><span class="fu">head</span>(Arthritis)  </span></code></pre></div>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="資料結構.html#cb201-1" tabindex="-1"></a><span class="co"># 載入vcd套件中的Arthritis資料集</span></span>
+<span id="cb201-2"><a href="資料結構.html#cb201-2" tabindex="-1"></a><span class="fu">data</span>(Arthritis,<span class="at">package =</span> <span class="st">&quot;vcd&quot;</span>)</span>
+<span id="cb201-3"><a href="資料結構.html#cb201-3" tabindex="-1"></a></span>
+<span id="cb201-4"><a href="資料結構.html#cb201-4" tabindex="-1"></a><span class="co"># 查看資料集的前幾行</span></span>
+<span id="cb201-5"><a href="資料結構.html#cb201-5" tabindex="-1"></a><span class="fu">head</span>(Arthritis)  </span></code></pre></div>
 <pre><code>##   ID Treatment  Sex Age Improved
 ## 1 57   Treated Male  27     Some
 ## 2 46   Treated Male  29     None
@@ -834,8 +834,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 17   Treated Male  32   Marked
 ## 5 36   Treated Male  46   Marked
 ## 6 23   Treated Male  58   Marked</code></pre>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="資料結構.html#cb90-1" tabindex="-1"></a><span class="co"># 使用table()</span></span>
-<span id="cb90-2"><a href="資料結構.html#cb90-2" tabindex="-1"></a><span class="fu">table</span>(Arthritis<span class="sc">$</span>Sex,Arthritis<span class="sc">$</span>Improved,Arthritis<span class="sc">$</span>Treatment ,<span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;性別&quot;</span>,<span class="st">&quot;治療結果&quot;</span>,<span class="st">&quot;組別&quot;</span>) )</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="資料結構.html#cb203-1" tabindex="-1"></a><span class="co"># 使用table()</span></span>
+<span id="cb203-2"><a href="資料結構.html#cb203-2" tabindex="-1"></a><span class="fu">table</span>(Arthritis<span class="sc">$</span>Sex,Arthritis<span class="sc">$</span>Improved,Arthritis<span class="sc">$</span>Treatment ,<span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;性別&quot;</span>,<span class="st">&quot;治療結果&quot;</span>,<span class="st">&quot;組別&quot;</span>) )</span></code></pre></div>
 <pre><code>## , , 組別 = Placebo
 ## 
 ##         治療結果
@@ -849,8 +849,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 性別   None Some Marked
 ##   Female    6    5     16
 ##   Male      7    2      5</code></pre>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="資料結構.html#cb92-1" tabindex="-1"></a><span class="co"># 使用ftable()</span></span>
-<span id="cb92-2"><a href="資料結構.html#cb92-2" tabindex="-1"></a><span class="fu">ftable</span>(Arthritis<span class="sc">$</span>Sex,Arthritis<span class="sc">$</span>Improved,Arthritis<span class="sc">$</span>Treatment,<span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;性別&quot;</span>,<span class="st">&quot;治療結果&quot;</span>,<span class="st">&quot;組別&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="資料結構.html#cb205-1" tabindex="-1"></a><span class="co"># 使用ftable()</span></span>
+<span id="cb205-2"><a href="資料結構.html#cb205-2" tabindex="-1"></a><span class="fu">ftable</span>(Arthritis<span class="sc">$</span>Sex,Arthritis<span class="sc">$</span>Improved,Arthritis<span class="sc">$</span>Treatment,<span class="at">dnn =</span> <span class="fu">c</span>(<span class="st">&quot;性別&quot;</span>,<span class="st">&quot;治療結果&quot;</span>,<span class="st">&quot;組別&quot;</span>))</span></code></pre></div>
 <pre><code>##                 組別 Placebo Treated
 ## 性別   治療結果                     
 ## Female None               19       6
@@ -860,6 +860,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##        Some                0       2
 ##        Marked              1       5</code></pre>
 
+<p>資料輸入與輸出</p>
 </div>
 </div>
 </div>
@@ -867,21 +868,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.4</span> 資料鍵入與印出<a href="資料結構.html#資料鍵入與印出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="資料鍵入" class="section level3 hasAnchor" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> 資料鍵入<a href="資料結構.html#資料鍵入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><code>scan()</code></p></li>
+<li><p><code>readline("請輸入字串:")</code></p></li>
+</ol>
 </div>
 <div id="資料印出" class="section level3 hasAnchor" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> 資料印出<a href="資料結構.html#資料印出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>print() 和cat()，都可以把資料打印到Console螢幕上，但是print()只能輸出一個完整文字訊息，如果想要利用print() 輸出一段話+某變數，就必須另外使用paste()或paste0()將兩個訊息結合成一個完整文字訊息才能用print()進行輸出，但cat()就沒有此問題，兩個以上訊息可以用”,” 來結合即可，範例如下:</p>
+<ol style="list-style-type: decimal">
+<li><code>cat()</code></li>
+</ol>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="資料結構.html#cb207-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb207-2"><a href="資料結構.html#cb207-2" tabindex="-1"></a><span class="fu">cat</span>( name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span> )</span></code></pre></div>
+<pre><code>## Lucy 帶狗狗去公園散步了</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><code>print()</code></li>
+</ol>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="資料結構.html#cb209-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb209-2"><a href="資料結構.html#cb209-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">paste</span>(name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span>)   )</span></code></pre></div>
+<pre><code>## [1] &quot;Lucy 帶狗狗去公園散步了&quot;</code></pre>
 </div>
 </div>
 <div id="複製及貼上" class="section level2 hasAnchor" number="4.5">
 <h2><span class="header-section-number">4.5</span> 複製及貼上<a href="資料結構.html#複製及貼上" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>有兩個套件，可以輕鬆將R輸出結果轉化到剪貼簿後，就可以直接拿到Excel或Word中複製貼上，相當方便，clipr 套件基本不用再安裝，因為已經常規預設安中好</p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="資料結構.html#cb211-1" tabindex="-1"></a><span class="co">#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 </span></span>
+<span id="cb211-2"><a href="資料結構.html#cb211-2" tabindex="-1"></a>text <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip</span>() <span class="do">##轉換成純文字向量(適合單行貼上) </span></span>
+<span id="cb211-3"><a href="資料結構.html#cb211-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip_tbl</span>() <span class="do">##轉換成data.frame(適合表格貼上)</span></span>
+<span id="cb211-4"><a href="資料結構.html#cb211-4" tabindex="-1"></a></span>
+<span id="cb211-5"><a href="資料結構.html#cb211-5" tabindex="-1"></a><span class="co">#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)</span></span>
+<span id="cb211-6"><a href="資料結構.html#cb211-6" tabindex="-1"></a></span>
+<span id="cb211-7"><a href="資料結構.html#cb211-7" tabindex="-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(text)</span></code></pre></div>
+<p>另一個好用套件是psychTools</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="資料結構.html#cb212-1" tabindex="-1"></a><span class="co">#另一個好用套件</span></span>
+<span id="cb212-2"><a href="資料結構.html#cb212-2" tabindex="-1"></a><span class="fu">library</span>(psychTools) </span>
+<span id="cb212-3"><a href="資料結構.html#cb212-3" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard</span>() </span>
+<span id="cb212-4"><a href="資料結構.html#cb212-4" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard.tab</span>()</span></code></pre></div>
 </div>
 <div id="資料匯入" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> 資料匯入<a href="資料結構.html#資料匯入" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="https://i.postimg.cc/jjzTLV5m/screenshot-9.png" width="448" /></p>
 <div id="匯入csv檔" class="section level3 hasAnchor" number="4.6.1">
 <h3><span class="header-section-number">4.6.1</span> 匯入csv檔<a href="資料結構.html#匯入csv檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="資料結構.html#cb213-1" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co">#呼叫csv檔的套件 </span></span>
+<span id="cb213-2"><a href="資料結構.html#cb213-2" tabindex="-1"></a></span>
+<span id="cb213-3"><a href="資料結構.html#cb213-3" tabindex="-1"></a>score <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>)</span>
+<span id="cb213-4"><a href="資料結構.html#cb213-4" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
 </div>
 <div id="匯入excel檔" class="section level3 hasAnchor" number="4.6.2">
 <h3><span class="header-section-number">4.6.2</span> 匯入excel檔<a href="資料結構.html#匯入excel檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="資料結構.html#cb214-1" tabindex="-1"></a><span class="fu">library</span>(readxl)<span class="co">#呼叫excel檔的套件</span></span></code></pre></div>
 </div>
 <div id="匯入json檔" class="section level3 hasAnchor" number="4.6.3">
 <h3><span class="header-section-number">4.6.3</span> 匯入json檔<a href="資料結構.html#匯入json檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>

@@ -269,9 +269,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><strong>ifelse()</strong></li>
 </ol>
 <p><code>ifelse</code>是最簡單的邏輯判斷，寫法類似excel函數if函數，第一參數放判斷句，第二參數放判斷為真(TRUE)，會執行的程式碼，第三參數放判斷為假(FALSE)，會執行的程式碼</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="流程控制.html#cb1-1" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">65</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">35</span>,<span class="dv">15</span>,<span class="dv">25</span>,<span class="dv">9</span>,<span class="dv">22</span>)</span>
-<span id="cb1-2"><a href="流程控制.html#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="流程控制.html#cb1-3" tabindex="-1"></a><span class="fu">ifelse</span>(num<span class="sc">&gt;=</span><span class="dv">10</span>,<span class="st">&quot;&gt;=10&quot;</span>,<span class="st">&quot;&lt;10&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="流程控制.html#cb215-1" tabindex="-1"></a>num <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">65</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">35</span>,<span class="dv">15</span>,<span class="dv">25</span>,<span class="dv">9</span>,<span class="dv">22</span>)</span>
+<span id="cb215-2"><a href="流程控制.html#cb215-2" tabindex="-1"></a></span>
+<span id="cb215-3"><a href="流程控制.html#cb215-3" tabindex="-1"></a><span class="fu">ifelse</span>(num<span class="sc">&gt;=</span><span class="dv">10</span>,<span class="st">&quot;&gt;=10&quot;</span>,<span class="st">&quot;&lt;10&quot;</span>)</span></code></pre></div>
 <pre><code>##  [1] &quot;&lt;10&quot;  &quot;&lt;10&quot;  &quot;&gt;=10&quot; &quot;&gt;=10&quot; &quot;&lt;10&quot;  &quot;&lt;10&quot;  &quot;&gt;=10&quot; &quot;&gt;=10&quot; &quot;&gt;=10&quot; &quot;&lt;10&quot; 
 ## [11] &quot;&gt;=10&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
@@ -279,40 +279,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>雖然ifelse很好用，但僅適用於單行邏輯判斷或執行，當預計執行程式碼較為複雜，無法用一行程式碼來執行，就必須考慮 使用if 及 else()</p>
 <p>if-else敘述使用在邏輯判斷，若需要依條件改變需要執行的程式碼，就會使用if-else，若if後所接邏輯判斷為真(TRUE)，就會執行if下方之程式碼，若為偽(FALSE)，則執行else下方之程式碼，若程式中沒有else片段，則不執行任何程式碼。</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="流程控制.html#cb3-1" tabindex="-1"></a>X <span class="ot">=</span><span class="dv">30</span></span>
-<span id="cb3-2"><a href="流程控制.html#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="流程控制.html#cb3-3" tabindex="-1"></a><span class="cf">if</span>(X<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
-<span id="cb3-4"><a href="流程控制.html#cb3-4" tabindex="-1"></a>  <span class="fu">print</span>( <span class="st">&quot;及格&quot;</span>  )</span>
-<span id="cb3-5"><a href="流程控制.html#cb3-5" tabindex="-1"></a>}<span class="cf">else</span>{</span>
-<span id="cb3-6"><a href="流程控制.html#cb3-6" tabindex="-1"></a>  <span class="fu">print</span>( <span class="st">&quot;不及格&quot;</span>)    </span>
-<span id="cb3-7"><a href="流程控制.html#cb3-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="流程控制.html#cb217-1" tabindex="-1"></a>X <span class="ot">=</span><span class="dv">30</span></span>
+<span id="cb217-2"><a href="流程控制.html#cb217-2" tabindex="-1"></a></span>
+<span id="cb217-3"><a href="流程控制.html#cb217-3" tabindex="-1"></a><span class="cf">if</span>(X<span class="sc">&gt;=</span><span class="dv">60</span>){</span>
+<span id="cb217-4"><a href="流程控制.html#cb217-4" tabindex="-1"></a>  <span class="fu">print</span>( <span class="st">&quot;及格&quot;</span>  )</span>
+<span id="cb217-5"><a href="流程控制.html#cb217-5" tabindex="-1"></a>}<span class="cf">else</span>{</span>
+<span id="cb217-6"><a href="流程控制.html#cb217-6" tabindex="-1"></a>  <span class="fu">print</span>( <span class="st">&quot;不及格&quot;</span>)    </span>
+<span id="cb217-7"><a href="流程控制.html#cb217-7" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;不及格&quot;</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>if- else if -else</li>
 </ol>
 <p>當條件判斷是超過三個以上，中間條件判斷可以使用 else if 來判斷，最後一個則用else即可</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="流程控制.html#cb5-1" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>,<span class="dv">1</span>)</span>
-<span id="cb5-2"><a href="流程控制.html#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="流程控制.html#cb5-3" tabindex="-1"></a><span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>){</span>
-<span id="cb5-4"><a href="流程控制.html#cb5-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;,春天&quot;</span>))</span>
-<span id="cb5-5"><a href="流程控制.html#cb5-5" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>){</span>
-<span id="cb5-6"><a href="流程控制.html#cb5-6" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;夏天&quot;</span>))</span>
-<span id="cb5-7"><a href="流程控制.html#cb5-7" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">9</span><span class="sc">:</span><span class="dv">11</span>){</span>
-<span id="cb5-8"><a href="流程控制.html#cb5-8" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;秋天&quot;</span>))  </span>
-<span id="cb5-9"><a href="流程控制.html#cb5-9" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span> (X <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">12</span>)){</span>
-<span id="cb5-10"><a href="流程控制.html#cb5-10" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;冬天&quot;</span>))</span>
-<span id="cb5-11"><a href="流程控制.html#cb5-11" tabindex="-1"></a>}<span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;請輸入1-12數字&quot;</span>))}</span></code></pre></div>
-<pre><code>## [1] &quot;X= 2 冬天&quot;</code></pre>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="流程控制.html#cb219-1" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">30</span>,<span class="dv">1</span>)</span>
+<span id="cb219-2"><a href="流程控制.html#cb219-2" tabindex="-1"></a></span>
+<span id="cb219-3"><a href="流程控制.html#cb219-3" tabindex="-1"></a><span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb219-4"><a href="流程控制.html#cb219-4" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;,春天&quot;</span>))</span>
+<span id="cb219-5"><a href="流程控制.html#cb219-5" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">8</span>){</span>
+<span id="cb219-6"><a href="流程控制.html#cb219-6" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;夏天&quot;</span>))</span>
+<span id="cb219-7"><a href="流程控制.html#cb219-7" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span>(X <span class="sc">%in%</span> <span class="dv">9</span><span class="sc">:</span><span class="dv">11</span>){</span>
+<span id="cb219-8"><a href="流程控制.html#cb219-8" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;秋天&quot;</span>))  </span>
+<span id="cb219-9"><a href="流程控制.html#cb219-9" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span> (X <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">12</span>)){</span>
+<span id="cb219-10"><a href="流程控制.html#cb219-10" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;冬天&quot;</span>))</span>
+<span id="cb219-11"><a href="流程控制.html#cb219-11" tabindex="-1"></a>}<span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;請輸入1-12數字&quot;</span>))}</span></code></pre></div>
+<pre><code>## [1] &quot;X= 4 ,春天&quot;</code></pre>
 </div>
 <div id="for-迴圈" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> for 迴圈<a href="流程控制.html#for-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="流程控制.html#cb7-1" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">&quot;蘋果&quot;</span>,<span class="st">&quot;香蕉&quot;</span>,<span class="st">&quot;西瓜&quot;</span>)){</span>
-<span id="cb7-2"><a href="流程控制.html#cb7-2" tabindex="-1"></a>  </span>
-<span id="cb7-3"><a href="流程控制.html#cb7-3" tabindex="-1"></a>    text <span class="ot">&lt;-</span>  <span class="fu">paste</span>(<span class="st">&quot;這是&quot;</span>,i )</span>
-<span id="cb7-4"><a href="流程控制.html#cb7-4" tabindex="-1"></a>  </span>
-<span id="cb7-5"><a href="流程控制.html#cb7-5" tabindex="-1"></a>  <span class="fu">print</span> (text)</span>
-<span id="cb7-6"><a href="流程控制.html#cb7-6" tabindex="-1"></a>  </span>
-<span id="cb7-7"><a href="流程控制.html#cb7-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="流程控制.html#cb221-1" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">c</span>(<span class="st">&quot;蘋果&quot;</span>,<span class="st">&quot;香蕉&quot;</span>,<span class="st">&quot;西瓜&quot;</span>)){</span>
+<span id="cb221-2"><a href="流程控制.html#cb221-2" tabindex="-1"></a>  </span>
+<span id="cb221-3"><a href="流程控制.html#cb221-3" tabindex="-1"></a>    text <span class="ot">&lt;-</span>  <span class="fu">paste</span>(<span class="st">&quot;這是&quot;</span>,i )</span>
+<span id="cb221-4"><a href="流程控制.html#cb221-4" tabindex="-1"></a>  </span>
+<span id="cb221-5"><a href="流程控制.html#cb221-5" tabindex="-1"></a>  <span class="fu">print</span> (text)</span>
+<span id="cb221-6"><a href="流程控制.html#cb221-6" tabindex="-1"></a>  </span>
+<span id="cb221-7"><a href="流程控制.html#cb221-7" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;這是 蘋果&quot;
 ## [1] &quot;這是 香蕉&quot;
 ## [1] &quot;這是 西瓜&quot;</code></pre>
@@ -321,15 +321,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.3</span> while 迴圈<a href="流程控制.html#while-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在R語言中，while迴圈用於在條件為真時重複執行一段程式碼。</p>
 <p>while迴圈的基本語法結構如下，在每次迭代之前，R會檢查括號中的條件是否為真。如果為真，則執行迴圈內的程式碼；如果為假，則退出迴圈。</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="流程控制.html#cb9-1" tabindex="-1"></a><span class="cf">while</span> (條件) {</span>
-<span id="cb9-2"><a href="流程控制.html#cb9-2" tabindex="-1"></a>    <span class="co"># 每次迭代要執行的程式碼</span></span>
-<span id="cb9-3"><a href="流程控制.html#cb9-3" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="流程控制.html#cb223-1" tabindex="-1"></a><span class="cf">while</span> (條件) {</span>
+<span id="cb223-2"><a href="流程控制.html#cb223-2" tabindex="-1"></a>    <span class="co"># 每次迭代要執行的程式碼</span></span>
+<span id="cb223-3"><a href="流程控制.html#cb223-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>以下是一個使用while迴圈的範例，這段程式碼將輸出月份名稱：</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="流程控制.html#cb10-1" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb10-2"><a href="流程控制.html#cb10-2" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
-<span id="cb10-3"><a href="流程控制.html#cb10-3" tabindex="-1"></a>    <span class="fu">print</span>(month.name[i])</span>
-<span id="cb10-4"><a href="流程控制.html#cb10-4" tabindex="-1"></a>    i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb10-5"><a href="流程控制.html#cb10-5" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="流程控制.html#cb224-1" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb224-2"><a href="流程控制.html#cb224-2" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb224-3"><a href="流程控制.html#cb224-3" tabindex="-1"></a>    <span class="fu">print</span>(month.name[i])</span>
+<span id="cb224-4"><a href="流程控制.html#cb224-4" tabindex="-1"></a>    i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb224-5"><a href="流程控制.html#cb224-5" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;January&quot;
 ## [1] &quot;February&quot;
 ## [1] &quot;March&quot;
@@ -339,22 +339,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="repeat-迴圈" class="section level2 hasAnchor" number="5.4">
 <h2><span class="header-section-number">5.4</span> repeat 迴圈<a href="流程控制.html#repeat-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>在R語言中，repeat迴圈用於重複執行一段程式碼，直到滿足特定的停止條件。這種迴圈的特點是沒有內建的條件來退出，必須使用break語句來明確地終止迴圈。</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="流程控制.html#cb12-1" tabindex="-1"></a><span class="cf">repeat</span> {</span>
-<span id="cb12-2"><a href="流程控制.html#cb12-2" tabindex="-1"></a>    <span class="co"># 執行的程式碼</span></span>
-<span id="cb12-3"><a href="流程控制.html#cb12-3" tabindex="-1"></a>    <span class="cf">if</span> (停止條件) {</span>
-<span id="cb12-4"><a href="流程控制.html#cb12-4" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb12-5"><a href="流程控制.html#cb12-5" tabindex="-1"></a>    }</span>
-<span id="cb12-6"><a href="流程控制.html#cb12-6" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="流程控制.html#cb226-1" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb226-2"><a href="流程控制.html#cb226-2" tabindex="-1"></a>    <span class="co"># 執行的程式碼</span></span>
+<span id="cb226-3"><a href="流程控制.html#cb226-3" tabindex="-1"></a>    <span class="cf">if</span> (停止條件) {</span>
+<span id="cb226-4"><a href="流程控制.html#cb226-4" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb226-5"><a href="流程控制.html#cb226-5" tabindex="-1"></a>    }</span>
+<span id="cb226-6"><a href="流程控制.html#cb226-6" tabindex="-1"></a>}</span></code></pre></div>
 <p>範例:打印數字直到達到特定值</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="流程控制.html#cb13-1" tabindex="-1"></a><span class="co"># 展示如何使用repeat迴圈從1打印到5</span></span>
-<span id="cb13-2"><a href="流程控制.html#cb13-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb13-3"><a href="流程控制.html#cb13-3" tabindex="-1"></a><span class="cf">repeat</span> {</span>
-<span id="cb13-4"><a href="流程控制.html#cb13-4" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
-<span id="cb13-5"><a href="流程控制.html#cb13-5" tabindex="-1"></a>    <span class="cf">if</span> (x <span class="sc">&gt;=</span> <span class="dv">5</span>) {</span>
-<span id="cb13-6"><a href="流程控制.html#cb13-6" tabindex="-1"></a>        <span class="cf">break</span></span>
-<span id="cb13-7"><a href="流程控制.html#cb13-7" tabindex="-1"></a>    }</span>
-<span id="cb13-8"><a href="流程控制.html#cb13-8" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb13-9"><a href="流程控制.html#cb13-9" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="流程控制.html#cb227-1" tabindex="-1"></a><span class="co"># 展示如何使用repeat迴圈從1打印到5</span></span>
+<span id="cb227-2"><a href="流程控制.html#cb227-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb227-3"><a href="流程控制.html#cb227-3" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb227-4"><a href="流程控制.html#cb227-4" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
+<span id="cb227-5"><a href="流程控制.html#cb227-5" tabindex="-1"></a>    <span class="cf">if</span> (x <span class="sc">&gt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb227-6"><a href="流程控制.html#cb227-6" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb227-7"><a href="流程控制.html#cb227-7" tabindex="-1"></a>    }</span>
+<span id="cb227-8"><a href="流程控制.html#cb227-8" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb227-9"><a href="流程控制.html#cb227-9" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3
@@ -369,25 +369,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>next: 跳過當前最內層迴圈的剩餘程式碼，直接進入下一次迭代。</p></li>
 </ul>
 <p>範例: break</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="流程控制.html#cb15-1" tabindex="-1"></a><span class="co"># 使用 break 退出迴圈</span></span>
-<span id="cb15-2"><a href="流程控制.html#cb15-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb15-3"><a href="流程控制.html#cb15-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">5</span>) {</span>
-<span id="cb15-4"><a href="流程控制.html#cb15-4" tabindex="-1"></a>    <span class="cf">break</span>  <span class="co"># 當 i 等於 5 時退出迴圈</span></span>
-<span id="cb15-5"><a href="流程控制.html#cb15-5" tabindex="-1"></a>  }</span>
-<span id="cb15-6"><a href="流程控制.html#cb15-6" tabindex="-1"></a>  <span class="fu">print</span>(i)  <span class="co"># 打印 i</span></span>
-<span id="cb15-7"><a href="流程控制.html#cb15-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="流程控制.html#cb229-1" tabindex="-1"></a><span class="co"># 使用 break 退出迴圈</span></span>
+<span id="cb229-2"><a href="流程控制.html#cb229-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb229-3"><a href="流程控制.html#cb229-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">5</span>) {</span>
+<span id="cb229-4"><a href="流程控制.html#cb229-4" tabindex="-1"></a>    <span class="cf">break</span>  <span class="co"># 當 i 等於 5 時退出迴圈</span></span>
+<span id="cb229-5"><a href="流程控制.html#cb229-5" tabindex="-1"></a>  }</span>
+<span id="cb229-6"><a href="流程控制.html#cb229-6" tabindex="-1"></a>  <span class="fu">print</span>(i)  <span class="co"># 打印 i</span></span>
+<span id="cb229-7"><a href="流程控制.html#cb229-7" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 2
 ## [1] 3
 ## [1] 4</code></pre>
 <p>範例: next</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="流程控制.html#cb17-1" tabindex="-1"></a><span class="co"># 使用 next 跳過某些值</span></span>
-<span id="cb17-2"><a href="流程控制.html#cb17-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb17-3"><a href="流程控制.html#cb17-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb17-4"><a href="流程控制.html#cb17-4" tabindex="-1"></a>    <span class="cf">next</span>  <span class="co"># 當 i 是偶數時跳過這次迭代</span></span>
-<span id="cb17-5"><a href="流程控制.html#cb17-5" tabindex="-1"></a>  }</span>
-<span id="cb17-6"><a href="流程控制.html#cb17-6" tabindex="-1"></a>  <span class="fu">print</span>(i)  <span class="co"># 打印 i</span></span>
-<span id="cb17-7"><a href="流程控制.html#cb17-7" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="流程控制.html#cb231-1" tabindex="-1"></a><span class="co"># 使用 next 跳過某些值</span></span>
+<span id="cb231-2"><a href="流程控制.html#cb231-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb231-3"><a href="流程控制.html#cb231-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb231-4"><a href="流程控制.html#cb231-4" tabindex="-1"></a>    <span class="cf">next</span>  <span class="co"># 當 i 是偶數時跳過這次迭代</span></span>
+<span id="cb231-5"><a href="流程控制.html#cb231-5" tabindex="-1"></a>  }</span>
+<span id="cb231-6"><a href="流程控制.html#cb231-6" tabindex="-1"></a>  <span class="fu">print</span>(i)  <span class="co"># 打印 i</span></span>
+<span id="cb231-7"><a href="流程控制.html#cb231-7" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] 1
 ## [1] 3
 ## [1] 5
