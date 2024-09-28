@@ -1,4 +1,4 @@
-# 基礎R- 資料結構
+# 資料結構
 
 R的資料結構以維度來看，可區分成1維、2維及3維以上，以資料型態可分為資料同質與資料不同質。資料同質表示存放資料元素全部相同，如全是數字，或全都是文字。非同質表示可同時放數字、文字及日期等各種資料元素。實務上數據分析最常用到資料結構就是二維不同質的 data.frame 資料框，其次是一維同質的Vector 向量。而在網路爬蟲時，經常將下載好的JSON檔轉換成 三維不同質list 或是 二維不同質 data.frame，下表是根據維度及資料型態區分出的5個不同資料結構
 
@@ -89,7 +89,7 @@ data.frame類似excel中的活頁簿，row 為橫行，column為直列，每一�
 1.  一般csv檔，可以很輕鬆用read.csv函數，將資料匯入成data.frame
 
 ```{r echo=TRUE}
-DT <- read.csv("C:/github/basicRteach/Data/C0AG80-2024-09-12.csv")
+DT <- read.csv("./data/C0G660-2024-09-27.csv")
 head(DT)
 ```
 
@@ -319,7 +319,7 @@ margin.table(tab1,2)  # 等同 colSums(tab1)
 
 prop.table()，可計算列聯表的行與列之比例，**用法** `prop.table(x, margin)`
 
--   x: table 
+-   x: table
 
 -   margin : 1= rows比例; 2= columns比例
 
@@ -334,15 +334,13 @@ prop.table(tab1,2)
 
 #### ftable()
 
-ftable()類似table()功能，但會依其分類變數進行扁平化，以Arthritis資料集為例，
-使用table()或ftable()處理三個分類變項時，會有不同呈現結果
+ftable()類似table()功能，但會依其分類變數進行扁平化，以Arthritis資料集為例， 使用table()或ftable()處理三個分類變項時，會有不同呈現結果
 
-- Treatment : 組別 (Treated 治療組、Placebo 安慰劑組)
+-   Treatment : 組別 (Treated 治療組、Placebo 安慰劑組)
 
-- Sex: 性別(Male男、Female女)
+-   Sex: 性別(Male男、Female女)
 
-- Improved: 治療結果(None無改善、Some一點改善、Marked顯著改善) 
-
+-   Improved: 治療結果(None無改善、Some一點改善、Marked顯著改善)
 
 ```{r echo=TRUE}
 
@@ -359,4 +357,3 @@ table(Arthritis$Sex,Arthritis$Improved,Arthritis$Treatment ,dnn = c("性別","�
 ftable(Arthritis$Sex,Arthritis$Improved,Arthritis$Treatment,dnn = c("性別","治療結果","組別"))
 
 ```
-

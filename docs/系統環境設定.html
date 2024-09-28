@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 系統環境設定 | R語言程式設計</title>
+  <meta name="description" content="Chapter 2 系統環境設定 | R語言程式設計" />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 系統環境設定 | R語言程式設計" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 系統環境設定 | R語言程式設計" />
+  
+  
+  
+
+<meta name="author" content="露西Lucy" />
+
+
+<meta name="date" content="2024-03-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="元素介紹.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R語言自我筆記(基礎篇)</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="系統環境設定.html"><a href="系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 系統環境設定</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
+<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#常用快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="元素介紹.html"><a href="元素介紹.html"><i class="fa fa-check"></i><b>3</b> 元素介紹</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
+<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#字串"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
+<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#數值"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
+<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#布林值"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
+<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
+<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
+<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="資料結構.html"><a href="資料結構.html"><i class="fa fa-check"></i><b>4</b> 資料結構</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#資料型態相同"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#一維結構vector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#二維結構matrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#三維結構-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#資料型態不同"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#二維結構-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#三維結構-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#列聯表"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="資料結構.html"><a href="資料結構.html#資料鍵入與印出"><i class="fa fa-check"></i><b>4.4</b> 資料鍵入與印出</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="資料結構.html"><a href="資料結構.html#資料鍵入"><i class="fa fa-check"></i><b>4.4.1</b> 資料鍵入</a></li>
+<li class="chapter" data-level="4.4.2" data-path="資料結構.html"><a href="資料結構.html#資料印出"><i class="fa fa-check"></i><b>4.4.2</b> 資料印出</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="資料結構.html"><a href="資料結構.html#複製及貼上"><i class="fa fa-check"></i><b>4.5</b> 複製及貼上</a></li>
+<li class="chapter" data-level="4.6" data-path="資料結構.html"><a href="資料結構.html#資料匯入"><i class="fa fa-check"></i><b>4.6</b> 資料匯入</a></li>
+<li class="chapter" data-level="4.7" data-path="資料結構.html"><a href="資料結構.html#資料匯出"><i class="fa fa-check"></i><b>4.7</b> 資料匯出</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="流程控制.html"><a href="流程控制.html"><i class="fa fa-check"></i><b>5</b> 流程控制</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="流程控制.html"><a href="流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>5.1</b> if -else 邏輯判斷</a></li>
+<li class="chapter" data-level="5.2" data-path="流程控制.html"><a href="流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>5.2</b> for 迴圈</a></li>
+<li class="chapter" data-level="5.3" data-path="流程控制.html"><a href="流程控制.html#while與repeat-迴圈"><i class="fa fa-check"></i><b>5.3</b> while與repeat 迴圈</a></li>
+<li class="chapter" data-level="5.4" data-path="流程控制.html"><a href="流程控制.html#break與next-改變迴圈狀態"><i class="fa fa-check"></i><b>5.4</b> break與next 改變迴圈狀態</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="函數介紹.html"><a href="函數介紹.html"><i class="fa fa-check"></i><b>6</b> 函數介紹</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="函數介紹.html"><a href="函數介紹.html#常用的內建函數"><i class="fa fa-check"></i><b>6.1</b> 常用的內建函數</a></li>
+<li class="chapter" data-level="6.2" data-path="函數介紹.html"><a href="函數介紹.html#實用套件之函數"><i class="fa fa-check"></i><b>6.2</b> 實用套件之函數</a></li>
+<li class="chapter" data-level="6.3" data-path="函數介紹.html"><a href="函數介紹.html#自訂函數"><i class="fa fa-check"></i><b>6.3</b> 自訂函數</a></li>
+<li class="chapter" data-level="6.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-及call"><i class="fa fa-check"></i><b>6.4</b> do.call 及call</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-基本用途"><i class="fa fa-check"></i><b>6.4.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="6.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>6.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="6.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>6.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
+<li class="chapter" data-level="6.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>6.4.4</b> call 與 do.call的差異</a></li>
+<li class="chapter" data-level="6.4.5" data-path="函數介紹.html"><a href="函數介紹.html#線上資源"><i class="fa fa-check"></i><b>6.4.5</b> 1.線上資源</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="基礎繪圖.html"><a href="基礎繪圖.html"><i class="fa fa-check"></i><b>7</b> 基礎繪圖</a></li>
+<li class="chapter" data-level="8" data-path="文字與時間處理.html"><a href="文字與時間處理.html"><i class="fa fa-check"></i><b>8</b> 文字與時間處理</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#內建文字函數base"><i class="fa fa-check"></i><b>8.1</b> 內建文字函數(base)</a></li>
+<li class="chapter" data-level="8.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr套件"><i class="fa fa-check"></i><b>8.2</b> stringr套件</a></li>
+<li class="chapter" data-level="8.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#正則表達式"><i class="fa fa-check"></i><b>8.3</b> 正則表達式</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="認識apply家族.html"><a href="認識apply家族.html"><i class="fa fa-check"></i><b>9</b> 認識apply家族</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply系列家族應用情境"><i class="fa fa-check"></i><b>9.1</b> apply系列家族應用情境</a></li>
+<li class="chapter" data-level="9.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply用法"><i class="fa fa-check"></i><b>9.2</b> apply用法</a></li>
+<li class="chapter" data-level="9.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply用法"><i class="fa fa-check"></i><b>9.3</b> sapply/lapply用法</a></li>
+<li class="chapter" data-level="9.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply用法"><i class="fa fa-check"></i><b>9.4</b> mapply用法</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="dplyr及-tidyr運用.html"><a href="dplyr及-tidyr運用.html"><i class="fa fa-check"></i><b>10</b> dplyr及 tidyr運用</a></li>
+<li class="chapter" data-level="11" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>11</b> data.table運用</a></li>
+<li class="chapter" data-level="12" data-path="ggplot2應用.html"><a href="ggplot2應用.html"><i class="fa fa-check"></i><b>12</b> ggplot2應用</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R語言程式設計</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="系統環境設定" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> 系統環境設定<a href="系統環境設定.html#系統環境設定" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="系統環境查詢" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> 系統環境查詢<a href="系統環境設定.html#系統環境查詢" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>使用<code>sessionInfo()</code>可以查詢目前R運行的詳細情形，包含R版本號、R套件清單與版本號、語系</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="系統環境設定.html#cb1-1" tabindex="-1"></a><span class="do">##查詢目前系統環境</span></span>
+<span id="cb1-2"><a href="系統環境設定.html#cb1-2" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.2.3 (2023-03-15 ucrt)
+## Platform: x86_64-w64-mingw32/x64 (64-bit)
+## Running under: Windows 10 x64 (build 22631)
+## 
+## Matrix products: default
+## 
+## locale:
+## [1] LC_COLLATE=Chinese (Traditional)_Taiwan.utf8 
+## [2] LC_CTYPE=Chinese (Traditional)_Taiwan.utf8   
+## [3] LC_MONETARY=Chinese (Traditional)_Taiwan.utf8
+## [4] LC_NUMERIC=C                                 
+## [5] LC_TIME=Chinese (Traditional)_Taiwan.utf8    
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## loaded via a namespace (and not attached):
+##  [1] bookdown_0.38   digest_0.6.29   R6_2.5.1        jsonlite_1.8.0 
+##  [5] evaluate_0.16   cachem_1.0.6    rlang_1.1.3     cli_3.6.1      
+##  [9] rstudioapi_0.14 jquerylib_0.1.4 bslib_0.4.0     rmarkdown_2.26 
+## [13] tools_4.2.3     xfun_0.42       yaml_2.3.5      fastmap_1.1.0  
+## [17] compiler_4.2.3  htmltools_0.5.5 knitr_1.45      sass_0.4.5</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>查詢或設定環境目錄</li>
+</ol>
+<p>使用<code>setwd</code>，可以指定某個資料夾為當前環境目錄，<code>getwd</code>可以查詢目前的環境目錄。</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="系統環境設定.html#cb3-1" tabindex="-1"></a><span class="do">##設定當前目錄</span></span>
+<span id="cb3-2"><a href="系統環境設定.html#cb3-2" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;C:/github/basicRnotes&quot;</span>)</span>
+<span id="cb3-3"><a href="系統環境設定.html#cb3-3" tabindex="-1"></a><span class="do">##查詢當前目錄</span></span>
+<span id="cb3-4"><a href="系統環境設定.html#cb3-4" tabindex="-1"></a><span class="fu">getwd</span>() </span></code></pre></div>
+<p>如果懶得打指令，也可以透過RStudio視窗中的選項按鈕來執行，<em>Set As Working Directory</em> 等同於<code>setwd</code>指令， <em>Go To Working Directory</em>等同於<code>getwd</code>指令。</p>
+</div>
+<div id="環境設定函數" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> 環境設定函數<a href="系統環境設定.html#環境設定函數" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>環境設定函數為<code>options()</code>，用<code>options()</code>指令可以設定一些環境變量，使用help(options)可以查看詳細的參數資訊，常見操作如下:</p>
+<ol style="list-style-type: decimal">
+<li>數字位數的設置，options(digits=n)，n一般預設是7位，但實際上的範圍是1~22，可以隨意設定位數。</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="系統環境設定.html#cb4-1" tabindex="-1"></a>     <span class="co">#這個指令，可以把R的整數表示能力設為10位元。</span></span>
+<span id="cb4-2"><a href="系統環境設定.html#cb4-2" tabindex="-1"></a>      <span class="fu">options</span>(<span class="at">digits=</span><span class="dv">10</span>)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>套件的安裝，使用下面的命令，可以指定預備下載端點。</li>
+</ol>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="系統環境設定.html#cb5-1" tabindex="-1"></a>      <span class="fu">options</span>(<span class="at">CRAN=</span><span class="st">&quot;http://cran.r-project.org&quot;</span>)</span>
+<span id="cb5-2"><a href="系統環境設定.html#cb5-2" tabindex="-1"></a>      <span class="fu">install.packages</span>(<span class="st">&quot;套件名稱&quot;</span>)</span></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>設定游標類型(prompt參數設定)。</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="系統環境設定.html#cb6-1" tabindex="-1"></a>       <span class="do">##游標開始預設為 &gt;</span></span>
+<span id="cb6-2"><a href="系統環境設定.html#cb6-2" tabindex="-1"></a>       <span class="fu">options</span>(<span class="at">prompt=</span><span class="st">&quot;$&quot;</span>)</span></code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li>設置 忽略警告(或錯誤)訊息出現</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="系統環境設定.html#cb7-1" tabindex="-1"></a>       <span class="do">##忽略任何警告，不顯示</span></span>
+<span id="cb7-2"><a href="系統環境設定.html#cb7-2" tabindex="-1"></a>       <span class="fu">options</span>(<span class="at">warn=</span><span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb7-3"><a href="系統環境設定.html#cb7-3" tabindex="-1"></a>       <span class="do">##顯示警告(預設)</span></span>
+<span id="cb7-4"><a href="系統環境設定.html#cb7-4" tabindex="-1"></a>       <span class="fu">options</span>(<span class="at">warn=</span><span class="dv">1</span>)</span></code></pre></div>
+</div>
+<div id="更改環境語系" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> 更改環境語系<a href="系統環境設定.html#更改環境語系" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li>用<code>Sys.setlocale()</code>查看當前語系(預設中文)，調整<code>locale</code>參數可暫時修改語系，但重開R時，語系會返回預設值。</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="系統環境設定.html#cb8-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>()  </span></code></pre></div>
+<pre><code>## [1] &quot;LC_COLLATE=Chinese (Traditional)_Taiwan.utf8;LC_CTYPE=Chinese (Traditional)_Taiwan.utf8;LC_MONETARY=Chinese (Traditional)_Taiwan.utf8;LC_NUMERIC=C;LC_TIME=Chinese (Traditional)_Taiwan.utf8&quot;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>將中文語系改為英文語系(暫時性)</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="系統環境設定.html#cb10-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;English&quot;</span>)  <span class="co"># 也可以用 en.UTF-8</span></span></code></pre></div>
+<pre><code>## [1] &quot;English_United States.1252&quot;</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="系統環境設定.html#cb12-1" tabindex="-1"></a><span class="co">#範例</span></span>
+<span id="cb12-2"><a href="系統環境設定.html#cb12-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
+<pre><code>## [1] &quot;Sunday&quot;</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>將英文語系變回中文語系</li>
+</ol>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="系統環境設定.html#cb14-1" tabindex="-1"></a><span class="fu">Sys.setlocale</span>(<span class="st">&quot;LC_TIME&quot;</span>, <span class="at">locale =</span><span class="st">&quot;zh_TW.UTF-8&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;zh_TW.UTF-8&quot;</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="系統環境設定.html#cb16-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%A&quot;</span>) <span class="co">#星期</span></span></code></pre></div>
+<pre><code>## [1] &quot;星期日&quot;</code></pre>
+<p>4.各國語系設定</p>
+<table style="width:99%;">
+<colgroup>
+<col width="14%" />
+<col width="56%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>國家語系</th>
+<th>語系設定</th>
+<th align="center"><p>format(Sys.Date(), “%A”)</p>
+<p>範例輸出</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>日本</td>
+<td>Sys.setlocale(“LC_TIME”, locale =<strong>“ja_JP.UTF-8”</strong>)</td>
+<td align="center">“土曜日”</td>
+</tr>
+<tr class="even">
+<td>韓國</td>
+<td>Sys.setlocale(“LC_TIME”, locale =<strong>“ko_KR.UTF-8”</strong>)</td>
+<td align="center">“토요일”</td>
+</tr>
+<tr class="odd">
+<td>德語</td>
+<td>Sys.setlocale(“LC_TIME”, locale =<strong>“de_DE.UTF-8”</strong>)</td>
+<td align="center">“Samstag”</td>
+</tr>
+<tr class="even">
+<td>俄語</td>
+<td>Sys.setlocale(“LC_TIME”, locale =<strong>“ru_RU.UTF-8”</strong>)</td>
+<td align="center">“суббота”</td>
+</tr>
+<tr class="odd">
+<td>西班牙語</td>
+<td>Sys.setlocale(“LC_TIME”,locale =<strong>“es_ES.UTF-8”</strong>)</td>
+<td align="center">“sábado”</td>
+</tr>
+<tr class="even">
+<td>泰語</td>
+<td>Sys.setlocale(“LC_TIME”, locale =<strong>“th_TH.UTF-8”</strong>)</td>
+<td align="center">“เสาร์”</td>
+</tr>
+<tr class="odd">
+<td>越南語</td>
+<td>Sys.setlocale(“LC_TIME”, locale =<strong>“vi_VN.UTF-8”</strong>)</td>
+<td align="center">“Thứ Bảy”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="新增專案" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> 新增專案<a href="系統環境設定.html#新增專案" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>RStudio是一個很強大IDE工具，凡是R使用者幾乎都是利用RStudio進行開發，RStudio可以輕鬆新增一個專案，為每一個專案設置專屬環境，安裝不同版本R及相關R套件，開啟新的專案可從工具列選取File -&gt; New Project。</p>
+<p><img src="https://i.postimg.cc/hts1m1vF/2-1.png" /></p>
+<p>點選New Projet按鈕後，會出現三個選項，選項功能如下</p>
+<ol style="list-style-type: decimal">
+<li><p>New Directory: 建立新資料夾來新增專案</p></li>
+<li><p>Existing Directory:用舊有資料夾來新增專案</p></li>
+<li><p>Version Control: 建立Git/subversion版本控管的新專案</p></li>
+</ol>
+<p><img src="https://i.postimg.cc/nzGFVrT1/2-2.png" width="565" /></p>
+<p>其實如想要建立有Git版本控管的新專案，可直接選擇New Directory-&gt; New Project， 勾選<strong>Create a git repository</strong> ，命名好專案名稱及選定存放位置後， 按下<strong>Create Project</strong>，即可建好新專案</p>
+<p><img src="https://i.postimg.cc/yYrDCSXR/2-3.png" width="563" /></p>
+<p>創建好新專案後，RStudio通常會自動開啟新專案，可由RStudio右上角看到目前處於哪個專案中，在檔案目錄中，可看到以專案名稱為名稱的.Rproj檔，該檔就是專屬的R專案設定檔，若是哪一天該資料夾不再當專案使用時，只要刪除.Rproj檔即可。</p>
+<p><img src="https://i.postimg.cc/GtGcyHTM/2-4.png" width="563" /></p>
+<p>設定專案有很多好處，除為每一個專案設置專屬環境，安裝不同版本R及相關R套件，工作路徑資料夾也是預設，同時RStudio的專案資料夾可以結合Git，做到新增或修改成程式碼後，就能進行版本控管，並可以同步更新到GitHub。</p>
+<p>除此之外，RStudio預設許多不同的專案範本，可以讓使用者輕鬆利用這些專案範本建立套件、電子書、部落格及互動式網頁，功能強大且齊全。</p>
+<p><img src="https://i.postimg.cc/Wpdcz9Bh/2-5.png" width="560" /></p>
+</div>
+<div id="常用快速鍵" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> 常用快速鍵<a href="系統環境設定.html#常用快速鍵" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table style="width:97%;">
+<colgroup>
+<col width="29%" />
+<col width="20%" />
+<col width="26%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>快速鍵</th>
+<th>說明</th>
+<th>快速鍵</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>Ctrl</code> + <code>L</code></td>
+<td>清除Console</td>
+<td><code>Ctrl</code> + <code>=</code></td>
+<td>放大螢幕</td>
+</tr>
+<tr class="even">
+<td><code>Alt</code> + <code>-</code></td>
+<td>賦值 &lt;-</td>
+<td><code>Ctrl</code> + <code>-</code></td>
+<td>縮小螢幕</td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl</code> +<code>Shift</code>+ <code>C</code></td>
+<td>註解/取消註解</td>
+<td><code>Ctrl</code> + <code>Enter</code></td>
+<td>執行當前程式碼</td>
+</tr>
+<tr class="even">
+<td><code>Ctrl</code> +<code>Shift</code>+ <code>M</code></td>
+<td>串流 %&gt;%</td>
+<td><code>Ctrl</code> +<code>Alt</code> +<code>R</code></td>
+<td>執行全部程式碼</td>
+</tr>
+<tr class="odd">
+<td><code>Ctrl</code> +<code>Shift</code>+ N</td>
+<td>新增.R檔</td>
+<td><code>Ctrl</code> +<code>Alt</code> +<code>A</code></td>
+<td>執行先前程式碼</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="元素介紹.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/01_環境設定.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/01_環境設定.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
