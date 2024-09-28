@@ -69,3 +69,9 @@ dplyr及-tidyr運用
 data.table運用
 ggplot2應用
 ggplot2繪圖
+while-迴圈
+repeat-迴圈
+break與next
+匯入csv檔
+匯入excel檔
+匯入json檔

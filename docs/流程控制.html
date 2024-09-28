@@ -202,8 +202,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="流程控制.html"><a href="流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>5.1</b> if -else 邏輯判斷</a></li>
 <li class="chapter" data-level="5.2" data-path="流程控制.html"><a href="流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>5.2</b> for 迴圈</a></li>
-<li class="chapter" data-level="5.3" data-path="流程控制.html"><a href="流程控制.html#while與repeat-迴圈"><i class="fa fa-check"></i><b>5.3</b> while與repeat 迴圈</a></li>
-<li class="chapter" data-level="5.4" data-path="流程控制.html"><a href="流程控制.html#break與next-改變迴圈狀態"><i class="fa fa-check"></i><b>5.4</b> break與next 改變迴圈狀態</a></li>
+<li class="chapter" data-level="5.3" data-path="流程控制.html"><a href="流程控制.html#while-迴圈"><i class="fa fa-check"></i><b>5.3</b> while 迴圈</a></li>
+<li class="chapter" data-level="5.4" data-path="流程控制.html"><a href="流程控制.html#repeat-迴圈"><i class="fa fa-check"></i><b>5.4</b> repeat 迴圈</a></li>
+<li class="chapter" data-level="5.5" data-path="流程控制.html"><a href="流程控制.html#break與next"><i class="fa fa-check"></i><b>5.5</b> break與next</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="函數介紹.html"><a href="函數介紹.html"><i class="fa fa-check"></i><b>6</b> 函數介紹</a>
 <ul>
@@ -235,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10" data-path="dplyr及-tidyr運用.html"><a href="dplyr及-tidyr運用.html"><i class="fa fa-check"></i><b>10</b> dplyr及 tidyr運用</a></li>
 <li class="chapter" data-level="11" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>11</b> data.table運用</a></li>
-<li class="chapter" data-level="12" data-path="ggplot2應用.html"><a href="ggplot2應用.html"><i class="fa fa-check"></i><b>12</b> ggplot2應用</a></li>
+<li class="chapter" data-level="12" data-path="ggplot2繪圖.html"><a href="ggplot2繪圖.html"><i class="fa fa-check"></i><b>12</b> ggplot2繪圖</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -296,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-9"><a href="流程控制.html#cb5-9" tabindex="-1"></a>  }<span class="cf">else</span> <span class="cf">if</span> (X <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">12</span>)){</span>
 <span id="cb5-10"><a href="流程控制.html#cb5-10" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;冬天&quot;</span>))</span>
 <span id="cb5-11"><a href="流程控制.html#cb5-11" tabindex="-1"></a>}<span class="cf">else</span> {<span class="fu">print</span>(<span class="fu">paste</span> (<span class="st">&quot;X=&quot;</span>,X,<span class="st">&quot;請輸入1-12數字&quot;</span>))}</span></code></pre></div>
-<pre><code>## [1] &quot;X= 1 冬天&quot;</code></pre>
+<pre><code>## [1] &quot;X= 28 請輸入1-12數字&quot;</code></pre>
 </div>
 <div id="for-迴圈" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> for 迴圈<a href="流程控制.html#for-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -311,11 +312,82 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] &quot;這是 香蕉&quot;
 ## [1] &quot;這是 西瓜&quot;</code></pre>
 </div>
-<div id="while與repeat-迴圈" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> while與repeat 迴圈<a href="流程控制.html#while與repeat-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="while-迴圈" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> while 迴圈<a href="流程控制.html#while-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在R語言中，while迴圈用於在條件為真時重複執行一段程式碼。</p>
+<p>while迴圈的基本語法結構如下，在每次迭代之前，R會檢查括號中的條件是否為真。如果為真，則執行迴圈內的程式碼；如果為假，則退出迴圈。</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="流程控制.html#cb9-1" tabindex="-1"></a><span class="cf">while</span> (條件) {</span>
+<span id="cb9-2"><a href="流程控制.html#cb9-2" tabindex="-1"></a>    <span class="co"># 每次迭代要執行的程式碼</span></span>
+<span id="cb9-3"><a href="流程控制.html#cb9-3" tabindex="-1"></a>}</span></code></pre></div>
+<p>以下是一個使用while迴圈的範例，這段程式碼將輸出月份名稱：</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="流程控制.html#cb10-1" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb10-2"><a href="流程控制.html#cb10-2" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb10-3"><a href="流程控制.html#cb10-3" tabindex="-1"></a>    <span class="fu">print</span>(month.name[i])</span>
+<span id="cb10-4"><a href="流程控制.html#cb10-4" tabindex="-1"></a>    i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb10-5"><a href="流程控制.html#cb10-5" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] &quot;January&quot;
+## [1] &quot;February&quot;
+## [1] &quot;March&quot;
+## [1] &quot;April&quot;
+## [1] &quot;May&quot;</code></pre>
 </div>
-<div id="break與next-改變迴圈狀態" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> break與next 改變迴圈狀態<a href="流程控制.html#break與next-改變迴圈狀態" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="repeat-迴圈" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> repeat 迴圈<a href="流程控制.html#repeat-迴圈" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在R語言中，repeat迴圈用於重複執行一段程式碼，直到滿足特定的停止條件。這種迴圈的特點是沒有內建的條件來退出，必須使用break語句來明確地終止迴圈。</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="流程控制.html#cb12-1" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb12-2"><a href="流程控制.html#cb12-2" tabindex="-1"></a>    <span class="co"># 執行的程式碼</span></span>
+<span id="cb12-3"><a href="流程控制.html#cb12-3" tabindex="-1"></a>    <span class="cf">if</span> (停止條件) {</span>
+<span id="cb12-4"><a href="流程控制.html#cb12-4" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb12-5"><a href="流程控制.html#cb12-5" tabindex="-1"></a>    }</span>
+<span id="cb12-6"><a href="流程控制.html#cb12-6" tabindex="-1"></a>}</span></code></pre></div>
+<p>範例:打印數字直到達到特定值</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="流程控制.html#cb13-1" tabindex="-1"></a><span class="co"># 展示如何使用repeat迴圈從1打印到5</span></span>
+<span id="cb13-2"><a href="流程控制.html#cb13-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-3"><a href="流程控制.html#cb13-3" tabindex="-1"></a><span class="cf">repeat</span> {</span>
+<span id="cb13-4"><a href="流程控制.html#cb13-4" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
+<span id="cb13-5"><a href="流程控制.html#cb13-5" tabindex="-1"></a>    <span class="cf">if</span> (x <span class="sc">&gt;=</span> <span class="dv">5</span>) {</span>
+<span id="cb13-6"><a href="流程控制.html#cb13-6" tabindex="-1"></a>        <span class="cf">break</span></span>
+<span id="cb13-7"><a href="流程控制.html#cb13-7" tabindex="-1"></a>    }</span>
+<span id="cb13-8"><a href="流程控制.html#cb13-8" tabindex="-1"></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb13-9"><a href="流程控制.html#cb13-9" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</code></pre>
+</div>
+<div id="break與next" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> break與next<a href="流程控制.html#break與next" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在 R 語言中，break 和 next 是用於控制迴圈流的兩個關鍵字。</p>
+<ul>
+<li><p>break: 用於立即終止最內層的迴圈，不會影響外層的執行。</p></li>
+<li><p>next: 跳過當前最內層迴圈的剩餘程式碼，直接進入下一次迭代。</p></li>
+</ul>
+<p>範例: break</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="流程控制.html#cb15-1" tabindex="-1"></a><span class="co"># 使用 break 退出迴圈</span></span>
+<span id="cb15-2"><a href="流程控制.html#cb15-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb15-3"><a href="流程控制.html#cb15-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">==</span> <span class="dv">5</span>) {</span>
+<span id="cb15-4"><a href="流程控制.html#cb15-4" tabindex="-1"></a>    <span class="cf">break</span>  <span class="co"># 當 i 等於 5 時退出迴圈</span></span>
+<span id="cb15-5"><a href="流程控制.html#cb15-5" tabindex="-1"></a>  }</span>
+<span id="cb15-6"><a href="流程控制.html#cb15-6" tabindex="-1"></a>  <span class="fu">print</span>(i)  <span class="co"># 打印 i</span></span>
+<span id="cb15-7"><a href="流程控制.html#cb15-7" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4</code></pre>
+<p>範例: next</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="流程控制.html#cb17-1" tabindex="-1"></a><span class="co"># 使用 next 跳過某些值</span></span>
+<span id="cb17-2"><a href="流程控制.html#cb17-2" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb17-3"><a href="流程控制.html#cb17-3" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb17-4"><a href="流程控制.html#cb17-4" tabindex="-1"></a>    <span class="cf">next</span>  <span class="co"># 當 i 是偶數時跳過這次迭代</span></span>
+<span id="cb17-5"><a href="流程控制.html#cb17-5" tabindex="-1"></a>  }</span>
+<span id="cb17-6"><a href="流程控制.html#cb17-6" tabindex="-1"></a>  <span class="fu">print</span>(i)  <span class="co"># 打印 i</span></span>
+<span id="cb17-7"><a href="流程控制.html#cb17-7" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>## [1] 1
+## [1] 3
+## [1] 5
+## [1] 7
+## [1] 9</code></pre>
 
 </div>
 </div>

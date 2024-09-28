@@ -50,6 +50,26 @@ text<-psychTools::read.clipboard()
 text<-psychTools::read.clipboard.tab()
 ```
 
+
 ## 資料匯入
+
+![](https://i.postimg.cc/jjzTLV5m/screenshot-9.png){width="448"}
+
+### 匯入csv檔
+```{r eval=FALSE}
+library(readr) #呼叫csv檔的套件 
+
+score = read.csv("./data/score.csv",sep=",")
+head(score)
+
+```
+
+### 匯入excel檔
+
+```{r eval=FALSE}
+library(readxl)#呼叫excel檔的套件
+```
+
+### 匯入json檔
 
 ## 資料匯出

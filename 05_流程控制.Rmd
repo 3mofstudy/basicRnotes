@@ -62,6 +62,84 @@ for(i in c("蘋果","香蕉","西瓜")){
 
 ```
 
-## while與repeat 迴圈
+## while 迴圈
 
-## break與next 改變迴圈狀態
+在R語言中，while迴圈用於在條件為真時重複執行一段程式碼。
+
+while迴圈的基本語法結構如下，在每次迭代之前，R會檢查括號中的條件是否為真。如果為真，則執行迴圈內的程式碼；如果為假，則退出迴圈。
+
+```{r echo=TRUE,eval=FALSE}
+while (條件) {
+    # 每次迭代要執行的程式碼
+}
+```
+
+以下是一個使用while迴圈的範例，這段程式碼將輸出月份名稱：
+
+```{r ,echo=TRUE}
+i <- 1
+while (i <= 5) {
+    print(month.name[i])
+    i <- i + 1
+}
+
+```
+
+## repeat 迴圈
+
+在R語言中，repeat迴圈用於重複執行一段程式碼，直到滿足特定的停止條件。這種迴圈的特點是沒有內建的條件來退出，必須使用break語句來明確地終止迴圈。
+
+```{r echo=TRUE,eval=FALSE}
+repeat {
+    # 執行的程式碼
+    if (停止條件) {
+        break
+    }
+}
+```
+
+範例:打印數字直到達到特定值
+
+```{r ,echo=TRUE}
+# 展示如何使用repeat迴圈從1打印到5
+x <- 1
+repeat {
+    print(x)
+    if (x >= 5) {
+        break
+    }
+    x <- x + 1
+}
+```
+
+## break與next
+
+在 R 語言中，break 和 next 是用於控制迴圈流的兩個關鍵字。
+
+-   break: 用於立即終止最內層的迴圈，不會影響外層的執行。
+
+-   next: 跳過當前最內層迴圈的剩餘程式碼，直接進入下一次迭代。
+
+範例: break
+
+```{r ,echo=TRUE}
+# 使用 break 退出迴圈
+for (i in 1:10) {
+  if (i == 5) {
+    break  # 當 i 等於 5 時退出迴圈
+  }
+  print(i)  # 打印 i
+}
+```
+
+範例: next
+
+```{r ,echo=TRUE}
+# 使用 next 跳過某些值
+for (i in 1:10) {
+  if (i %% 2 == 0) {
+    next  # 當 i 是偶數時跳過這次迭代
+  }
+  print(i)  # 打印 i
+}
+```
