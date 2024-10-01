@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 12 data.table運用 | R語言程式設計</title>
-  <meta name="description" content="Chapter 12 data.table運用 | R語言程式設計" />
+  <title>Chapter 5 資料輸入與輸出 | R語言程式設計</title>
+  <meta name="description" content="Chapter 5 資料輸入與輸出 | R語言程式設計" />
   <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 12 data.table運用 | R語言程式設計" />
+  <meta property="og:title" content="Chapter 5 資料輸入與輸出 | R語言程式設計" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 12 data.table運用 | R語言程式設計" />
+  <meta name="twitter:title" content="Chapter 5 資料輸入與輸出 | R語言程式設計" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="dplyr及-tidyr運用.html"/>
-<link rel="next" href="ggplot2繪圖.html"/>
+<link rel="prev" href="資料結構.html"/>
+<link rel="next" href="流程控制.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -264,17 +264,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data.table運用" class="section level1 hasAnchor" number="12">
-<h1><span class="header-section-number">Chapter 12</span> data.table運用<a href="data.html#data.table運用" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="資料輸入與輸出" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> 資料輸入與輸出<a href="資料輸入與輸出.html#資料輸入與輸出" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="資料鍵入與印出" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> 資料鍵入與印出<a href="資料輸入與輸出.html#資料鍵入與印出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="資料鍵入" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> 資料鍵入<a href="資料輸入與輸出.html#資料鍵入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><code>scan()</code></p></li>
+<li><p><code>readline("請輸入字串:")</code></p></li>
+</ol>
+</div>
+<div id="資料印出" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> 資料印出<a href="資料輸入與輸出.html#資料印出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>print() 和cat()，都可以把資料打印到Console螢幕上，但是print()只能輸出一個完整文字訊息，如果想要利用print() 輸出一段話+某變數，就必須另外使用paste()或paste0()將兩個訊息結合成一個完整文字訊息才能用print()進行輸出，但cat()就沒有此問題，兩個以上訊息可以用”,” 來結合即可，範例如下:</p>
+<ol style="list-style-type: decimal">
+<li><code>cat()</code></li>
+</ol>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="資料輸入與輸出.html#cb207-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb207-2"><a href="資料輸入與輸出.html#cb207-2" tabindex="-1"></a><span class="fu">cat</span>( name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span> )</span></code></pre></div>
+<pre><code>## Lucy 帶狗狗去公園散步了</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><code>print()</code></li>
+</ol>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="資料輸入與輸出.html#cb209-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb209-2"><a href="資料輸入與輸出.html#cb209-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">paste</span>(name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span>)   )</span></code></pre></div>
+<pre><code>## [1] &quot;Lucy 帶狗狗去公園散步了&quot;</code></pre>
+</div>
+</div>
+<div id="複製及貼上" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> 複製及貼上<a href="資料輸入與輸出.html#複製及貼上" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>有兩個套件，可以輕鬆將R輸出結果轉化到剪貼簿後，就可以直接拿到Excel或Word中複製貼上，相當方便，clipr 套件基本不用再安裝，因為已經常規預設安中好</p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="資料輸入與輸出.html#cb211-1" tabindex="-1"></a><span class="co">#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 </span></span>
+<span id="cb211-2"><a href="資料輸入與輸出.html#cb211-2" tabindex="-1"></a>text <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip</span>() <span class="do">##轉換成純文字向量(適合單行貼上) </span></span>
+<span id="cb211-3"><a href="資料輸入與輸出.html#cb211-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip_tbl</span>() <span class="do">##轉換成data.frame(適合表格貼上)</span></span>
+<span id="cb211-4"><a href="資料輸入與輸出.html#cb211-4" tabindex="-1"></a></span>
+<span id="cb211-5"><a href="資料輸入與輸出.html#cb211-5" tabindex="-1"></a><span class="co">#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)</span></span>
+<span id="cb211-6"><a href="資料輸入與輸出.html#cb211-6" tabindex="-1"></a></span>
+<span id="cb211-7"><a href="資料輸入與輸出.html#cb211-7" tabindex="-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(text)</span></code></pre></div>
+<p>另一個好用套件是psychTools</p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="資料輸入與輸出.html#cb212-1" tabindex="-1"></a><span class="co">#另一個好用套件</span></span>
+<span id="cb212-2"><a href="資料輸入與輸出.html#cb212-2" tabindex="-1"></a><span class="fu">library</span>(psychTools) </span>
+<span id="cb212-3"><a href="資料輸入與輸出.html#cb212-3" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard</span>() </span>
+<span id="cb212-4"><a href="資料輸入與輸出.html#cb212-4" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard.tab</span>()</span></code></pre></div>
+</div>
+<div id="資料匯入" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> 資料匯入<a href="資料輸入與輸出.html#資料匯入" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="https://i.postimg.cc/jjzTLV5m/screenshot-9.png" width="448" /></p>
+<div id="匯入csv檔" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> 匯入csv檔<a href="資料輸入與輸出.html#匯入csv檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="資料輸入與輸出.html#cb213-1" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co">#呼叫csv檔的套件 </span></span>
+<span id="cb213-2"><a href="資料輸入與輸出.html#cb213-2" tabindex="-1"></a></span>
+<span id="cb213-3"><a href="資料輸入與輸出.html#cb213-3" tabindex="-1"></a>score <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>)</span>
+<span id="cb213-4"><a href="資料輸入與輸出.html#cb213-4" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+</div>
+<div id="匯入excel檔" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> 匯入excel檔<a href="資料輸入與輸出.html#匯入excel檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="資料輸入與輸出.html#cb214-1" tabindex="-1"></a><span class="fu">library</span>(readxl)<span class="co">#呼叫excel檔的套件</span></span></code></pre></div>
+</div>
+<div id="匯入json檔" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> 匯入json檔<a href="資料輸入與輸出.html#匯入json檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="資料匯出" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> 資料匯出<a href="資料輸入與輸出.html#資料匯出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="dplyr及-tidyr運用.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ggplot2繪圖.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="資料結構.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="流程控制.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -305,7 +368,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/11_data.table應用.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/edit/main/04_資料輸入與輸出.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -313,7 +376,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/11_data.table應用.Rmd",
+"link": "https://github.com/3mofstudy/basicRnotes/blob/main/04_資料輸入與輸出.Rmd",
 "text": null
 },
 "download": null,

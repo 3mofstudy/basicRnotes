@@ -34,6 +34,7 @@ table函數
 margin.table
 prop.table
 ftable
+資料輸入與輸出
 資料鍵入與印出
 資料鍵入
 資料印出
