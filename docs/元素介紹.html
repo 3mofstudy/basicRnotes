@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 3 元素介紹 | R語言程式設計</title>
   <meta name="description" content="Chapter 3 元素介紹 | R語言程式設計" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 3 元素介紹 | R語言程式設計" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="露西Lucy" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2025-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,8 +55,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +67,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -142,105 +143,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#%E9%97%9C%E6%96%BC%E4%BD%9C%E8%80%85"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#%E5%AF%AB%E6%9B%B8%E7%9A%84%E8%B5%B7%E6%BA%90"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#%E6%9C%AC%E6%9B%B8%E7%9A%84%E7%90%86%E8%A7%A3"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="系統環境設定.html"><a href="系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 系統環境設定</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
-<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
-<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
-<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
-<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#常用快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
+<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E6%9F%A5%E8%A9%A2"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
+<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%9B%B4%E6%94%B9%E7%92%B0%E5%A2%83%E8%AA%9E%E7%B3%BB"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%96%B0%E5%A2%9E%E5%B0%88%E6%A1%88"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#%E5%B8%B8%E7%94%A8%E5%BF%AB%E9%80%9F%E9%8D%B5"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="元素介紹.html"><a href="元素介紹.html"><i class="fa fa-check"></i><b>3</b> 元素介紹</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
-<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
+<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E8%B3%A6%E5%80%BC"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
+<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#字串"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
-<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#數值"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
-<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#布林值"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
-<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
+<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#%E5%AD%97%E4%B8%B2"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
+<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#%E6%95%B8%E5%80%BC"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
+<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B8%83%E6%9E%97%E5%80%BC"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
+<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
-<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
+<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B1%AC%E6%80%A7%E6%9F%A5%E8%A9%A2%E8%88%87%E8%BD%89%E6%8F%9B"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
+<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
-<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
+<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="資料結構.html"><a href="資料結構.html"><i class="fa fa-check"></i><b>4</b> 資料結構</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#資料型態相同"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
+<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E7%9B%B8%E5%90%8C"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#一維結構vector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#二維結構matrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
-<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#三維結構-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
+<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%80%E7%B6%AD%E7%B5%90%E6%A7%8Bvector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8Bmatrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#資料型態不同"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
+<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E4%B8%8D%E5%90%8C"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#二維結構-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#三維結構-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8B-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
+<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#%E7%89%B9%E6%AE%8A%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#列聯表"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
+<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#%E5%88%97%E8%81%AF%E8%A1%A8"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html"><i class="fa fa-check"></i><b>5</b> 資料輸入與輸出</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入與印出"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
+<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5%E8%88%87%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
-<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料印出"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
+<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
+<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#複製及貼上"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
-<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯入"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
+<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%A4%87%E8%A3%BD%E5%8F%8A%E8%B2%BC%E4%B8%8A"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
+<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%85%A5"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入csv檔"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
-<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入excel檔"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
-<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入json檔"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5csv%E6%AA%94"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
+<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5excel%E6%AA%94"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
+<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5json%E6%AA%94"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5rds%E6%AA%94-%E6%88%96%E8%BC%89%E5%85%A5%E5%A4%9A%E5%80%8Br%E7%89%A9%E4%BB%B6"><i class="fa fa-check"></i><b>5.3.4</b> 匯入RDS檔 或載入多個R物件</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯出"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a></li>
+<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%87%BA"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAcsv%E6%AA%94"><i class="fa fa-check"></i><b>5.4.1</b> 匯出為csv檔</a></li>
+<li class="chapter" data-level="5.4.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAexcel%E6%AA%94"><i class="fa fa-check"></i><b>5.4.2</b> 匯出為excel檔</a></li>
+<li class="chapter" data-level="5.4.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAjson%E6%AA%94"><i class="fa fa-check"></i><b>5.4.3</b> 匯出為json檔</a></li>
+<li class="chapter" data-level="5.4.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAr%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>5.4.4</b> 匯出為R資料格式</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="流程控制.html"><a href="流程控制.html"><i class="fa fa-check"></i><b>6</b> 流程控制</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
-<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
-<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-迴圈"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
-<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-迴圈"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
-<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break與next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
+<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-%E9%82%8F%E8%BC%AF%E5%88%A4%E6%96%B7"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
+<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
+<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
+<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
+<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break%E8%88%87next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="函數介紹.html"><a href="函數介紹.html"><i class="fa fa-check"></i><b>7</b> 函數介紹</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#常用的內建函數"><i class="fa fa-check"></i><b>7.1</b> 常用的內建函數</a></li>
-<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#實用套件之函數"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
-<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#自訂函數"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
-<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-及call"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
+<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#r-%E8%AA%9E%E8%A8%80%E5%B8%B8%E7%94%A8%E5%85%A7%E5%BB%BA%E5%87%BD%E6%95%B8%E5%88%86%E9%A1%9E"><i class="fa fa-check"></i><b>7.1</b> R 語言常用內建函數分類</a></li>
+<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#%E5%AF%A6%E7%94%A8%E5%A5%97%E4%BB%B6%E4%B9%8B%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
+<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#%E8%87%AA%E8%A8%82%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
+<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%8F%8Acall"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-基本用途"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
-<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
-<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
-<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
-<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#線上資源"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
+<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%9F%BA%E6%9C%AC%E7%94%A8%E9%80%94"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%B8%B8%E9%81%8B%E7%94%A8%E6%96%BCdata.frame%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E4%BA%A6%E5%8F%AF%E9%81%8B%E7%94%A8%E6%96%BClist-%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
+<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-%E8%88%87-do.call%E7%9A%84%E5%B7%AE%E7%95%B0"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
+<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#%E7%B7%9A%E4%B8%8A%E8%B3%87%E6%BA%90"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="基礎繪圖.html"><a href="基礎繪圖.html"><i class="fa fa-check"></i><b>8</b> 基礎繪圖</a></li>
 <li class="chapter" data-level="9" data-path="文字與時間處理.html"><a href="文字與時間處理.html"><i class="fa fa-check"></i><b>9</b> 文字與時間處理</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#內建文字函數base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
-<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr套件"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
-<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#正則表達式"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
+<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E5%85%A7%E5%BB%BA%E6%96%87%E5%AD%97%E5%87%BD%E6%95%B8base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
+<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr%E5%A5%97%E4%BB%B6"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
+<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="認識apply家族.html"><a href="認識apply家族.html"><i class="fa fa-check"></i><b>10</b> 認識apply家族</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply系列家族應用情境"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
-<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply用法"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
-<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply用法"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
-<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply用法"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
+<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%B3%BB%E5%88%97%E5%AE%B6%E6%97%8F%E6%87%89%E7%94%A8%E6%83%85%E5%A2%83"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
+<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
+<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
+<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="dplyr及-tidyr運用.html"><a href="dplyr及-tidyr運用.html"><i class="fa fa-check"></i><b>11</b> dplyr及 tidyr運用</a></li>
 <li class="chapter" data-level="12" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>12</b> data.table運用</a></li>
@@ -265,9 +273,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="元素介紹" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapter 3</span> 元素介紹<a href="元素介紹.html#元素介紹" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 3</span> 元素介紹<a href="元素介紹.html#%E5%85%83%E7%B4%A0%E4%BB%8B%E7%B4%B9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="資料賦值" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> 資料賦值<a href="元素介紹.html#資料賦值" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.1</span> 資料賦值<a href="元素介紹.html#%E8%B3%87%E6%96%99%E8%B3%A6%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>資料的賦值，又稱為變數的設定。在進入R領域前，需要理解何謂是變數，變數就是可變動的數值，設定方式為變數名稱。在R中<code>&lt;-</code> 及<code>=</code>符號皆可被用來賦予變數，但R科學家更常使用<code>&lt;-</code>，在RStudio中，可用快速鍵<code>Alt</code>+<code>-</code> 快速形成</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="元素介紹.html#cb18-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">10</span></span>
 <span id="cb18-2"><a href="元素介紹.html#cb18-2" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">15</span></span>
@@ -275,7 +283,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 25</code></pre>
 </div>
 <div id="資料型態" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> 資料型態<a href="元素介紹.html#資料型態" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.2</span> 資料型態<a href="元素介紹.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>資料型態可分成一般性資料型態，和特殊性資料型態，初學者基本上學會一般性資料型態就已足夠，而特殊性資料型態通常應用在特殊環境，例如factor是R程式特殊專有資料型態，常運用統計學上類別變量相關分析，ts常用於與時間序列有關的統計。本章節會介紹<strong>一般性常見的</strong>資料型態，特殊性資料型態會在之後章節(中級篇或高級篇)，進一步介紹。</p>
 <table>
 <thead>
@@ -304,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <div id="字串" class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> 字串<a href="元素介紹.html#字串" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">3.2.1</span> 字串<a href="元素介紹.html#%E5%AD%97%E4%B8%B2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>字串可用單引號或雙引號包起來代表，何時使用單引號或雙引號其實是隨意，只是需要注意一點，當單引號亦視為字串中內容時，外圍則須用雙引號包起來，反之亦然</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="元素介紹.html#cb20-1" tabindex="-1"></a>name <span class="ot">&lt;-</span> <span class="st">&quot;Mary Wang&quot;</span></span>
 <span id="cb20-2"><a href="元素介紹.html#cb20-2" tabindex="-1"></a><span class="fu">print</span>(name)</span></code></pre></div>
@@ -317,7 +325,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;I&#39;m an adult&quot;</code></pre>
 </div>
 <div id="數值" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> 數值<a href="元素介紹.html#數值" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">3.2.2</span> 數值<a href="元素介紹.html#%E6%95%B8%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>數學的<strong>數</strong>包含<strong><em>實數(numeric)</em></strong>和<strong><em>複數(complex)</em></strong>，R是專為計算數學相關領域而發展的程式語言，數的型態多於其他程式語言，R能處理實數(numeric)與複數(complex)， 實數又包括整數（沒有小數點）與浮點數（有小數點）的數值，所以在R的數值中，通常分成三種，分別為:</p>
 <ul>
 <li><p>numeric: 浮點數</p></li>
@@ -335,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;complex&quot;</code></pre>
 </div>
 <div id="布林值" class="section level3 hasAnchor" number="3.2.3">
-<h3><span class="header-section-number">3.2.3</span> 布林值<a href="元素介紹.html#布林值" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">3.2.3</span> 布林值<a href="元素介紹.html#%E5%B8%83%E6%9E%97%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>布林值又稱為邏輯值((logic)，用於邏輯判斷，可使用大寫<code>TRUE</code>或<code>T</code>代表真，大寫<code>FALSE</code>或<code>F</code>代表假，此外布林值可以進行加減運算， TRUE =1 ，FALSE =0</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="元素介紹.html#cb32-1" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
 <span id="cb32-2"><a href="元素介紹.html#cb32-2" tabindex="-1"></a><span class="fu">class</span>(A)</span></code></pre></div>
@@ -350,15 +358,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 2</code></pre>
 </div>
 <div id="日期時間" class="section level3 hasAnchor" number="3.2.4">
-<h3><span class="header-section-number">3.2.4</span> 日期/時間<a href="元素介紹.html#日期時間" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">3.2.4</span> 日期/時間<a href="元素介紹.html#%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>(1) 取得當下時間資訊</strong></p>
 <p>R內建有幾個函數，可以查詢當下系統的日期、時間及時區資訊</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="元素介紹.html#cb40-1" tabindex="-1"></a><span class="fu">Sys.Date</span>()  <span class="co">#當前日期  類似lubridate::today()     </span></span></code></pre></div>
-<pre><code>## [1] &quot;2024-10-01&quot;</code></pre>
+<pre><code>## [1] &quot;2025-11-14&quot;</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="元素介紹.html#cb42-1" tabindex="-1"></a><span class="fu">date</span>()      <span class="co">#當前系統日期和時間  </span></span></code></pre></div>
-<pre><code>## [1] &quot;Tue Oct  1 20:31:33 2024&quot;</code></pre>
+<pre><code>## [1] &quot;Fri Nov 14 16:59:26 2025&quot;</code></pre>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="元素介紹.html#cb44-1" tabindex="-1"></a><span class="fu">Sys.time</span>()  <span class="co">#當前系統日期和時間  lubridate::now()</span></span></code></pre></div>
-<pre><code>## [1] &quot;2024-10-01 20:31:33 CST&quot;</code></pre>
+<pre><code>## [1] &quot;2025-11-14 16:59:26 CST&quot;</code></pre>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="元素介紹.html#cb46-1" tabindex="-1"></a><span class="fu">Sys.timezone</span>() <span class="co">#有關時區的信息將返回當前時區的名稱</span></span></code></pre></div>
 <pre><code>## [1] &quot;Asia/Taipei&quot;</code></pre>
 <p><strong>(2) as.Date 函數(文字轉日期)</strong></p>
@@ -441,26 +449,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>(4) 擷取特定日期格式</strong></p>
 <div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="元素介紹.html#cb56-1" tabindex="-1"></a><span class="co">#輸出年份：</span></span>
 <span id="cb56-2"><a href="元素介紹.html#cb56-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%Y&quot;</span>)   </span></code></pre></div>
-<pre><code>## [1] &quot;2024&quot;</code></pre>
+<pre><code>## [1] &quot;2025&quot;</code></pre>
 <div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="元素介紹.html#cb58-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%y&quot;</span>)  </span></code></pre></div>
-<pre><code>## [1] &quot;24&quot;</code></pre>
+<pre><code>## [1] &quot;25&quot;</code></pre>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="元素介紹.html#cb60-1" tabindex="-1"></a><span class="co">#輸出月份：</span></span>
 <span id="cb60-2"><a href="元素介紹.html#cb60-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%m&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;10&quot;</code></pre>
+<pre><code>## [1] &quot;11&quot;</code></pre>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="元素介紹.html#cb62-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%b&quot;</span>)   </span></code></pre></div>
-<pre><code>## [1] &quot;十月&quot;</code></pre>
+<pre><code>## [1] &quot;十一月&quot;</code></pre>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="元素介紹.html#cb64-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%B&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;十月&quot;</code></pre>
+<pre><code>## [1] &quot;十一月&quot;</code></pre>
 <div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="元素介紹.html#cb66-1" tabindex="-1"></a><span class="co">#輸出日期：</span></span>
 <span id="cb66-2"><a href="元素介紹.html#cb66-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%d&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;01&quot;</code></pre>
+<pre><code>## [1] &quot;14&quot;</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="元素介紹.html#cb68-1" tabindex="-1"></a><span class="co">#輸出星期：</span></span>
 <span id="cb68-2"><a href="元素介紹.html#cb68-2" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%A&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;星期二&quot;</code></pre>
+<pre><code>## [1] &quot;星期五&quot;</code></pre>
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="元素介紹.html#cb70-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%a&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;週二&quot;</code></pre>
+<pre><code>## [1] &quot;週五&quot;</code></pre>
 <div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="元素介紹.html#cb72-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%u&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;2&quot;</code></pre>
+<pre><code>## [1] &quot;5&quot;</code></pre>
 <div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="元素介紹.html#cb74-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2024-02-01&quot;</span>),<span class="at">format=</span><span class="st">&quot;%w&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;4&quot;</code></pre>
 <div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="元素介紹.html#cb76-1" tabindex="-1"></a><span class="co">#輸出週數：</span></span>
@@ -511,15 +519,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p><strong>(6) 擷取特定時間格式</strong></p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="元素介紹.html#cb79-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%H&quot;</span>) <span class="co">#輸出小時</span></span></code></pre></div>
-<pre><code>## [1] &quot;20&quot;</code></pre>
+<pre><code>## [1] &quot;16&quot;</code></pre>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="元素介紹.html#cb81-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%M&quot;</span>) <span class="co">#輸出分鐘</span></span></code></pre></div>
-<pre><code>## [1] &quot;31&quot;</code></pre>
+<pre><code>## [1] &quot;59&quot;</code></pre>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="元素介紹.html#cb83-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%S&quot;</span>) <span class="co">#輸出秒數</span></span></code></pre></div>
-<pre><code>## [1] &quot;33&quot;</code></pre>
+<pre><code>## [1] &quot;26&quot;</code></pre>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="元素介紹.html#cb85-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%Y年%m月%d日&quot;</span>) </span></code></pre></div>
-<pre><code>## [1] &quot;2024年10月01日&quot;</code></pre>
+<pre><code>## [1] &quot;2025年11月14日&quot;</code></pre>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="元素介紹.html#cb87-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;西元%Y年%m月%d日&quot;</span>)  </span></code></pre></div>
-<pre><code>## [1] &quot;西元2024年10月01日&quot;</code></pre>
+<pre><code>## [1] &quot;西元2025年11月14日&quot;</code></pre>
 <p><strong>(7) 日期時間的加減</strong></p>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="元素介紹.html#cb89-1" tabindex="-1"></a><span class="co">#單純加秒數</span></span>
 <span id="cb89-2"><a href="元素介紹.html#cb89-2" tabindex="-1"></a>D1<span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
@@ -532,7 +540,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="屬性查詢與轉換" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> 屬性查詢與轉換<a href="元素介紹.html#屬性查詢與轉換" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.3</span> 屬性查詢與轉換<a href="元素介紹.html#%E5%B1%AC%E6%80%A7%E6%9F%A5%E8%A9%A2%E8%88%87%E8%BD%89%E6%8F%9B" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>資料查詢可根據資料類型來分類 <code>class</code>可以查詢某物件的屬性，如下圖所示</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="元素介紹.html#cb95-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="st">&quot;dog&quot;</span></span>
 <span id="cb95-2"><a href="元素介紹.html#cb95-2" tabindex="-1"></a><span class="fu">class</span>(a)  <span class="do">##屬性 純文字 (character)</span></span></code></pre></div>
@@ -548,10 +556,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] &quot;POSIXct&quot; &quot;POSIXt&quot;</code></pre>
 </div>
 <div id="運算子" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> 運算子<a href="元素介紹.html#運算子" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.4</span> 運算子<a href="元素介紹.html#%E9%81%8B%E7%AE%97%E5%AD%90" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>運算子一般分成二類，第一類為常見用於加減乘除的算術運算子，第二類為邏輯運算子，通常根據所判斷的規則，輸出結果為TRUE 或FALSE，常與條件控制(if-else)搭配使用。</p>
 <div id="算術運算子" class="section level3 hasAnchor" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> 算術運算子<a href="元素介紹.html#算術運算子" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">3.4.1</span> 算術運算子<a href="元素介紹.html#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>1.一般算術運算子</p>
 <table>
 <thead>
@@ -695,7 +703,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [6,]    4    6    2    3    6    9</code></pre>
 </div>
 <div id="邏輯運算子" class="section level3 hasAnchor" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> 邏輯運算子<a href="元素介紹.html#邏輯運算子" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">3.4.2</span> 邏輯運算子<a href="元素介紹.html#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
 <tr class="header">
@@ -780,42 +788,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/02_元素介紹.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/02_元素介紹.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/3mofstudy/basicRnotes/edit/main/02_元素介紹.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/3mofstudy/basicRnotes/blob/main/02_元素介紹.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

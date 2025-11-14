@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 函數介紹 | R語言程式設計</title>
   <meta name="description" content="Chapter 7 函數介紹 | R語言程式設計" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 函數介紹 | R語言程式設計" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="露西Lucy" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2025-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,8 +55,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +67,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -142,105 +143,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#%E9%97%9C%E6%96%BC%E4%BD%9C%E8%80%85"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#%E5%AF%AB%E6%9B%B8%E7%9A%84%E8%B5%B7%E6%BA%90"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#%E6%9C%AC%E6%9B%B8%E7%9A%84%E7%90%86%E8%A7%A3"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="系統環境設定.html"><a href="系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 系統環境設定</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
-<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
-<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
-<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
-<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#常用快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
+<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E6%9F%A5%E8%A9%A2"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
+<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%9B%B4%E6%94%B9%E7%92%B0%E5%A2%83%E8%AA%9E%E7%B3%BB"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%96%B0%E5%A2%9E%E5%B0%88%E6%A1%88"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#%E5%B8%B8%E7%94%A8%E5%BF%AB%E9%80%9F%E9%8D%B5"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="元素介紹.html"><a href="元素介紹.html"><i class="fa fa-check"></i><b>3</b> 元素介紹</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
-<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
+<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E8%B3%A6%E5%80%BC"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
+<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#字串"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
-<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#數值"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
-<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#布林值"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
-<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
+<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#%E5%AD%97%E4%B8%B2"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
+<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#%E6%95%B8%E5%80%BC"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
+<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B8%83%E6%9E%97%E5%80%BC"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
+<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
-<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
+<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B1%AC%E6%80%A7%E6%9F%A5%E8%A9%A2%E8%88%87%E8%BD%89%E6%8F%9B"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
+<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
-<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
+<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="資料結構.html"><a href="資料結構.html"><i class="fa fa-check"></i><b>4</b> 資料結構</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#資料型態相同"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
+<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E7%9B%B8%E5%90%8C"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#一維結構vector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#二維結構matrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
-<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#三維結構-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
+<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%80%E7%B6%AD%E7%B5%90%E6%A7%8Bvector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8Bmatrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#資料型態不同"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
+<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E4%B8%8D%E5%90%8C"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#二維結構-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#三維結構-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8B-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
+<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#%E7%89%B9%E6%AE%8A%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#列聯表"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
+<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#%E5%88%97%E8%81%AF%E8%A1%A8"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html"><i class="fa fa-check"></i><b>5</b> 資料輸入與輸出</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入與印出"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
+<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5%E8%88%87%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
-<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料印出"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
+<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
+<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#複製及貼上"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
-<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯入"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
+<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%A4%87%E8%A3%BD%E5%8F%8A%E8%B2%BC%E4%B8%8A"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
+<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%85%A5"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入csv檔"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
-<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入excel檔"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
-<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入json檔"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5csv%E6%AA%94"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
+<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5excel%E6%AA%94"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
+<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5json%E6%AA%94"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5rds%E6%AA%94-%E6%88%96%E8%BC%89%E5%85%A5%E5%A4%9A%E5%80%8Br%E7%89%A9%E4%BB%B6"><i class="fa fa-check"></i><b>5.3.4</b> 匯入RDS檔 或載入多個R物件</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯出"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a></li>
+<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%87%BA"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAcsv%E6%AA%94"><i class="fa fa-check"></i><b>5.4.1</b> 匯出為csv檔</a></li>
+<li class="chapter" data-level="5.4.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAexcel%E6%AA%94"><i class="fa fa-check"></i><b>5.4.2</b> 匯出為excel檔</a></li>
+<li class="chapter" data-level="5.4.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAjson%E6%AA%94"><i class="fa fa-check"></i><b>5.4.3</b> 匯出為json檔</a></li>
+<li class="chapter" data-level="5.4.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAr%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>5.4.4</b> 匯出為R資料格式</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="流程控制.html"><a href="流程控制.html"><i class="fa fa-check"></i><b>6</b> 流程控制</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
-<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
-<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-迴圈"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
-<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-迴圈"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
-<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break與next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
+<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-%E9%82%8F%E8%BC%AF%E5%88%A4%E6%96%B7"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
+<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
+<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
+<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
+<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break%E8%88%87next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="函數介紹.html"><a href="函數介紹.html"><i class="fa fa-check"></i><b>7</b> 函數介紹</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#常用的內建函數"><i class="fa fa-check"></i><b>7.1</b> 常用的內建函數</a></li>
-<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#實用套件之函數"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
-<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#自訂函數"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
-<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-及call"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
+<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#r-%E8%AA%9E%E8%A8%80%E5%B8%B8%E7%94%A8%E5%85%A7%E5%BB%BA%E5%87%BD%E6%95%B8%E5%88%86%E9%A1%9E"><i class="fa fa-check"></i><b>7.1</b> R 語言常用內建函數分類</a></li>
+<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#%E5%AF%A6%E7%94%A8%E5%A5%97%E4%BB%B6%E4%B9%8B%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
+<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#%E8%87%AA%E8%A8%82%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
+<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%8F%8Acall"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-基本用途"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
-<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
-<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
-<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
-<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#線上資源"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
+<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%9F%BA%E6%9C%AC%E7%94%A8%E9%80%94"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%B8%B8%E9%81%8B%E7%94%A8%E6%96%BCdata.frame%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E4%BA%A6%E5%8F%AF%E9%81%8B%E7%94%A8%E6%96%BClist-%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
+<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-%E8%88%87-do.call%E7%9A%84%E5%B7%AE%E7%95%B0"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
+<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#%E7%B7%9A%E4%B8%8A%E8%B3%87%E6%BA%90"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="基礎繪圖.html"><a href="基礎繪圖.html"><i class="fa fa-check"></i><b>8</b> 基礎繪圖</a></li>
 <li class="chapter" data-level="9" data-path="文字與時間處理.html"><a href="文字與時間處理.html"><i class="fa fa-check"></i><b>9</b> 文字與時間處理</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#內建文字函數base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
-<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr套件"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
-<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#正則表達式"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
+<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E5%85%A7%E5%BB%BA%E6%96%87%E5%AD%97%E5%87%BD%E6%95%B8base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
+<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr%E5%A5%97%E4%BB%B6"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
+<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="認識apply家族.html"><a href="認識apply家族.html"><i class="fa fa-check"></i><b>10</b> 認識apply家族</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply系列家族應用情境"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
-<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply用法"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
-<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply用法"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
-<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply用法"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
+<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%B3%BB%E5%88%97%E5%AE%B6%E6%97%8F%E6%87%89%E7%94%A8%E6%83%85%E5%A2%83"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
+<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
+<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
+<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="dplyr及-tidyr運用.html"><a href="dplyr及-tidyr運用.html"><i class="fa fa-check"></i><b>11</b> dplyr及 tidyr運用</a></li>
 <li class="chapter" data-level="12" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>12</b> data.table運用</a></li>
@@ -265,89 +273,222 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="函數介紹" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">Chapter 7</span> 函數介紹<a href="函數介紹.html#函數介紹" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="常用的內建函數" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> 常用的內建函數<a href="函數介紹.html#常用的內建函數" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h1><span class="header-section-number">Chapter 7</span> 函數介紹<a href="函數介紹.html#%E5%87%BD%E6%95%B8%E4%BB%8B%E7%B4%B9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="r-語言常用內建函數分類" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> R 語言常用內建函數分類<a href="函數介紹.html#r-%E8%AA%9E%E8%A8%80%E5%B8%B8%E7%94%A8%E5%85%A7%E5%BB%BA%E5%87%BD%E6%95%B8%E5%88%86%E9%A1%9E" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R 語言的核心系統 (Base R) 提供了豐富的內建函數（Built-in Functions），這些函數是處理資料、執行運算和進行統計分析的基礎工具。它們可以被大致分為以下幾類：</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">函數種類</th>
+<th align="left">主要功能</th>
+<th align="left">常用內建函數 (範例)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>數學運算 (Mathematical)</strong></td>
+<td align="left">執行數值計算和數學轉換</td>
+<td align="left"><code>abs()</code> (絕對值)、<code>sqrt()</code> (平方根)、<code>log()</code> (對數)、<code>exp()</code> (指數)、<code>round()</code> (四捨五入)、<code>ceiling()</code> (無條件進位)、<code>floor()</code> (無條件捨去)、<code>sin()</code>、<code>cos()</code> (三角函數)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>敘述統計 (Descriptive Statistics)</strong></td>
+<td align="left">快速計算數據集的摘要統計量</td>
+<td align="left"><code>sum()</code> (總和)、<code>mean()</code> (平均值)、<code>median()</code> (中位數)、<code>sd()</code> (標準差)、<code>var()</code> (變異數)、<code>min()</code> (最小值)、<code>max()</code> (最大值)、<code>range()</code> (範圍)、<code>quantile()</code> (分位數)</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>資料結構/管理 (Data Management)</strong></td>
+<td align="left">建立、操作或檢查 R 的資料物件</td>
+<td align="left"><code>c()</code> (連接向量或列表)、<code>length()</code> (求長度)、<code>seq()</code> (建立等差序列)、<code>rep()</code> (重複)、<code>sort()</code> (排序)、<code>class()</code> (檢查物件類型)、<code>subset()</code> (求子集)、<code>unique()</code> (去重)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>字串處理 (String Manipulation)</strong></td>
+<td align="left">處理和轉換文字/字元向量</td>
+<td align="left"><code>paste()</code> / <code>paste0()</code> (連接字串)、<code>nchar()</code> (計算字元數)、<code>substr()</code> (取出子字串)、<code>toupper()</code> (轉大寫)、<code>tolower()</code> (轉小寫)、<code>strsplit()</code> (拆分字串)</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>陣列/矩陣操作 (Matrix/Array)</strong></td>
+<td align="left">處理多維資料結構</td>
+<td align="left"><code>t()</code> (矩陣轉置)、<code>cbind()</code> (按列合併)、<code>rbind()</code> (按行合併)、<code>dim()</code> (取得維度)、<code>%*%</code> (矩陣乘法)、<code>apply()</code> (對陣列應用函數)</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>機率與分配 (Probability/Distribution)</strong></td>
+<td align="left">處理統計機率分配</td>
+<td align="left"><code>rnorm()</code> (常態分布亂數)、<code>dnorm()</code> (常態機率密度)、<code>pnorm()</code> (常態累積機率)、<code>dbinom()</code> (二項式機率密度)、<code>sample()</code> (隨機抽樣)</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>輸入/輸出 (I/O)</strong></td>
+<td align="left">讀取或寫入檔案資料</td>
+<td align="left"><code>read.csv()</code> (讀取 CSV)、<code>write.csv()</code> (寫入 CSV)、<code>read.table()</code> (讀取表格)、<code>saveRDS()</code> (儲存 R 物件)</td>
+</tr>
+</tbody>
+</table>
+<p>在 R 語言中，每個函數的使用方式都是 <code>函數名稱(參數1, 參數2, ...)</code> 的形式。其中，括號內的<strong>參數 (argument)</strong> 用來控制函數執行的方式或指定輸入的資料。</p>
+<p>例如，處理有缺失值 (NA) 的資料時，可以使用 <code>mean()</code> 函數的 <code>na.rm = TRUE</code> 參數來忽略這些缺失值：</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="函數介紹.html#cb241-1" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">85</span>, <span class="dv">92</span>, <span class="dv">78</span>, <span class="dv">90</span>, <span class="cn">NA</span>) <span class="co"># 包含一個缺失值 NA</span></span>
+<span id="cb241-2"><a href="函數介紹.html#cb241-2" tabindex="-1"></a></span>
+<span id="cb241-3"><a href="函數介紹.html#cb241-3" tabindex="-1"></a><span class="co"># 1. 直接計算：會回傳 NA</span></span>
+<span id="cb241-4"><a href="函數介紹.html#cb241-4" tabindex="-1"></a><span class="fu">mean</span>(scores)</span>
+<span id="cb241-5"><a href="函數介紹.html#cb241-5" tabindex="-1"></a></span>
+<span id="cb241-6"><a href="函數介紹.html#cb241-6" tabindex="-1"></a><span class="co"># 2. 使用參數調整：移除缺失值後計算平均</span></span>
+<span id="cb241-7"><a href="函數介紹.html#cb241-7" tabindex="-1"></a><span class="fu">mean</span>(scores, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="實用套件之函數" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> 實用套件之函數<a href="函數介紹.html#實用套件之函數" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">7.2</span> 實用套件之函數<a href="函數介紹.html#%E5%AF%A6%E7%94%A8%E5%A5%97%E4%BB%B6%E4%B9%8B%E5%87%BD%E6%95%B8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R 生態系提供大量功能強大的套件，能大幅提升資料處理、資料視覺化、 文字處理、日期處理、統計模型與機器學習等分析效率。 下表整理 11 個最常用、最知名的 R 套件</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>套件名稱</th>
+<th>主要用途分類</th>
+<th>簡短介紹</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>tidyverse</strong></td>
+<td>資料處理 / 視覺化 / 整潔資料</td>
+<td>包含 dplyr、tidyr、ggplot2 等，是 R 的核心分析工具。</td>
+</tr>
+<tr class="even">
+<td><strong>dplyr</strong></td>
+<td>資料處理（filter / select / mutate）</td>
+<td>快速且直覺的資料操作語法。</td>
+</tr>
+<tr class="odd">
+<td><strong>ggplot2</strong></td>
+<td>資料視覺化</td>
+<td>高彈性統計繪圖，建立高品質圖表。</td>
+</tr>
+<tr class="even">
+<td><strong>tidyr</strong></td>
+<td>資料整形（Wide ↔︎ Long）</td>
+<td>處理資料格式整理，如 pivot_longer() / pivot_wider()。</td>
+</tr>
+<tr class="odd">
+<td><strong>forcats</strong></td>
+<td>類別資料處理（factor）</td>
+<td>最好用的 factor 操作工具，如排序、重新編碼。</td>
+</tr>
+<tr class="even">
+<td><strong>data.table</strong></td>
+<td>高速資料處理</td>
+<td>超大資料量下的高效運算利器。</td>
+</tr>
+<tr class="odd">
+<td><strong>lubridate</strong></td>
+<td>日期與時間處理</td>
+<td>提供簡單直覺的日期運算工具。</td>
+</tr>
+<tr class="even">
+<td><strong>stringr</strong></td>
+<td>字串處理</td>
+<td>統一介面的字串操作。</td>
+</tr>
+<tr class="odd">
+<td><strong>shiny</strong></td>
+<td>互動式儀表板</td>
+<td>用 R 建立網頁應用程式。</td>
+</tr>
+<tr class="even">
+<td><strong>caret</strong></td>
+<td>機器學習</td>
+<td>整合多種 ML 模型的統一介面。</td>
+</tr>
+<tr class="odd">
+<td><strong>reticulate</strong></td>
+<td>與 Python 互動</td>
+<td>可呼叫 Python、匯入 Python 模組、執行 Python 物件。</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="自訂函數" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> 自訂函數<a href="函數介紹.html#自訂函數" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>在 R 語言中，自定義函數（Custom Functions）是用戶可以根據自己的需求編寫並使用的函數。這些函數可以執行任何你想要的任務，從簡單的計算到複雜的數據處理。以下是一個簡單的例子，說明如何創建和使用自定義函數。 自定義函數的基本結構 自定義函數的一般形式如下：</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="函數介紹.html#cb233-1" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(arguments) {</span>
-<span id="cb233-2"><a href="函數介紹.html#cb233-2" tabindex="-1"></a>  <span class="co"># 函數主體</span></span>
-<span id="cb233-3"><a href="函數介紹.html#cb233-3" tabindex="-1"></a>  <span class="co"># 這裡是函數要執行的代碼</span></span>
-<span id="cb233-4"><a href="函數介紹.html#cb233-4" tabindex="-1"></a>  <span class="fu">return</span>(value)</span>
-<span id="cb233-5"><a href="函數介紹.html#cb233-5" tabindex="-1"></a>}</span></code></pre></div>
+<h2><span class="header-section-number">7.3</span> 自訂函數<a href="函數介紹.html#%E8%87%AA%E8%A8%82%E5%87%BD%E6%95%B8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>在 R 語言中，自定義函數（Custom Functions） 是用戶可以根據自己的需求編寫並使用的函數。這些函數可以執行任何你想要的任務，從簡單的計算到複雜的數據處理。以下是一個簡單的例子，說明如何創建和使用自定義函數。 自定義函數的基本結構 自定義函數的一般形式如下：</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="函數介紹.html#cb242-1" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(arguments) {</span>
+<span id="cb242-2"><a href="函數介紹.html#cb242-2" tabindex="-1"></a>  <span class="co"># 函數主體</span></span>
+<span id="cb242-3"><a href="函數介紹.html#cb242-3" tabindex="-1"></a>  <span class="co"># 這裡是函數要執行的代碼</span></span>
+<span id="cb242-4"><a href="函數介紹.html#cb242-4" tabindex="-1"></a>  <span class="fu">return</span>(value)</span>
+<span id="cb242-5"><a href="函數介紹.html#cb242-5" tabindex="-1"></a>}</span></code></pre></div>
 <p>範例1: 簡單加法函數</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="函數介紹.html#cb234-1" tabindex="-1"></a>add_numbers <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb234-2"><a href="函數介紹.html#cb234-2" tabindex="-1"></a>  sum <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
-<span id="cb234-3"><a href="函數介紹.html#cb234-3" tabindex="-1"></a>  <span class="fu">return</span>(sum)</span>
-<span id="cb234-4"><a href="函數介紹.html#cb234-4" tabindex="-1"></a>}</span>
-<span id="cb234-5"><a href="函數介紹.html#cb234-5" tabindex="-1"></a><span class="co">#使用這個函數</span></span>
-<span id="cb234-6"><a href="函數介紹.html#cb234-6" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">add_numbers</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb234-7"><a href="函數介紹.html#cb234-7" tabindex="-1"></a><span class="fu">print</span>(result)  <span class="co"># 輸出：8</span></span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="函數介紹.html#cb243-1" tabindex="-1"></a>add_numbers <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb243-2"><a href="函數介紹.html#cb243-2" tabindex="-1"></a>  sum <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb243-3"><a href="函數介紹.html#cb243-3" tabindex="-1"></a>  <span class="fu">return</span>(sum)</span>
+<span id="cb243-4"><a href="函數介紹.html#cb243-4" tabindex="-1"></a>}</span>
+<span id="cb243-5"><a href="函數介紹.html#cb243-5" tabindex="-1"></a><span class="co">#使用這個函數</span></span>
+<span id="cb243-6"><a href="函數介紹.html#cb243-6" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">add_numbers</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb243-7"><a href="函數介紹.html#cb243-7" tabindex="-1"></a><span class="fu">print</span>(result)  <span class="co"># 輸出：8</span></span></code></pre></div>
 <pre><code>## [1] 8</code></pre>
 <p>範例2: 計算圓的面積</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="函數介紹.html#cb236-1" tabindex="-1"></a>calculate_area <span class="ot">&lt;-</span> <span class="cf">function</span>(radius) {</span>
-<span id="cb236-2"><a href="函數介紹.html#cb236-2" tabindex="-1"></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radius<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb236-3"><a href="函數介紹.html#cb236-3" tabindex="-1"></a>  <span class="fu">return</span>(area)</span>
-<span id="cb236-4"><a href="函數介紹.html#cb236-4" tabindex="-1"></a>}</span>
-<span id="cb236-5"><a href="函數介紹.html#cb236-5" tabindex="-1"></a><span class="co">#使用這個函數</span></span>
-<span id="cb236-6"><a href="函數介紹.html#cb236-6" tabindex="-1"></a>circle_area <span class="ot">&lt;-</span> <span class="fu">calculate_area</span>(<span class="dv">4</span>)</span>
-<span id="cb236-7"><a href="函數介紹.html#cb236-7" tabindex="-1"></a><span class="fu">print</span>(circle_area)  <span class="co"># 輸出：50.26548</span></span></code></pre></div>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="函數介紹.html#cb245-1" tabindex="-1"></a>calculate_area <span class="ot">&lt;-</span> <span class="cf">function</span>(radius) {</span>
+<span id="cb245-2"><a href="函數介紹.html#cb245-2" tabindex="-1"></a>  area <span class="ot">&lt;-</span> pi <span class="sc">*</span> radius<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb245-3"><a href="函數介紹.html#cb245-3" tabindex="-1"></a>  <span class="fu">return</span>(area)</span>
+<span id="cb245-4"><a href="函數介紹.html#cb245-4" tabindex="-1"></a>}</span>
+<span id="cb245-5"><a href="函數介紹.html#cb245-5" tabindex="-1"></a><span class="co">#使用這個函數</span></span>
+<span id="cb245-6"><a href="函數介紹.html#cb245-6" tabindex="-1"></a>circle_area <span class="ot">&lt;-</span> <span class="fu">calculate_area</span>(<span class="dv">4</span>)</span>
+<span id="cb245-7"><a href="函數介紹.html#cb245-7" tabindex="-1"></a><span class="fu">print</span>(circle_area)  <span class="co"># 輸出：50.26548</span></span></code></pre></div>
 <pre><code>## [1] 50.26548</code></pre>
 <p>範例3: 處理數據框的函數</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="函數介紹.html#cb238-1" tabindex="-1"></a>column_means <span class="ot">&lt;-</span> <span class="cf">function</span>(dataframe) {</span>
-<span id="cb238-2"><a href="函數介紹.html#cb238-2" tabindex="-1"></a>  means <span class="ot">&lt;-</span> <span class="fu">sapply</span>(dataframe, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb238-3"><a href="函數介紹.html#cb238-3" tabindex="-1"></a>  <span class="fu">return</span>(means)</span>
-<span id="cb238-4"><a href="函數介紹.html#cb238-4" tabindex="-1"></a>}</span>
-<span id="cb238-5"><a href="函數介紹.html#cb238-5" tabindex="-1"></a></span>
-<span id="cb238-6"><a href="函數介紹.html#cb238-6" tabindex="-1"></a><span class="co"># 創建示例數據框</span></span>
-<span id="cb238-7"><a href="函數介紹.html#cb238-7" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb238-8"><a href="函數介紹.html#cb238-8" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
-<span id="cb238-9"><a href="函數介紹.html#cb238-9" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>),</span>
-<span id="cb238-10"><a href="函數介紹.html#cb238-10" tabindex="-1"></a>  <span class="at">z =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>)</span>
-<span id="cb238-11"><a href="函數介紹.html#cb238-11" tabindex="-1"></a>)</span>
-<span id="cb238-12"><a href="函數介紹.html#cb238-12" tabindex="-1"></a></span>
-<span id="cb238-13"><a href="函數介紹.html#cb238-13" tabindex="-1"></a><span class="co"># 計算每列的平均值</span></span>
-<span id="cb238-14"><a href="函數介紹.html#cb238-14" tabindex="-1"></a>means <span class="ot">&lt;-</span> <span class="fu">column_means</span>(data)</span>
-<span id="cb238-15"><a href="函數介紹.html#cb238-15" tabindex="-1"></a><span class="fu">print</span>(means)  <span class="co"># 輸出： x y z </span></span></code></pre></div>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="函數介紹.html#cb247-1" tabindex="-1"></a>column_means <span class="ot">&lt;-</span> <span class="cf">function</span>(dataframe) {</span>
+<span id="cb247-2"><a href="函數介紹.html#cb247-2" tabindex="-1"></a>  means <span class="ot">&lt;-</span> <span class="fu">sapply</span>(dataframe, mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb247-3"><a href="函數介紹.html#cb247-3" tabindex="-1"></a>  <span class="fu">return</span>(means)</span>
+<span id="cb247-4"><a href="函數介紹.html#cb247-4" tabindex="-1"></a>}</span>
+<span id="cb247-5"><a href="函數介紹.html#cb247-5" tabindex="-1"></a></span>
+<span id="cb247-6"><a href="函數介紹.html#cb247-6" tabindex="-1"></a><span class="co"># 創建示例數據框</span></span>
+<span id="cb247-7"><a href="函數介紹.html#cb247-7" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb247-8"><a href="函數介紹.html#cb247-8" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb247-9"><a href="函數介紹.html#cb247-9" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>),</span>
+<span id="cb247-10"><a href="函數介紹.html#cb247-10" tabindex="-1"></a>  <span class="at">z =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>)</span>
+<span id="cb247-11"><a href="函數介紹.html#cb247-11" tabindex="-1"></a>)</span>
+<span id="cb247-12"><a href="函數介紹.html#cb247-12" tabindex="-1"></a></span>
+<span id="cb247-13"><a href="函數介紹.html#cb247-13" tabindex="-1"></a><span class="co"># 計算每列的平均值</span></span>
+<span id="cb247-14"><a href="函數介紹.html#cb247-14" tabindex="-1"></a>means <span class="ot">&lt;-</span> <span class="fu">column_means</span>(data)</span>
+<span id="cb247-15"><a href="函數介紹.html#cb247-15" tabindex="-1"></a><span class="fu">print</span>(means)  <span class="co"># 輸出： x y z </span></span></code></pre></div>
 <pre><code>##  x  y  z 
 ##  3  8 13</code></pre>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="函數介紹.html#cb240-1" tabindex="-1"></a>              <span class="co">#        3 8 13</span></span></code></pre></div>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="函數介紹.html#cb249-1" tabindex="-1"></a>              <span class="co">#        3 8 13</span></span></code></pre></div>
 </div>
 <div id="do.call-及call" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> do.call 及call<a href="函數介紹.html#do.call-及call" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">7.4</span> do.call 及call<a href="函數介紹.html#do.call-%E5%8F%8Acall" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="do.call-基本用途" class="section level3 hasAnchor" number="7.4.1">
-<h3><span class="header-section-number">7.4.1</span> 1. do.call 基本用途<a href="函數介紹.html#do.call-基本用途" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">7.4.1</span> 1. do.call 基本用途<a href="函數介紹.html#do.call-%E5%9F%BA%E6%9C%AC%E7%94%A8%E9%80%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>簡單的講，do.call 的功能就是執行一個函數，而這個函數的參數呢，放在一個list裡面, 是list的每個子元素，見下列範例: do.call的第一個參數(what)預備執行的函數名稱,第二個參數(args)放list格式包起來的資料及相關函數設定，如下列範例:</p>
-<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="函數介紹.html#cb241-1" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">9</span>,<span class="cn">NA</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">74</span>,<span class="dv">36</span>,<span class="cn">NA</span>,<span class="dv">55</span>)</span>
-<span id="cb241-2"><a href="函數介紹.html#cb241-2" tabindex="-1"></a></span>
-<span id="cb241-3"><a href="函數介紹.html#cb241-3" tabindex="-1"></a><span class="fu">do.call</span>(mean, <span class="fu">list</span>(vec1)) <span class="do">##輸出NA，因為無設定第二個參數值</span></span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="函數介紹.html#cb250-1" tabindex="-1"></a>vec1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">9</span>,<span class="cn">NA</span>,<span class="dv">8</span>,<span class="dv">12</span>,<span class="dv">74</span>,<span class="dv">36</span>,<span class="cn">NA</span>,<span class="dv">55</span>)</span>
+<span id="cb250-2"><a href="函數介紹.html#cb250-2" tabindex="-1"></a></span>
+<span id="cb250-3"><a href="函數介紹.html#cb250-3" tabindex="-1"></a><span class="fu">do.call</span>(mean, <span class="fu">list</span>(vec1)) <span class="do">##輸出NA，因為無設定第二個參數值</span></span></code></pre></div>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="函數介紹.html#cb243-1" tabindex="-1"></a><span class="fu">do.call</span>(mean, <span class="fu">list</span>(vec1,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="do">##排除遺失值後，計算平均值</span></span></code></pre></div>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="函數介紹.html#cb252-1" tabindex="-1"></a><span class="fu">do.call</span>(mean, <span class="fu">list</span>(vec1,<span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="do">##排除遺失值後，計算平均值</span></span></code></pre></div>
 <pre><code>## [1] 28.28571</code></pre>
 </div>
 <div id="do.call-常運用於data.frame的子元素" class="section level3 hasAnchor" number="7.4.2">
-<h3><span class="header-section-number">7.4.2</span> 2. do.call 常運用於data.frame的子元素<a href="函數介紹.html#do.call-常運用於data.frame的子元素" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="函數介紹.html#cb245-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&#39;letter&#39;</span> <span class="ot">=</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], <span class="st">&#39;number&#39;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">&#39;value&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;+&#39;</span>,<span class="st">&#39;-&#39;</span>))</span>
-<span id="cb245-2"><a href="函數介紹.html#cb245-2" tabindex="-1"></a>dt[[<span class="dv">1</span>]]</span></code></pre></div>
+<h3><span class="header-section-number">7.4.2</span> 2. do.call 常運用於data.frame的子元素<a href="函數介紹.html#do.call-%E5%B8%B8%E9%81%8B%E7%94%A8%E6%96%BCdata.frame%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="函數介紹.html#cb254-1" tabindex="-1"></a>dt <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&#39;letter&#39;</span> <span class="ot">=</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>], <span class="st">&#39;number&#39;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="st">&#39;value&#39;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&#39;+&#39;</span>,<span class="st">&#39;-&#39;</span>))</span>
+<span id="cb254-2"><a href="函數介紹.html#cb254-2" tabindex="-1"></a>dt[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>##  [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot; &quot;f&quot; &quot;g&quot; &quot;h&quot; &quot;i&quot; &quot;j&quot;</code></pre>
-<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="函數介紹.html#cb247-1" tabindex="-1"></a>dt[[<span class="dv">2</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="函數介紹.html#cb256-1" tabindex="-1"></a>dt[[<span class="dv">2</span>]]</span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="函數介紹.html#cb249-1" tabindex="-1"></a>dt[[<span class="dv">3</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="函數介紹.html#cb258-1" tabindex="-1"></a>dt[[<span class="dv">3</span>]]</span></code></pre></div>
 <pre><code>##  [1] &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot; &quot;+&quot; &quot;-&quot;</code></pre>
-<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="函數介紹.html#cb251-1" tabindex="-1"></a><span class="fu">do.call</span>(paste0,dt)</span></code></pre></div>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="函數介紹.html#cb260-1" tabindex="-1"></a><span class="fu">do.call</span>(paste0,dt)</span></code></pre></div>
 <pre><code>##  [1] &quot;a1+&quot;  &quot;b2-&quot;  &quot;c3+&quot;  &quot;d4-&quot;  &quot;e5+&quot;  &quot;f6-&quot;  &quot;g7+&quot;  &quot;h8-&quot;  &quot;i9+&quot;  &quot;j10-&quot;</code></pre>
 </div>
 <div id="do.call-亦可運用於list-資料格式" class="section level3 hasAnchor" number="7.4.3">
-<h3><span class="header-section-number">7.4.3</span> 3. do.call 亦可運用於list 資料格式<a href="函數介紹.html#do.call-亦可運用於list-資料格式" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="函數介紹.html#cb253-1" tabindex="-1"></a>一心營業額 <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;北區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">10000</span>,<span class="dv">27000</span>,<span class="dv">68500</span>,<span class="dv">34000</span>)),</span>
-<span id="cb253-2"><a href="函數介紹.html#cb253-2" tabindex="-1"></a>                  <span class="st">&quot;中區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">9000</span>,<span class="dv">10400</span>,<span class="dv">59400</span>,<span class="dv">48000</span>)),</span>
-<span id="cb253-3"><a href="函數介紹.html#cb253-3" tabindex="-1"></a>                  <span class="st">&quot;南區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">8000</span>,<span class="dv">96000</span>,<span class="dv">70400</span>,<span class="dv">63500</span>)))</span>
-<span id="cb253-4"><a href="函數介紹.html#cb253-4" tabindex="-1"></a><span class="fu">do.call</span>(rbind,一心營業額)</span></code></pre></div>
+<h3><span class="header-section-number">7.4.3</span> 3. do.call 亦可運用於list 資料格式<a href="函數介紹.html#do.call-%E4%BA%A6%E5%8F%AF%E9%81%8B%E7%94%A8%E6%96%BClist-%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="函數介紹.html#cb262-1" tabindex="-1"></a>一心營業額 <span class="ot">=</span> <span class="fu">list</span>(<span class="st">&quot;北區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">10000</span>,<span class="dv">27000</span>,<span class="dv">68500</span>,<span class="dv">34000</span>)),</span>
+<span id="cb262-2"><a href="函數介紹.html#cb262-2" tabindex="-1"></a>                  <span class="st">&quot;中區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">9000</span>,<span class="dv">10400</span>,<span class="dv">59400</span>,<span class="dv">48000</span>)),</span>
+<span id="cb262-3"><a href="函數介紹.html#cb262-3" tabindex="-1"></a>                  <span class="st">&quot;南區&quot;</span><span class="ot">=</span><span class="fu">data.frame</span>(<span class="st">&quot;月份&quot;</span><span class="ot">=</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>) ,<span class="st">&quot;銷售額&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">8000</span>,<span class="dv">96000</span>,<span class="dv">70400</span>,<span class="dv">63500</span>)))</span>
+<span id="cb262-4"><a href="函數介紹.html#cb262-4" tabindex="-1"></a><span class="fu">do.call</span>(rbind,一心營業額)</span></code></pre></div>
 <pre><code>##        月份 銷售額
 ## 北區.1    7  10000
 ## 北區.2    8  27000
@@ -363,44 +504,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 南區.4   10  63500</code></pre>
 </div>
 <div id="call-與-do.call的差異" class="section level3 hasAnchor" number="7.4.4">
-<h3><span class="header-section-number">7.4.4</span> call 與 do.call的差異<a href="函數介紹.html#call-與-do.call的差異" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">7.4.4</span> call 與 do.call的差異<a href="函數介紹.html#call-%E8%88%87-do.call%E7%9A%84%E5%B7%AE%E7%95%B0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>call 和 do.call很像，兩者主要差異:</p>
 <ol style="list-style-type: decimal">
 <li>do.call() 執行某個已知現存的函數，例如內建函數<code>sum()</code>、<code>mean()</code>等，需將參數以<strong>列表的形式</strong>傳遞給函數後，才能正常運作。</li>
 </ol>
-<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="函數介紹.html#cb255-1" tabindex="-1"></a><span class="co">#自創一個能計算BMI的函數</span></span>
-<span id="cb255-2"><a href="函數介紹.html#cb255-2" tabindex="-1"></a>BMI <span class="ot">&lt;-</span> <span class="cf">function</span>(ht, wt) {</span>
-<span id="cb255-3"><a href="函數介紹.html#cb255-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> wt <span class="sc">/</span> (ht <span class="sc">/</span> <span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb255-4"><a href="函數介紹.html#cb255-4" tabindex="-1"></a><span class="fu">return</span>(x)</span>
-<span id="cb255-5"><a href="函數介紹.html#cb255-5" tabindex="-1"></a>}</span>
-<span id="cb255-6"><a href="函數介紹.html#cb255-6" tabindex="-1"></a><span class="co"># 建立一個有身高及體重資料集</span></span>
-<span id="cb255-7"><a href="函數介紹.html#cb255-7" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;ht&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">155</span>, <span class="dv">168</span>, <span class="dv">159</span>), <span class="st">&quot;wt&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">48</span>))</span>
-<span id="cb255-8"><a href="函數介紹.html#cb255-8" tabindex="-1"></a><span class="co"># 使用 do.call 將列表作為參數傳遞給 BMI 函數</span></span>
-<span id="cb255-9"><a href="函數介紹.html#cb255-9" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">do.call</span>(BMI, <span class="fu">list</span>(<span class="at">ht =</span> DT<span class="sc">$</span>ht, <span class="at">wt =</span> DT<span class="sc">$</span>wt))</span>
-<span id="cb255-10"><a href="函數介紹.html#cb255-10" tabindex="-1"></a><span class="co"># 印出結果</span></span>
-<span id="cb255-11"><a href="函數介紹.html#cb255-11" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="函數介紹.html#cb264-1" tabindex="-1"></a><span class="co">#自創一個能計算BMI的函數</span></span>
+<span id="cb264-2"><a href="函數介紹.html#cb264-2" tabindex="-1"></a>BMI <span class="ot">&lt;-</span> <span class="cf">function</span>(ht, wt) {</span>
+<span id="cb264-3"><a href="函數介紹.html#cb264-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> wt <span class="sc">/</span> (ht <span class="sc">/</span> <span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb264-4"><a href="函數介紹.html#cb264-4" tabindex="-1"></a><span class="fu">return</span>(x)</span>
+<span id="cb264-5"><a href="函數介紹.html#cb264-5" tabindex="-1"></a>}</span>
+<span id="cb264-6"><a href="函數介紹.html#cb264-6" tabindex="-1"></a><span class="co"># 建立一個有身高及體重資料集</span></span>
+<span id="cb264-7"><a href="函數介紹.html#cb264-7" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;ht&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">155</span>, <span class="dv">168</span>, <span class="dv">159</span>), <span class="st">&quot;wt&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">48</span>))</span>
+<span id="cb264-8"><a href="函數介紹.html#cb264-8" tabindex="-1"></a><span class="co"># 使用 do.call 將列表作為參數傳遞給 BMI 函數</span></span>
+<span id="cb264-9"><a href="函數介紹.html#cb264-9" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">do.call</span>(BMI, <span class="fu">list</span>(<span class="at">ht =</span> DT<span class="sc">$</span>ht, <span class="at">wt =</span> DT<span class="sc">$</span>wt))</span>
+<span id="cb264-10"><a href="函數介紹.html#cb264-10" tabindex="-1"></a><span class="co"># 印出結果</span></span>
+<span id="cb264-11"><a href="函數介紹.html#cb264-11" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
 <pre><code>## [1] 33.29865 21.25850 18.98659</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>call() 以動態的方式生成函數呼叫，再用<strong><code>eval</code></strong>函數執行呼叫</li>
 </ol>
-<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="函數介紹.html#cb257-1" tabindex="-1"></a><span class="co">#自創一個能計算BMI的函數</span></span>
-<span id="cb257-2"><a href="函數介紹.html#cb257-2" tabindex="-1"></a>BMI <span class="ot">&lt;-</span> <span class="cf">function</span>(ht, wt) {</span>
-<span id="cb257-3"><a href="函數介紹.html#cb257-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> wt <span class="sc">/</span> (ht <span class="sc">/</span> <span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb257-4"><a href="函數介紹.html#cb257-4" tabindex="-1"></a><span class="fu">return</span>(x)</span>
-<span id="cb257-5"><a href="函數介紹.html#cb257-5" tabindex="-1"></a>}</span>
-<span id="cb257-6"><a href="函數介紹.html#cb257-6" tabindex="-1"></a><span class="co"># 建立一個有身高及體重資料集</span></span>
-<span id="cb257-7"><a href="函數介紹.html#cb257-7" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;ht&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">155</span>, <span class="dv">168</span>, <span class="dv">159</span>), <span class="st">&quot;wt&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">48</span>))</span>
-<span id="cb257-8"><a href="函數介紹.html#cb257-8" tabindex="-1"></a><span class="co"># 使用call函數動態生成函數呼叫</span></span>
-<span id="cb257-9"><a href="函數介紹.html#cb257-9" tabindex="-1"></a>my_call <span class="ot">&lt;-</span> <span class="fu">call</span>(<span class="st">&quot;BMI&quot;</span>, <span class="at">ht =</span> DT<span class="sc">$</span>ht, <span class="at">wt =</span> DT<span class="sc">$</span>wt)</span>
-<span id="cb257-10"><a href="函數介紹.html#cb257-10" tabindex="-1"></a><span class="co"># 以eval函數執行生成的函數呼叫</span></span>
-<span id="cb257-11"><a href="函數介紹.html#cb257-11" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">eval</span>(my_call)</span>
-<span id="cb257-12"><a href="函數介紹.html#cb257-12" tabindex="-1"></a><span class="co"># 印出結果</span></span>
-<span id="cb257-13"><a href="函數介紹.html#cb257-13" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="函數介紹.html#cb266-1" tabindex="-1"></a><span class="co">#自創一個能計算BMI的函數</span></span>
+<span id="cb266-2"><a href="函數介紹.html#cb266-2" tabindex="-1"></a>BMI <span class="ot">&lt;-</span> <span class="cf">function</span>(ht, wt) {</span>
+<span id="cb266-3"><a href="函數介紹.html#cb266-3" tabindex="-1"></a>x <span class="ot">&lt;-</span> wt <span class="sc">/</span> (ht <span class="sc">/</span> <span class="dv">100</span>)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb266-4"><a href="函數介紹.html#cb266-4" tabindex="-1"></a><span class="fu">return</span>(x)</span>
+<span id="cb266-5"><a href="函數介紹.html#cb266-5" tabindex="-1"></a>}</span>
+<span id="cb266-6"><a href="函數介紹.html#cb266-6" tabindex="-1"></a><span class="co"># 建立一個有身高及體重資料集</span></span>
+<span id="cb266-7"><a href="函數介紹.html#cb266-7" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;ht&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">155</span>, <span class="dv">168</span>, <span class="dv">159</span>), <span class="st">&quot;wt&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">60</span>, <span class="dv">48</span>))</span>
+<span id="cb266-8"><a href="函數介紹.html#cb266-8" tabindex="-1"></a><span class="co"># 使用call函數動態生成函數呼叫</span></span>
+<span id="cb266-9"><a href="函數介紹.html#cb266-9" tabindex="-1"></a>my_call <span class="ot">&lt;-</span> <span class="fu">call</span>(<span class="st">&quot;BMI&quot;</span>, <span class="at">ht =</span> DT<span class="sc">$</span>ht, <span class="at">wt =</span> DT<span class="sc">$</span>wt)</span>
+<span id="cb266-10"><a href="函數介紹.html#cb266-10" tabindex="-1"></a><span class="co"># 以eval函數執行生成的函數呼叫</span></span>
+<span id="cb266-11"><a href="函數介紹.html#cb266-11" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">eval</span>(my_call)</span>
+<span id="cb266-12"><a href="函數介紹.html#cb266-12" tabindex="-1"></a><span class="co"># 印出結果</span></span>
+<span id="cb266-13"><a href="函數介紹.html#cb266-13" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
 <pre><code>## [1] 33.29865 21.25850 18.98659</code></pre>
 <p>由上面兩段程式碼可以看出來，<code>call</code>函數還需要搭配<code>eval</code>函數執行後續的呼叫，所以實務上，<strong><code>do.call</code></strong>往往更常被使用，而另一個快速調用函數的方法則是<strong><code>apply</code></strong>家族</p>
 </div>
 <div id="線上資源" class="section level3 hasAnchor" number="7.4.5">
-<h3><span class="header-section-number">7.4.5</span> 1.線上資源<a href="函數介紹.html#線上資源" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">7.4.5</span> 1.線上資源<a href="函數介紹.html#%E7%B7%9A%E4%B8%8A%E8%B3%87%E6%BA%90" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><a href="https://blog.csdn.net/neweastsun/article/details/122397987">R do.call &amp; call 函数教程</a></li>
 <li><a href="https://www.twblogs.net/a/5d42ed0ebd9eee5327fb25a7">R語言中eval和do.call的用法</a></li>
@@ -430,42 +571,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/06_函數使用.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/06_函數使用.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/3mofstudy/basicRnotes/edit/main/06_函數使用.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/3mofstudy/basicRnotes/blob/main/06_函數使用.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 5 資料輸入與輸出 | R語言程式設計</title>
   <meta name="description" content="Chapter 5 資料輸入與輸出 | R語言程式設計" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 5 資料輸入與輸出 | R語言程式設計" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="露西Lucy" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2025-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,8 +55,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +67,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -142,105 +143,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#%E9%97%9C%E6%96%BC%E4%BD%9C%E8%80%85"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#%E5%AF%AB%E6%9B%B8%E7%9A%84%E8%B5%B7%E6%BA%90"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#%E6%9C%AC%E6%9B%B8%E7%9A%84%E7%90%86%E8%A7%A3"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="系統環境設定.html"><a href="系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 系統環境設定</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
-<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
-<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
-<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
-<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#常用快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
+<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E6%9F%A5%E8%A9%A2"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
+<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%9B%B4%E6%94%B9%E7%92%B0%E5%A2%83%E8%AA%9E%E7%B3%BB"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%96%B0%E5%A2%9E%E5%B0%88%E6%A1%88"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#%E5%B8%B8%E7%94%A8%E5%BF%AB%E9%80%9F%E9%8D%B5"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="元素介紹.html"><a href="元素介紹.html"><i class="fa fa-check"></i><b>3</b> 元素介紹</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
-<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
+<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E8%B3%A6%E5%80%BC"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
+<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#字串"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
-<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#數值"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
-<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#布林值"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
-<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
+<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#%E5%AD%97%E4%B8%B2"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
+<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#%E6%95%B8%E5%80%BC"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
+<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B8%83%E6%9E%97%E5%80%BC"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
+<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
-<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
+<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B1%AC%E6%80%A7%E6%9F%A5%E8%A9%A2%E8%88%87%E8%BD%89%E6%8F%9B"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
+<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
-<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
+<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="資料結構.html"><a href="資料結構.html"><i class="fa fa-check"></i><b>4</b> 資料結構</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#資料型態相同"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
+<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E7%9B%B8%E5%90%8C"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#一維結構vector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#二維結構matrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
-<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#三維結構-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
+<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%80%E7%B6%AD%E7%B5%90%E6%A7%8Bvector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8Bmatrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#資料型態不同"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
+<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E4%B8%8D%E5%90%8C"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#二維結構-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#三維結構-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8B-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
+<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#%E7%89%B9%E6%AE%8A%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#列聯表"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
+<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#%E5%88%97%E8%81%AF%E8%A1%A8"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html"><i class="fa fa-check"></i><b>5</b> 資料輸入與輸出</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入與印出"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
+<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5%E8%88%87%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
-<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料印出"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
+<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
+<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#複製及貼上"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
-<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯入"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
+<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%A4%87%E8%A3%BD%E5%8F%8A%E8%B2%BC%E4%B8%8A"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
+<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%85%A5"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入csv檔"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
-<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入excel檔"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
-<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入json檔"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5csv%E6%AA%94"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
+<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5excel%E6%AA%94"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
+<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5json%E6%AA%94"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5rds%E6%AA%94-%E6%88%96%E8%BC%89%E5%85%A5%E5%A4%9A%E5%80%8Br%E7%89%A9%E4%BB%B6"><i class="fa fa-check"></i><b>5.3.4</b> 匯入RDS檔 或載入多個R物件</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯出"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a></li>
+<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%87%BA"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAcsv%E6%AA%94"><i class="fa fa-check"></i><b>5.4.1</b> 匯出為csv檔</a></li>
+<li class="chapter" data-level="5.4.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAexcel%E6%AA%94"><i class="fa fa-check"></i><b>5.4.2</b> 匯出為excel檔</a></li>
+<li class="chapter" data-level="5.4.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAjson%E6%AA%94"><i class="fa fa-check"></i><b>5.4.3</b> 匯出為json檔</a></li>
+<li class="chapter" data-level="5.4.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAr%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>5.4.4</b> 匯出為R資料格式</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="流程控制.html"><a href="流程控制.html"><i class="fa fa-check"></i><b>6</b> 流程控制</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
-<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
-<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-迴圈"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
-<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-迴圈"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
-<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break與next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
+<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-%E9%82%8F%E8%BC%AF%E5%88%A4%E6%96%B7"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
+<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
+<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
+<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
+<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break%E8%88%87next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="函數介紹.html"><a href="函數介紹.html"><i class="fa fa-check"></i><b>7</b> 函數介紹</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#常用的內建函數"><i class="fa fa-check"></i><b>7.1</b> 常用的內建函數</a></li>
-<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#實用套件之函數"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
-<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#自訂函數"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
-<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-及call"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
+<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#r-%E8%AA%9E%E8%A8%80%E5%B8%B8%E7%94%A8%E5%85%A7%E5%BB%BA%E5%87%BD%E6%95%B8%E5%88%86%E9%A1%9E"><i class="fa fa-check"></i><b>7.1</b> R 語言常用內建函數分類</a></li>
+<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#%E5%AF%A6%E7%94%A8%E5%A5%97%E4%BB%B6%E4%B9%8B%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
+<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#%E8%87%AA%E8%A8%82%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
+<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%8F%8Acall"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-基本用途"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
-<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
-<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
-<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
-<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#線上資源"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
+<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%9F%BA%E6%9C%AC%E7%94%A8%E9%80%94"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%B8%B8%E9%81%8B%E7%94%A8%E6%96%BCdata.frame%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E4%BA%A6%E5%8F%AF%E9%81%8B%E7%94%A8%E6%96%BClist-%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
+<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-%E8%88%87-do.call%E7%9A%84%E5%B7%AE%E7%95%B0"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
+<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#%E7%B7%9A%E4%B8%8A%E8%B3%87%E6%BA%90"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="基礎繪圖.html"><a href="基礎繪圖.html"><i class="fa fa-check"></i><b>8</b> 基礎繪圖</a></li>
 <li class="chapter" data-level="9" data-path="文字與時間處理.html"><a href="文字與時間處理.html"><i class="fa fa-check"></i><b>9</b> 文字與時間處理</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#內建文字函數base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
-<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr套件"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
-<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#正則表達式"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
+<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E5%85%A7%E5%BB%BA%E6%96%87%E5%AD%97%E5%87%BD%E6%95%B8base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
+<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr%E5%A5%97%E4%BB%B6"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
+<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="認識apply家族.html"><a href="認識apply家族.html"><i class="fa fa-check"></i><b>10</b> 認識apply家族</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply系列家族應用情境"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
-<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply用法"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
-<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply用法"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
-<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply用法"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
+<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%B3%BB%E5%88%97%E5%AE%B6%E6%97%8F%E6%87%89%E7%94%A8%E6%83%85%E5%A2%83"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
+<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
+<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
+<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="dplyr及-tidyr運用.html"><a href="dplyr及-tidyr運用.html"><i class="fa fa-check"></i><b>11</b> dplyr及 tidyr運用</a></li>
 <li class="chapter" data-level="12" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>12</b> data.table運用</a></li>
@@ -265,70 +273,234 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="資料輸入與輸出" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> 資料輸入與輸出<a href="資料輸入與輸出.html#資料輸入與輸出" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 5</span> 資料輸入與輸出<a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E8%BC%B8%E5%85%A5%E8%88%87%E8%BC%B8%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="資料鍵入與印出" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> 資料鍵入與印出<a href="資料輸入與輸出.html#資料鍵入與印出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">5.1</span> 資料鍵入與印出<a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5%E8%88%87%E5%8D%B0%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="資料鍵入" class="section level3 hasAnchor" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> 資料鍵入<a href="資料輸入與輸出.html#資料鍵入" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">5.1.1</span> 資料鍵入<a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>在 R 語言中，當我們需要讓使用者從鍵盤輸入資料時，最常用的基礎函數就是 scan() 和 readline()</p>
 <ol style="list-style-type: decimal">
-<li><p><code>scan()</code></p></li>
-<li><p><code>readline("請輸入字串:")</code></p></li>
+<li><code>scan()</code>：常用於從標準輸入（鍵盤）或文件中讀取一連串相同類型的資料，並將其儲存為一個向量 (Vector)。</li>
+</ol>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="資料輸入與輸出.html#cb207-1" tabindex="-1"></a><span class="co"># 範例一：輸入數字向量</span></span>
+<span id="cb207-2"><a href="資料輸入與輸出.html#cb207-2" tabindex="-1"></a>ages <span class="ot">&lt;-</span> <span class="fu">scan</span>() <span class="co"># 預設讀取數字 (依序輸入數值，完成後請按兩次 Enter)&quot;</span></span>
+<span id="cb207-3"><a href="資料輸入與輸出.html#cb207-3" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;您輸入的資料為：&quot;</span>)</span>
+<span id="cb207-4"><a href="資料輸入與輸出.html#cb207-4" tabindex="-1"></a><span class="fu">print</span>(ages)</span>
+<span id="cb207-5"><a href="資料輸入與輸出.html#cb207-5" tabindex="-1"></a></span>
+<span id="cb207-6"><a href="資料輸入與輸出.html#cb207-6" tabindex="-1"></a><span class="co"># 範例二：輸入文字向量</span></span>
+<span id="cb207-7"><a href="資料輸入與輸出.html#cb207-7" tabindex="-1"></a><span class="co"># 指定讀取文字(依序輸入三個最喜歡的水果，完成後請按兩次 Enter)</span></span>
+<span id="cb207-8"><a href="資料輸入與輸出.html#cb207-8" tabindex="-1"></a>fruits <span class="ot">&lt;-</span> <span class="fu">scan</span>(<span class="at">what =</span> <span class="fu">character</span>()) </span>
+<span id="cb207-9"><a href="資料輸入與輸出.html#cb207-9" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;您喜歡的水果列表：&quot;</span>)</span>
+<span id="cb207-10"><a href="資料輸入與輸出.html#cb207-10" tabindex="-1"></a><span class="fu">print</span>(favorite_fruits)</span></code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li><code>readline("請輸入字串:")</code>：用於提示使用者輸入一段文字，並將整行輸入作為一個單一的字串 (character string) 儲存。</li>
 </ol>
 </div>
 <div id="資料印出" class="section level3 hasAnchor" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> 資料印出<a href="資料輸入與輸出.html#資料印出" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>print() 和cat()，都可以把資料打印到Console螢幕上，但是print()只能輸出一個完整文字訊息，如果想要利用print() 輸出一段話+某變數，就必須另外使用paste()或paste0()將兩個訊息結合成一個完整文字訊息才能用print()進行輸出，但cat()就沒有此問題，兩個以上訊息可以用”,” 來結合即可，範例如下:</p>
+<h3><span class="header-section-number">5.1.2</span> 資料印出<a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8D%B0%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>print() 和cat()，都可以把資料打印到Console螢幕上</p></li>
+<li><p>print()只能輸出一個完整文字訊息，如果想要利用print() 輸出一段話+某變數，就必須另外使用paste()或paste0()將兩個訊息結合成一個完整文字訊息才能用print()進行輸出。</p></li>
+<li><p>但cat()可直接用”,” 來結合文字或物件即可輸出，範例如下:</p></li>
+</ul>
 <ol style="list-style-type: decimal">
 <li><code>cat()</code></li>
 </ol>
-<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="資料輸入與輸出.html#cb207-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
-<span id="cb207-2"><a href="資料輸入與輸出.html#cb207-2" tabindex="-1"></a><span class="fu">cat</span>( name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="資料輸入與輸出.html#cb208-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb208-2"><a href="資料輸入與輸出.html#cb208-2" tabindex="-1"></a><span class="fu">cat</span>( name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span> )</span></code></pre></div>
 <pre><code>## Lucy 帶狗狗去公園散步了</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><code>print()</code></li>
 </ol>
-<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="資料輸入與輸出.html#cb209-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
-<span id="cb209-2"><a href="資料輸入與輸出.html#cb209-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">paste</span>(name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span>)   )</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="資料輸入與輸出.html#cb210-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb210-2"><a href="資料輸入與輸出.html#cb210-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">paste</span>(name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span>)   )</span></code></pre></div>
 <pre><code>## [1] &quot;Lucy 帶狗狗去公園散步了&quot;</code></pre>
 </div>
 </div>
 <div id="複製及貼上" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> 複製及貼上<a href="資料輸入與輸出.html#複製及貼上" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">5.2</span> 複製及貼上<a href="資料輸入與輸出.html#%E8%A4%87%E8%A3%BD%E5%8F%8A%E8%B2%BC%E4%B8%8A" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>有兩個套件，可以輕鬆將R輸出結果轉化到剪貼簿後，就可以直接拿到Excel或Word中複製貼上，相當方便，clipr 套件基本不用再安裝，因為已經常規預設安中好</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="資料輸入與輸出.html#cb211-1" tabindex="-1"></a><span class="co">#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 </span></span>
-<span id="cb211-2"><a href="資料輸入與輸出.html#cb211-2" tabindex="-1"></a>text <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip</span>() <span class="do">##轉換成純文字向量(適合單行貼上) </span></span>
-<span id="cb211-3"><a href="資料輸入與輸出.html#cb211-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip_tbl</span>() <span class="do">##轉換成data.frame(適合表格貼上)</span></span>
-<span id="cb211-4"><a href="資料輸入與輸出.html#cb211-4" tabindex="-1"></a></span>
-<span id="cb211-5"><a href="資料輸入與輸出.html#cb211-5" tabindex="-1"></a><span class="co">#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)</span></span>
-<span id="cb211-6"><a href="資料輸入與輸出.html#cb211-6" tabindex="-1"></a></span>
-<span id="cb211-7"><a href="資料輸入與輸出.html#cb211-7" tabindex="-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(text)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="資料輸入與輸出.html#cb212-1" tabindex="-1"></a><span class="co">#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 </span></span>
+<span id="cb212-2"><a href="資料輸入與輸出.html#cb212-2" tabindex="-1"></a>text <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip</span>() <span class="do">##轉換成純文字向量(適合單行貼上) </span></span>
+<span id="cb212-3"><a href="資料輸入與輸出.html#cb212-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip_tbl</span>() <span class="do">##轉換成data.frame(適合表格貼上)</span></span>
+<span id="cb212-4"><a href="資料輸入與輸出.html#cb212-4" tabindex="-1"></a></span>
+<span id="cb212-5"><a href="資料輸入與輸出.html#cb212-5" tabindex="-1"></a><span class="co">#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)</span></span>
+<span id="cb212-6"><a href="資料輸入與輸出.html#cb212-6" tabindex="-1"></a></span>
+<span id="cb212-7"><a href="資料輸入與輸出.html#cb212-7" tabindex="-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(text)</span></code></pre></div>
 <p>另一個好用套件是psychTools</p>
-<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="資料輸入與輸出.html#cb212-1" tabindex="-1"></a><span class="co">#另一個好用套件</span></span>
-<span id="cb212-2"><a href="資料輸入與輸出.html#cb212-2" tabindex="-1"></a><span class="fu">library</span>(psychTools) </span>
-<span id="cb212-3"><a href="資料輸入與輸出.html#cb212-3" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard</span>() </span>
-<span id="cb212-4"><a href="資料輸入與輸出.html#cb212-4" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard.tab</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="資料輸入與輸出.html#cb213-1" tabindex="-1"></a><span class="co">#另一個好用套件</span></span>
+<span id="cb213-2"><a href="資料輸入與輸出.html#cb213-2" tabindex="-1"></a><span class="fu">library</span>(psychTools) </span>
+<span id="cb213-3"><a href="資料輸入與輸出.html#cb213-3" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard</span>() </span>
+<span id="cb213-4"><a href="資料輸入與輸出.html#cb213-4" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard.tab</span>()</span></code></pre></div>
 </div>
 <div id="資料匯入" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> 資料匯入<a href="資料輸入與輸出.html#資料匯入" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">5.3</span> 資料匯入<a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%85%A5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>可從RStudio 工具列 選擇 不同檔案格式 匯入，亦可輸入指令匯入</p>
 <p><img src="https://i.postimg.cc/jjzTLV5m/screenshot-9.png" width="448" /></p>
 <div id="匯入csv檔" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> 匯入csv檔<a href="資料輸入與輸出.html#匯入csv檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="資料輸入與輸出.html#cb213-1" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co">#呼叫csv檔的套件 </span></span>
-<span id="cb213-2"><a href="資料輸入與輸出.html#cb213-2" tabindex="-1"></a></span>
-<span id="cb213-3"><a href="資料輸入與輸出.html#cb213-3" tabindex="-1"></a>score <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>,<span class="at">sep=</span><span class="st">&quot;,&quot;</span>)</span>
-<span id="cb213-4"><a href="資料輸入與輸出.html#cb213-4" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
+<h3><span class="header-section-number">5.3.1</span> 匯入csv檔<a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5csv%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="資料輸入與輸出.html#cb214-1" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co">#呼叫csv檔的套件 </span></span>
+<span id="cb214-2"><a href="資料輸入與輸出.html#cb214-2" tabindex="-1"></a></span>
+<span id="cb214-3"><a href="資料輸入與輸出.html#cb214-3" tabindex="-1"></a><span class="co"># 方法1：使用 R 內建的 read.csv()</span></span>
+<span id="cb214-4"><a href="資料輸入與輸出.html#cb214-4" tabindex="-1"></a>score <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">FALSE</span>)</span>
+<span id="cb214-5"><a href="資料輸入與輸出.html#cb214-5" tabindex="-1"></a><span class="fu">head</span>(score)</span>
+<span id="cb214-6"><a href="資料輸入與輸出.html#cb214-6" tabindex="-1"></a></span>
+<span id="cb214-7"><a href="資料輸入與輸出.html#cb214-7" tabindex="-1"></a><span class="co"># 方法2：使用 readr 套件的 read_csv() - 速度更快，處理大檔案更有效率</span></span>
+<span id="cb214-8"><a href="資料輸入與輸出.html#cb214-8" tabindex="-1"></a>score2 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>)</span>
+<span id="cb214-9"><a href="資料輸入與輸出.html#cb214-9" tabindex="-1"></a><span class="fu">head</span>(score2)</span>
+<span id="cb214-10"><a href="資料輸入與輸出.html#cb214-10" tabindex="-1"></a></span>
+<span id="cb214-11"><a href="資料輸入與輸出.html#cb214-11" tabindex="-1"></a><span class="co"># 方法3：讀取有中文編碼的csv檔</span></span>
+<span id="cb214-12"><a href="資料輸入與輸出.html#cb214-12" tabindex="-1"></a>score3 <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>, <span class="at">fileEncoding=</span><span class="st">&quot;UTF-8&quot;</span>) <span class="co"># 或 &quot;BIG5&quot;</span></span>
+<span id="cb214-13"><a href="資料輸入與輸出.html#cb214-13" tabindex="-1"></a><span class="fu">head</span>(score3)</span></code></pre></div>
 </div>
 <div id="匯入excel檔" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> 匯入excel檔<a href="資料輸入與輸出.html#匯入excel檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="資料輸入與輸出.html#cb214-1" tabindex="-1"></a><span class="fu">library</span>(readxl)<span class="co">#呼叫excel檔的套件</span></span></code></pre></div>
+<h3><span class="header-section-number">5.3.2</span> 匯入excel檔<a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5excel%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="資料輸入與輸出.html#cb215-1" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co">#呼叫excel檔的套件</span></span>
+<span id="cb215-2"><a href="資料輸入與輸出.html#cb215-2" tabindex="-1"></a></span>
+<span id="cb215-3"><a href="資料輸入與輸出.html#cb215-3" tabindex="-1"></a><span class="co"># 讀取第一個工作表</span></span>
+<span id="cb215-4"><a href="資料輸入與輸出.html#cb215-4" tabindex="-1"></a>data1 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/datasets.xlsx&quot;</span>)</span>
+<span id="cb215-5"><a href="資料輸入與輸出.html#cb215-5" tabindex="-1"></a></span>
+<span id="cb215-6"><a href="資料輸入與輸出.html#cb215-6" tabindex="-1"></a><span class="fu">head</span>(data1)</span>
+<span id="cb215-7"><a href="資料輸入與輸出.html#cb215-7" tabindex="-1"></a></span>
+<span id="cb215-8"><a href="資料輸入與輸出.html#cb215-8" tabindex="-1"></a><span class="co"># 讀取指定工作表 - 透過名稱</span></span>
+<span id="cb215-9"><a href="資料輸入與輸出.html#cb215-9" tabindex="-1"></a>data2 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/datasets.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;iris&quot;</span>)</span>
+<span id="cb215-10"><a href="資料輸入與輸出.html#cb215-10" tabindex="-1"></a><span class="fu">head</span>(data2)</span>
+<span id="cb215-11"><a href="資料輸入與輸出.html#cb215-11" tabindex="-1"></a></span>
+<span id="cb215-12"><a href="資料輸入與輸出.html#cb215-12" tabindex="-1"></a><span class="co"># 讀取指定工作表 - 透過索引</span></span>
+<span id="cb215-13"><a href="資料輸入與輸出.html#cb215-13" tabindex="-1"></a>data3 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/datasets.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span>
+<span id="cb215-14"><a href="資料輸入與輸出.html#cb215-14" tabindex="-1"></a><span class="fu">head</span>(data3)</span>
+<span id="cb215-15"><a href="資料輸入與輸出.html#cb215-15" tabindex="-1"></a></span>
+<span id="cb215-16"><a href="資料輸入與輸出.html#cb215-16" tabindex="-1"></a><span class="co"># 讀取指定範圍的資料</span></span>
+<span id="cb215-17"><a href="資料輸入與輸出.html#cb215-17" tabindex="-1"></a>data4 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/datasets.xlsx&quot;</span>, <span class="at">range =</span> <span class="st">&quot;A1:C10&quot;</span>)</span>
+<span id="cb215-18"><a href="資料輸入與輸出.html#cb215-18" tabindex="-1"></a><span class="fu">head</span>(data4)</span>
+<span id="cb215-19"><a href="資料輸入與輸出.html#cb215-19" tabindex="-1"></a></span>
+<span id="cb215-20"><a href="資料輸入與輸出.html#cb215-20" tabindex="-1"></a><span class="co"># 跳過前幾行</span></span>
+<span id="cb215-21"><a href="資料輸入與輸出.html#cb215-21" tabindex="-1"></a>data5 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/datasets.xlsx&quot;</span>, <span class="at">skip =</span> <span class="dv">2</span>)</span>
+<span id="cb215-22"><a href="資料輸入與輸出.html#cb215-22" tabindex="-1"></a><span class="fu">head</span>(data5)</span></code></pre></div>
 </div>
 <div id="匯入json檔" class="section level3 hasAnchor" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> 匯入json檔<a href="資料輸入與輸出.html#匯入json檔" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">5.3.3</span> 匯入json檔<a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5json%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="資料輸入與輸出.html#cb216-1" tabindex="-1"></a><span class="fu">library</span>(jsonlite) <span class="co"># 處理JSON格式資料的套件</span></span>
+<span id="cb216-2"><a href="資料輸入與輸出.html#cb216-2" tabindex="-1"></a></span>
+<span id="cb216-3"><a href="資料輸入與輸出.html#cb216-3" tabindex="-1"></a><span class="co"># 從本地檔案讀取JSON資料</span></span>
+<span id="cb216-4"><a href="資料輸入與輸出.html#cb216-4" tabindex="-1"></a>json_data <span class="ot">=</span> <span class="fu">fromJSON</span>(<span class="st">&quot;data/198_5.json&quot;</span>)</span>
+<span id="cb216-5"><a href="資料輸入與輸出.html#cb216-5" tabindex="-1"></a><span class="fu">str</span>(json_data) <span class="co"># 查看資料結構</span></span>
+<span id="cb216-6"><a href="資料輸入與輸出.html#cb216-6" tabindex="-1"></a></span>
+<span id="cb216-7"><a href="資料輸入與輸出.html#cb216-7" tabindex="-1"></a><span class="co"># 從URL讀取JSON資料</span></span>
+<span id="cb216-8"><a href="資料輸入與輸出.html#cb216-8" tabindex="-1"></a>api_data <span class="ot">=</span> <span class="fu">fromJSON</span>(<span class="st">&quot;https://www-ws.pthg.gov.tw/Upload/2015pthg/0/relfile/0/0/ccb3a5fd-4754-4be4-96be-df1f50367f47.json&quot;</span>)</span>
+<span id="cb216-9"><a href="資料輸入與輸出.html#cb216-9" tabindex="-1"></a><span class="fu">head</span>(api_data)</span>
+<span id="cb216-10"><a href="資料輸入與輸出.html#cb216-10" tabindex="-1"></a></span>
+<span id="cb216-11"><a href="資料輸入與輸出.html#cb216-11" tabindex="-1"></a><span class="co"># 如果JSON資料是巢狀結構，可以使用flatten參數</span></span>
+<span id="cb216-12"><a href="資料輸入與輸出.html#cb216-12" tabindex="-1"></a><span class="co"># flat_data = fromJSON(&quot;data/data.json&quot;, flatten=TRUE)</span></span>
+<span id="cb216-13"><a href="資料輸入與輸出.html#cb216-13" tabindex="-1"></a><span class="co"># str(flat_data)</span></span>
+<span id="cb216-14"><a href="資料輸入與輸出.html#cb216-14" tabindex="-1"></a></span>
+<span id="cb216-15"><a href="資料輸入與輸出.html#cb216-15" tabindex="-1"></a><span class="co"># 自建JSON格式</span></span>
+<span id="cb216-16"><a href="資料輸入與輸出.html#cb216-16" tabindex="-1"></a>string <span class="ot">=</span> <span class="st">&#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;city&quot;:&quot;New York&quot;}&#39;</span></span>
+<span id="cb216-17"><a href="資料輸入與輸出.html#cb216-17" tabindex="-1"></a>parsed_data <span class="ot">=</span> <span class="fu">fromJSON</span>(string)</span>
+<span id="cb216-18"><a href="資料輸入與輸出.html#cb216-18" tabindex="-1"></a><span class="fu">print</span>(parsed_data)</span></code></pre></div>
+</div>
+<div id="匯入rds檔-或載入多個r物件" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> 匯入RDS檔 或載入多個R物件<a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5rds%E6%AA%94-%E6%88%96%E8%BC%89%E5%85%A5%E5%A4%9A%E5%80%8Br%E7%89%A9%E4%BB%B6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>RDS檔是R專有的檔案格式，具有檔案小速度快特性，而RData是多個R物件的組合檔</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="資料輸入與輸出.html#cb217-1" tabindex="-1"></a><span class="co"># 讀取RDS檔案</span></span>
+<span id="cb217-2"><a href="資料輸入與輸出.html#cb217-2" tabindex="-1"></a>mtcars <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">&quot;data/mtcars.rds&quot;</span>)</span>
+<span id="cb217-3"><a href="資料輸入與輸出.html#cb217-3" tabindex="-1"></a></span>
+<span id="cb217-4"><a href="資料輸入與輸出.html#cb217-4" tabindex="-1"></a></span>
+<span id="cb217-5"><a href="資料輸入與輸出.html#cb217-5" tabindex="-1"></a><span class="co"># 載入RData檔案</span></span>
+<span id="cb217-6"><a href="資料輸入與輸出.html#cb217-6" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/my_data.RData&quot;</span>)  </span></code></pre></div>
 </div>
 </div>
 <div id="資料匯出" class="section level2 hasAnchor" number="5.4">
-<h2><span class="header-section-number">5.4</span> 資料匯出<a href="資料輸入與輸出.html#資料匯出" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">5.4</span> 資料匯出<a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="匯出為csv檔" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> 匯出為csv檔<a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAcsv%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="資料輸入與輸出.html#cb218-1" tabindex="-1"></a><span class="co"># 方法1：使用 base R 的 write.csv()</span></span>
+<span id="cb218-2"><a href="資料輸入與輸出.html#cb218-2" tabindex="-1"></a><span class="fu">write.csv</span>(mtcars, <span class="st">&quot;data/output/mtcars1.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
+<span id="cb218-3"><a href="資料輸入與輸出.html#cb218-3" tabindex="-1"></a></span>
+<span id="cb218-4"><a href="資料輸入與輸出.html#cb218-4" tabindex="-1"></a><span class="co"># 方法2：使用 readr 套件的 write_csv() - 速度更快</span></span>
+<span id="cb218-5"><a href="資料輸入與輸出.html#cb218-5" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb218-6"><a href="資料輸入與輸出.html#cb218-6" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">&quot;data/output/mtcars2.csv&quot;</span>)</span>
+<span id="cb218-7"><a href="資料輸入與輸出.html#cb218-7" tabindex="-1"></a></span>
+<span id="cb218-8"><a href="資料輸入與輸出.html#cb218-8" tabindex="-1"></a><span class="co"># 方法3：處理中文編碼</span></span>
+<span id="cb218-9"><a href="資料輸入與輸出.html#cb218-9" tabindex="-1"></a><span class="fu">write.csv</span>(mtcars, <span class="st">&quot;data/output/mtcars3.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">fileEncoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+</div>
+<div id="匯出為excel檔" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> 匯出為excel檔<a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAexcel%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>要匯出 Excel，建議使用 openxlsx 或 writexl 套件。</p>
+<div id="方法-1使用-writexl" class="section level4 hasAnchor" number="5.4.2.1">
+<h4><span class="header-section-number">5.4.2.1</span> 方法 1：使用 writexl<a href="資料輸入與輸出.html#%E6%96%B9%E6%B3%95-1%E4%BD%BF%E7%94%A8-writexl" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="資料輸入與輸出.html#cb219-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;writexl&quot;</span>) <span class="co">#安裝 writexl套件</span></span>
+<span id="cb219-2"><a href="資料輸入與輸出.html#cb219-2" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
+<span id="cb219-3"><a href="資料輸入與輸出.html#cb219-3" tabindex="-1"></a></span>
+<span id="cb219-4"><a href="資料輸入與輸出.html#cb219-4" tabindex="-1"></a><span class="co"># 函數參數介紹 </span></span>
+<span id="cb219-5"><a href="資料輸入與輸出.html#cb219-5" tabindex="-1"></a><span class="fu">write_xlsx</span>(</span>
+<span id="cb219-6"><a href="資料輸入與輸出.html#cb219-6" tabindex="-1"></a>  x,                           <span class="co"># 要輸出的資料（data frame 或 list of data frames）</span></span>
+<span id="cb219-7"><a href="資料輸入與輸出.html#cb219-7" tabindex="-1"></a>  <span class="at">path =</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.xlsx&quot;</span>),   <span class="co"># 輸出檔案路徑（預設為暫存檔）</span></span>
+<span id="cb219-8"><a href="資料輸入與輸出.html#cb219-8" tabindex="-1"></a>  <span class="at">col_names =</span> <span class="cn">TRUE</span>,            <span class="co"># 是否輸出欄位名稱</span></span>
+<span id="cb219-9"><a href="資料輸入與輸出.html#cb219-9" tabindex="-1"></a>  <span class="at">format_headers =</span> <span class="cn">TRUE</span>,       <span class="co"># 是否格式化欄位名稱（如粗體）</span></span>
+<span id="cb219-10"><a href="資料輸入與輸出.html#cb219-10" tabindex="-1"></a>  <span class="at">use_zip64 =</span> <span class="cn">FALSE</span>            <span class="co"># 是否使用 ZIP64（處理超大 Excel 檔案）</span></span>
+<span id="cb219-11"><a href="資料輸入與輸出.html#cb219-11" tabindex="-1"></a>)</span>
+<span id="cb219-12"><a href="資料輸入與輸出.html#cb219-12" tabindex="-1"></a></span>
+<span id="cb219-13"><a href="資料輸入與輸出.html#cb219-13" tabindex="-1"></a><span class="co"># 簡單匯出excel</span></span>
+<span id="cb219-14"><a href="資料輸入與輸出.html#cb219-14" tabindex="-1"></a><span class="fu">write_xlsx</span>(iris, <span class="st">&quot;data/output/iris1.xlsx&quot;</span>)</span>
+<span id="cb219-15"><a href="資料輸入與輸出.html#cb219-15" tabindex="-1"></a></span>
+<span id="cb219-16"><a href="資料輸入與輸出.html#cb219-16" tabindex="-1"></a><span class="do">####################################################</span></span>
+<span id="cb219-17"><a href="資料輸入與輸出.html#cb219-17" tabindex="-1"></a><span class="co">#1. 假設有兩個 Data Frame: result_A 和 result_B</span></span>
+<span id="cb219-18"><a href="資料輸入與輸出.html#cb219-18" tabindex="-1"></a>result_A <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">Value =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>))</span>
+<span id="cb219-19"><a href="資料輸入與輸出.html#cb219-19" tabindex="-1"></a>result_B <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Group =</span> <span class="fu">c</span>(<span class="st">&quot;X&quot;</span>, <span class="st">&quot;Y&quot;</span>), <span class="at">Mean =</span> <span class="fu">c</span>(<span class="fl">5.5</span>, <span class="fl">8.2</span>))</span>
+<span id="cb219-20"><a href="資料輸入與輸出.html#cb219-20" tabindex="-1"></a></span>
+<span id="cb219-21"><a href="資料輸入與輸出.html#cb219-21" tabindex="-1"></a><span class="co">#2. 使用 list() 將多個 Data Frame 組合成一個列表，並指定每個工作表的名稱</span></span>
+<span id="cb219-22"><a href="資料輸入與輸出.html#cb219-22" tabindex="-1"></a>data_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb219-23"><a href="資料輸入與輸出.html#cb219-23" tabindex="-1"></a>  <span class="st">&quot;Result_Set_A&quot;</span> <span class="ot">=</span> result_A, <span class="co"># 第一個工作表名稱為 Result_Set_A</span></span>
+<span id="cb219-24"><a href="資料輸入與輸出.html#cb219-24" tabindex="-1"></a>  <span class="st">&quot;Result_Set_B&quot;</span> <span class="ot">=</span> result_B  <span class="co"># 第二個工作表名稱為 Result_Set_B</span></span>
+<span id="cb219-25"><a href="資料輸入與輸出.html#cb219-25" tabindex="-1"></a>)</span>
+<span id="cb219-26"><a href="資料輸入與輸出.html#cb219-26" tabindex="-1"></a></span>
+<span id="cb219-27"><a href="資料輸入與輸出.html#cb219-27" tabindex="-1"></a><span class="co">#3. 使用 write_xlsx() 寫入 Excel 檔案</span></span>
+<span id="cb219-28"><a href="資料輸入與輸出.html#cb219-28" tabindex="-1"></a><span class="fu">write_xlsx</span>(</span>
+<span id="cb219-29"><a href="資料輸入與輸出.html#cb219-29" tabindex="-1"></a>  <span class="at">x =</span> data_list, </span>
+<span id="cb219-30"><a href="資料輸入與輸出.html#cb219-30" tabindex="-1"></a>  <span class="at">path =</span> <span class="st">&quot;data/output/analysis_summary.xlsx&quot;</span></span>
+<span id="cb219-31"><a href="資料輸入與輸出.html#cb219-31" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="方法-2使用-openxlsx" class="section level4 hasAnchor" number="5.4.2.2">
+<h4><span class="header-section-number">5.4.2.2</span> 方法 2：使用 openxlsx<a href="資料輸入與輸出.html#%E6%96%B9%E6%B3%95-2%E4%BD%BF%E7%94%A8-openxlsx" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>openxlsx有豐富的函式，可以客製化輸出一些特殊的格式</p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="資料輸入與輸出.html#cb220-1" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb220-2"><a href="資料輸入與輸出.html#cb220-2" tabindex="-1"></a><span class="co"># 方法1 :簡單匯出excel</span></span>
+<span id="cb220-3"><a href="資料輸入與輸出.html#cb220-3" tabindex="-1"></a><span class="fu">data</span>(iris)  <span class="co"># 載入 iris 資料集</span></span>
+<span id="cb220-4"><a href="資料輸入與輸出.html#cb220-4" tabindex="-1"></a><span class="fu">write.xlsx</span>(iris, <span class="at">file =</span> <span class="st">&quot;data/output/iris.xlsx&quot;</span>)</span>
+<span id="cb220-5"><a href="資料輸入與輸出.html#cb220-5" tabindex="-1"></a></span>
+<span id="cb220-6"><a href="資料輸入與輸出.html#cb220-6" tabindex="-1"></a><span class="co"># 方法2 : 另一種方式</span></span>
+<span id="cb220-7"><a href="資料輸入與輸出.html#cb220-7" tabindex="-1"></a><span class="co"># 建立新的Excel工作簿</span></span>
+<span id="cb220-8"><a href="資料輸入與輸出.html#cb220-8" tabindex="-1"></a>wb <span class="ot">=</span> <span class="fu">createWorkbook</span>()</span>
+<span id="cb220-9"><a href="資料輸入與輸出.html#cb220-9" tabindex="-1"></a></span>
+<span id="cb220-10"><a href="資料輸入與輸出.html#cb220-10" tabindex="-1"></a><span class="co"># 添加工作表並寫入資料</span></span>
+<span id="cb220-11"><a href="資料輸入與輸出.html#cb220-11" tabindex="-1"></a><span class="fu">addWorksheet</span>(wb, <span class="st">&quot;mtcars數據&quot;</span>)</span>
+<span id="cb220-12"><a href="資料輸入與輸出.html#cb220-12" tabindex="-1"></a><span class="fu">writeData</span>(wb, <span class="at">sheet=</span><span class="st">&quot;mtcars數據&quot;</span>, mtcars)</span>
+<span id="cb220-13"><a href="資料輸入與輸出.html#cb220-13" tabindex="-1"></a></span>
+<span id="cb220-14"><a href="資料輸入與輸出.html#cb220-14" tabindex="-1"></a><span class="co"># 儲存Excel檔案</span></span>
+<span id="cb220-15"><a href="資料輸入與輸出.html#cb220-15" tabindex="-1"></a><span class="fu">saveWorkbook</span>(wb, <span class="st">&quot;data/output/mtcars.xlsx&quot;</span>, <span class="at">overwrite=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="匯出為json檔" class="section level3 hasAnchor" number="5.4.3">
+<h3><span class="header-section-number">5.4.3</span> 匯出為json檔<a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAjson%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="資料輸入與輸出.html#cb221-1" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb221-2"><a href="資料輸入與輸出.html#cb221-2" tabindex="-1"></a></span>
+<span id="cb221-3"><a href="資料輸入與輸出.html#cb221-3" tabindex="-1"></a><span class="co"># 將資料框轉換為JSON格式並儲存</span></span>
+<span id="cb221-4"><a href="資料輸入與輸出.html#cb221-4" tabindex="-1"></a>json_data <span class="ot">=</span> <span class="fu">toJSON</span>(mtcars, <span class="at">pretty=</span><span class="cn">TRUE</span>)</span>
+<span id="cb221-5"><a href="資料輸入與輸出.html#cb221-5" tabindex="-1"></a><span class="fu">write</span>(json_data, <span class="st">&quot;data/output/mtcars.json&quot;</span>)</span>
+<span id="cb221-6"><a href="資料輸入與輸出.html#cb221-6" tabindex="-1"></a></span>
+<span id="cb221-7"><a href="資料輸入與輸出.html#cb221-7" tabindex="-1"></a><span class="co"># 直接將物件轉為JSON並寫入檔案</span></span>
+<span id="cb221-8"><a href="資料輸入與輸出.html#cb221-8" tabindex="-1"></a><span class="fu">write_json</span>(mtcars, <span class="st">&quot;data/output/mtcars2.json&quot;</span>, <span class="at">pretty=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="匯出為r資料格式" class="section level3 hasAnchor" number="5.4.4">
+<h3><span class="header-section-number">5.4.4</span> 匯出為R資料格式<a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAr%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="資料輸入與輸出.html#cb222-1" tabindex="-1"></a><span class="co"># 儲存單一物件為RDS格式</span></span>
+<span id="cb222-2"><a href="資料輸入與輸出.html#cb222-2" tabindex="-1"></a><span class="fu">saveRDS</span>(mtcars, <span class="st">&quot;data/output/mtcars.rds&quot;</span>)</span>
+<span id="cb222-3"><a href="資料輸入與輸出.html#cb222-3" tabindex="-1"></a></span>
+<span id="cb222-4"><a href="資料輸入與輸出.html#cb222-4" tabindex="-1"></a><span class="co"># 儲存多個物件為RData格式</span></span>
+<span id="cb222-5"><a href="資料輸入與輸出.html#cb222-5" tabindex="-1"></a><span class="fu">save</span>(iris, mtcars, <span class="at">file=</span><span class="st">&quot;data/output/my_data.RData&quot;</span>)</span></code></pre></div>
 
+</div>
 </div>
 </div>
             </section>
@@ -351,42 +523,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/04_資料輸入與輸出.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/04_資料輸入與輸出.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/3mofstudy/basicRnotes/edit/main/04_資料輸入與輸出.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/3mofstudy/basicRnotes/blob/main/04_資料輸入與輸出.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

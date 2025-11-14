@@ -43,7 +43,14 @@ ftable
 匯入csv檔
 匯入excel檔
 匯入json檔
+匯入rds檔-或載入多個r物件
 資料匯出
+匯出為csv檔
+匯出為excel檔
+方法-1使用-writexl
+方法-2使用-openxlsx
+匯出為json檔
+匯出為r資料格式
 流程控制
 if--else-邏輯判斷
 for-迴圈
@@ -51,7 +58,7 @@ while-迴圈
 repeat-迴圈
 break與next
 函數介紹
-常用的內建函數
+r-語言常用內建函數分類
 實用套件之函數
 自訂函數
 do.call-及call

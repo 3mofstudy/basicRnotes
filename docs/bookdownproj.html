@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>R語言程式設計</title>
+  <meta name="description" content="R語言程式設計" />
+  <meta name="generator" content="bookdown #bookdown:version# and GitBook 2.6.7" />
+
+  <meta property="og:title" content="R語言程式設計" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R語言程式設計" />
+  
+  
+  
+
+<meta name="author" content="露西Lucy" />
+
+
+<meta name="date" content="2024-03-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<!--bookdown:link_prev-->
+<!--bookdown:link_next-->
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">R語言程式設計</h1>
+<p class="author"><em>露西Lucy</em></p>
+<p class="date"><em>2024-03-18</em></p>
+</div>
+<!--bookdown:title:end-->
+
+<!--bookdown:toc:start-->
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+<!--bookdown:toc2:start-->
+<ul>
+<li><a href="#%E9%97%9C%E6%96%BC" id="toc-關於"><span class="toc-section-number">1</span> 關於</a>
+<ul>
+<li><a href="#%E9%97%9C%E6%96%BC%E4%BD%9C%E8%80%85" id="toc-關於作者"><span class="toc-section-number">1.1</span> 關於作者</a></li>
+<li><a href="#%E5%AF%AB%E6%9B%B8%E7%9A%84%E8%B5%B7%E6%BA%90" id="toc-寫書的起源"><span class="toc-section-number">1.2</span> 寫書的起源</a></li>
+<li><a href="#%E6%9C%AC%E6%9B%B8%E7%9A%84%E7%90%86%E8%A7%A3" id="toc-本書的理解"><span class="toc-section-number">1.3</span> 本書的理解</a></li>
+<li><a href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" id="toc-參考資料"><span class="toc-section-number">1.4</span> 參考資料</a></li>
+</ul></li>
+<li><a href="#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A" id="toc-系統環境設定"><span class="toc-section-number">2</span> 系統環境設定</a>
+<ul>
+<li><a href="#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E6%9F%A5%E8%A9%A2" id="toc-系統環境查詢"><span class="toc-section-number">2.1</span> 系統環境查詢</a></li>
+<li><a href="#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E5%87%BD%E6%95%B8" id="toc-環境設定函數"><span class="toc-section-number">2.2</span> 環境設定函數</a></li>
+<li><a href="#%E6%9B%B4%E6%94%B9%E7%92%B0%E5%A2%83%E8%AA%9E%E7%B3%BB" id="toc-更改環境語系"><span class="toc-section-number">2.3</span> 更改環境語系</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E5%B0%88%E6%A1%88" id="toc-新增專案"><span class="toc-section-number">2.4</span> 新增專案</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E9%80%9F%E9%8D%B5" id="toc-常用快速鍵"><span class="toc-section-number">2.5</span> 常用快速鍵</a></li>
+</ul></li>
+<li><a href="#%E5%85%83%E7%B4%A0%E4%BB%8B%E7%B4%B9" id="toc-元素介紹"><span class="toc-section-number">3</span> 元素介紹</a>
+<ul>
+<li><a href="#%E8%B3%87%E6%96%99%E8%B3%A6%E5%80%BC" id="toc-資料賦值"><span class="toc-section-number">3.1</span> 資料賦值</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B" id="toc-資料型態"><span class="toc-section-number">3.2</span> 資料型態</a>
+<ul>
+<li><a href="#%E5%AD%97%E4%B8%B2" id="toc-字串"><span class="toc-section-number">3.2.1</span> 字串</a></li>
+<li><a href="#%E6%95%B8%E5%80%BC" id="toc-數值"><span class="toc-section-number">3.2.2</span> 數值</a></li>
+<li><a href="#%E5%B8%83%E6%9E%97%E5%80%BC" id="toc-布林值"><span class="toc-section-number">3.2.3</span> 布林值</a></li>
+<li><a href="#%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93" id="toc-日期時間"><span class="toc-section-number">3.2.4</span> 日期/時間</a></li>
+</ul></li>
+<li><a href="#%E5%B1%AC%E6%80%A7%E6%9F%A5%E8%A9%A2%E8%88%87%E8%BD%89%E6%8F%9B" id="toc-屬性查詢與轉換"><span class="toc-section-number">3.3</span> 屬性查詢與轉換</a></li>
+<li><a href="#%E9%81%8B%E7%AE%97%E5%AD%90" id="toc-運算子"><span class="toc-section-number">3.4</span> 運算子</a>
+<ul>
+<li><a href="#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90" id="toc-算術運算子"><span class="toc-section-number">3.4.1</span> 算術運算子</a></li>
+<li><a href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90" id="toc-邏輯運算子"><span class="toc-section-number">3.4.2</span> 邏輯運算子</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B" id="toc-資料結構"><span class="toc-section-number">4</span> 資料結構</a>
+<ul>
+<li><a href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E7%9B%B8%E5%90%8C" id="toc-資料型態相同"><span class="toc-section-number">4.1</span> 資料型態相同</a>
+<ul>
+<li><a href="#%E4%B8%80%E7%B6%AD%E7%B5%90%E6%A7%8Bvector" id="toc-一維結構vector"><span class="toc-section-number">4.1.1</span> 一維結構(Vector)</a></li>
+<li><a href="#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8Bmatrix" id="toc-二維結構matrix"><span class="toc-section-number">4.1.2</span> 二維結構(matrix)</a></li>
+<li><a href="#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-array" id="toc-三維結構-array"><span class="toc-section-number">4.1.3</span> 三維結構 (array)</a></li>
+</ul></li>
+<li><a href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E4%B8%8D%E5%90%8C" id="toc-資料型態不同"><span class="toc-section-number">4.2</span> 資料型態不同</a>
+<ul>
+<li><a href="#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8B-data.frame" id="toc-二維結構-data.frame"><span class="toc-section-number">4.2.1</span> 二維結構 (data.frame)</a></li>
+<li><a href="#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-list" id="toc-三維結構-list"><span class="toc-section-number">4.2.2</span> 三維結構 (list)</a></li>
+</ul></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B" id="toc-特殊資料結構"><span class="toc-section-number">4.3</span> 特殊資料結構</a>
+<ul>
+<li><a href="#%E5%88%97%E8%81%AF%E8%A1%A8" id="toc-列聯表"><span class="toc-section-number">4.3.1</span> 列聯表</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#%E8%B3%87%E6%96%99%E8%BC%B8%E5%85%A5%E8%88%87%E8%BC%B8%E5%87%BA" id="toc-資料輸入與輸出"><span class="toc-section-number">5</span> 資料輸入與輸出</a>
+<ul>
+<li><a href="#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5%E8%88%87%E5%8D%B0%E5%87%BA" id="toc-資料鍵入與印出"><span class="toc-section-number">5.1</span> 資料鍵入與印出</a>
+<ul>
+<li><a href="#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5" id="toc-資料鍵入"><span class="toc-section-number">5.1.1</span> 資料鍵入</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E5%8D%B0%E5%87%BA" id="toc-資料印出"><span class="toc-section-number">5.1.2</span> 資料印出</a></li>
+</ul></li>
+<li><a href="#%E8%A4%87%E8%A3%BD%E5%8F%8A%E8%B2%BC%E4%B8%8A" id="toc-複製及貼上"><span class="toc-section-number">5.2</span> 複製及貼上</a></li>
+<li><a href="#%E8%B3%87%E6%96%99%E5%8C%AF%E5%85%A5" id="toc-資料匯入"><span class="toc-section-number">5.3</span> 資料匯入</a>
+<ul>
+<li><a href="#%E5%8C%AF%E5%85%A5csv%E6%AA%94" id="toc-匯入csv檔"><span class="toc-section-number">5.3.1</span> 匯入csv檔</a></li>
+<li><a href="#%E5%8C%AF%E5%85%A5excel%E6%AA%94" id="toc-匯入excel檔"><span class="toc-section-number">5.3.2</span> 匯入excel檔</a></li>
+<li><a href="#%E5%8C%AF%E5%85%A5json%E6%AA%94" id="toc-匯入json檔"><span class="toc-section-number">5.3.3</span> 匯入json檔</a></li>
+<li><a href="#%E5%8C%AF%E5%85%A5rds%E6%AA%94-%E6%88%96%E8%BC%89%E5%85%A5%E5%A4%9A%E5%80%8Br%E7%89%A9%E4%BB%B6" id="toc-匯入rds檔-或載入多個r物件"><span class="toc-section-number">5.3.4</span> 匯入RDS檔 或載入多個R物件</a></li>
+</ul></li>
+<li><a href="#%E8%B3%87%E6%96%99%E5%8C%AF%E5%87%BA" id="toc-資料匯出"><span class="toc-section-number">5.4</span> 資料匯出</a>
+<ul>
+<li><a href="#%E5%8C%AF%E5%87%BA%E7%82%BAcsv%E6%AA%94" id="toc-匯出為csv檔"><span class="toc-section-number">5.4.1</span> 匯出為csv檔</a></li>
+<li><a href="#%E5%8C%AF%E5%87%BA%E7%82%BAexcel%E6%AA%94" id="toc-匯出為excel檔"><span class="toc-section-number">5.4.2</span> 匯出為excel檔</a></li>
+<li><a href="#%E5%8C%AF%E5%87%BA%E7%82%BAjson%E6%AA%94" id="toc-匯出為json檔"><span class="toc-section-number">5.4.3</span> 匯出為json檔</a></li>
+<li><a href="#%E5%8C%AF%E5%87%BA%E7%82%BAr%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F" id="toc-匯出為r資料格式"><span class="toc-section-number">5.4.4</span> 匯出為R資料格式</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6" id="toc-流程控制"><span class="toc-section-number">6</span> 流程控制</a>
+<ul>
+<li><a href="#if--else-%E9%82%8F%E8%BC%AF%E5%88%A4%E6%96%B7" id="toc-if--else-邏輯判斷"><span class="toc-section-number">6.1</span> if -else 邏輯判斷</a></li>
+<li><a href="#for-%E8%BF%B4%E5%9C%88" id="toc-for-迴圈"><span class="toc-section-number">6.2</span> for 迴圈</a></li>
+<li><a href="#while-%E8%BF%B4%E5%9C%88" id="toc-while-迴圈"><span class="toc-section-number">6.3</span> while 迴圈</a></li>
+<li><a href="#repeat-%E8%BF%B4%E5%9C%88" id="toc-repeat-迴圈"><span class="toc-section-number">6.4</span> repeat 迴圈</a></li>
+<li><a href="#break%E8%88%87next" id="toc-break與next"><span class="toc-section-number">6.5</span> break與next</a></li>
+</ul></li>
+<li><a href="#%E5%87%BD%E6%95%B8%E4%BB%8B%E7%B4%B9" id="toc-函數介紹"><span class="toc-section-number">7</span> 函數介紹</a>
+<ul>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%A7%E5%BB%BA%E5%87%BD%E6%95%B8" id="toc-常用的內建函數"><span class="toc-section-number">7.1</span> 常用的內建函數</a></li>
+<li><a href="#%E5%AF%A6%E7%94%A8%E5%A5%97%E4%BB%B6%E4%B9%8B%E5%87%BD%E6%95%B8" id="toc-實用套件之函數"><span class="toc-section-number">7.2</span> 實用套件之函數</a></li>
+<li><a href="#%E8%87%AA%E8%A8%82%E5%87%BD%E6%95%B8" id="toc-自訂函數"><span class="toc-section-number">7.3</span> 自訂函數</a></li>
+<li><a href="#do.call-%E5%8F%8Acall" id="toc-do.call-及call"><span class="toc-section-number">7.4</span> do.call 及call</a>
+<ul>
+<li><a href="#do.call-%E5%9F%BA%E6%9C%AC%E7%94%A8%E9%80%94" id="toc-do.call-基本用途"><span class="toc-section-number">7.4.1</span> 1. do.call 基本用途</a></li>
+<li><a href="#do.call-%E5%B8%B8%E9%81%8B%E7%94%A8%E6%96%BCdata.frame%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0" id="toc-do.call-常運用於data.frame的子元素"><span class="toc-section-number">7.4.2</span> 2. do.call 常運用於data.frame的子元素</a></li>
+<li><a href="#do.call-%E4%BA%A6%E5%8F%AF%E9%81%8B%E7%94%A8%E6%96%BClist-%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F" id="toc-do.call-亦可運用於list-資料格式"><span class="toc-section-number">7.4.3</span> 3. do.call 亦可運用於list 資料格式</a></li>
+<li><a href="#call-%E8%88%87-do.call%E7%9A%84%E5%B7%AE%E7%95%B0" id="toc-call-與-do.call的差異"><span class="toc-section-number">7.4.4</span> call 與 do.call的差異</a></li>
+<li><a href="#%E7%B7%9A%E4%B8%8A%E8%B3%87%E6%BA%90" id="toc-線上資源"><span class="toc-section-number">7.4.5</span> 1.線上資源</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#%E5%9F%BA%E7%A4%8E%E7%B9%AA%E5%9C%96" id="toc-基礎繪圖"><span class="toc-section-number">8</span> 基礎繪圖</a></li>
+<li><a href="#%E6%96%87%E5%AD%97%E8%88%87%E6%99%82%E9%96%93%E8%99%95%E7%90%86" id="toc-文字與時間處理"><span class="toc-section-number">9</span> 文字與時間處理</a>
+<ul>
+<li><a href="#%E5%85%A7%E5%BB%BA%E6%96%87%E5%AD%97%E5%87%BD%E6%95%B8base" id="toc-內建文字函數base"><span class="toc-section-number">9.1</span> 內建文字函數(base)</a></li>
+<li><a href="#stringr%E5%A5%97%E4%BB%B6" id="toc-stringr套件"><span class="toc-section-number">9.2</span> stringr套件</a></li>
+<li><a href="#%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F" id="toc-正則表達式"><span class="toc-section-number">9.3</span> 正則表達式</a></li>
+</ul></li>
+<li><a href="#%E8%AA%8D%E8%AD%98apply%E5%AE%B6%E6%97%8F" id="toc-認識apply家族"><span class="toc-section-number">10</span> 認識apply家族</a>
+<ul>
+<li><a href="#apply%E7%B3%BB%E5%88%97%E5%AE%B6%E6%97%8F%E6%87%89%E7%94%A8%E6%83%85%E5%A2%83" id="toc-apply系列家族應用情境"><span class="toc-section-number">10.1</span> apply系列家族應用情境</a></li>
+<li><a href="#apply%E7%94%A8%E6%B3%95" id="toc-apply用法"><span class="toc-section-number">10.2</span> apply用法</a></li>
+<li><a href="#sapplylapply%E7%94%A8%E6%B3%95" id="toc-sapplylapply用法"><span class="toc-section-number">10.3</span> sapply/lapply用法</a></li>
+<li><a href="#mapply%E7%94%A8%E6%B3%95" id="toc-mapply用法"><span class="toc-section-number">10.4</span> mapply用法</a></li>
+</ul></li>
+<li><a href="#dplyr%E5%8F%8A-tidyr%E9%81%8B%E7%94%A8" id="toc-dplyr及-tidyr運用"><span class="toc-section-number">11</span> dplyr及 tidyr運用</a></li>
+<li><a href="#data.table%E9%81%8B%E7%94%A8" id="toc-data.table運用"><span class="toc-section-number">12</span> data.table運用</a></li>
+<li><a href="#ggplot2%E7%B9%AA%E5%9C%96" id="toc-ggplot2繪圖"><span class="toc-section-number">13</span> ggplot2繪圖</a></li>
+</ul>
+<!--bookdown:toc2:end-->
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R語言程式設計</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:toc:end-->
+<!--bookdown:body:start-->
+<div id="關於" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> 關於<a href="#%E9%97%9C%E6%96%BC" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Placeholder</p>
+<div id="關於作者" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 關於作者<a href="#%E9%97%9C%E6%96%BC%E4%BD%9C%E8%80%85" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="寫書的起源" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 寫書的起源<a href="#%E5%AF%AB%E6%9B%B8%E7%9A%84%E8%B5%B7%E6%BA%90" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="本書的理解" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> 本書的理解<a href="#%E6%9C%AC%E6%9B%B8%E7%9A%84%E7%90%86%E8%A7%A3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="參考資料" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> 參考資料<a href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--chapter:end:index.Rmd-->
+</div>
+</div>
+<div id="系統環境設定" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> 系統環境設定<a href="#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Placeholder</p>
+<div id="系統環境查詢" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> 系統環境查詢<a href="#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E6%9F%A5%E8%A9%A2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="環境設定函數" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> 環境設定函數<a href="#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E5%87%BD%E6%95%B8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="更改環境語系" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> 更改環境語系<a href="#%E6%9B%B4%E6%94%B9%E7%92%B0%E5%A2%83%E8%AA%9E%E7%B3%BB" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="新增專案" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> 新增專案<a href="#%E6%96%B0%E5%A2%9E%E5%B0%88%E6%A1%88" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="常用快速鍵" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> 常用快速鍵<a href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E9%80%9F%E9%8D%B5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--chapter:end:01_環境設定.Rmd-->
+</div>
+</div>
+<div id="元素介紹" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> 元素介紹<a href="#%E5%85%83%E7%B4%A0%E4%BB%8B%E7%B4%B9" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Placeholder</p>
+<div id="資料賦值" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> 資料賦值<a href="#%E8%B3%87%E6%96%99%E8%B3%A6%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="資料型態" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 資料型態<a href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="字串" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> 字串<a href="#%E5%AD%97%E4%B8%B2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="數值" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> 數值<a href="#%E6%95%B8%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="布林值" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> 布林值<a href="#%E5%B8%83%E6%9E%97%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="日期時間" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> 日期/時間<a href="#%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="屬性查詢與轉換" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> 屬性查詢與轉換<a href="#%E5%B1%AC%E6%80%A7%E6%9F%A5%E8%A9%A2%E8%88%87%E8%BD%89%E6%8F%9B" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="運算子" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> 運算子<a href="#%E9%81%8B%E7%AE%97%E5%AD%90" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="算術運算子" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> 算術運算子<a href="#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="邏輯運算子" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> 邏輯運算子<a href="#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!--chapter:end:02_元素介紹.Rmd-->
+</div>
+</div>
+</div>
+<div id="資料結構" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> 資料結構<a href="#%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Placeholder</p>
+<div id="資料型態相同" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> 資料型態相同<a href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E7%9B%B8%E5%90%8C" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="一維結構vector" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> 一維結構(Vector)<a href="#%E4%B8%80%E7%B6%AD%E7%B5%90%E6%A7%8Bvector" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="二維結構matrix" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> 二維結構(matrix)<a href="#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8Bmatrix" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="三維結構-array" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> 三維結構 (array)<a href="#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-array" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="資料型態不同" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> 資料型態不同<a href="#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E4%B8%8D%E5%90%8C" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="二維結構-data.frame" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> 二維結構 (data.frame)<a href="#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8B-data.frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+<div id="三維結構-list" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> 三維結構 (list)<a href="#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
+</div>
+<div id="特殊資料結構" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> 特殊資料結構<a href="#%E7%89%B9%E6%AE%8A%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="列聯表" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> 列聯表<a href="#%E5%88%97%E8%81%AF%E8%A1%A8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="table函數" class="section level4 hasAnchor" number="4.3.1.1">
+<h4><span class="header-section-number">4.3.1.1</span> table()函數<a href="#table%E5%87%BD%E6%95%B8" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="margin.table" class="section level4 hasAnchor" number="4.3.1.2">
+<h4><span class="header-section-number">4.3.1.2</span> margin.table()<a href="#margin.table" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="prop.table" class="section level4 hasAnchor" number="4.3.1.3">
+<h4><span class="header-section-number">4.3.1.3</span> prop.table()<a href="#prop.table" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="ftable" class="section level4 hasAnchor" number="4.3.1.4">
+<h4><span class="header-section-number">4.3.1.4</span> ftable()<a href="#ftable" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<!--chapter:end:03_資料結構.Rmd-->
+</div>
+</div>
+</div>
+</div>
+<div id="資料輸入與輸出" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> 資料輸入與輸出<a href="#%E8%B3%87%E6%96%99%E8%BC%B8%E5%85%A5%E8%88%87%E8%BC%B8%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="資料鍵入與印出" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> 資料鍵入與印出<a href="#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5%E8%88%87%E5%8D%B0%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="資料鍵入" class="section level3 hasAnchor" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> 資料鍵入<a href="#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><code>scan()</code></p></li>
+<li><p><code>readline("請輸入字串:")</code></p></li>
+</ol>
+</div>
+<div id="資料印出" class="section level3 hasAnchor" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> 資料印出<a href="#%E8%B3%87%E6%96%99%E5%8D%B0%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>print() 和cat()，都可以把資料打印到Console螢幕上，但是print()只能輸出一個完整文字訊息，如果想要利用print() 輸出一段話+某變數，就必須另外使用paste()或paste0()將兩個訊息結合成一個完整文字訊息才能用print()進行輸出，但cat()就沒有此問題，兩個以上訊息可以用”,” 來結合即可，範例如下:</p>
+<ol style="list-style-type: decimal">
+<li><code>cat()</code></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">cat</span>( name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span> )</span></code></pre></div>
+<pre><code>## Lucy 帶狗狗去公園散步了</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><code>print()</code></li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>name <span class="ot">=</span> <span class="st">&quot;Lucy&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">print</span>( <span class="fu">paste</span>(name ,<span class="st">&quot;帶狗狗去公園散步了&quot;</span>)   )</span></code></pre></div>
+<pre><code>## [1] &quot;Lucy 帶狗狗去公園散步了&quot;</code></pre>
+</div>
+</div>
+<div id="複製及貼上" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> 複製及貼上<a href="#%E8%A4%87%E8%A3%BD%E5%8F%8A%E8%B2%BC%E4%B8%8A" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>有兩個套件，可以輕鬆將R輸出結果轉化到剪貼簿後，就可以直接拿到Excel或Word中複製貼上，相當方便，clipr 套件基本不用再安裝，因為已經常規預設安中好</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#A.把 clipboard 中（你已經複製好）的內容存在 text 變數中 </span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>text <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip</span>() <span class="do">##轉換成純文字向量(適合單行貼上) </span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>DT <span class="ot">&lt;-</span>clipr<span class="sc">::</span><span class="fu">read_clip_tbl</span>() <span class="do">##轉換成data.frame(適合表格貼上)</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#B.本該輸出至Console的內容暫存到 clipboard 容器，就可以貼到別處(例如Excel)</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(text)</span></code></pre></div>
+<p>另一個好用套件是psychTools</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#另一個好用套件</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">library</span>(psychTools) </span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard</span>() </span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>text<span class="ot">&lt;-</span>psychTools<span class="sc">::</span><span class="fu">read.clipboard.tab</span>()</span></code></pre></div>
+</div>
+<div id="資料匯入" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> 資料匯入<a href="#%E8%B3%87%E6%96%99%E5%8C%AF%E5%85%A5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>可從RStudio 工具列 選擇 不同檔案格式 匯入，亦可輸入指令匯入</p>
+<p><img src="https://i.postimg.cc/jjzTLV5m/screenshot-9.png" width="448" /></p>
+<div id="匯入csv檔" class="section level3 hasAnchor" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> 匯入csv檔<a href="#%E5%8C%AF%E5%85%A5csv%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">library</span>(readr) <span class="co">#呼叫csv檔的套件 </span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co"># 方法1：使用 R 內建的 read.csv()</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>score <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>, <span class="at">sep=</span><span class="st">&quot;,&quot;</span>, <span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">stringsAsFactors=</span><span class="cn">FALSE</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="fu">head</span>(score)</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co"># 方法2：使用 readr 套件的 read_csv() - 速度更快，處理大檔案更有效率</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>score2 <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="fu">head</span>(score2)</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="co"># 方法3：讀取有中文編碼的csv檔</span></span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>score3 <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/score.csv&quot;</span>, <span class="at">fileEncoding=</span><span class="st">&quot;UTF-8&quot;</span>) <span class="co"># 或 &quot;BIG5&quot;</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="fu">head</span>(score3)</span></code></pre></div>
+</div>
+<div id="匯入excel檔" class="section level3 hasAnchor" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> 匯入excel檔<a href="#%E5%8C%AF%E5%85%A5excel%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co">#呼叫excel檔的套件</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co"># 讀取第一個工作表</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>data1 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;~/basicRnotes/data/datasets.xlsx&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="fu">head</span>(data1)</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co"># 讀取指定工作表 - 透過名稱</span></span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>data2 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;~/basicRnotes/data/datasets.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;iris&quot;</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a><span class="fu">head</span>(data2)</span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="co"># 讀取指定工作表 - 透過索引</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>data3 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;~/basicRnotes/data/datasets.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="dv">2</span>)</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="fu">head</span>(data3)</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="co"># 讀取指定範圍的資料</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a>data4 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;~/basicRnotes/data/datasets.xlsx&quot;</span>, <span class="at">range =</span> <span class="st">&quot;A1:C10&quot;</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="fu">head</span>(data4)</span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="co"># 跳過前幾行</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a>data5 <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">&quot;~/basicRnotes/data/datasets.xlsx&quot;</span>, <span class="at">skip =</span> <span class="dv">2</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="fu">head</span>(data5)</span></code></pre></div>
+</div>
+<div id="匯入json檔" class="section level3 hasAnchor" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> 匯入json檔<a href="#%E5%8C%AF%E5%85%A5json%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">library</span>(jsonlite) <span class="co"># 處理JSON格式資料的套件</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co"># 從本地檔案讀取JSON資料</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>json_data <span class="ot">=</span> <span class="fu">fromJSON</span>(<span class="st">&quot;./data/198_5.json&quot;</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="fu">str</span>(json_data) <span class="co"># 查看資料結構</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co"># 從URL讀取JSON資料</span></span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>api_data <span class="ot">=</span> <span class="fu">fromJSON</span>(<span class="st">&quot;https://www-ws.pthg.gov.tw/Upload/2015pthg/0/relfile/0/0/ccb3a5fd-4754-4be4-96be-df1f50367f47.json&quot;</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="fu">head</span>(api_data)</span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co"># 如果JSON資料是巢狀結構，可以使用flatten參數</span></span>
+<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="co"># flat_data = fromJSON(&quot;./data/data.json&quot;, flatten=TRUE)</span></span>
+<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a><span class="co"># str(flat_data)</span></span>
+<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a><span class="co"># 自建JSON格式</span></span>
+<span id="cb9-16"><a href="#cb9-16" tabindex="-1"></a>string <span class="ot">=</span> <span class="st">&#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;city&quot;:&quot;New York&quot;}&#39;</span></span>
+<span id="cb9-17"><a href="#cb9-17" tabindex="-1"></a>parsed_data <span class="ot">=</span> <span class="fu">fromJSON</span>(string)</span>
+<span id="cb9-18"><a href="#cb9-18" tabindex="-1"></a><span class="fu">print</span>(parsed_data)</span></code></pre></div>
+</div>
+<div id="匯入rds檔-或載入多個r物件" class="section level3 hasAnchor" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> 匯入RDS檔 或載入多個R物件<a href="#%E5%8C%AF%E5%85%A5rds%E6%AA%94-%E6%88%96%E8%BC%89%E5%85%A5%E5%A4%9A%E5%80%8Br%E7%89%A9%E4%BB%B6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>RDS檔是R專有的檔案格式，具有檔案小速度快特性，而RData是多個R物件的組合檔</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># 讀取RDS檔案</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>mtcars <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">&quot;data/mtcars.rds&quot;</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="co"># 載入RData檔案</span></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/my_data.RData&quot;</span>)  </span></code></pre></div>
+</div>
+</div>
+<div id="資料匯出" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> 資料匯出<a href="#%E8%B3%87%E6%96%99%E5%8C%AF%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="匯出為csv檔" class="section level3 hasAnchor" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> 匯出為csv檔<a href="#%E5%8C%AF%E5%87%BA%E7%82%BAcsv%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># 方法1：使用 base R 的 write.csv()</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">write.csv</span>(mtcars, <span class="st">&quot;data/output/mtcars1.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="co"># 方法2：使用 readr 套件的 write_csv() - 速度更快</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="fu">write_csv</span>(mtcars, <span class="st">&quot;data/output/mtcars2.csv&quot;</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co"># 方法3：處理中文編碼</span></span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="fu">write.csv</span>(mtcars, <span class="st">&quot;data/output/mtcars3.csv&quot;</span>, <span class="at">row.names=</span><span class="cn">FALSE</span>, <span class="at">fileEncoding=</span><span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
+</div>
+<div id="匯出為excel檔" class="section level3 hasAnchor" number="5.4.2">
+<h3><span class="header-section-number">5.4.2</span> 匯出為excel檔<a href="#%E5%8C%AF%E5%87%BA%E7%82%BAexcel%E6%AA%94" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>要匯出 Excel，建議使用 openxlsx 或 writexl 套件。</p>
+<div id="方法-1使用-writexl" class="section level4 hasAnchor" number="5.4.2.1">
+<h4><span class="header-section-number">5.4.2.1</span> 方法 1：使用 writexl<a href="#%E6%96%B9%E6%B3%95-1%E4%BD%BF%E7%94%A8-writexl" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;writexl&quot;</span>) <span class="co">#安裝 writexl套件</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="co"># 函數參數介紹 </span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="fu">write_xlsx</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>  x,                           <span class="co"># 要輸出的資料（data frame 或 list of data frames）</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>  <span class="at">path =</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.xlsx&quot;</span>),   <span class="co"># 輸出檔案路徑（預設為暫存檔）</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a>  <span class="at">col_names =</span> <span class="cn">TRUE</span>,            <span class="co"># 是否輸出欄位名稱</span></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>  <span class="at">format_headers =</span> <span class="cn">TRUE</span>,       <span class="co"># 是否格式化欄位名稱（如粗體）</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>  <span class="at">use_zip64 =</span> <span class="cn">FALSE</span>            <span class="co"># 是否使用 ZIP64（處理超大 Excel 檔案）</span></span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a>)</span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co"># 簡單匯出excel</span></span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a><span class="fu">w

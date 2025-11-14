@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 文字與時間處理 | R語言程式設計</title>
   <meta name="description" content="Chapter 9 文字與時間處理 | R語言程式設計" />
-  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 文字與時間處理 | R語言程式設計" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="露西Lucy" />
 
 
-<meta name="date" content="2024-03-18" />
+<meta name="date" content="2025-03-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,8 +55,9 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +67,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -142,105 +143,112 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 關於</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#關於作者"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#寫書的起源"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#本書的理解"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#參考資料"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#%E9%97%9C%E6%96%BC%E4%BD%9C%E8%80%85"><i class="fa fa-check"></i><b>1.1</b> 關於作者</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#%E5%AF%AB%E6%9B%B8%E7%9A%84%E8%B5%B7%E6%BA%90"><i class="fa fa-check"></i><b>1.2</b> 寫書的起源</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#%E6%9C%AC%E6%9B%B8%E7%9A%84%E7%90%86%E8%A7%A3"><i class="fa fa-check"></i><b>1.3</b> 本書的理解</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#%E5%8F%83%E8%80%83%E8%B3%87%E6%96%99"><i class="fa fa-check"></i><b>1.4</b> 參考資料</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="系統環境設定.html"><a href="系統環境設定.html"><i class="fa fa-check"></i><b>2</b> 系統環境設定</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#系統環境查詢"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
-<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#環境設定函數"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
-<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#更改環境語系"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
-<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#新增專案"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
-<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#常用快速鍵"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
+<li class="chapter" data-level="2.1" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%B3%BB%E7%B5%B1%E7%92%B0%E5%A2%83%E6%9F%A5%E8%A9%A2"><i class="fa fa-check"></i><b>2.1</b> 系統環境查詢</a></li>
+<li class="chapter" data-level="2.2" data-path="系統環境設定.html"><a href="系統環境設定.html#%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>2.2</b> 環境設定函數</a></li>
+<li class="chapter" data-level="2.3" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%9B%B4%E6%94%B9%E7%92%B0%E5%A2%83%E8%AA%9E%E7%B3%BB"><i class="fa fa-check"></i><b>2.3</b> 更改環境語系</a></li>
+<li class="chapter" data-level="2.4" data-path="系統環境設定.html"><a href="系統環境設定.html#%E6%96%B0%E5%A2%9E%E5%B0%88%E6%A1%88"><i class="fa fa-check"></i><b>2.4</b> 新增專案</a></li>
+<li class="chapter" data-level="2.5" data-path="系統環境設定.html"><a href="系統環境設定.html#%E5%B8%B8%E7%94%A8%E5%BF%AB%E9%80%9F%E9%8D%B5"><i class="fa fa-check"></i><b>2.5</b> 常用快速鍵</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="元素介紹.html"><a href="元素介紹.html"><i class="fa fa-check"></i><b>3</b> 元素介紹</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#資料賦值"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
-<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#資料型態"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
+<li class="chapter" data-level="3.1" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E8%B3%A6%E5%80%BC"><i class="fa fa-check"></i><b>3.1</b> 資料賦值</a></li>
+<li class="chapter" data-level="3.2" data-path="元素介紹.html"><a href="元素介紹.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B"><i class="fa fa-check"></i><b>3.2</b> 資料型態</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#字串"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
-<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#數值"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
-<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#布林值"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
-<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#日期時間"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
+<li class="chapter" data-level="3.2.1" data-path="元素介紹.html"><a href="元素介紹.html#%E5%AD%97%E4%B8%B2"><i class="fa fa-check"></i><b>3.2.1</b> 字串</a></li>
+<li class="chapter" data-level="3.2.2" data-path="元素介紹.html"><a href="元素介紹.html#%E6%95%B8%E5%80%BC"><i class="fa fa-check"></i><b>3.2.2</b> 數值</a></li>
+<li class="chapter" data-level="3.2.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B8%83%E6%9E%97%E5%80%BC"><i class="fa fa-check"></i><b>3.2.3</b> 布林值</a></li>
+<li class="chapter" data-level="3.2.4" data-path="元素介紹.html"><a href="元素介紹.html#%E6%97%A5%E6%9C%9F%E6%99%82%E9%96%93"><i class="fa fa-check"></i><b>3.2.4</b> 日期/時間</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#屬性查詢與轉換"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
-<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#運算子"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
+<li class="chapter" data-level="3.3" data-path="元素介紹.html"><a href="元素介紹.html#%E5%B1%AC%E6%80%A7%E6%9F%A5%E8%A9%A2%E8%88%87%E8%BD%89%E6%8F%9B"><i class="fa fa-check"></i><b>3.3</b> 屬性查詢與轉換</a></li>
+<li class="chapter" data-level="3.4" data-path="元素介紹.html"><a href="元素介紹.html#%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4</b> 運算子</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#算術運算子"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
-<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#邏輯運算子"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
+<li class="chapter" data-level="3.4.1" data-path="元素介紹.html"><a href="元素介紹.html#%E7%AE%97%E8%A1%93%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.1</b> 算術運算子</a></li>
+<li class="chapter" data-level="3.4.2" data-path="元素介紹.html"><a href="元素介紹.html#%E9%82%8F%E8%BC%AF%E9%81%8B%E7%AE%97%E5%AD%90"><i class="fa fa-check"></i><b>3.4.2</b> 邏輯運算子</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="資料結構.html"><a href="資料結構.html"><i class="fa fa-check"></i><b>4</b> 資料結構</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#資料型態相同"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
+<li class="chapter" data-level="4.1" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E7%9B%B8%E5%90%8C"><i class="fa fa-check"></i><b>4.1</b> 資料型態相同</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#一維結構vector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
-<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#二維結構matrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
-<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#三維結構-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
+<li class="chapter" data-level="4.1.1" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%80%E7%B6%AD%E7%B5%90%E6%A7%8Bvector"><i class="fa fa-check"></i><b>4.1.1</b> 一維結構(Vector)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8Bmatrix"><i class="fa fa-check"></i><b>4.1.2</b> 二維結構(matrix)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-array"><i class="fa fa-check"></i><b>4.1.3</b> 三維結構 (array)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#資料型態不同"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
+<li class="chapter" data-level="4.2" data-path="資料結構.html"><a href="資料結構.html#%E8%B3%87%E6%96%99%E5%9E%8B%E6%85%8B%E4%B8%8D%E5%90%8C"><i class="fa fa-check"></i><b>4.2</b> 資料型態不同</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#二維結構-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
-<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#三維結構-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
+<li class="chapter" data-level="4.2.1" data-path="資料結構.html"><a href="資料結構.html#%E4%BA%8C%E7%B6%AD%E7%B5%90%E6%A7%8B-data.frame"><i class="fa fa-check"></i><b>4.2.1</b> 二維結構 (data.frame)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="資料結構.html"><a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-list"><i class="fa fa-check"></i><b>4.2.2</b> 三維結構 (list)</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#特殊資料結構"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
+<li class="chapter" data-level="4.3" data-path="資料結構.html"><a href="資料結構.html#%E7%89%B9%E6%AE%8A%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B"><i class="fa fa-check"></i><b>4.3</b> 特殊資料結構</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#列聯表"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
+<li class="chapter" data-level="4.3.1" data-path="資料結構.html"><a href="資料結構.html#%E5%88%97%E8%81%AF%E8%A1%A8"><i class="fa fa-check"></i><b>4.3.1</b> 列聯表</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html"><i class="fa fa-check"></i><b>5</b> 資料輸入與輸出</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入與印出"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
+<li class="chapter" data-level="5.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5%E8%88%87%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1</b> 資料鍵入與印出</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料鍵入"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
-<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料印出"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
+<li class="chapter" data-level="5.1.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E9%8D%B5%E5%85%A5"><i class="fa fa-check"></i><b>5.1.1</b> 資料鍵入</a></li>
+<li class="chapter" data-level="5.1.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8D%B0%E5%87%BA"><i class="fa fa-check"></i><b>5.1.2</b> 資料印出</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#複製及貼上"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
-<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯入"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
+<li class="chapter" data-level="5.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%A4%87%E8%A3%BD%E5%8F%8A%E8%B2%BC%E4%B8%8A"><i class="fa fa-check"></i><b>5.2</b> 複製及貼上</a></li>
+<li class="chapter" data-level="5.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%85%A5"><i class="fa fa-check"></i><b>5.3</b> 資料匯入</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入csv檔"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
-<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入excel檔"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
-<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#匯入json檔"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5csv%E6%AA%94"><i class="fa fa-check"></i><b>5.3.1</b> 匯入csv檔</a></li>
+<li class="chapter" data-level="5.3.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5excel%E6%AA%94"><i class="fa fa-check"></i><b>5.3.2</b> 匯入excel檔</a></li>
+<li class="chapter" data-level="5.3.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5json%E6%AA%94"><i class="fa fa-check"></i><b>5.3.3</b> 匯入json檔</a></li>
+<li class="chapter" data-level="5.3.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%85%A5rds%E6%AA%94-%E6%88%96%E8%BC%89%E5%85%A5%E5%A4%9A%E5%80%8Br%E7%89%A9%E4%BB%B6"><i class="fa fa-check"></i><b>5.3.4</b> 匯入RDS檔 或載入多個R物件</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#資料匯出"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a></li>
+<li class="chapter" data-level="5.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E8%B3%87%E6%96%99%E5%8C%AF%E5%87%BA"><i class="fa fa-check"></i><b>5.4</b> 資料匯出</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAcsv%E6%AA%94"><i class="fa fa-check"></i><b>5.4.1</b> 匯出為csv檔</a></li>
+<li class="chapter" data-level="5.4.2" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAexcel%E6%AA%94"><i class="fa fa-check"></i><b>5.4.2</b> 匯出為excel檔</a></li>
+<li class="chapter" data-level="5.4.3" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAjson%E6%AA%94"><i class="fa fa-check"></i><b>5.4.3</b> 匯出為json檔</a></li>
+<li class="chapter" data-level="5.4.4" data-path="資料輸入與輸出.html"><a href="資料輸入與輸出.html#%E5%8C%AF%E5%87%BA%E7%82%BAr%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>5.4.4</b> 匯出為R資料格式</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="流程控制.html"><a href="流程控制.html"><i class="fa fa-check"></i><b>6</b> 流程控制</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-邏輯判斷"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
-<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-迴圈"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
-<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-迴圈"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
-<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-迴圈"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
-<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break與next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
+<li class="chapter" data-level="6.1" data-path="流程控制.html"><a href="流程控制.html#if--else-%E9%82%8F%E8%BC%AF%E5%88%A4%E6%96%B7"><i class="fa fa-check"></i><b>6.1</b> if -else 邏輯判斷</a></li>
+<li class="chapter" data-level="6.2" data-path="流程控制.html"><a href="流程控制.html#for-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.2</b> for 迴圈</a></li>
+<li class="chapter" data-level="6.3" data-path="流程控制.html"><a href="流程控制.html#while-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.3</b> while 迴圈</a></li>
+<li class="chapter" data-level="6.4" data-path="流程控制.html"><a href="流程控制.html#repeat-%E8%BF%B4%E5%9C%88"><i class="fa fa-check"></i><b>6.4</b> repeat 迴圈</a></li>
+<li class="chapter" data-level="6.5" data-path="流程控制.html"><a href="流程控制.html#break%E8%88%87next"><i class="fa fa-check"></i><b>6.5</b> break與next</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="函數介紹.html"><a href="函數介紹.html"><i class="fa fa-check"></i><b>7</b> 函數介紹</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#常用的內建函數"><i class="fa fa-check"></i><b>7.1</b> 常用的內建函數</a></li>
-<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#實用套件之函數"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
-<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#自訂函數"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
-<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-及call"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
+<li class="chapter" data-level="7.1" data-path="函數介紹.html"><a href="函數介紹.html#r-%E8%AA%9E%E8%A8%80%E5%B8%B8%E7%94%A8%E5%85%A7%E5%BB%BA%E5%87%BD%E6%95%B8%E5%88%86%E9%A1%9E"><i class="fa fa-check"></i><b>7.1</b> R 語言常用內建函數分類</a></li>
+<li class="chapter" data-level="7.2" data-path="函數介紹.html"><a href="函數介紹.html#%E5%AF%A6%E7%94%A8%E5%A5%97%E4%BB%B6%E4%B9%8B%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.2</b> 實用套件之函數</a></li>
+<li class="chapter" data-level="7.3" data-path="函數介紹.html"><a href="函數介紹.html#%E8%87%AA%E8%A8%82%E5%87%BD%E6%95%B8"><i class="fa fa-check"></i><b>7.3</b> 自訂函數</a></li>
+<li class="chapter" data-level="7.4" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%8F%8Acall"><i class="fa fa-check"></i><b>7.4</b> do.call 及call</a>
 <ul>
-<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-基本用途"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
-<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-常運用於data.frame的子元素"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
-<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-亦可運用於list-資料格式"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
-<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-與-do.call的差異"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
-<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#線上資源"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
+<li class="chapter" data-level="7.4.1" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%9F%BA%E6%9C%AC%E7%94%A8%E9%80%94"><i class="fa fa-check"></i><b>7.4.1</b> 1. do.call 基本用途</a></li>
+<li class="chapter" data-level="7.4.2" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E5%B8%B8%E9%81%8B%E7%94%A8%E6%96%BCdata.frame%E7%9A%84%E5%AD%90%E5%85%83%E7%B4%A0"><i class="fa fa-check"></i><b>7.4.2</b> 2. do.call 常運用於data.frame的子元素</a></li>
+<li class="chapter" data-level="7.4.3" data-path="函數介紹.html"><a href="函數介紹.html#do.call-%E4%BA%A6%E5%8F%AF%E9%81%8B%E7%94%A8%E6%96%BClist-%E8%B3%87%E6%96%99%E6%A0%BC%E5%BC%8F"><i class="fa fa-check"></i><b>7.4.3</b> 3. do.call 亦可運用於list 資料格式</a></li>
+<li class="chapter" data-level="7.4.4" data-path="函數介紹.html"><a href="函數介紹.html#call-%E8%88%87-do.call%E7%9A%84%E5%B7%AE%E7%95%B0"><i class="fa fa-check"></i><b>7.4.4</b> call 與 do.call的差異</a></li>
+<li class="chapter" data-level="7.4.5" data-path="函數介紹.html"><a href="函數介紹.html#%E7%B7%9A%E4%B8%8A%E8%B3%87%E6%BA%90"><i class="fa fa-check"></i><b>7.4.5</b> 1.線上資源</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="基礎繪圖.html"><a href="基礎繪圖.html"><i class="fa fa-check"></i><b>8</b> 基礎繪圖</a></li>
 <li class="chapter" data-level="9" data-path="文字與時間處理.html"><a href="文字與時間處理.html"><i class="fa fa-check"></i><b>9</b> 文字與時間處理</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#內建文字函數base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
-<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr套件"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
-<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#正則表達式"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
+<li class="chapter" data-level="9.1" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E5%85%A7%E5%BB%BA%E6%96%87%E5%AD%97%E5%87%BD%E6%95%B8base"><i class="fa fa-check"></i><b>9.1</b> 內建文字函數(base)</a></li>
+<li class="chapter" data-level="9.2" data-path="文字與時間處理.html"><a href="文字與時間處理.html#stringr%E5%A5%97%E4%BB%B6"><i class="fa fa-check"></i><b>9.2</b> stringr套件</a></li>
+<li class="chapter" data-level="9.3" data-path="文字與時間處理.html"><a href="文字與時間處理.html#%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F"><i class="fa fa-check"></i><b>9.3</b> 正則表達式</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="認識apply家族.html"><a href="認識apply家族.html"><i class="fa fa-check"></i><b>10</b> 認識apply家族</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply系列家族應用情境"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
-<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply用法"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
-<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply用法"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
-<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply用法"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
+<li class="chapter" data-level="10.1" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%B3%BB%E5%88%97%E5%AE%B6%E6%97%8F%E6%87%89%E7%94%A8%E6%83%85%E5%A2%83"><i class="fa fa-check"></i><b>10.1</b> apply系列家族應用情境</a></li>
+<li class="chapter" data-level="10.2" data-path="認識apply家族.html"><a href="認識apply家族.html#apply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.2</b> apply用法</a></li>
+<li class="chapter" data-level="10.3" data-path="認識apply家族.html"><a href="認識apply家族.html#sapplylapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.3</b> sapply/lapply用法</a></li>
+<li class="chapter" data-level="10.4" data-path="認識apply家族.html"><a href="認識apply家族.html#mapply%E7%94%A8%E6%B3%95"><i class="fa fa-check"></i><b>10.4</b> mapply用法</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="dplyr及-tidyr運用.html"><a href="dplyr及-tidyr運用.html"><i class="fa fa-check"></i><b>11</b> dplyr及 tidyr運用</a></li>
 <li class="chapter" data-level="12" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>12</b> data.table運用</a></li>
@@ -265,76 +273,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="文字與時間處理" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> 文字與時間處理<a href="文字與時間處理.html#文字與時間處理" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 9</span> 文字與時間處理<a href="文字與時間處理.html#%E6%96%87%E5%AD%97%E8%88%87%E6%99%82%E9%96%93%E8%99%95%E7%90%86" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>在R中，有需多內建的文字處理函數，可以對文字進行搜尋、取代、切割或擷取，除此之外，R在文字處理亦有一個套件 library(stringr)，可以彌補內建函數部分不足之處。</p>
 <div id="內建文字函數base" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> 內建文字函數(base)<a href="文字與時間處理.html#內建文字函數base" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">9.1</span> 內建文字函數(base)<a href="文字與時間處理.html#%E5%85%A7%E5%BB%BA%E6%96%87%E5%AD%97%E5%87%BD%E6%95%B8base" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>1. 大小寫切換</strong></p>
-<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="文字與時間處理.html#cb259-1" tabindex="-1"></a><span class="co"># 全部轉小寫之函數</span></span>
-<span id="cb259-2"><a href="文字與時間處理.html#cb259-2" tabindex="-1"></a><span class="fu">tolower</span>(<span class="st">&quot;HAPPLY DAY&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="文字與時間處理.html#cb268-1" tabindex="-1"></a><span class="co"># 全部轉小寫之函數</span></span>
+<span id="cb268-2"><a href="文字與時間處理.html#cb268-2" tabindex="-1"></a><span class="fu">tolower</span>(<span class="st">&quot;HAPPLY DAY&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;happly day&quot;</code></pre>
-<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="文字與時間處理.html#cb261-1" tabindex="-1"></a><span class="co"># 全部轉大寫之函數</span></span>
-<span id="cb261-2"><a href="文字與時間處理.html#cb261-2" tabindex="-1"></a><span class="fu">toupper</span>(<span class="st">&quot;happly day&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="文字與時間處理.html#cb270-1" tabindex="-1"></a><span class="co"># 全部轉大寫之函數</span></span>
+<span id="cb270-2"><a href="文字與時間處理.html#cb270-2" tabindex="-1"></a><span class="fu">toupper</span>(<span class="st">&quot;happly day&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;HAPPLY DAY&quot;</code></pre>
 <p><strong>2. 文字搜尋</strong></p>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="文字與時間處理.html#cb263-1" tabindex="-1"></a><span class="co"># 找出符合條件的向量內位置</span></span>
-<span id="cb263-2"><a href="文字與時間處理.html#cb263-2" tabindex="-1"></a><span class="fu">grep</span>(pattern, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>, <span class="at">value =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb263-3"><a href="文字與時間處理.html#cb263-3" tabindex="-1"></a>     <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>, <span class="at">invert =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb263-4"><a href="文字與時間處理.html#cb263-4" tabindex="-1"></a></span>
-<span id="cb263-5"><a href="文字與時間處理.html#cb263-5" tabindex="-1"></a><span class="co"># 找出符合條件之邏輯判斷(TRUE FALSE)</span></span>
-<span id="cb263-6"><a href="文字與時間處理.html#cb263-6" tabindex="-1"></a><span class="fu">grepl</span>(pattern, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb263-7"><a href="文字與時間處理.html#cb263-7" tabindex="-1"></a>      <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="文字與時間處理.html#cb272-1" tabindex="-1"></a><span class="co"># 找出符合條件的向量內位置</span></span>
+<span id="cb272-2"><a href="文字與時間處理.html#cb272-2" tabindex="-1"></a><span class="fu">grep</span>(pattern, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>, <span class="at">value =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb272-3"><a href="文字與時間處理.html#cb272-3" tabindex="-1"></a>     <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>, <span class="at">invert =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb272-4"><a href="文字與時間處理.html#cb272-4" tabindex="-1"></a></span>
+<span id="cb272-5"><a href="文字與時間處理.html#cb272-5" tabindex="-1"></a><span class="co"># 找出符合條件之邏輯判斷(TRUE FALSE)</span></span>
+<span id="cb272-6"><a href="文字與時間處理.html#cb272-6" tabindex="-1"></a><span class="fu">grepl</span>(pattern, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb272-7"><a href="文字與時間處理.html#cb272-7" tabindex="-1"></a>      <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>3. 文字取代</strong></p>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="文字與時間處理.html#cb264-1" tabindex="-1"></a><span class="co"># 只替换第一次匹配的字串</span></span>
-<span id="cb264-2"><a href="文字與時間處理.html#cb264-2" tabindex="-1"></a><span class="fu">sub</span>(pattern, replacement, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb264-3"><a href="文字與時間處理.html#cb264-3" tabindex="-1"></a>    <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb264-4"><a href="文字與時間處理.html#cb264-4" tabindex="-1"></a></span>
-<span id="cb264-5"><a href="文字與時間處理.html#cb264-5" tabindex="-1"></a><span class="co"># 替换所有匹配的字串</span></span>
-<span id="cb264-6"><a href="文字與時間處理.html#cb264-6" tabindex="-1"></a><span class="fu">gsub</span>(pattern, replacement, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb264-7"><a href="文字與時間處理.html#cb264-7" tabindex="-1"></a>     <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="文字與時間處理.html#cb273-1" tabindex="-1"></a><span class="co"># 只替换第一次匹配的字串</span></span>
+<span id="cb273-2"><a href="文字與時間處理.html#cb273-2" tabindex="-1"></a><span class="fu">sub</span>(pattern, replacement, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb273-3"><a href="文字與時間處理.html#cb273-3" tabindex="-1"></a>    <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb273-4"><a href="文字與時間處理.html#cb273-4" tabindex="-1"></a></span>
+<span id="cb273-5"><a href="文字與時間處理.html#cb273-5" tabindex="-1"></a><span class="co"># 替换所有匹配的字串</span></span>
+<span id="cb273-6"><a href="文字與時間處理.html#cb273-6" tabindex="-1"></a><span class="fu">gsub</span>(pattern, replacement, x, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb273-7"><a href="文字與時間處理.html#cb273-7" tabindex="-1"></a>     <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><strong>4. 使用位址擷取</strong></p>
-<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="文字與時間處理.html#cb265-1" tabindex="-1"></a><span class="co"># 根據起始位址和結束位址，擷取出特定文字</span></span>
-<span id="cb265-2"><a href="文字與時間處理.html#cb265-2" tabindex="-1"></a><span class="fu">substr</span>(x, start, stop)</span>
-<span id="cb265-3"><a href="文字與時間處理.html#cb265-3" tabindex="-1"></a></span>
-<span id="cb265-4"><a href="文字與時間處理.html#cb265-4" tabindex="-1"></a><span class="co"># 根據起始位址和結束位址，擷取出特定文字，但結束位置可以向量化</span></span>
-<span id="cb265-5"><a href="文字與時間處理.html#cb265-5" tabindex="-1"></a><span class="fu">substring</span>(x, first, last)</span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="文字與時間處理.html#cb274-1" tabindex="-1"></a><span class="co"># 根據起始位址和結束位址，擷取出特定文字</span></span>
+<span id="cb274-2"><a href="文字與時間處理.html#cb274-2" tabindex="-1"></a><span class="fu">substr</span>(x, start, stop)</span>
+<span id="cb274-3"><a href="文字與時間處理.html#cb274-3" tabindex="-1"></a></span>
+<span id="cb274-4"><a href="文字與時間處理.html#cb274-4" tabindex="-1"></a><span class="co"># 根據起始位址和結束位址，擷取出特定文字，但結束位置可以向量化</span></span>
+<span id="cb274-5"><a href="文字與時間處理.html#cb274-5" tabindex="-1"></a><span class="fu">substring</span>(x, first, last)</span></code></pre></div>
 <p><strong>5. 符合條件下之位址搜尋</strong></p>
-<div class="sourceCode" id="cb266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb266-1"><a href="文字與時間處理.html#cb266-1" tabindex="-1"></a><span class="co"># 找出符合條件的字串向量的起始位置</span></span>
-<span id="cb266-2"><a href="文字與時間處理.html#cb266-2" tabindex="-1"></a><span class="fu">regexpr</span>(pattern, text, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb266-3"><a href="文字與時間處理.html#cb266-3" tabindex="-1"></a>        <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb266-4"><a href="文字與時間處理.html#cb266-4" tabindex="-1"></a></span>
-<span id="cb266-5"><a href="文字與時間處理.html#cb266-5" tabindex="-1"></a><span class="co"># 找出符合條件的字串向量的起始位置,各自列表化</span></span>
-<span id="cb266-6"><a href="文字與時間處理.html#cb266-6" tabindex="-1"></a><span class="fu">gregexpr</span>(pattern, text, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb266-7"><a href="文字與時間處理.html#cb266-7" tabindex="-1"></a>         <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="文字與時間處理.html#cb275-1" tabindex="-1"></a><span class="co"># 找出符合條件的字串向量的起始位置</span></span>
+<span id="cb275-2"><a href="文字與時間處理.html#cb275-2" tabindex="-1"></a><span class="fu">regexpr</span>(pattern, text, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb275-3"><a href="文字與時間處理.html#cb275-3" tabindex="-1"></a>        <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb275-4"><a href="文字與時間處理.html#cb275-4" tabindex="-1"></a></span>
+<span id="cb275-5"><a href="文字與時間處理.html#cb275-5" tabindex="-1"></a><span class="co"># 找出符合條件的字串向量的起始位置,各自列表化</span></span>
+<span id="cb275-6"><a href="文字與時間處理.html#cb275-6" tabindex="-1"></a><span class="fu">gregexpr</span>(pattern, text, <span class="at">ignore.case =</span> <span class="cn">FALSE</span>, <span class="at">perl =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb275-7"><a href="文字與時間處理.html#cb275-7" tabindex="-1"></a>         <span class="at">fixed =</span> <span class="cn">FALSE</span>, <span class="at">useBytes =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p>與<code>gregexpr</code>類似的函數，還有<code>regexec</code>、<code>gregexec</code>，差異不大，只是輸出方式不同，筆者認為以後續處理方便性而言，<code>gregexpr</code>是比較值得學習的函數</p>
 </div>
 <div id="stringr套件" class="section level2 hasAnchor" number="9.2">
-<h2><span class="header-section-number">9.2</span> stringr套件<a href="文字與時間處理.html#stringr套件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="文字與時間處理.html#cb267-1" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb267-2"><a href="文字與時間處理.html#cb267-2" tabindex="-1"></a><span class="co"># 首字母轉換成大寫字母</span></span>
-<span id="cb267-3"><a href="文字與時間處理.html#cb267-3" tabindex="-1"></a><span class="fu">str_to_title</span>(<span class="st">&quot;jack&quot;</span>)</span>
-<span id="cb267-4"><a href="文字與時間處理.html#cb267-4" tabindex="-1"></a></span>
-<span id="cb267-5"><a href="文字與時間處理.html#cb267-5" tabindex="-1"></a><span class="co">#1.字串分割(可割多句)   #輸出格式list</span></span>
-<span id="cb267-6"><a href="文字與時間處理.html#cb267-6" tabindex="-1"></a><span class="fu">str_split</span>(string, pattern, <span class="at">n =</span> <span class="cn">Inf</span>, <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb267-7"><a href="文字與時間處理.html#cb267-7" tabindex="-1"></a></span>
-<span id="cb267-8"><a href="文字與時間處理.html#cb267-8" tabindex="-1"></a><span class="co">#2.字串分割(只割一句)</span></span>
-<span id="cb267-9"><a href="文字與時間處理.html#cb267-9" tabindex="-1"></a><span class="fu">str_split_1</span>(string, pattern)</span>
-<span id="cb267-10"><a href="文字與時間處理.html#cb267-10" tabindex="-1"></a></span>
-<span id="cb267-11"><a href="文字與時間處理.html#cb267-11" tabindex="-1"></a><span class="co">#3.字串分割(指定割出多少詞)   #輸出格式matrix</span></span>
-<span id="cb267-12"><a href="文字與時間處理.html#cb267-12" tabindex="-1"></a><span class="fu">str_split_fixed</span>(string, pattern, n)</span>
-<span id="cb267-13"><a href="文字與時間處理.html#cb267-13" tabindex="-1"></a></span>
-<span id="cb267-14"><a href="文字與時間處理.html#cb267-14" tabindex="-1"></a><span class="co">#4.字串分割(指定割出後，輸出第i個字串)   #輸出格式matrix</span></span>
-<span id="cb267-15"><a href="文字與時間處理.html#cb267-15" tabindex="-1"></a><span class="fu">str_split_i</span>(string, pattern, i)</span>
-<span id="cb267-16"><a href="文字與時間處理.html#cb267-16" tabindex="-1"></a></span>
-<span id="cb267-17"><a href="文字與時間處理.html#cb267-17" tabindex="-1"></a>fool<span class="ot">=</span>  <span class="fu">c</span>(<span class="st">&quot;蘋果and橘子and香蕉and西瓜&quot;</span>,<span class="st">&quot;豬肉and牛肉and雞肉&quot;</span>)</span>
-<span id="cb267-18"><a href="文字與時間處理.html#cb267-18" tabindex="-1"></a><span class="fu">str_split_i</span>(fool, <span class="st">&quot;and&quot;</span>,<span class="dv">3</span>)</span>
-<span id="cb267-19"><a href="文字與時間處理.html#cb267-19" tabindex="-1"></a></span>
-<span id="cb267-20"><a href="文字與時間處理.html#cb267-20" tabindex="-1"></a><span class="co">#5.比對 (想找包含 西瓜 在內的字串)   #類似 grepl</span></span>
-<span id="cb267-21"><a href="文字與時間處理.html#cb267-21" tabindex="-1"></a><span class="fu">str_detect</span>(fool, <span class="at">pattern =</span> <span class="st">&quot;西瓜&quot;</span> )</span>
-<span id="cb267-22"><a href="文字與時間處理.html#cb267-22" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;西瓜&quot;</span>, fool)</span></code></pre></div>
+<h2><span class="header-section-number">9.2</span> stringr套件<a href="文字與時間處理.html#stringr%E5%A5%97%E4%BB%B6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="文字與時間處理.html#cb276-1" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb276-2"><a href="文字與時間處理.html#cb276-2" tabindex="-1"></a><span class="co"># 首字母轉換成大寫字母</span></span>
+<span id="cb276-3"><a href="文字與時間處理.html#cb276-3" tabindex="-1"></a><span class="fu">str_to_title</span>(<span class="st">&quot;jack&quot;</span>)</span>
+<span id="cb276-4"><a href="文字與時間處理.html#cb276-4" tabindex="-1"></a></span>
+<span id="cb276-5"><a href="文字與時間處理.html#cb276-5" tabindex="-1"></a><span class="co">#1.字串分割(可割多句)   #輸出格式list</span></span>
+<span id="cb276-6"><a href="文字與時間處理.html#cb276-6" tabindex="-1"></a><span class="fu">str_split</span>(string, pattern, <span class="at">n =</span> <span class="cn">Inf</span>, <span class="at">simplify =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb276-7"><a href="文字與時間處理.html#cb276-7" tabindex="-1"></a></span>
+<span id="cb276-8"><a href="文字與時間處理.html#cb276-8" tabindex="-1"></a><span class="co">#2.字串分割(只割一句)</span></span>
+<span id="cb276-9"><a href="文字與時間處理.html#cb276-9" tabindex="-1"></a><span class="fu">str_split_1</span>(string, pattern)</span>
+<span id="cb276-10"><a href="文字與時間處理.html#cb276-10" tabindex="-1"></a></span>
+<span id="cb276-11"><a href="文字與時間處理.html#cb276-11" tabindex="-1"></a><span class="co">#3.字串分割(指定割出多少詞)   #輸出格式matrix</span></span>
+<span id="cb276-12"><a href="文字與時間處理.html#cb276-12" tabindex="-1"></a><span class="fu">str_split_fixed</span>(string, pattern, n)</span>
+<span id="cb276-13"><a href="文字與時間處理.html#cb276-13" tabindex="-1"></a></span>
+<span id="cb276-14"><a href="文字與時間處理.html#cb276-14" tabindex="-1"></a><span class="co">#4.字串分割(指定割出後，輸出第i個字串)   #輸出格式matrix</span></span>
+<span id="cb276-15"><a href="文字與時間處理.html#cb276-15" tabindex="-1"></a><span class="fu">str_split_i</span>(string, pattern, i)</span>
+<span id="cb276-16"><a href="文字與時間處理.html#cb276-16" tabindex="-1"></a></span>
+<span id="cb276-17"><a href="文字與時間處理.html#cb276-17" tabindex="-1"></a>fool<span class="ot">=</span>  <span class="fu">c</span>(<span class="st">&quot;蘋果and橘子and香蕉and西瓜&quot;</span>,<span class="st">&quot;豬肉and牛肉and雞肉&quot;</span>)</span>
+<span id="cb276-18"><a href="文字與時間處理.html#cb276-18" tabindex="-1"></a><span class="fu">str_split_i</span>(fool, <span class="st">&quot;and&quot;</span>,<span class="dv">3</span>)</span>
+<span id="cb276-19"><a href="文字與時間處理.html#cb276-19" tabindex="-1"></a></span>
+<span id="cb276-20"><a href="文字與時間處理.html#cb276-20" tabindex="-1"></a><span class="co">#5.比對 (想找包含 西瓜 在內的字串)   #類似 grepl</span></span>
+<span id="cb276-21"><a href="文字與時間處理.html#cb276-21" tabindex="-1"></a><span class="fu">str_detect</span>(fool, <span class="at">pattern =</span> <span class="st">&quot;西瓜&quot;</span> )</span>
+<span id="cb276-22"><a href="文字與時間處理.html#cb276-22" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;西瓜&quot;</span>, fool)</span></code></pre></div>
 </div>
 <div id="正則表達式" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> 正則表達式<a href="文字與時間處理.html#正則表達式" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">9.3</span> 正則表達式<a href="文字與時間處理.html#%E6%AD%A3%E5%89%87%E8%A1%A8%E9%81%94%E5%BC%8F" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>正則表達式（Regular Expressions）是一種用來匹配字串模式的工具，正規表達式有 <code>. ^ $ * + ? \ | []() {}</code> 保留字元。正規表示式從左到右進行計算，並遵循優先順序，這與算術表達式非常類似。相同優先權的從左到右進行運算，不同優先權的運算先高後低，下表為相同優先權等級說明</p>
 <table>
 <thead>
@@ -593,42 +601,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/3mofstudy/basicRnotes/edit/main/08_文字與時間.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": "https://github.com/3mofstudy/basicRnotes/blob/main/08_文字與時間.Rmd",
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/3mofstudy/basicRnotes/edit/main/08_文字與時間.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/3mofstudy/basicRnotes/blob/main/08_文字與時間.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
