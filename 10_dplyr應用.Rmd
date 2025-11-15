@@ -1,1 +1,375 @@
 # dplyr及 tidyr運用
+
+## 簡介
+
+`dplyr`和`tidyr`是R語言中最重要的資料處理套件，它們提供了一套直觀且一致的函數來處理資料框。這兩個套件都是`tidyverse`生態系統的核心成員，可單獨安裝，或安裝tidyverse即可。
+
+### 11.1.1 安裝與載入
+
+```{r setup, message=FALSE, warning=FALSE}
+# 安裝套件（如果尚未安裝）
+# install.packages("tidyverse")
+
+# 載入套件
+library(dplyr)
+library(tidyr)
+```
+
+## dplyr核心函數
+
+### filter() - 資料篩選
+
+filter()用於根據條件篩選資料列。
+
+```{r message=FALSE, warning=FALSE}
+# 使用內建資料集
+data("mtcars")
+
+# 基本篩選
+filter(mtcars, mpg > 20)
+
+# 多重條件篩選
+filter(mtcars, mpg > 20, cyl == 4)
+
+# 使用OR條件
+filter(mtcars, mpg > 20 | hp > 150)
+
+# 配合%in%運算子
+filter(mtcars, cyl %in% c(4, 6))
+
+```
+
+### select() - 選擇變數
+
+select()用於選擇特定的資料欄。
+
+```{r message=FALSE, warning=FALSE}
+# 選擇特定欄位
+select(mtcars, mpg, cyl, hp)
+
+# 選擇欄位範圍
+select(mtcars, mpg:drat)
+
+# 排除特定欄位
+select(mtcars, -carb, -gear)
+
+# 輔助函數
+select(mtcars, starts_with("c"))  # 開頭為c的欄位
+select(mtcars, ends_with("p"))    # 結尾為p的欄位
+select(mtcars, contains("a"))     # 包含a的欄位
+
+```
+
+### mutate() - 新增變數
+
+mutate()用於建立新的資料欄。
+
+```{r message=FALSE, warning=FALSE}
+# 建立新變數
+mtcars_new <- mutate(mtcars,
+                     km_per_l = mpg * 0.425,  # 轉換為km/l
+                     power_weight = hp / wt   # 馬力重量比
+                    )
+head(select(mtcars_new, mpg, km_per_l, hp, wt, power_weight))
+
+# 使用ifelse建立分類變數
+mtcars_class <- mutate(mtcars,
+                       efficiency = ifelse(mpg > 20, "高效", "一般")
+                      )
+table(mtcars_class$efficiency)
+
+```
+
+### arrange() - 資料排序
+
+arrange()用於對資料進行排序。
+
+```{r message=FALSE, warning=FALSE}
+# 升冪排序
+arrange(mtcars, mpg)
+
+# 降冪排序
+arrange(mtcars, desc(mpg))
+
+# 多重排序
+arrange(mtcars, cyl, desc(mpg))
+
+```
+
+### summarise() - 資料彙總
+
+summarise()用於計算摘要統計量。
+
+```{r message=FALSE, warning=FALSE}
+
+# 基本彙總
+summarise(mtcars,
+          count = n(),
+          avg_mpg = mean(mpg),
+          sd_mpg = sd(mpg),
+          max_hp = max(hp)
+         )
+
+# 配合group_by進行分組彙總
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(
+    count = n(),
+    avg_mpg = mean(mpg),
+    avg_hp = mean(hp)
+  )
+
+```
+
+### group_by() - 分組操作
+
+group_by()用於對資料進行分組。
+
+```{r message=FALSE, warning=FALSE}
+# 分組後進行多重操作
+mtcars %>%
+  group_by(cyl, gear) %>%
+  summarise(
+    count = n(),
+    avg_mpg = mean(mpg),
+    .groups = 'drop'
+  )
+
+# 分組後篩選，ungroup()移除分組，資料框恢復為未分組狀態
+mtcars %>%
+  group_by(cyl) %>%
+  filter(mpg == max(mpg)) %>%
+  ungroup()
+
+```
+
+### slice() - 選擇特定列
+
+slice()用於選擇特定的資料列。
+
+```{r message=FALSE, warning=FALSE}
+# 選擇前幾列
+slice(mtcars, 1:5)
+
+# 選擇最後幾列
+slice(mtcars, (n()-4):n())
+
+# 隨機抽樣
+set.seed(123)
+slice_sample(mtcars, n = 5)
+
+# 按比例抽樣
+slice_sample(mtcars, prop = 0.1)
+```
+
+## tidyr核心函數
+
+### pivot_longer() - 寬轉長
+
+pivot_longer()用於將資料從寬格式轉換為長格式。
+
+```{r message=FALSE, warning=FALSE}
+# 建立範例資料
+sales_data <- data.frame(
+  月份 = c("1月", "2月", "3月"),
+  產品A = c(100, 120, 130),
+  產品B = c(80, 90, 95),
+  產品C = c(150, 160, 170)
+)
+print(sales_data)
+# 寬轉長
+sales_long <- pivot_longer(
+  sales_data,
+  cols = 產品A:產品C,
+  names_to = "產品",
+  values_to = "銷售額"
+)
+print(sales_long)
+
+```
+
+### pivot_wider() - 長轉寬
+
+pivot_wider()用於將資料從長格式轉換為寬格式。
+
+```{r message=FALSE, warning=FALSE}
+# 將長格式資料轉回寬格式
+sales_wide <- pivot_wider(
+  sales_long,
+  names_from = 產品,
+  values_from = 銷售額
+)
+print(sales_wide)
+
+```
+
+### separate() - 分割欄位
+
+separate()用於將一個欄位分割為多個欄位。
+
+```{r message=FALSE, warning=FALSE}
+# 建立範例資料
+name_data <- data.frame(
+  姓名 = c("張三_25_男", "李四_30_女", "王五_28_男")
+)
+
+# 分割欄位
+name_separated <- separate(
+  name_data,
+  col = 姓名,
+  into = c("姓名", "年齡", "性別"),
+  sep = "_"
+)
+print(name_separated)
+
+```
+
+### unite() - 合併欄位
+
+unite()用於將多個欄位合併為一個欄位。
+
+```{r message=FALSE, warning=FALSE}
+# 將分割的欄位重新合併
+name_united <- unite(
+  name_separated,
+  col = "個人資料",
+  姓名, 年齡, 性別,
+  sep = "-"
+)
+print(name_united)
+
+```
+
+### drop_na() - 刪除缺失值
+
+drop_na()用於刪除包含缺失值的列。
+
+```{r message=FALSE, warning=FALSE}
+# 建立包含缺失值的資料
+missing_data <- data.frame(
+  A = c(1, 2, NA, 4),
+  B = c(NA, 2, 3, 4),
+  C = c(1, 2, 3, 4)
+)
+
+# 刪除任何包含缺失值的列
+drop_na(missing_data)
+
+# 只刪除特定欄位的缺失值
+drop_na(missing_data, A)
+
+```
+
+### fill() - 填補缺失值
+
+fill()用於用前一個或後一個值填補缺失值。
+
+```{r message=FALSE, warning=FALSE}
+# 建立時間序列資料
+time_data <- data.frame(
+  時間 = 1:6,
+  數值 = c(10, NA, NA, 40, NA, 60)
+)
+
+# 向下填補
+fill(time_data, 數值, .direction = "down")
+
+# 向上填補
+fill(time_data, 數值, .direction = "up")
+
+```
+
+### replace_na() - 替換缺失值
+
+replace_na()用於特定值替換缺失值。
+
+```{r message=FALSE, warning=FALSE}
+# 建立包含缺失值的資料
+na_data <- data.frame(
+  X = c(1, NA, 3, NA, 5),
+  Y = c(NA, 2, NA, 4, NA)
+)
+
+# 替換缺失值
+replace_na(na_data, list(X = 0, Y = -999))
+
+# 使用平均值替換
+na_data %>%
+  mutate(
+    X = replace_na(X, mean(X, na.rm = TRUE)),
+    Y = replace_na(Y, mean(Y, na.rm = TRUE))
+  )
+```
+
+## 常用技巧與綜合應用
+
+### 管道操作符%\>%的使用
+
+```{r message=FALSE, warning=FALSE}
+# 管道操作讓程式碼更易讀
+result <- mtcars %>%
+  filter(cyl == 6) %>%
+  select(mpg, hp, wt) %>%
+  mutate(馬力重量比 = hp / wt) %>%
+  arrange(desc(馬力重量比))
+
+head(result)
+```
+
+### 處理因子變數
+
+```{r message=FALSE, warning=FALSE}
+# 在dplyr中處理因子變數
+mtcars %>%
+  mutate(
+    cyl_factor = factor(cyl, 
+                       levels = c(4, 6, 8),
+                       labels = c("四缸", "六缸", "八缸"))
+  ) %>%
+  count(cyl_factor)
+
+```
+
+### 資料清理流程
+
+```{r message=FALSE, warning=FALSE}
+# 使用mtcars資料集進行分析
+mtcars_analysis <- mtcars %>%
+  # 新增分類變數
+  mutate(
+    性能等級 = case_when(
+      hp > 150 ~ "高性能",
+      hp > 100 ~ "中等性能",
+      TRUE ~ "一般性能"
+    ),
+    油耗等級 = ifelse(mpg > 20, "省油", "耗油")
+  ) %>%
+  # 分組彙總
+  group_by(cyl, 性能等級, 油耗等級) %>%
+  summarise(
+    車輛數 = n(),
+    平均馬力 = mean(hp),
+    平均油耗 = mean(mpg),
+    .groups = 'drop'
+  ) %>%
+  # 長轉寬以便展示
+  pivot_wider(
+    names_from = 油耗等級,
+    values_from = 車輛數:平均油耗,
+    values_fill = 0
+  )
+
+print(mtcars_analysis)
+```
+
+## 延伸學習
+
+dplyr和tidyr套件提供了許多強大的函數，本章僅介紹了最常用核心函數。為了更深入學習和查閱所有可用函數，強烈推薦使用官方提供的速查表（Cheatsheets）。
+
+-   官方主頁: <https://rstudio.github.io/cheatsheets/>
+
+-   中文版速查表
+
+    -   dplyr速查表: <https://rstudio.github.io/cheatsheets/translations/chinese/data-transformation_zh_cn.pdf>
+
+    -   tidyr速查表: <https://rstudio.github.io/cheatsheets/translations/chinese/tidyr_zh_cn.pdf>
