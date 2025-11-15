@@ -340,12 +340,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>dplyr</code>和<code>tidyr</code>是R語言中最重要的資料處理套件，它們提供了一套直觀且一致的函數來處理資料框。這兩個套件都是<code>tidyverse</code>生態系統的核心成員，可單獨安裝，或安裝tidyverse即可。</p>
 <div id="安裝與載入" class="section level3 hasAnchor" number="11.1.1">
 <h3><span class="header-section-number">11.1.1</span> 11.1.1 安裝與載入<a href="dplyr及-tidyr運用.html#%E5%AE%89%E8%A3%9D%E8%88%87%E8%BC%89%E5%85%A5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb322-1"><a href="dplyr及-tidyr運用.html#cb322-1" tabindex="-1"></a><span class="co"># 安裝套件（如果尚未安裝）</span></span>
-<span id="cb322-2"><a href="dplyr及-tidyr運用.html#cb322-2" tabindex="-1"></a><span class="co"># install.packages(&quot;tidyverse&quot;)</span></span>
-<span id="cb322-3"><a href="dplyr及-tidyr運用.html#cb322-3" tabindex="-1"></a></span>
-<span id="cb322-4"><a href="dplyr及-tidyr運用.html#cb322-4" tabindex="-1"></a><span class="co"># 載入套件</span></span>
-<span id="cb322-5"><a href="dplyr及-tidyr運用.html#cb322-5" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb322-6"><a href="dplyr及-tidyr運用.html#cb322-6" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code></pre></div>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="dplyr及-tidyr運用.html#cb320-1" tabindex="-1"></a><span class="co"># 安裝套件（如果尚未安裝）</span></span>
+<span id="cb320-2"><a href="dplyr及-tidyr運用.html#cb320-2" tabindex="-1"></a><span class="co"># install.packages(&quot;tidyverse&quot;)</span></span>
+<span id="cb320-3"><a href="dplyr及-tidyr運用.html#cb320-3" tabindex="-1"></a></span>
+<span id="cb320-4"><a href="dplyr及-tidyr運用.html#cb320-4" tabindex="-1"></a><span class="co"># 載入套件</span></span>
+<span id="cb320-5"><a href="dplyr及-tidyr運用.html#cb320-5" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb320-6"><a href="dplyr及-tidyr運用.html#cb320-6" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code></pre></div>
 </div>
 </div>
 <div id="dplyr核心函數" class="section level2 hasAnchor" number="11.2">
@@ -353,11 +353,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="filter---資料篩選" class="section level3 hasAnchor" number="11.2.1">
 <h3><span class="header-section-number">11.2.1</span> filter() - 資料篩選<a href="dplyr及-tidyr運用.html#filter---%E8%B3%87%E6%96%99%E7%AF%A9%E9%81%B8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>filter()用於根據條件篩選資料列。</p>
-<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="dplyr及-tidyr運用.html#cb323-1" tabindex="-1"></a><span class="co"># 使用內建資料集</span></span>
-<span id="cb323-2"><a href="dplyr及-tidyr運用.html#cb323-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;mtcars&quot;</span>)</span>
-<span id="cb323-3"><a href="dplyr及-tidyr運用.html#cb323-3" tabindex="-1"></a></span>
-<span id="cb323-4"><a href="dplyr及-tidyr運用.html#cb323-4" tabindex="-1"></a><span class="co"># 基本篩選</span></span>
-<span id="cb323-5"><a href="dplyr及-tidyr運用.html#cb323-5" tabindex="-1"></a><span class="fu">filter</span>(mtcars, mpg <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb321"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb321-1"><a href="dplyr及-tidyr運用.html#cb321-1" tabindex="-1"></a><span class="co"># 使用內建資料集</span></span>
+<span id="cb321-2"><a href="dplyr及-tidyr運用.html#cb321-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;mtcars&quot;</span>)</span>
+<span id="cb321-3"><a href="dplyr及-tidyr運用.html#cb321-3" tabindex="-1"></a></span>
+<span id="cb321-4"><a href="dplyr及-tidyr運用.html#cb321-4" tabindex="-1"></a><span class="co"># 基本篩選</span></span>
+<span id="cb321-5"><a href="dplyr及-tidyr運用.html#cb321-5" tabindex="-1"></a><span class="fu">filter</span>(mtcars, mpg <span class="sc">&gt;</span> <span class="dv">20</span>)</span></code></pre></div>
 <pre><code>##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
@@ -373,8 +373,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
 ## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
 ## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="dplyr及-tidyr運用.html#cb325-1" tabindex="-1"></a><span class="co"># 多重條件篩選</span></span>
-<span id="cb325-2"><a href="dplyr及-tidyr運用.html#cb325-2" tabindex="-1"></a><span class="fu">filter</span>(mtcars, mpg <span class="sc">&gt;</span> <span class="dv">20</span>, cyl <span class="sc">==</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb323-1"><a href="dplyr及-tidyr運用.html#cb323-1" tabindex="-1"></a><span class="co"># 多重條件篩選</span></span>
+<span id="cb323-2"><a href="dplyr及-tidyr運用.html#cb323-2" tabindex="-1"></a><span class="fu">filter</span>(mtcars, mpg <span class="sc">&gt;</span> <span class="dv">20</span>, cyl <span class="sc">==</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Datsun 710     22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
 ## Merc 240D      24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
@@ -387,8 +387,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
 ## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
 ## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
-<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="dplyr及-tidyr運用.html#cb327-1" tabindex="-1"></a><span class="co"># 使用OR條件</span></span>
-<span id="cb327-2"><a href="dplyr及-tidyr運用.html#cb327-2" tabindex="-1"></a><span class="fu">filter</span>(mtcars, mpg <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">|</span> hp <span class="sc">&gt;</span> <span class="dv">150</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb325-1"><a href="dplyr及-tidyr運用.html#cb325-1" tabindex="-1"></a><span class="co"># 使用OR條件</span></span>
+<span id="cb325-2"><a href="dplyr及-tidyr運用.html#cb325-2" tabindex="-1"></a><span class="fu">filter</span>(mtcars, mpg <span class="sc">&gt;</span> <span class="dv">20</span> <span class="sc">|</span> hp <span class="sc">&gt;</span> <span class="dv">150</span>)</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
@@ -417,8 +417,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
 ## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
 ## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
-<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="dplyr及-tidyr運用.html#cb329-1" tabindex="-1"></a><span class="co"># 配合%in%運算子</span></span>
-<span id="cb329-2"><a href="dplyr及-tidyr運用.html#cb329-2" tabindex="-1"></a><span class="fu">filter</span>(mtcars, cyl <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb327-1"><a href="dplyr及-tidyr運用.html#cb327-1" tabindex="-1"></a><span class="co"># 配合%in%運算子</span></span>
+<span id="cb327-2"><a href="dplyr及-tidyr運用.html#cb327-2" tabindex="-1"></a><span class="fu">filter</span>(mtcars, cyl <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>))</span></code></pre></div>
 <pre><code>##                 mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4      21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag  21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
@@ -442,8 +442,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="select---選擇變數" class="section level3 hasAnchor" number="11.2.2">
 <h3><span class="header-section-number">11.2.2</span> select() - 選擇變數<a href="dplyr及-tidyr運用.html#select---%E9%81%B8%E6%93%87%E8%AE%8A%E6%95%B8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>select()用於選擇特定的資料欄。</p>
-<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="dplyr及-tidyr運用.html#cb331-1" tabindex="-1"></a><span class="co"># 選擇特定欄位</span></span>
-<span id="cb331-2"><a href="dplyr及-tidyr運用.html#cb331-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, mpg, cyl, hp)</span></code></pre></div>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb329-1"><a href="dplyr及-tidyr運用.html#cb329-1" tabindex="-1"></a><span class="co"># 選擇特定欄位</span></span>
+<span id="cb329-2"><a href="dplyr及-tidyr運用.html#cb329-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, mpg, cyl, hp)</span></code></pre></div>
 <pre><code>##                      mpg cyl  hp
 ## Mazda RX4           21.0   6 110
 ## Mazda RX4 Wag       21.0   6 110
@@ -477,8 +477,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ferrari Dino        19.7   6 175
 ## Maserati Bora       15.0   8 335
 ## Volvo 142E          21.4   4 109</code></pre>
-<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="dplyr及-tidyr運用.html#cb333-1" tabindex="-1"></a><span class="co"># 選擇欄位範圍</span></span>
-<span id="cb333-2"><a href="dplyr及-tidyr運用.html#cb333-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, mpg<span class="sc">:</span>drat)</span></code></pre></div>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb331-1"><a href="dplyr及-tidyr運用.html#cb331-1" tabindex="-1"></a><span class="co"># 選擇欄位範圍</span></span>
+<span id="cb331-2"><a href="dplyr及-tidyr運用.html#cb331-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, mpg<span class="sc">:</span>drat)</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat
 ## Mazda RX4           21.0   6 160.0 110 3.90
 ## Mazda RX4 Wag       21.0   6 160.0 110 3.90
@@ -512,8 +512,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ferrari Dino        19.7   6 145.0 175 3.62
 ## Maserati Bora       15.0   8 301.0 335 3.54
 ## Volvo 142E          21.4   4 121.0 109 4.11</code></pre>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="dplyr及-tidyr運用.html#cb335-1" tabindex="-1"></a><span class="co"># 排除特定欄位</span></span>
-<span id="cb335-2"><a href="dplyr及-tidyr運用.html#cb335-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="sc">-</span>carb, <span class="sc">-</span>gear)</span></code></pre></div>
+<div class="sourceCode" id="cb333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb333-1"><a href="dplyr及-tidyr運用.html#cb333-1" tabindex="-1"></a><span class="co"># 排除特定欄位</span></span>
+<span id="cb333-2"><a href="dplyr及-tidyr運用.html#cb333-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="sc">-</span>carb, <span class="sc">-</span>gear)</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am
 ## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1
 ## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1
@@ -547,8 +547,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1
 ## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1
 ## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1</code></pre>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="dplyr及-tidyr運用.html#cb337-1" tabindex="-1"></a><span class="co"># 輔助函數</span></span>
-<span id="cb337-2"><a href="dplyr及-tidyr運用.html#cb337-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="fu">starts_with</span>(<span class="st">&quot;c&quot;</span>))  <span class="co"># 開頭為c的欄位</span></span></code></pre></div>
+<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="dplyr及-tidyr運用.html#cb335-1" tabindex="-1"></a><span class="co"># 輔助函數</span></span>
+<span id="cb335-2"><a href="dplyr及-tidyr運用.html#cb335-2" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="fu">starts_with</span>(<span class="st">&quot;c&quot;</span>))  <span class="co"># 開頭為c的欄位</span></span></code></pre></div>
 <pre><code>##                     cyl carb
 ## Mazda RX4             6    4
 ## Mazda RX4 Wag         6    4
@@ -582,7 +582,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ferrari Dino          6    6
 ## Maserati Bora         8    8
 ## Volvo 142E            4    2</code></pre>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="dplyr及-tidyr運用.html#cb339-1" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="fu">ends_with</span>(<span class="st">&quot;p&quot;</span>))    <span class="co"># 結尾為p的欄位</span></span></code></pre></div>
+<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="dplyr及-tidyr運用.html#cb337-1" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="fu">ends_with</span>(<span class="st">&quot;p&quot;</span>))    <span class="co"># 結尾為p的欄位</span></span></code></pre></div>
 <pre><code>##                      disp  hp
 ## Mazda RX4           160.0 110
 ## Mazda RX4 Wag       160.0 110
@@ -616,7 +616,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Ferrari Dino        145.0 175
 ## Maserati Bora       301.0 335
 ## Volvo 142E          121.0 109</code></pre>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="dplyr及-tidyr運用.html#cb341-1" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="fu">contains</span>(<span class="st">&quot;a&quot;</span>))     <span class="co"># 包含a的欄位</span></span></code></pre></div>
+<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="dplyr及-tidyr運用.html#cb339-1" tabindex="-1"></a><span class="fu">select</span>(mtcars, <span class="fu">contains</span>(<span class="st">&quot;a&quot;</span>))     <span class="co"># 包含a的欄位</span></span></code></pre></div>
 <pre><code>##                     drat am gear carb
 ## Mazda RX4           3.90  1    4    4
 ## Mazda RX4 Wag       3.90  1    4    4
@@ -654,12 +654,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="mutate---新增變數" class="section level3 hasAnchor" number="11.2.3">
 <h3><span class="header-section-number">11.2.3</span> mutate() - 新增變數<a href="dplyr及-tidyr運用.html#mutate---%E6%96%B0%E5%A2%9E%E8%AE%8A%E6%95%B8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>mutate()用於建立新的資料欄。</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="dplyr及-tidyr運用.html#cb343-1" tabindex="-1"></a><span class="co"># 建立新變數</span></span>
-<span id="cb343-2"><a href="dplyr及-tidyr運用.html#cb343-2" tabindex="-1"></a>mtcars_new <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mtcars,</span>
-<span id="cb343-3"><a href="dplyr及-tidyr運用.html#cb343-3" tabindex="-1"></a>                     <span class="at">km_per_l =</span> mpg <span class="sc">*</span> <span class="fl">0.425</span>,  <span class="co"># 轉換為km/l</span></span>
-<span id="cb343-4"><a href="dplyr及-tidyr運用.html#cb343-4" tabindex="-1"></a>                     <span class="at">power_weight =</span> hp <span class="sc">/</span> wt   <span class="co"># 馬力重量比</span></span>
-<span id="cb343-5"><a href="dplyr及-tidyr運用.html#cb343-5" tabindex="-1"></a>                    )</span>
-<span id="cb343-6"><a href="dplyr及-tidyr運用.html#cb343-6" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">select</span>(mtcars_new, mpg, km_per_l, hp, wt, power_weight))</span></code></pre></div>
+<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="dplyr及-tidyr運用.html#cb341-1" tabindex="-1"></a><span class="co"># 建立新變數</span></span>
+<span id="cb341-2"><a href="dplyr及-tidyr運用.html#cb341-2" tabindex="-1"></a>mtcars_new <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mtcars,</span>
+<span id="cb341-3"><a href="dplyr及-tidyr運用.html#cb341-3" tabindex="-1"></a>                     <span class="at">km_per_l =</span> mpg <span class="sc">*</span> <span class="fl">0.425</span>,  <span class="co"># 轉換為km/l</span></span>
+<span id="cb341-4"><a href="dplyr及-tidyr運用.html#cb341-4" tabindex="-1"></a>                     <span class="at">power_weight =</span> hp <span class="sc">/</span> wt   <span class="co"># 馬力重量比</span></span>
+<span id="cb341-5"><a href="dplyr及-tidyr運用.html#cb341-5" tabindex="-1"></a>                    )</span>
+<span id="cb341-6"><a href="dplyr及-tidyr運用.html#cb341-6" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">select</span>(mtcars_new, mpg, km_per_l, hp, wt, power_weight))</span></code></pre></div>
 <pre><code>##                    mpg km_per_l  hp    wt power_weight
 ## Mazda RX4         21.0   8.9250 110 2.620     41.98473
 ## Mazda RX4 Wag     21.0   8.9250 110 2.875     38.26087
@@ -667,11 +667,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Hornet 4 Drive    21.4   9.0950 110 3.215     34.21462
 ## Hornet Sportabout 18.7   7.9475 175 3.440     50.87209
 ## Valiant           18.1   7.6925 105 3.460     30.34682</code></pre>
-<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="dplyr及-tidyr運用.html#cb345-1" tabindex="-1"></a><span class="co"># 使用ifelse建立分類變數</span></span>
-<span id="cb345-2"><a href="dplyr及-tidyr運用.html#cb345-2" tabindex="-1"></a>mtcars_class <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mtcars,</span>
-<span id="cb345-3"><a href="dplyr及-tidyr運用.html#cb345-3" tabindex="-1"></a>                       <span class="at">efficiency =</span> <span class="fu">ifelse</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="st">&quot;高效&quot;</span>, <span class="st">&quot;一般&quot;</span>)</span>
-<span id="cb345-4"><a href="dplyr及-tidyr運用.html#cb345-4" tabindex="-1"></a>                      )</span>
-<span id="cb345-5"><a href="dplyr及-tidyr運用.html#cb345-5" tabindex="-1"></a><span class="fu">table</span>(mtcars_class<span class="sc">$</span>efficiency)</span></code></pre></div>
+<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="dplyr及-tidyr運用.html#cb343-1" tabindex="-1"></a><span class="co"># 使用ifelse建立分類變數</span></span>
+<span id="cb343-2"><a href="dplyr及-tidyr運用.html#cb343-2" tabindex="-1"></a>mtcars_class <span class="ot">&lt;-</span> <span class="fu">mutate</span>(mtcars,</span>
+<span id="cb343-3"><a href="dplyr及-tidyr運用.html#cb343-3" tabindex="-1"></a>                       <span class="at">efficiency =</span> <span class="fu">ifelse</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="st">&quot;高效&quot;</span>, <span class="st">&quot;一般&quot;</span>)</span>
+<span id="cb343-4"><a href="dplyr及-tidyr運用.html#cb343-4" tabindex="-1"></a>                      )</span>
+<span id="cb343-5"><a href="dplyr及-tidyr運用.html#cb343-5" tabindex="-1"></a><span class="fu">table</span>(mtcars_class<span class="sc">$</span>efficiency)</span></code></pre></div>
 <pre><code>## 
 ## 一般 高效 
 ##   18   14</code></pre>
@@ -679,8 +679,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="arrange---資料排序" class="section level3 hasAnchor" number="11.2.4">
 <h3><span class="header-section-number">11.2.4</span> arrange() - 資料排序<a href="dplyr及-tidyr運用.html#arrange---%E8%B3%87%E6%96%99%E6%8E%92%E5%BA%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>arrange()用於對資料進行排序。</p>
-<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="dplyr及-tidyr運用.html#cb347-1" tabindex="-1"></a><span class="co"># 升冪排序</span></span>
-<span id="cb347-2"><a href="dplyr及-tidyr運用.html#cb347-2" tabindex="-1"></a><span class="fu">arrange</span>(mtcars, mpg)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="dplyr及-tidyr運用.html#cb345-1" tabindex="-1"></a><span class="co"># 升冪排序</span></span>
+<span id="cb345-2"><a href="dplyr及-tidyr運用.html#cb345-2" tabindex="-1"></a><span class="fu">arrange</span>(mtcars, mpg)</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
 ## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
@@ -714,8 +714,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
 ## Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
 ## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1</code></pre>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="dplyr及-tidyr運用.html#cb349-1" tabindex="-1"></a><span class="co"># 降冪排序</span></span>
-<span id="cb349-2"><a href="dplyr及-tidyr運用.html#cb349-2" tabindex="-1"></a><span class="fu">arrange</span>(mtcars, <span class="fu">desc</span>(mpg))</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="dplyr及-tidyr運用.html#cb347-1" tabindex="-1"></a><span class="co"># 降冪排序</span></span>
+<span id="cb347-2"><a href="dplyr及-tidyr運用.html#cb347-2" tabindex="-1"></a><span class="fu">arrange</span>(mtcars, <span class="fu">desc</span>(mpg))</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
 ## Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
@@ -749,8 +749,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
 ## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
 ## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4</code></pre>
-<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="dplyr及-tidyr運用.html#cb351-1" tabindex="-1"></a><span class="co"># 多重排序</span></span>
-<span id="cb351-2"><a href="dplyr及-tidyr運用.html#cb351-2" tabindex="-1"></a><span class="fu">arrange</span>(mtcars, cyl, <span class="fu">desc</span>(mpg))</span></code></pre></div>
+<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="dplyr及-tidyr運用.html#cb349-1" tabindex="-1"></a><span class="co"># 多重排序</span></span>
+<span id="cb349-2"><a href="dplyr及-tidyr運用.html#cb349-2" tabindex="-1"></a><span class="fu">arrange</span>(mtcars, cyl, <span class="fu">desc</span>(mpg))</span></code></pre></div>
 <pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
 ## Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
@@ -788,23 +788,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="summarise---資料彙總" class="section level3 hasAnchor" number="11.2.5">
 <h3><span class="header-section-number">11.2.5</span> summarise() - 資料彙總<a href="dplyr及-tidyr運用.html#summarise---%E8%B3%87%E6%96%99%E5%BD%99%E7%B8%BD" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>summarise()用於計算摘要統計量。</p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="dplyr及-tidyr運用.html#cb353-1" tabindex="-1"></a><span class="co"># 基本彙總</span></span>
-<span id="cb353-2"><a href="dplyr及-tidyr運用.html#cb353-2" tabindex="-1"></a><span class="fu">summarise</span>(mtcars,</span>
-<span id="cb353-3"><a href="dplyr及-tidyr運用.html#cb353-3" tabindex="-1"></a>          <span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb353-4"><a href="dplyr及-tidyr運用.html#cb353-4" tabindex="-1"></a>          <span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg),</span>
-<span id="cb353-5"><a href="dplyr及-tidyr運用.html#cb353-5" tabindex="-1"></a>          <span class="at">sd_mpg =</span> <span class="fu">sd</span>(mpg),</span>
-<span id="cb353-6"><a href="dplyr及-tidyr運用.html#cb353-6" tabindex="-1"></a>          <span class="at">max_hp =</span> <span class="fu">max</span>(hp)</span>
-<span id="cb353-7"><a href="dplyr及-tidyr運用.html#cb353-7" tabindex="-1"></a>         )</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="dplyr及-tidyr運用.html#cb351-1" tabindex="-1"></a><span class="co"># 基本彙總</span></span>
+<span id="cb351-2"><a href="dplyr及-tidyr運用.html#cb351-2" tabindex="-1"></a><span class="fu">summarise</span>(mtcars,</span>
+<span id="cb351-3"><a href="dplyr及-tidyr運用.html#cb351-3" tabindex="-1"></a>          <span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb351-4"><a href="dplyr及-tidyr運用.html#cb351-4" tabindex="-1"></a>          <span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb351-5"><a href="dplyr及-tidyr運用.html#cb351-5" tabindex="-1"></a>          <span class="at">sd_mpg =</span> <span class="fu">sd</span>(mpg),</span>
+<span id="cb351-6"><a href="dplyr及-tidyr運用.html#cb351-6" tabindex="-1"></a>          <span class="at">max_hp =</span> <span class="fu">max</span>(hp)</span>
+<span id="cb351-7"><a href="dplyr及-tidyr運用.html#cb351-7" tabindex="-1"></a>         )</span></code></pre></div>
 <pre><code>##   count  avg_mpg   sd_mpg max_hp
 ## 1    32 20.09062 6.026948    335</code></pre>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="dplyr及-tidyr運用.html#cb355-1" tabindex="-1"></a><span class="co"># 配合group_by進行分組彙總</span></span>
-<span id="cb355-2"><a href="dplyr及-tidyr運用.html#cb355-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb355-3"><a href="dplyr及-tidyr運用.html#cb355-3" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
-<span id="cb355-4"><a href="dplyr及-tidyr運用.html#cb355-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb355-5"><a href="dplyr及-tidyr運用.html#cb355-5" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb355-6"><a href="dplyr及-tidyr運用.html#cb355-6" tabindex="-1"></a>    <span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg),</span>
-<span id="cb355-7"><a href="dplyr及-tidyr運用.html#cb355-7" tabindex="-1"></a>    <span class="at">avg_hp =</span> <span class="fu">mean</span>(hp)</span>
-<span id="cb355-8"><a href="dplyr及-tidyr運用.html#cb355-8" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="dplyr及-tidyr運用.html#cb353-1" tabindex="-1"></a><span class="co"># 配合group_by進行分組彙總</span></span>
+<span id="cb353-2"><a href="dplyr及-tidyr運用.html#cb353-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb353-3"><a href="dplyr及-tidyr運用.html#cb353-3" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb353-4"><a href="dplyr及-tidyr運用.html#cb353-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb353-5"><a href="dplyr及-tidyr運用.html#cb353-5" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb353-6"><a href="dplyr及-tidyr運用.html#cb353-6" tabindex="-1"></a>    <span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb353-7"><a href="dplyr及-tidyr運用.html#cb353-7" tabindex="-1"></a>    <span class="at">avg_hp =</span> <span class="fu">mean</span>(hp)</span>
+<span id="cb353-8"><a href="dplyr及-tidyr運用.html#cb353-8" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 4
 ##     cyl count avg_mpg avg_hp
 ##   &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;
@@ -815,14 +815,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="group_by---分組操作" class="section level3 hasAnchor" number="11.2.6">
 <h3><span class="header-section-number">11.2.6</span> group_by() - 分組操作<a href="dplyr及-tidyr運用.html#group_by---%E5%88%86%E7%B5%84%E6%93%8D%E4%BD%9C" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>group_by()用於對資料進行分組。</p>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="dplyr及-tidyr運用.html#cb357-1" tabindex="-1"></a><span class="co"># 分組後進行多重操作</span></span>
-<span id="cb357-2"><a href="dplyr及-tidyr運用.html#cb357-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb357-3"><a href="dplyr及-tidyr運用.html#cb357-3" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl, gear) <span class="sc">%&gt;%</span></span>
-<span id="cb357-4"><a href="dplyr及-tidyr運用.html#cb357-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb357-5"><a href="dplyr及-tidyr運用.html#cb357-5" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
-<span id="cb357-6"><a href="dplyr及-tidyr運用.html#cb357-6" tabindex="-1"></a>    <span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg),</span>
-<span id="cb357-7"><a href="dplyr及-tidyr運用.html#cb357-7" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span></span>
-<span id="cb357-8"><a href="dplyr及-tidyr運用.html#cb357-8" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="dplyr及-tidyr運用.html#cb355-1" tabindex="-1"></a><span class="co"># 分組後進行多重操作</span></span>
+<span id="cb355-2"><a href="dplyr及-tidyr運用.html#cb355-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb355-3"><a href="dplyr及-tidyr運用.html#cb355-3" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl, gear) <span class="sc">%&gt;%</span></span>
+<span id="cb355-4"><a href="dplyr及-tidyr運用.html#cb355-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb355-5"><a href="dplyr及-tidyr運用.html#cb355-5" tabindex="-1"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb355-6"><a href="dplyr及-tidyr運用.html#cb355-6" tabindex="-1"></a>    <span class="at">avg_mpg =</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb355-7"><a href="dplyr及-tidyr運用.html#cb355-7" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span></span>
+<span id="cb355-8"><a href="dplyr及-tidyr運用.html#cb355-8" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 8 × 4
 ##     cyl  gear count avg_mpg
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;   &lt;dbl&gt;
@@ -834,11 +834,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 6     6     5     1    19.7
 ## 7     8     3    12    15.0
 ## 8     8     5     2    15.4</code></pre>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="dplyr及-tidyr運用.html#cb359-1" tabindex="-1"></a><span class="co"># 分組後篩選，ungroup()移除分組，資料框恢復為未分組狀態</span></span>
-<span id="cb359-2"><a href="dplyr及-tidyr運用.html#cb359-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb359-3"><a href="dplyr及-tidyr運用.html#cb359-3" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
-<span id="cb359-4"><a href="dplyr及-tidyr運用.html#cb359-4" tabindex="-1"></a>  <span class="fu">filter</span>(mpg <span class="sc">==</span> <span class="fu">max</span>(mpg)) <span class="sc">%&gt;%</span></span>
-<span id="cb359-5"><a href="dplyr及-tidyr運用.html#cb359-5" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="dplyr及-tidyr運用.html#cb357-1" tabindex="-1"></a><span class="co"># 分組後篩選，ungroup()移除分組，資料框恢復為未分組狀態</span></span>
+<span id="cb357-2"><a href="dplyr及-tidyr運用.html#cb357-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb357-3"><a href="dplyr及-tidyr運用.html#cb357-3" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb357-4"><a href="dplyr及-tidyr運用.html#cb357-4" tabindex="-1"></a>  <span class="fu">filter</span>(mpg <span class="sc">==</span> <span class="fu">max</span>(mpg)) <span class="sc">%&gt;%</span></span>
+<span id="cb357-5"><a href="dplyr及-tidyr運用.html#cb357-5" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 11
 ##     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -849,33 +849,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="slice---選擇特定列" class="section level3 hasAnchor" number="11.2.7">
 <h3><span class="header-section-number">11.2.7</span> slice() - 選擇特定列<a href="dplyr及-tidyr運用.html#slice---%E9%81%B8%E6%93%87%E7%89%B9%E5%AE%9A%E5%88%97" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>slice()用於選擇特定的資料列。</p>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="dplyr及-tidyr運用.html#cb361-1" tabindex="-1"></a><span class="co"># 選擇前幾列</span></span>
-<span id="cb361-2"><a href="dplyr及-tidyr運用.html#cb361-2" tabindex="-1"></a><span class="fu">slice</span>(mtcars, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="dplyr及-tidyr運用.html#cb359-1" tabindex="-1"></a><span class="co"># 選擇前幾列</span></span>
+<span id="cb359-2"><a href="dplyr及-tidyr運用.html#cb359-2" tabindex="-1"></a><span class="fu">slice</span>(mtcars, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
 ## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
 ## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
 ## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
 ## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
 ## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</code></pre>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="dplyr及-tidyr運用.html#cb363-1" tabindex="-1"></a><span class="co"># 選擇最後幾列</span></span>
-<span id="cb363-2"><a href="dplyr及-tidyr運用.html#cb363-2" tabindex="-1"></a><span class="fu">slice</span>(mtcars, (<span class="fu">n</span>()<span class="sc">-</span><span class="dv">4</span>)<span class="sc">:</span><span class="fu">n</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="dplyr及-tidyr運用.html#cb361-1" tabindex="-1"></a><span class="co"># 選擇最後幾列</span></span>
+<span id="cb361-2"><a href="dplyr及-tidyr運用.html#cb361-2" tabindex="-1"></a><span class="fu">slice</span>(mtcars, (<span class="fu">n</span>()<span class="sc">-</span><span class="dv">4</span>)<span class="sc">:</span><span class="fu">n</span>())</span></code></pre></div>
 <pre><code>##                 mpg cyl  disp  hp drat    wt qsec vs am gear carb
 ## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
 ## Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
 ## Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
 ## Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
 ## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2</code></pre>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="dplyr及-tidyr運用.html#cb365-1" tabindex="-1"></a><span class="co"># 隨機抽樣</span></span>
-<span id="cb365-2"><a href="dplyr及-tidyr運用.html#cb365-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb365-3"><a href="dplyr及-tidyr運用.html#cb365-3" tabindex="-1"></a><span class="fu">slice_sample</span>(mtcars, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="dplyr及-tidyr運用.html#cb363-1" tabindex="-1"></a><span class="co"># 隨機抽樣</span></span>
+<span id="cb363-2"><a href="dplyr及-tidyr運用.html#cb363-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb363-3"><a href="dplyr及-tidyr運用.html#cb363-3" tabindex="-1"></a><span class="fu">slice_sample</span>(mtcars, <span class="at">n =</span> <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
 ## Maserati Bora      15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
 ## Cadillac Fleetwood 10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
 ## Honda Civic        30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
 ## Merc 450SLC        15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
 ## Datsun 710         22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1</code></pre>
-<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="dplyr及-tidyr運用.html#cb367-1" tabindex="-1"></a><span class="co"># 按比例抽樣</span></span>
-<span id="cb367-2"><a href="dplyr及-tidyr運用.html#cb367-2" tabindex="-1"></a><span class="fu">slice_sample</span>(mtcars, <span class="at">prop =</span> <span class="fl">0.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="dplyr及-tidyr運用.html#cb365-1" tabindex="-1"></a><span class="co"># 按比例抽樣</span></span>
+<span id="cb365-2"><a href="dplyr及-tidyr運用.html#cb365-2" tabindex="-1"></a><span class="fu">slice_sample</span>(mtcars, <span class="at">prop =</span> <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>##                   mpg cyl  disp  hp drat   wt  qsec vs am gear carb
 ## Merc 280         19.2   6 167.6 123 3.92 3.44 18.30  1  0    4    4
 ## Fiat 128         32.4   4  78.7  66 4.08 2.20 19.47  1  1    4    1
@@ -887,26 +887,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="pivot_longer---寬轉長" class="section level3 hasAnchor" number="11.3.1">
 <h3><span class="header-section-number">11.3.1</span> pivot_longer() - 寬轉長<a href="dplyr及-tidyr運用.html#pivot_longer---%E5%AF%AC%E8%BD%89%E9%95%B7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>pivot_longer()用於將資料從寬格式轉換為長格式。</p>
-<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="dplyr及-tidyr運用.html#cb369-1" tabindex="-1"></a><span class="co"># 建立範例資料</span></span>
-<span id="cb369-2"><a href="dplyr及-tidyr運用.html#cb369-2" tabindex="-1"></a>sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb369-3"><a href="dplyr及-tidyr運用.html#cb369-3" tabindex="-1"></a>  月份 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;1月&quot;</span>, <span class="st">&quot;2月&quot;</span>, <span class="st">&quot;3月&quot;</span>),</span>
-<span id="cb369-4"><a href="dplyr及-tidyr運用.html#cb369-4" tabindex="-1"></a>  產品<span class="at">A =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">130</span>),</span>
-<span id="cb369-5"><a href="dplyr及-tidyr運用.html#cb369-5" tabindex="-1"></a>  產品<span class="at">B =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">95</span>),</span>
-<span id="cb369-6"><a href="dplyr及-tidyr運用.html#cb369-6" tabindex="-1"></a>  產品<span class="at">C =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">160</span>, <span class="dv">170</span>)</span>
-<span id="cb369-7"><a href="dplyr及-tidyr運用.html#cb369-7" tabindex="-1"></a>)</span>
-<span id="cb369-8"><a href="dplyr及-tidyr運用.html#cb369-8" tabindex="-1"></a><span class="fu">print</span>(sales_data)</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="dplyr及-tidyr運用.html#cb367-1" tabindex="-1"></a><span class="co"># 建立範例資料</span></span>
+<span id="cb367-2"><a href="dplyr及-tidyr運用.html#cb367-2" tabindex="-1"></a>sales_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb367-3"><a href="dplyr及-tidyr運用.html#cb367-3" tabindex="-1"></a>  月份 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;1月&quot;</span>, <span class="st">&quot;2月&quot;</span>, <span class="st">&quot;3月&quot;</span>),</span>
+<span id="cb367-4"><a href="dplyr及-tidyr運用.html#cb367-4" tabindex="-1"></a>  產品<span class="at">A =</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">120</span>, <span class="dv">130</span>),</span>
+<span id="cb367-5"><a href="dplyr及-tidyr運用.html#cb367-5" tabindex="-1"></a>  產品<span class="at">B =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">95</span>),</span>
+<span id="cb367-6"><a href="dplyr及-tidyr運用.html#cb367-6" tabindex="-1"></a>  產品<span class="at">C =</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">160</span>, <span class="dv">170</span>)</span>
+<span id="cb367-7"><a href="dplyr及-tidyr運用.html#cb367-7" tabindex="-1"></a>)</span>
+<span id="cb367-8"><a href="dplyr及-tidyr運用.html#cb367-8" tabindex="-1"></a><span class="fu">print</span>(sales_data)</span></code></pre></div>
 <pre><code>##   月份 產品A 產品B 產品C
 ## 1  1月   100    80   150
 ## 2  2月   120    90   160
 ## 3  3月   130    95   170</code></pre>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="dplyr及-tidyr運用.html#cb371-1" tabindex="-1"></a><span class="co"># 寬轉長</span></span>
-<span id="cb371-2"><a href="dplyr及-tidyr運用.html#cb371-2" tabindex="-1"></a>sales_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
-<span id="cb371-3"><a href="dplyr及-tidyr運用.html#cb371-3" tabindex="-1"></a>  sales_data,</span>
-<span id="cb371-4"><a href="dplyr及-tidyr運用.html#cb371-4" tabindex="-1"></a>  <span class="at">cols =</span> 產品A<span class="sc">:</span>產品C,</span>
-<span id="cb371-5"><a href="dplyr及-tidyr運用.html#cb371-5" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;產品&quot;</span>,</span>
-<span id="cb371-6"><a href="dplyr及-tidyr運用.html#cb371-6" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;銷售額&quot;</span></span>
-<span id="cb371-7"><a href="dplyr及-tidyr運用.html#cb371-7" tabindex="-1"></a>)</span>
-<span id="cb371-8"><a href="dplyr及-tidyr運用.html#cb371-8" tabindex="-1"></a><span class="fu">print</span>(sales_long)</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="dplyr及-tidyr運用.html#cb369-1" tabindex="-1"></a><span class="co"># 寬轉長</span></span>
+<span id="cb369-2"><a href="dplyr及-tidyr運用.html#cb369-2" tabindex="-1"></a>sales_long <span class="ot">&lt;-</span> <span class="fu">pivot_longer</span>(</span>
+<span id="cb369-3"><a href="dplyr及-tidyr運用.html#cb369-3" tabindex="-1"></a>  sales_data,</span>
+<span id="cb369-4"><a href="dplyr及-tidyr運用.html#cb369-4" tabindex="-1"></a>  <span class="at">cols =</span> 產品A<span class="sc">:</span>產品C,</span>
+<span id="cb369-5"><a href="dplyr及-tidyr運用.html#cb369-5" tabindex="-1"></a>  <span class="at">names_to =</span> <span class="st">&quot;產品&quot;</span>,</span>
+<span id="cb369-6"><a href="dplyr及-tidyr運用.html#cb369-6" tabindex="-1"></a>  <span class="at">values_to =</span> <span class="st">&quot;銷售額&quot;</span></span>
+<span id="cb369-7"><a href="dplyr及-tidyr運用.html#cb369-7" tabindex="-1"></a>)</span>
+<span id="cb369-8"><a href="dplyr及-tidyr運用.html#cb369-8" tabindex="-1"></a><span class="fu">print</span>(sales_long)</span></code></pre></div>
 <pre><code>## # A tibble: 9 × 3
 ##   月份  產品  銷售額
 ##   &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;
@@ -923,13 +923,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="pivot_wider---長轉寬" class="section level3 hasAnchor" number="11.3.2">
 <h3><span class="header-section-number">11.3.2</span> pivot_wider() - 長轉寬<a href="dplyr及-tidyr運用.html#pivot_wider---%E9%95%B7%E8%BD%89%E5%AF%AC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>pivot_wider()用於將資料從長格式轉換為寬格式。</p>
-<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="dplyr及-tidyr運用.html#cb373-1" tabindex="-1"></a><span class="co"># 將長格式資料轉回寬格式</span></span>
-<span id="cb373-2"><a href="dplyr及-tidyr運用.html#cb373-2" tabindex="-1"></a>sales_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
-<span id="cb373-3"><a href="dplyr及-tidyr運用.html#cb373-3" tabindex="-1"></a>  sales_long,</span>
-<span id="cb373-4"><a href="dplyr及-tidyr運用.html#cb373-4" tabindex="-1"></a>  <span class="at">names_from =</span> 產品,</span>
-<span id="cb373-5"><a href="dplyr及-tidyr運用.html#cb373-5" tabindex="-1"></a>  <span class="at">values_from =</span> 銷售額</span>
-<span id="cb373-6"><a href="dplyr及-tidyr運用.html#cb373-6" tabindex="-1"></a>)</span>
-<span id="cb373-7"><a href="dplyr及-tidyr運用.html#cb373-7" tabindex="-1"></a><span class="fu">print</span>(sales_wide)</span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="dplyr及-tidyr運用.html#cb371-1" tabindex="-1"></a><span class="co"># 將長格式資料轉回寬格式</span></span>
+<span id="cb371-2"><a href="dplyr及-tidyr運用.html#cb371-2" tabindex="-1"></a>sales_wide <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(</span>
+<span id="cb371-3"><a href="dplyr及-tidyr運用.html#cb371-3" tabindex="-1"></a>  sales_long,</span>
+<span id="cb371-4"><a href="dplyr及-tidyr運用.html#cb371-4" tabindex="-1"></a>  <span class="at">names_from =</span> 產品,</span>
+<span id="cb371-5"><a href="dplyr及-tidyr運用.html#cb371-5" tabindex="-1"></a>  <span class="at">values_from =</span> 銷售額</span>
+<span id="cb371-6"><a href="dplyr及-tidyr運用.html#cb371-6" tabindex="-1"></a>)</span>
+<span id="cb371-7"><a href="dplyr及-tidyr運用.html#cb371-7" tabindex="-1"></a><span class="fu">print</span>(sales_wide)</span></code></pre></div>
 <pre><code>## # A tibble: 3 × 4
 ##   月份  產品A 產品B 產品C
 ##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
@@ -940,19 +940,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="separate---分割欄位" class="section level3 hasAnchor" number="11.3.3">
 <h3><span class="header-section-number">11.3.3</span> separate() - 分割欄位<a href="dplyr及-tidyr運用.html#separate---%E5%88%86%E5%89%B2%E6%AC%84%E4%BD%8D" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>separate()用於將一個欄位分割為多個欄位。</p>
-<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="dplyr及-tidyr運用.html#cb375-1" tabindex="-1"></a><span class="co"># 建立範例資料</span></span>
-<span id="cb375-2"><a href="dplyr及-tidyr運用.html#cb375-2" tabindex="-1"></a>name_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb375-3"><a href="dplyr及-tidyr運用.html#cb375-3" tabindex="-1"></a>  姓名 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;張三_25_男&quot;</span>, <span class="st">&quot;李四_30_女&quot;</span>, <span class="st">&quot;王五_28_男&quot;</span>)</span>
-<span id="cb375-4"><a href="dplyr及-tidyr運用.html#cb375-4" tabindex="-1"></a>)</span>
-<span id="cb375-5"><a href="dplyr及-tidyr運用.html#cb375-5" tabindex="-1"></a></span>
-<span id="cb375-6"><a href="dplyr及-tidyr運用.html#cb375-6" tabindex="-1"></a><span class="co"># 分割欄位</span></span>
-<span id="cb375-7"><a href="dplyr及-tidyr運用.html#cb375-7" tabindex="-1"></a>name_separated <span class="ot">&lt;-</span> <span class="fu">separate</span>(</span>
-<span id="cb375-8"><a href="dplyr及-tidyr運用.html#cb375-8" tabindex="-1"></a>  name_data,</span>
-<span id="cb375-9"><a href="dplyr及-tidyr運用.html#cb375-9" tabindex="-1"></a>  <span class="at">col =</span> 姓名,</span>
-<span id="cb375-10"><a href="dplyr及-tidyr運用.html#cb375-10" tabindex="-1"></a>  <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;姓名&quot;</span>, <span class="st">&quot;年齡&quot;</span>, <span class="st">&quot;性別&quot;</span>),</span>
-<span id="cb375-11"><a href="dplyr及-tidyr運用.html#cb375-11" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;_&quot;</span></span>
-<span id="cb375-12"><a href="dplyr及-tidyr運用.html#cb375-12" tabindex="-1"></a>)</span>
-<span id="cb375-13"><a href="dplyr及-tidyr運用.html#cb375-13" tabindex="-1"></a><span class="fu">print</span>(name_separated)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="dplyr及-tidyr運用.html#cb373-1" tabindex="-1"></a><span class="co"># 建立範例資料</span></span>
+<span id="cb373-2"><a href="dplyr及-tidyr運用.html#cb373-2" tabindex="-1"></a>name_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb373-3"><a href="dplyr及-tidyr運用.html#cb373-3" tabindex="-1"></a>  姓名 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;張三_25_男&quot;</span>, <span class="st">&quot;李四_30_女&quot;</span>, <span class="st">&quot;王五_28_男&quot;</span>)</span>
+<span id="cb373-4"><a href="dplyr及-tidyr運用.html#cb373-4" tabindex="-1"></a>)</span>
+<span id="cb373-5"><a href="dplyr及-tidyr運用.html#cb373-5" tabindex="-1"></a></span>
+<span id="cb373-6"><a href="dplyr及-tidyr運用.html#cb373-6" tabindex="-1"></a><span class="co"># 分割欄位</span></span>
+<span id="cb373-7"><a href="dplyr及-tidyr運用.html#cb373-7" tabindex="-1"></a>name_separated <span class="ot">&lt;-</span> <span class="fu">separate</span>(</span>
+<span id="cb373-8"><a href="dplyr及-tidyr運用.html#cb373-8" tabindex="-1"></a>  name_data,</span>
+<span id="cb373-9"><a href="dplyr及-tidyr運用.html#cb373-9" tabindex="-1"></a>  <span class="at">col =</span> 姓名,</span>
+<span id="cb373-10"><a href="dplyr及-tidyr運用.html#cb373-10" tabindex="-1"></a>  <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;姓名&quot;</span>, <span class="st">&quot;年齡&quot;</span>, <span class="st">&quot;性別&quot;</span>),</span>
+<span id="cb373-11"><a href="dplyr及-tidyr運用.html#cb373-11" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;_&quot;</span></span>
+<span id="cb373-12"><a href="dplyr及-tidyr運用.html#cb373-12" tabindex="-1"></a>)</span>
+<span id="cb373-13"><a href="dplyr及-tidyr運用.html#cb373-13" tabindex="-1"></a><span class="fu">print</span>(name_separated)</span></code></pre></div>
 <pre><code>##   姓名 年齡 性別
 ## 1 張三   25   男
 ## 2 李四   30   女
@@ -961,14 +961,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="unite---合併欄位" class="section level3 hasAnchor" number="11.3.4">
 <h3><span class="header-section-number">11.3.4</span> unite() - 合併欄位<a href="dplyr及-tidyr運用.html#unite---%E5%90%88%E4%BD%B5%E6%AC%84%E4%BD%8D" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>unite()用於將多個欄位合併為一個欄位。</p>
-<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="dplyr及-tidyr運用.html#cb377-1" tabindex="-1"></a><span class="co"># 將分割的欄位重新合併</span></span>
-<span id="cb377-2"><a href="dplyr及-tidyr運用.html#cb377-2" tabindex="-1"></a>name_united <span class="ot">&lt;-</span> <span class="fu">unite</span>(</span>
-<span id="cb377-3"><a href="dplyr及-tidyr運用.html#cb377-3" tabindex="-1"></a>  name_separated,</span>
-<span id="cb377-4"><a href="dplyr及-tidyr運用.html#cb377-4" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;個人資料&quot;</span>,</span>
-<span id="cb377-5"><a href="dplyr及-tidyr運用.html#cb377-5" tabindex="-1"></a>  姓名, 年齡, 性別,</span>
-<span id="cb377-6"><a href="dplyr及-tidyr運用.html#cb377-6" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;-&quot;</span></span>
-<span id="cb377-7"><a href="dplyr及-tidyr運用.html#cb377-7" tabindex="-1"></a>)</span>
-<span id="cb377-8"><a href="dplyr及-tidyr運用.html#cb377-8" tabindex="-1"></a><span class="fu">print</span>(name_united)</span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="dplyr及-tidyr運用.html#cb375-1" tabindex="-1"></a><span class="co"># 將分割的欄位重新合併</span></span>
+<span id="cb375-2"><a href="dplyr及-tidyr運用.html#cb375-2" tabindex="-1"></a>name_united <span class="ot">&lt;-</span> <span class="fu">unite</span>(</span>
+<span id="cb375-3"><a href="dplyr及-tidyr運用.html#cb375-3" tabindex="-1"></a>  name_separated,</span>
+<span id="cb375-4"><a href="dplyr及-tidyr運用.html#cb375-4" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;個人資料&quot;</span>,</span>
+<span id="cb375-5"><a href="dplyr及-tidyr運用.html#cb375-5" tabindex="-1"></a>  姓名, 年齡, 性別,</span>
+<span id="cb375-6"><a href="dplyr及-tidyr運用.html#cb375-6" tabindex="-1"></a>  <span class="at">sep =</span> <span class="st">&quot;-&quot;</span></span>
+<span id="cb375-7"><a href="dplyr及-tidyr運用.html#cb375-7" tabindex="-1"></a>)</span>
+<span id="cb375-8"><a href="dplyr及-tidyr運用.html#cb375-8" tabindex="-1"></a><span class="fu">print</span>(name_united)</span></code></pre></div>
 <pre><code>##     個人資料
 ## 1 張三-25-男
 ## 2 李四-30-女
@@ -977,20 +977,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="drop_na---刪除缺失值" class="section level3 hasAnchor" number="11.3.5">
 <h3><span class="header-section-number">11.3.5</span> drop_na() - 刪除缺失值<a href="dplyr及-tidyr運用.html#drop_na---%E5%88%AA%E9%99%A4%E7%BC%BA%E5%A4%B1%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>drop_na()用於刪除包含缺失值的列。</p>
-<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="dplyr及-tidyr運用.html#cb379-1" tabindex="-1"></a><span class="co"># 建立包含缺失值的資料</span></span>
-<span id="cb379-2"><a href="dplyr及-tidyr運用.html#cb379-2" tabindex="-1"></a>missing_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb379-3"><a href="dplyr及-tidyr運用.html#cb379-3" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>),</span>
-<span id="cb379-4"><a href="dplyr及-tidyr運用.html#cb379-4" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
-<span id="cb379-5"><a href="dplyr及-tidyr運用.html#cb379-5" tabindex="-1"></a>  <span class="at">C =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb379-6"><a href="dplyr及-tidyr運用.html#cb379-6" tabindex="-1"></a>)</span>
-<span id="cb379-7"><a href="dplyr及-tidyr運用.html#cb379-7" tabindex="-1"></a></span>
-<span id="cb379-8"><a href="dplyr及-tidyr運用.html#cb379-8" tabindex="-1"></a><span class="co"># 刪除任何包含缺失值的列</span></span>
-<span id="cb379-9"><a href="dplyr及-tidyr運用.html#cb379-9" tabindex="-1"></a><span class="fu">drop_na</span>(missing_data)</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="dplyr及-tidyr運用.html#cb377-1" tabindex="-1"></a><span class="co"># 建立包含缺失值的資料</span></span>
+<span id="cb377-2"><a href="dplyr及-tidyr運用.html#cb377-2" tabindex="-1"></a>missing_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb377-3"><a href="dplyr及-tidyr運用.html#cb377-3" tabindex="-1"></a>  <span class="at">A =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>),</span>
+<span id="cb377-4"><a href="dplyr及-tidyr運用.html#cb377-4" tabindex="-1"></a>  <span class="at">B =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb377-5"><a href="dplyr及-tidyr運用.html#cb377-5" tabindex="-1"></a>  <span class="at">C =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb377-6"><a href="dplyr及-tidyr運用.html#cb377-6" tabindex="-1"></a>)</span>
+<span id="cb377-7"><a href="dplyr及-tidyr運用.html#cb377-7" tabindex="-1"></a></span>
+<span id="cb377-8"><a href="dplyr及-tidyr運用.html#cb377-8" tabindex="-1"></a><span class="co"># 刪除任何包含缺失值的列</span></span>
+<span id="cb377-9"><a href="dplyr及-tidyr運用.html#cb377-9" tabindex="-1"></a><span class="fu">drop_na</span>(missing_data)</span></code></pre></div>
 <pre><code>##   A B C
 ## 1 2 2 2
 ## 2 4 4 4</code></pre>
-<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="dplyr及-tidyr運用.html#cb381-1" tabindex="-1"></a><span class="co"># 只刪除特定欄位的缺失值</span></span>
-<span id="cb381-2"><a href="dplyr及-tidyr運用.html#cb381-2" tabindex="-1"></a><span class="fu">drop_na</span>(missing_data, A)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="dplyr及-tidyr運用.html#cb379-1" tabindex="-1"></a><span class="co"># 只刪除特定欄位的缺失值</span></span>
+<span id="cb379-2"><a href="dplyr及-tidyr運用.html#cb379-2" tabindex="-1"></a><span class="fu">drop_na</span>(missing_data, A)</span></code></pre></div>
 <pre><code>##   A  B C
 ## 1 1 NA 1
 ## 2 2  2 2
@@ -999,14 +999,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="fill---填補缺失值" class="section level3 hasAnchor" number="11.3.6">
 <h3><span class="header-section-number">11.3.6</span> fill() - 填補缺失值<a href="dplyr及-tidyr運用.html#fill---%E5%A1%AB%E8%A3%9C%E7%BC%BA%E5%A4%B1%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>fill()用於用前一個或後一個值填補缺失值。</p>
-<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="dplyr及-tidyr運用.html#cb383-1" tabindex="-1"></a><span class="co"># 建立時間序列資料</span></span>
-<span id="cb383-2"><a href="dplyr及-tidyr運用.html#cb383-2" tabindex="-1"></a>time_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb383-3"><a href="dplyr及-tidyr運用.html#cb383-3" tabindex="-1"></a>  時間 <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
-<span id="cb383-4"><a href="dplyr及-tidyr運用.html#cb383-4" tabindex="-1"></a>  數值 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">40</span>, <span class="cn">NA</span>, <span class="dv">60</span>)</span>
-<span id="cb383-5"><a href="dplyr及-tidyr運用.html#cb383-5" tabindex="-1"></a>)</span>
-<span id="cb383-6"><a href="dplyr及-tidyr運用.html#cb383-6" tabindex="-1"></a></span>
-<span id="cb383-7"><a href="dplyr及-tidyr運用.html#cb383-7" tabindex="-1"></a><span class="co"># 向下填補</span></span>
-<span id="cb383-8"><a href="dplyr及-tidyr運用.html#cb383-8" tabindex="-1"></a><span class="fu">fill</span>(time_data, 數值, <span class="at">.direction =</span> <span class="st">&quot;down&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="dplyr及-tidyr運用.html#cb381-1" tabindex="-1"></a><span class="co"># 建立時間序列資料</span></span>
+<span id="cb381-2"><a href="dplyr及-tidyr運用.html#cb381-2" tabindex="-1"></a>time_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb381-3"><a href="dplyr及-tidyr運用.html#cb381-3" tabindex="-1"></a>  時間 <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb381-4"><a href="dplyr及-tidyr運用.html#cb381-4" tabindex="-1"></a>  數值 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">40</span>, <span class="cn">NA</span>, <span class="dv">60</span>)</span>
+<span id="cb381-5"><a href="dplyr及-tidyr運用.html#cb381-5" tabindex="-1"></a>)</span>
+<span id="cb381-6"><a href="dplyr及-tidyr運用.html#cb381-6" tabindex="-1"></a></span>
+<span id="cb381-7"><a href="dplyr及-tidyr運用.html#cb381-7" tabindex="-1"></a><span class="co"># 向下填補</span></span>
+<span id="cb381-8"><a href="dplyr及-tidyr運用.html#cb381-8" tabindex="-1"></a><span class="fu">fill</span>(time_data, 數值, <span class="at">.direction =</span> <span class="st">&quot;down&quot;</span>)</span></code></pre></div>
 <pre><code>##   時間 數值
 ## 1    1   10
 ## 2    2   10
@@ -1014,8 +1014,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4    4   40
 ## 5    5   40
 ## 6    6   60</code></pre>
-<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="dplyr及-tidyr運用.html#cb385-1" tabindex="-1"></a><span class="co"># 向上填補</span></span>
-<span id="cb385-2"><a href="dplyr及-tidyr運用.html#cb385-2" tabindex="-1"></a><span class="fu">fill</span>(time_data, 數值, <span class="at">.direction =</span> <span class="st">&quot;up&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="dplyr及-tidyr運用.html#cb383-1" tabindex="-1"></a><span class="co"># 向上填補</span></span>
+<span id="cb383-2"><a href="dplyr及-tidyr運用.html#cb383-2" tabindex="-1"></a><span class="fu">fill</span>(time_data, 數值, <span class="at">.direction =</span> <span class="st">&quot;up&quot;</span>)</span></code></pre></div>
 <pre><code>##   時間 數值
 ## 1    1   10
 ## 2    2   40
@@ -1027,26 +1027,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="replace_na---替換缺失值" class="section level3 hasAnchor" number="11.3.7">
 <h3><span class="header-section-number">11.3.7</span> replace_na() - 替換缺失值<a href="dplyr及-tidyr運用.html#replace_na---%E6%9B%BF%E6%8F%9B%E7%BC%BA%E5%A4%B1%E5%80%BC" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>replace_na()用於特定值替換缺失值。</p>
-<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="dplyr及-tidyr運用.html#cb387-1" tabindex="-1"></a><span class="co"># 建立包含缺失值的資料</span></span>
-<span id="cb387-2"><a href="dplyr及-tidyr運用.html#cb387-2" tabindex="-1"></a>na_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb387-3"><a href="dplyr及-tidyr運用.html#cb387-3" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>),</span>
-<span id="cb387-4"><a href="dplyr及-tidyr運用.html#cb387-4" tabindex="-1"></a>  <span class="at">Y =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="cn">NA</span>)</span>
-<span id="cb387-5"><a href="dplyr及-tidyr運用.html#cb387-5" tabindex="-1"></a>)</span>
-<span id="cb387-6"><a href="dplyr及-tidyr運用.html#cb387-6" tabindex="-1"></a></span>
-<span id="cb387-7"><a href="dplyr及-tidyr運用.html#cb387-7" tabindex="-1"></a><span class="co"># 替換缺失值</span></span>
-<span id="cb387-8"><a href="dplyr及-tidyr運用.html#cb387-8" tabindex="-1"></a><span class="fu">replace_na</span>(na_data, <span class="fu">list</span>(<span class="at">X =</span> <span class="dv">0</span>, <span class="at">Y =</span> <span class="sc">-</span><span class="dv">999</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb385"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb385-1"><a href="dplyr及-tidyr運用.html#cb385-1" tabindex="-1"></a><span class="co"># 建立包含缺失值的資料</span></span>
+<span id="cb385-2"><a href="dplyr及-tidyr運用.html#cb385-2" tabindex="-1"></a>na_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb385-3"><a href="dplyr及-tidyr運用.html#cb385-3" tabindex="-1"></a>  <span class="at">X =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NA</span>, <span class="dv">3</span>, <span class="cn">NA</span>, <span class="dv">5</span>),</span>
+<span id="cb385-4"><a href="dplyr及-tidyr運用.html#cb385-4" tabindex="-1"></a>  <span class="at">Y =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="dv">2</span>, <span class="cn">NA</span>, <span class="dv">4</span>, <span class="cn">NA</span>)</span>
+<span id="cb385-5"><a href="dplyr及-tidyr運用.html#cb385-5" tabindex="-1"></a>)</span>
+<span id="cb385-6"><a href="dplyr及-tidyr運用.html#cb385-6" tabindex="-1"></a></span>
+<span id="cb385-7"><a href="dplyr及-tidyr運用.html#cb385-7" tabindex="-1"></a><span class="co"># 替換缺失值</span></span>
+<span id="cb385-8"><a href="dplyr及-tidyr運用.html#cb385-8" tabindex="-1"></a><span class="fu">replace_na</span>(na_data, <span class="fu">list</span>(<span class="at">X =</span> <span class="dv">0</span>, <span class="at">Y =</span> <span class="sc">-</span><span class="dv">999</span>))</span></code></pre></div>
 <pre><code>##   X    Y
 ## 1 1 -999
 ## 2 0    2
 ## 3 3 -999
 ## 4 0    4
 ## 5 5 -999</code></pre>
-<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="dplyr及-tidyr運用.html#cb389-1" tabindex="-1"></a><span class="co"># 使用平均值替換</span></span>
-<span id="cb389-2"><a href="dplyr及-tidyr運用.html#cb389-2" tabindex="-1"></a>na_data <span class="sc">%&gt;%</span></span>
-<span id="cb389-3"><a href="dplyr及-tidyr運用.html#cb389-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb389-4"><a href="dplyr及-tidyr運用.html#cb389-4" tabindex="-1"></a>    <span class="at">X =</span> <span class="fu">replace_na</span>(X, <span class="fu">mean</span>(X, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
-<span id="cb389-5"><a href="dplyr及-tidyr運用.html#cb389-5" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">replace_na</span>(Y, <span class="fu">mean</span>(Y, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb389-6"><a href="dplyr及-tidyr運用.html#cb389-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb387"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb387-1"><a href="dplyr及-tidyr運用.html#cb387-1" tabindex="-1"></a><span class="co"># 使用平均值替換</span></span>
+<span id="cb387-2"><a href="dplyr及-tidyr運用.html#cb387-2" tabindex="-1"></a>na_data <span class="sc">%&gt;%</span></span>
+<span id="cb387-3"><a href="dplyr及-tidyr運用.html#cb387-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb387-4"><a href="dplyr及-tidyr運用.html#cb387-4" tabindex="-1"></a>    <span class="at">X =</span> <span class="fu">replace_na</span>(X, <span class="fu">mean</span>(X, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb387-5"><a href="dplyr及-tidyr運用.html#cb387-5" tabindex="-1"></a>    <span class="at">Y =</span> <span class="fu">replace_na</span>(Y, <span class="fu">mean</span>(Y, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb387-6"><a href="dplyr及-tidyr運用.html#cb387-6" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>##   X Y
 ## 1 1 3
 ## 2 3 2
@@ -1059,14 +1059,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">11.4</span> 常用技巧與綜合應用<a href="dplyr及-tidyr運用.html#%E5%B8%B8%E7%94%A8%E6%8A%80%E5%B7%A7%E8%88%87%E7%B6%9C%E5%90%88%E6%87%89%E7%94%A8" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="管道操作符的使用" class="section level3 hasAnchor" number="11.4.1">
 <h3><span class="header-section-number">11.4.1</span> 管道操作符%&gt;%的使用<a href="dplyr及-tidyr運用.html#%E7%AE%A1%E9%81%93%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E4%BD%BF%E7%94%A8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="dplyr及-tidyr運用.html#cb391-1" tabindex="-1"></a><span class="co"># 管道操作讓程式碼更易讀</span></span>
-<span id="cb391-2"><a href="dplyr及-tidyr運用.html#cb391-2" tabindex="-1"></a>result <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb391-3"><a href="dplyr及-tidyr運用.html#cb391-3" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb391-4"><a href="dplyr及-tidyr運用.html#cb391-4" tabindex="-1"></a>  <span class="fu">select</span>(mpg, hp, wt) <span class="sc">%&gt;%</span></span>
-<span id="cb391-5"><a href="dplyr及-tidyr運用.html#cb391-5" tabindex="-1"></a>  <span class="fu">mutate</span>(馬力重量比 <span class="ot">=</span> hp <span class="sc">/</span> wt) <span class="sc">%&gt;%</span></span>
-<span id="cb391-6"><a href="dplyr及-tidyr運用.html#cb391-6" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(馬力重量比))</span>
-<span id="cb391-7"><a href="dplyr及-tidyr運用.html#cb391-7" tabindex="-1"></a></span>
-<span id="cb391-8"><a href="dplyr及-tidyr運用.html#cb391-8" tabindex="-1"></a><span class="fu">head</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb389"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb389-1"><a href="dplyr及-tidyr運用.html#cb389-1" tabindex="-1"></a><span class="co"># 管道操作讓程式碼更易讀</span></span>
+<span id="cb389-2"><a href="dplyr及-tidyr運用.html#cb389-2" tabindex="-1"></a>result <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb389-3"><a href="dplyr及-tidyr運用.html#cb389-3" tabindex="-1"></a>  <span class="fu">filter</span>(cyl <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb389-4"><a href="dplyr及-tidyr運用.html#cb389-4" tabindex="-1"></a>  <span class="fu">select</span>(mpg, hp, wt) <span class="sc">%&gt;%</span></span>
+<span id="cb389-5"><a href="dplyr及-tidyr運用.html#cb389-5" tabindex="-1"></a>  <span class="fu">mutate</span>(馬力重量比 <span class="ot">=</span> hp <span class="sc">/</span> wt) <span class="sc">%&gt;%</span></span>
+<span id="cb389-6"><a href="dplyr及-tidyr運用.html#cb389-6" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(馬力重量比))</span>
+<span id="cb389-7"><a href="dplyr及-tidyr運用.html#cb389-7" tabindex="-1"></a></span>
+<span id="cb389-8"><a href="dplyr及-tidyr運用.html#cb389-8" tabindex="-1"></a><span class="fu">head</span>(result)</span></code></pre></div>
 <pre><code>##                 mpg  hp    wt 馬力重量比
 ## Ferrari Dino   19.7 175 2.770   63.17690
 ## Mazda RX4      21.0 110 2.620   41.98473
@@ -1077,14 +1077,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="處理因子變數" class="section level3 hasAnchor" number="11.4.2">
 <h3><span class="header-section-number">11.4.2</span> 處理因子變數<a href="dplyr及-tidyr運用.html#%E8%99%95%E7%90%86%E5%9B%A0%E5%AD%90%E8%AE%8A%E6%95%B8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="dplyr及-tidyr運用.html#cb393-1" tabindex="-1"></a><span class="co"># 在dplyr中處理因子變數</span></span>
-<span id="cb393-2"><a href="dplyr及-tidyr運用.html#cb393-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb393-3"><a href="dplyr及-tidyr運用.html#cb393-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb393-4"><a href="dplyr及-tidyr運用.html#cb393-4" tabindex="-1"></a>    <span class="at">cyl_factor =</span> <span class="fu">factor</span>(cyl, </span>
-<span id="cb393-5"><a href="dplyr及-tidyr運用.html#cb393-5" tabindex="-1"></a>                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>),</span>
-<span id="cb393-6"><a href="dplyr及-tidyr運用.html#cb393-6" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;四缸&quot;</span>, <span class="st">&quot;六缸&quot;</span>, <span class="st">&quot;八缸&quot;</span>))</span>
-<span id="cb393-7"><a href="dplyr及-tidyr運用.html#cb393-7" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb393-8"><a href="dplyr及-tidyr運用.html#cb393-8" tabindex="-1"></a>  <span class="fu">count</span>(cyl_factor)</span></code></pre></div>
+<div class="sourceCode" id="cb391"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb391-1"><a href="dplyr及-tidyr運用.html#cb391-1" tabindex="-1"></a><span class="co"># 在dplyr中處理因子變數</span></span>
+<span id="cb391-2"><a href="dplyr及-tidyr運用.html#cb391-2" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb391-3"><a href="dplyr及-tidyr運用.html#cb391-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb391-4"><a href="dplyr及-tidyr運用.html#cb391-4" tabindex="-1"></a>    <span class="at">cyl_factor =</span> <span class="fu">factor</span>(cyl, </span>
+<span id="cb391-5"><a href="dplyr及-tidyr運用.html#cb391-5" tabindex="-1"></a>                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>),</span>
+<span id="cb391-6"><a href="dplyr及-tidyr運用.html#cb391-6" tabindex="-1"></a>                       <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;四缸&quot;</span>, <span class="st">&quot;六缸&quot;</span>, <span class="st">&quot;八缸&quot;</span>))</span>
+<span id="cb391-7"><a href="dplyr及-tidyr運用.html#cb391-7" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb391-8"><a href="dplyr及-tidyr運用.html#cb391-8" tabindex="-1"></a>  <span class="fu">count</span>(cyl_factor)</span></code></pre></div>
 <pre><code>##   cyl_factor  n
 ## 1       四缸 11
 ## 2       六缸  7
@@ -1092,33 +1092,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="資料清理流程" class="section level3 hasAnchor" number="11.4.3">
 <h3><span class="header-section-number">11.4.3</span> 資料清理流程<a href="dplyr及-tidyr運用.html#%E8%B3%87%E6%96%99%E6%B8%85%E7%90%86%E6%B5%81%E7%A8%8B" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb395"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb395-1"><a href="dplyr及-tidyr運用.html#cb395-1" tabindex="-1"></a><span class="co"># 使用mtcars資料集進行分析</span></span>
-<span id="cb395-2"><a href="dplyr及-tidyr運用.html#cb395-2" tabindex="-1"></a>mtcars_analysis <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
-<span id="cb395-3"><a href="dplyr及-tidyr運用.html#cb395-3" tabindex="-1"></a>  <span class="co"># 新增分類變數</span></span>
-<span id="cb395-4"><a href="dplyr及-tidyr運用.html#cb395-4" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb395-5"><a href="dplyr及-tidyr運用.html#cb395-5" tabindex="-1"></a>    性能等級 <span class="ot">=</span> <span class="fu">case_when</span>(</span>
-<span id="cb395-6"><a href="dplyr及-tidyr運用.html#cb395-6" tabindex="-1"></a>      hp <span class="sc">&gt;</span> <span class="dv">150</span> <span class="sc">~</span> <span class="st">&quot;高性能&quot;</span>,</span>
-<span id="cb395-7"><a href="dplyr及-tidyr運用.html#cb395-7" tabindex="-1"></a>      hp <span class="sc">&gt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">&quot;中等性能&quot;</span>,</span>
-<span id="cb395-8"><a href="dplyr及-tidyr運用.html#cb395-8" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;一般性能&quot;</span></span>
-<span id="cb395-9"><a href="dplyr及-tidyr運用.html#cb395-9" tabindex="-1"></a>    ),</span>
-<span id="cb395-10"><a href="dplyr及-tidyr運用.html#cb395-10" tabindex="-1"></a>    油耗等級 <span class="ot">=</span> <span class="fu">ifelse</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="st">&quot;省油&quot;</span>, <span class="st">&quot;耗油&quot;</span>)</span>
-<span id="cb395-11"><a href="dplyr及-tidyr運用.html#cb395-11" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb395-12"><a href="dplyr及-tidyr運用.html#cb395-12" tabindex="-1"></a>  <span class="co"># 分組彙總</span></span>
-<span id="cb395-13"><a href="dplyr及-tidyr運用.html#cb395-13" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl, 性能等級, 油耗等級) <span class="sc">%&gt;%</span></span>
-<span id="cb395-14"><a href="dplyr及-tidyr運用.html#cb395-14" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb395-15"><a href="dplyr及-tidyr運用.html#cb395-15" tabindex="-1"></a>    車輛數 <span class="ot">=</span> <span class="fu">n</span>(),</span>
-<span id="cb395-16"><a href="dplyr及-tidyr運用.html#cb395-16" tabindex="-1"></a>    平均馬力 <span class="ot">=</span> <span class="fu">mean</span>(hp),</span>
-<span id="cb395-17"><a href="dplyr及-tidyr運用.html#cb395-17" tabindex="-1"></a>    平均油耗 <span class="ot">=</span> <span class="fu">mean</span>(mpg),</span>
-<span id="cb395-18"><a href="dplyr及-tidyr運用.html#cb395-18" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span></span>
-<span id="cb395-19"><a href="dplyr及-tidyr運用.html#cb395-19" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb395-20"><a href="dplyr及-tidyr運用.html#cb395-20" tabindex="-1"></a>  <span class="co"># 長轉寬以便展示</span></span>
-<span id="cb395-21"><a href="dplyr及-tidyr運用.html#cb395-21" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
-<span id="cb395-22"><a href="dplyr及-tidyr運用.html#cb395-22" tabindex="-1"></a>    <span class="at">names_from =</span> 油耗等級,</span>
-<span id="cb395-23"><a href="dplyr及-tidyr運用.html#cb395-23" tabindex="-1"></a>    <span class="at">values_from =</span> 車輛數<span class="sc">:</span>平均油耗,</span>
-<span id="cb395-24"><a href="dplyr及-tidyr運用.html#cb395-24" tabindex="-1"></a>    <span class="at">values_fill =</span> <span class="dv">0</span></span>
-<span id="cb395-25"><a href="dplyr及-tidyr運用.html#cb395-25" tabindex="-1"></a>  )</span>
-<span id="cb395-26"><a href="dplyr及-tidyr運用.html#cb395-26" tabindex="-1"></a></span>
-<span id="cb395-27"><a href="dplyr及-tidyr運用.html#cb395-27" tabindex="-1"></a><span class="fu">print</span>(mtcars_analysis)</span></code></pre></div>
+<div class="sourceCode" id="cb393"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb393-1"><a href="dplyr及-tidyr運用.html#cb393-1" tabindex="-1"></a><span class="co"># 使用mtcars資料集進行分析</span></span>
+<span id="cb393-2"><a href="dplyr及-tidyr運用.html#cb393-2" tabindex="-1"></a>mtcars_analysis <span class="ot">&lt;-</span> mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb393-3"><a href="dplyr及-tidyr運用.html#cb393-3" tabindex="-1"></a>  <span class="co"># 新增分類變數</span></span>
+<span id="cb393-4"><a href="dplyr及-tidyr運用.html#cb393-4" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb393-5"><a href="dplyr及-tidyr運用.html#cb393-5" tabindex="-1"></a>    性能等級 <span class="ot">=</span> <span class="fu">case_when</span>(</span>
+<span id="cb393-6"><a href="dplyr及-tidyr運用.html#cb393-6" tabindex="-1"></a>      hp <span class="sc">&gt;</span> <span class="dv">150</span> <span class="sc">~</span> <span class="st">&quot;高性能&quot;</span>,</span>
+<span id="cb393-7"><a href="dplyr及-tidyr運用.html#cb393-7" tabindex="-1"></a>      hp <span class="sc">&gt;</span> <span class="dv">100</span> <span class="sc">~</span> <span class="st">&quot;中等性能&quot;</span>,</span>
+<span id="cb393-8"><a href="dplyr及-tidyr運用.html#cb393-8" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">&quot;一般性能&quot;</span></span>
+<span id="cb393-9"><a href="dplyr及-tidyr運用.html#cb393-9" tabindex="-1"></a>    ),</span>
+<span id="cb393-10"><a href="dplyr及-tidyr運用.html#cb393-10" tabindex="-1"></a>    油耗等級 <span class="ot">=</span> <span class="fu">ifelse</span>(mpg <span class="sc">&gt;</span> <span class="dv">20</span>, <span class="st">&quot;省油&quot;</span>, <span class="st">&quot;耗油&quot;</span>)</span>
+<span id="cb393-11"><a href="dplyr及-tidyr運用.html#cb393-11" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb393-12"><a href="dplyr及-tidyr運用.html#cb393-12" tabindex="-1"></a>  <span class="co"># 分組彙總</span></span>
+<span id="cb393-13"><a href="dplyr及-tidyr運用.html#cb393-13" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl, 性能等級, 油耗等級) <span class="sc">%&gt;%</span></span>
+<span id="cb393-14"><a href="dplyr及-tidyr運用.html#cb393-14" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb393-15"><a href="dplyr及-tidyr運用.html#cb393-15" tabindex="-1"></a>    車輛數 <span class="ot">=</span> <span class="fu">n</span>(),</span>
+<span id="cb393-16"><a href="dplyr及-tidyr運用.html#cb393-16" tabindex="-1"></a>    平均馬力 <span class="ot">=</span> <span class="fu">mean</span>(hp),</span>
+<span id="cb393-17"><a href="dplyr及-tidyr運用.html#cb393-17" tabindex="-1"></a>    平均油耗 <span class="ot">=</span> <span class="fu">mean</span>(mpg),</span>
+<span id="cb393-18"><a href="dplyr及-tidyr運用.html#cb393-18" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&#39;drop&#39;</span></span>
+<span id="cb393-19"><a href="dplyr及-tidyr運用.html#cb393-19" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb393-20"><a href="dplyr及-tidyr運用.html#cb393-20" tabindex="-1"></a>  <span class="co"># 長轉寬以便展示</span></span>
+<span id="cb393-21"><a href="dplyr及-tidyr運用.html#cb393-21" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb393-22"><a href="dplyr及-tidyr運用.html#cb393-22" tabindex="-1"></a>    <span class="at">names_from =</span> 油耗等級,</span>
+<span id="cb393-23"><a href="dplyr及-tidyr運用.html#cb393-23" tabindex="-1"></a>    <span class="at">values_from =</span> 車輛數<span class="sc">:</span>平均油耗,</span>
+<span id="cb393-24"><a href="dplyr及-tidyr運用.html#cb393-24" tabindex="-1"></a>    <span class="at">values_fill =</span> <span class="dv">0</span></span>
+<span id="cb393-25"><a href="dplyr及-tidyr運用.html#cb393-25" tabindex="-1"></a>  )</span>
+<span id="cb393-26"><a href="dplyr及-tidyr運用.html#cb393-26" tabindex="-1"></a></span>
+<span id="cb393-27"><a href="dplyr及-tidyr運用.html#cb393-27" tabindex="-1"></a><span class="fu">print</span>(mtcars_analysis)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 8
 ##     cyl 性能等級 車輛數_省油 車輛數_耗油 平均馬力_省油 平均馬力_耗油
 ##   &lt;dbl&gt; &lt;chr&gt;          &lt;int&gt;       &lt;int&gt;         &lt;dbl&gt;         &lt;dbl&gt;

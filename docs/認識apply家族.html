@@ -396,13 +396,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="apply用法" class="section level2 hasAnchor" number="10.2">
 <h2><span class="header-section-number">10.2</span> apply用法<a href="認識apply家族.html#apply%E7%94%A8%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>1.apply函數，輸入Matrix資料結構，輸出numeric向量</p>
-<div class="sourceCode" id="cb302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb302-1"><a href="認識apply家族.html#cb302-1" tabindex="-1"></a>  <span class="co"># 輸入Matrix資料結構，輸出numeric向量</span></span>
-<span id="cb302-2"><a href="認識apply家族.html#cb302-2" tabindex="-1"></a>  DT <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">6</span>, <span class="dv">8</span>), <span class="at">ncol=</span><span class="dv">3</span>)</span>
-<span id="cb302-3"><a href="認識apply家族.html#cb302-3" tabindex="-1"></a>  <span class="fu">colnames</span>(DT) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;獅子&quot;</span>,<span class="st">&quot;斑馬&quot;</span>,<span class="st">&quot;熊貓&quot;</span>)</span>
-<span id="cb302-4"><a href="認識apply家族.html#cb302-4" tabindex="-1"></a>  <span class="fu">rownames</span>(DT) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Day 1&quot;</span>, <span class="st">&quot;Day 2&quot;</span>, <span class="st">&quot;Day 3&quot;</span>)</span>
-<span id="cb302-5"><a href="認識apply家族.html#cb302-5" tabindex="-1"></a>  <span class="fu">print</span>(DT)</span>
-<span id="cb302-6"><a href="認識apply家族.html#cb302-6" tabindex="-1"></a>  Vec <span class="ot">&lt;-</span>  <span class="fu">apply</span>(DT, <span class="dv">2</span>, max)</span>
-<span id="cb302-7"><a href="認識apply家族.html#cb302-7" tabindex="-1"></a>  <span class="fu">class</span>(Vec)</span></code></pre></div>
+<div class="sourceCode" id="cb300"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb300-1"><a href="認識apply家族.html#cb300-1" tabindex="-1"></a>  <span class="co"># 輸入Matrix資料結構，輸出numeric向量</span></span>
+<span id="cb300-2"><a href="認識apply家族.html#cb300-2" tabindex="-1"></a>  DT <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">6</span>, <span class="dv">8</span>), <span class="at">ncol=</span><span class="dv">3</span>)</span>
+<span id="cb300-3"><a href="認識apply家族.html#cb300-3" tabindex="-1"></a>  <span class="fu">colnames</span>(DT) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;獅子&quot;</span>,<span class="st">&quot;斑馬&quot;</span>,<span class="st">&quot;熊貓&quot;</span>)</span>
+<span id="cb300-4"><a href="認識apply家族.html#cb300-4" tabindex="-1"></a>  <span class="fu">rownames</span>(DT) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Day 1&quot;</span>, <span class="st">&quot;Day 2&quot;</span>, <span class="st">&quot;Day 3&quot;</span>)</span>
+<span id="cb300-5"><a href="認識apply家族.html#cb300-5" tabindex="-1"></a>  <span class="fu">print</span>(DT)</span>
+<span id="cb300-6"><a href="認識apply家族.html#cb300-6" tabindex="-1"></a>  Vec <span class="ot">&lt;-</span>  <span class="fu">apply</span>(DT, <span class="dv">2</span>, max)</span>
+<span id="cb300-7"><a href="認識apply家族.html#cb300-7" tabindex="-1"></a>  <span class="fu">class</span>(Vec)</span></code></pre></div>
 <p>apply函數輸出如下</p>
 <pre><code>##       獅子 斑馬 熊貓
 ## Day 1    8    5   10
@@ -412,11 +412,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##    9    7   10</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <p>2.apply函數，輸入data.frame資料結構，輸出numeric向量</p>
-<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb306-1"><a href="認識apply家族.html#cb306-1" tabindex="-1"></a>  <span class="co"># 輸入data.frame資料結構，輸出numeric向量</span></span>
-<span id="cb306-2"><a href="認識apply家族.html#cb306-2" tabindex="-1"></a>  DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;獅子&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">2</span>),<span class="st">&quot;斑馬&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">2</span>),<span class="st">&quot;熊貓&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">6</span>,<span class="dv">8</span>))</span>
-<span id="cb306-3"><a href="認識apply家族.html#cb306-3" tabindex="-1"></a>  <span class="fu">print</span>(DT)</span>
-<span id="cb306-4"><a href="認識apply家族.html#cb306-4" tabindex="-1"></a>  (Vec <span class="ot">&lt;-</span>  <span class="fu">apply</span>(DT, <span class="dv">2</span>, max))</span>
-<span id="cb306-5"><a href="認識apply家族.html#cb306-5" tabindex="-1"></a>  <span class="fu">class</span>(Vec)</span></code></pre></div>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb304-1"><a href="認識apply家族.html#cb304-1" tabindex="-1"></a>  <span class="co"># 輸入data.frame資料結構，輸出numeric向量</span></span>
+<span id="cb304-2"><a href="認識apply家族.html#cb304-2" tabindex="-1"></a>  DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;獅子&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">2</span>),<span class="st">&quot;斑馬&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">2</span>),<span class="st">&quot;熊貓&quot;</span><span class="ot">=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">6</span>,<span class="dv">8</span>))</span>
+<span id="cb304-3"><a href="認識apply家族.html#cb304-3" tabindex="-1"></a>  <span class="fu">print</span>(DT)</span>
+<span id="cb304-4"><a href="認識apply家族.html#cb304-4" tabindex="-1"></a>  (Vec <span class="ot">&lt;-</span>  <span class="fu">apply</span>(DT, <span class="dv">2</span>, max))</span>
+<span id="cb304-5"><a href="認識apply家族.html#cb304-5" tabindex="-1"></a>  <span class="fu">class</span>(Vec)</span></code></pre></div>
 <p>apply函數輸出如下</p>
 <pre><code>##   獅子 斑馬 熊貓
 ## 1    8    5   10
@@ -434,10 +434,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>sapply()則嘗試簡化輸出結果，盡可能將其化簡為向量或矩陣。</p></li>
 </ul>
 <p>1.lapply處理向量，輸出list</p>
-<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="認識apply家族.html#cb310-1" tabindex="-1"></a><span class="co"># 使用 lapply 計算每個元素的平方</span></span>
-<span id="cb310-2"><a href="認識apply家族.html#cb310-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>  <span class="co"># 定義一個數組向量</span></span>
-<span id="cb310-3"><a href="認識apply家族.html#cb310-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">lapply</span>(x, <span class="cf">function</span>(num) num<span class="sc">^</span><span class="dv">2</span>) <span class="co"># 使用 lapply 計算每個元素的平方</span></span>
-<span id="cb310-4"><a href="認識apply家族.html#cb310-4" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="認識apply家族.html#cb308-1" tabindex="-1"></a><span class="co"># 使用 lapply 計算每個元素的平方</span></span>
+<span id="cb308-2"><a href="認識apply家族.html#cb308-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>  <span class="co"># 定義一個數組向量</span></span>
+<span id="cb308-3"><a href="認識apply家族.html#cb308-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">lapply</span>(x, <span class="cf">function</span>(num) num<span class="sc">^</span><span class="dv">2</span>) <span class="co"># 使用 lapply 計算每個元素的平方</span></span>
+<span id="cb308-4"><a href="認識apply家族.html#cb308-4" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 1
 ## 
@@ -453,10 +453,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [[5]]
 ## [1] 25</code></pre>
 <p>2.lapply處理list，輸出list</p>
-<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="認識apply家族.html#cb312-1" tabindex="-1"></a><span class="co"># 使用 lapply 計算每欄的總和</span></span>
-<span id="cb312-2"><a href="認識apply家族.html#cb312-2" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">c =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>)</span>
-<span id="cb312-3"><a href="認識apply家族.html#cb312-3" tabindex="-1"></a>result_lapply <span class="ot">&lt;-</span> <span class="fu">lapply</span>(my_list, sum)</span>
-<span id="cb312-4"><a href="認識apply家族.html#cb312-4" tabindex="-1"></a><span class="fu">print</span>(result_lapply)</span></code></pre></div>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb310-1"><a href="認識apply家族.html#cb310-1" tabindex="-1"></a><span class="co"># 使用 lapply 計算每欄的總和</span></span>
+<span id="cb310-2"><a href="認識apply家族.html#cb310-2" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">c =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb310-3"><a href="認識apply家族.html#cb310-3" tabindex="-1"></a>result_lapply <span class="ot">&lt;-</span> <span class="fu">lapply</span>(my_list, sum)</span>
+<span id="cb310-4"><a href="認識apply家族.html#cb310-4" tabindex="-1"></a><span class="fu">print</span>(result_lapply)</span></code></pre></div>
 <pre><code>## $a
 ## [1] 15
 ## 
@@ -468,16 +468,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol start="3" style="list-style-type: decimal">
 <li>sapply處理向量，輸出向量</li>
 </ol>
-<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="認識apply家族.html#cb314-1" tabindex="-1"></a><span class="co"># 使用 sapply 計算每個元素的平方</span></span>
-<span id="cb314-2"><a href="認識apply家族.html#cb314-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>  <span class="co"># 定義一個數組向量</span></span>
-<span id="cb314-3"><a href="認識apply家族.html#cb314-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x, <span class="cf">function</span>(num) num<span class="sc">^</span><span class="dv">2</span>) <span class="co"># 使用 sapply 計算每個元素的平方</span></span>
-<span id="cb314-4"><a href="認識apply家族.html#cb314-4" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb312-1"><a href="認識apply家族.html#cb312-1" tabindex="-1"></a><span class="co"># 使用 sapply 計算每個元素的平方</span></span>
+<span id="cb312-2"><a href="認識apply家族.html#cb312-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>  <span class="co"># 定義一個數組向量</span></span>
+<span id="cb312-3"><a href="認識apply家族.html#cb312-3" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sapply</span>(x, <span class="cf">function</span>(num) num<span class="sc">^</span><span class="dv">2</span>) <span class="co"># 使用 sapply 計算每個元素的平方</span></span>
+<span id="cb312-4"><a href="認識apply家族.html#cb312-4" tabindex="-1"></a><span class="fu">print</span>(result)</span></code></pre></div>
 <pre><code>## [1]  1  4  9 16 25</code></pre>
 <p>4.sapply處理list，輸出向量</p>
-<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="認識apply家族.html#cb316-1" tabindex="-1"></a><span class="co"># 使用 sapply 計算每欄的總和</span></span>
-<span id="cb316-2"><a href="認識apply家族.html#cb316-2" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">c =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>)</span>
-<span id="cb316-3"><a href="認識apply家族.html#cb316-3" tabindex="-1"></a>result_lapply <span class="ot">&lt;-</span> <span class="fu">sapply</span>(my_list, sum)</span>
-<span id="cb316-4"><a href="認識apply家族.html#cb316-4" tabindex="-1"></a><span class="fu">print</span>(result_lapply)</span></code></pre></div>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb314-1"><a href="認識apply家族.html#cb314-1" tabindex="-1"></a><span class="co"># 使用 sapply 計算每欄的總和</span></span>
+<span id="cb314-2"><a href="認識apply家族.html#cb314-2" tabindex="-1"></a>my_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">b =</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">c =</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span>)</span>
+<span id="cb314-3"><a href="認識apply家族.html#cb314-3" tabindex="-1"></a>result_lapply <span class="ot">&lt;-</span> <span class="fu">sapply</span>(my_list, sum)</span>
+<span id="cb314-4"><a href="認識apply家族.html#cb314-4" tabindex="-1"></a><span class="fu">print</span>(result_lapply)</span></code></pre></div>
 <pre><code>##  a  b  c 
 ## 15 40 65</code></pre>
 </div>
@@ -494,35 +494,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>USE.NAMES: 是否使用輸入的名稱作為輸出名稱。</p></li>
 </ul>
 <p><strong>範例1: 計算兩個向量的總和</strong></p>
-<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="認識apply家族.html#cb318-1" tabindex="-1"></a>vector1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
-<span id="cb318-2"><a href="認識apply家族.html#cb318-2" tabindex="-1"></a>vector2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb318-3"><a href="認識apply家族.html#cb318-3" tabindex="-1"></a></span>
-<span id="cb318-4"><a href="認識apply家族.html#cb318-4" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="fu">mapply</span>(sum, vector1, vector2)</span>
-<span id="cb318-5"><a href="認識apply家族.html#cb318-5" tabindex="-1"></a><span class="fu">print</span>(total)</span></code></pre></div>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb316-1"><a href="認識apply家族.html#cb316-1" tabindex="-1"></a>vector1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>)</span>
+<span id="cb316-2"><a href="認識apply家族.html#cb316-2" tabindex="-1"></a>vector2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb316-3"><a href="認識apply家族.html#cb316-3" tabindex="-1"></a></span>
+<span id="cb316-4"><a href="認識apply家族.html#cb316-4" tabindex="-1"></a>total <span class="ot">&lt;-</span> <span class="fu">mapply</span>(sum, vector1, vector2)</span>
+<span id="cb316-5"><a href="認識apply家族.html#cb316-5" tabindex="-1"></a><span class="fu">print</span>(total)</span></code></pre></div>
 <pre><code>## [1] 11 22 33</code></pre>
 <p><strong>範例2: 用身高、性別和年齡來計算尖峰呼氣流速理想值 (PEFR)</strong></p>
 <p><img src="https://i.postimg.cc/6pqX5xhZ/S-31039529-0.png" width="565" /></p>
-<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb320-1"><a href="認識apply家族.html#cb320-1" tabindex="-1"></a><span class="co"># 設定隨機種子以便重現</span></span>
-<span id="cb320-2"><a href="認識apply家族.html#cb320-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb320-3"><a href="認識apply家族.html#cb320-3" tabindex="-1"></a><span class="co"># 步驟1: 創建資料集 DT</span></span>
-<span id="cb320-4"><a href="認識apply家族.html#cb320-4" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Gender =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="co"># 性別變數 (0: 女性, 1: 男性), </span></span>
-<span id="cb320-5"><a href="認識apply家族.html#cb320-5" tabindex="-1"></a>                 <span class="at">Height =</span> <span class="fu">sample</span>(<span class="dv">150</span><span class="sc">:</span><span class="dv">190</span>, <span class="at">size =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="co"># 身高變數 (cm), </span></span>
-<span id="cb320-6"><a href="認識apply家族.html#cb320-6" tabindex="-1"></a>                 <span class="at">Age =</span> <span class="fu">sample</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">50</span>, <span class="at">size =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)) <span class="co"># 年齡變數 (20-50歲)) </span></span>
-<span id="cb320-7"><a href="認識apply家族.html#cb320-7" tabindex="-1"></a></span>
-<span id="cb320-8"><a href="認識apply家族.html#cb320-8" tabindex="-1"></a><span class="co"># 步驟2: 定義 PEFR 函數</span></span>
-<span id="cb320-9"><a href="認識apply家族.html#cb320-9" tabindex="-1"></a>PEFR <span class="ot">&lt;-</span> <span class="cf">function</span>(gender, height, age) {</span>
-<span id="cb320-10"><a href="認識apply家族.html#cb320-10" tabindex="-1"></a>  <span class="cf">if</span> (gender <span class="sc">==</span> <span class="dv">1</span>) { <span class="co"># 男性</span></span>
-<span id="cb320-11"><a href="認識apply家族.html#cb320-11" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fl">3.89</span> <span class="sc">*</span> height <span class="sc">-</span> <span class="fl">2.95</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fl">43.59</span>)</span>
-<span id="cb320-12"><a href="認識apply家族.html#cb320-12" tabindex="-1"></a>  } <span class="cf">else</span> { <span class="co"># 女性</span></span>
-<span id="cb320-13"><a href="認識apply家族.html#cb320-13" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fl">4.10</span> <span class="sc">*</span> height <span class="sc">-</span> <span class="fl">1.61</span> <span class="sc">*</span> age <span class="sc">-</span> <span class="fl">173.55</span>)</span>
-<span id="cb320-14"><a href="認識apply家族.html#cb320-14" tabindex="-1"></a>  }</span>
-<span id="cb320-15"><a href="認識apply家族.html#cb320-15" tabindex="-1"></a>}</span>
-<span id="cb320-16"><a href="認識apply家族.html#cb320-16" tabindex="-1"></a></span>
-<span id="cb320-17"><a href="認識apply家族.html#cb320-17" tabindex="-1"></a><span class="co"># 步驟3: 使用 mapply 計算 PEFR 預測值並新增到 DT</span></span>
-<span id="cb320-18"><a href="認識apply家族.html#cb320-18" tabindex="-1"></a>DT<span class="sc">$</span>PEFR_Predicted <span class="ot">&lt;-</span> <span class="fu">mapply</span>(PEFR, DT<span class="sc">$</span>Gender, DT<span class="sc">$</span>Height, DT<span class="sc">$</span>Age)</span>
-<span id="cb320-19"><a href="認識apply家族.html#cb320-19" tabindex="-1"></a></span>
-<span id="cb320-20"><a href="認識apply家族.html#cb320-20" tabindex="-1"></a><span class="co"># 顯示更新後的資料集</span></span>
-<span id="cb320-21"><a href="認識apply家族.html#cb320-21" tabindex="-1"></a><span class="fu">head</span>(DT)</span></code></pre></div>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb318-1"><a href="認識apply家族.html#cb318-1" tabindex="-1"></a><span class="co"># 設定隨機種子以便重現</span></span>
+<span id="cb318-2"><a href="認識apply家族.html#cb318-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb318-3"><a href="認識apply家族.html#cb318-3" tabindex="-1"></a><span class="co"># 步驟1: 創建資料集 DT</span></span>
+<span id="cb318-4"><a href="認識apply家族.html#cb318-4" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Gender =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="co"># 性別變數 (0: 女性, 1: 男性), </span></span>
+<span id="cb318-5"><a href="認識apply家族.html#cb318-5" tabindex="-1"></a>                 <span class="at">Height =</span> <span class="fu">sample</span>(<span class="dv">150</span><span class="sc">:</span><span class="dv">190</span>, <span class="at">size =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="co"># 身高變數 (cm), </span></span>
+<span id="cb318-6"><a href="認識apply家族.html#cb318-6" tabindex="-1"></a>                 <span class="at">Age =</span> <span class="fu">sample</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">50</span>, <span class="at">size =</span> <span class="dv">30</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)) <span class="co"># 年齡變數 (20-50歲)) </span></span>
+<span id="cb318-7"><a href="認識apply家族.html#cb318-7" tabindex="-1"></a></span>
+<span id="cb318-8"><a href="認識apply家族.html#cb318-8" tabindex="-1"></a><span class="co"># 步驟2: 定義 PEFR 函數</span></span>
+<span id="cb318-9"><a href="認識apply家族.html#cb318-9" tabindex="-1"></a>PEFR <span class="ot">&lt;-</span> <span class="cf">function</span>(gender, height, age) {</span>
+<span id="cb318-10"><a href="認識apply家族.html#cb318-10" tabindex="-1"></a>  <span class="cf">if</span> (gender <span class="sc">==</span> <span class="dv">1</span>) { <span class="co"># 男性</span></span>
+<span id="cb318-11"><a href="認識apply家族.html#cb318-11" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fl">3.89</span> <span class="sc">*</span> height <span class="sc">-</span> <span class="fl">2.95</span> <span class="sc">*</span> age <span class="sc">+</span> <span class="fl">43.59</span>)</span>
+<span id="cb318-12"><a href="認識apply家族.html#cb318-12" tabindex="-1"></a>  } <span class="cf">else</span> { <span class="co"># 女性</span></span>
+<span id="cb318-13"><a href="認識apply家族.html#cb318-13" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fl">4.10</span> <span class="sc">*</span> height <span class="sc">-</span> <span class="fl">1.61</span> <span class="sc">*</span> age <span class="sc">-</span> <span class="fl">173.55</span>)</span>
+<span id="cb318-14"><a href="認識apply家族.html#cb318-14" tabindex="-1"></a>  }</span>
+<span id="cb318-15"><a href="認識apply家族.html#cb318-15" tabindex="-1"></a>}</span>
+<span id="cb318-16"><a href="認識apply家族.html#cb318-16" tabindex="-1"></a></span>
+<span id="cb318-17"><a href="認識apply家族.html#cb318-17" tabindex="-1"></a><span class="co"># 步驟3: 使用 mapply 計算 PEFR 預測值並新增到 DT</span></span>
+<span id="cb318-18"><a href="認識apply家族.html#cb318-18" tabindex="-1"></a>DT<span class="sc">$</span>PEFR_Predicted <span class="ot">&lt;-</span> <span class="fu">mapply</span>(PEFR, DT<span class="sc">$</span>Gender, DT<span class="sc">$</span>Height, DT<span class="sc">$</span>Age)</span>
+<span id="cb318-19"><a href="認識apply家族.html#cb318-19" tabindex="-1"></a></span>
+<span id="cb318-20"><a href="認識apply家族.html#cb318-20" tabindex="-1"></a><span class="co"># 顯示更新後的資料集</span></span>
+<span id="cb318-21"><a href="認識apply家族.html#cb318-21" tabindex="-1"></a><span class="fu">head</span>(DT)</span></code></pre></div>
 <pre><code>##   Gender Height Age PEFR_Predicted
 ## 1      0    158  25         434.00
 ## 2      0    168  40         450.85

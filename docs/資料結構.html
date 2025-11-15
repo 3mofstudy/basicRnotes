@@ -509,34 +509,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="資料結構.html#cb129-1" tabindex="-1"></a><span class="co"># 查看前5筆</span></span>
 <span id="cb129-2"><a href="資料結構.html#cb129-2" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
 <pre><code>##   CLASS SEX   AREA CS ES MS
-## 1  甲班  女 瑞興里 78 70 40
-## 2  甲班  女 瑞興里 37 96 46
-## 3  甲班  女 仁善里 50 98 64
-## 4  甲班  女 復興里 32 84 42
-## 5  甲班  男 仁善里 67 73 68
-## 6  甲班  男 復興里 51 64 63</code></pre>
+## 1  甲班  男 仁善里 42 78 47
+## 2  甲班  女 復興里 61 57 68
+## 3  甲班  女 興和里 51 77 57
+## 4  甲班  女 仁善里 77 94 40
+## 5  甲班  女 復興里 51 72 66
+## 6  甲班  女 復興里 66 75 78</code></pre>
 <div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="資料結構.html#cb131-1" tabindex="-1"></a><span class="co"># 查看最後5筆</span></span>
 <span id="cb131-2"><a href="資料結構.html#cb131-2" tabindex="-1"></a><span class="fu">tail</span>(score)</span></code></pre></div>
 <pre><code>##    CLASS SEX   AREA CS ES MS
-## 25  丙班  男 興和里 56 93 62
-## 26  丙班  男 仁善里 34 59 55
-## 27  丙班  女 仁善里 56 75 45
-## 28  丙班  女 仁善里 70 72 44
-## 29  丙班  女 仁善里 61 69 72
-## 30  丙班  女 興和里 51 69 80</code></pre>
+## 25  丙班  男 仁善里 53 89 65
+## 26  丙班  男 復興里 66 54 88
+## 27  丙班  男 復興里 76 50 67
+## 28  丙班  女 復興里 77 76 82
+## 29  丙班  女 復興里 75 54 56
+## 30  丙班  男 瑞興里 66 59 79</code></pre>
 <div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="資料結構.html#cb133-1" tabindex="-1"></a><span class="co"># 查看前10筆</span></span>
 <span id="cb133-2"><a href="資料結構.html#cb133-2" tabindex="-1"></a><span class="fu">head</span>(score ,<span class="at">n=</span><span class="dv">10</span>)</span></code></pre></div>
 <pre><code>##    CLASS SEX   AREA CS ES MS
-## 1   甲班  女 瑞興里 78 70 40
-## 2   甲班  女 瑞興里 37 96 46
-## 3   甲班  女 仁善里 50 98 64
-## 4   甲班  女 復興里 32 84 42
-## 5   甲班  男 仁善里 67 73 68
-## 6   甲班  男 復興里 51 64 63
-## 7   甲班  女 瑞興里 32 70 86
-## 8   甲班  女 興和里 78 97 59
-## 9   甲班  男 興和里 79 84 84
-## 10  甲班  女 瑞興里 54 89 80</code></pre>
+## 1   甲班  男 仁善里 42 78 47
+## 2   甲班  女 復興里 61 57 68
+## 3   甲班  女 興和里 51 77 57
+## 4   甲班  女 仁善里 77 94 40
+## 5   甲班  女 復興里 51 72 66
+## 6   甲班  女 復興里 66 75 78
+## 7   甲班  男 瑞興里 43 51 62
+## 8   甲班  女 復興里 44 61 82
+## 9   甲班  女 仁善里 80 66 54
+## 10  甲班  男 興和里 74 55 66</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>data.frame 行與列 之 數量查詢</li>
 </ol>
@@ -556,11 +556,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb141-2"><a href="資料結構.html#cb141-2" tabindex="-1"></a><span class="fu">str</span>(score)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    30 obs. of  6 variables:
 ##  $ CLASS: chr  &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; ...
-##  $ SEX  : chr  &quot;女&quot; &quot;女&quot; &quot;女&quot; &quot;女&quot; ...
-##  $ AREA : chr  &quot;瑞興里&quot; &quot;瑞興里&quot; &quot;仁善里&quot; &quot;復興里&quot; ...
-##  $ CS   : int  78 37 50 32 67 51 32 78 79 54 ...
-##  $ ES   : int  70 96 98 84 73 64 70 97 84 89 ...
-##  $ MS   : int  40 46 64 42 68 63 86 59 84 80 ...</code></pre>
+##  $ SEX  : chr  &quot;男&quot; &quot;女&quot; &quot;女&quot; &quot;女&quot; ...
+##  $ AREA : chr  &quot;仁善里&quot; &quot;復興里&quot; &quot;興和里&quot; &quot;仁善里&quot; ...
+##  $ CS   : int  42 61 51 77 51 66 43 44 80 74 ...
+##  $ ES   : int  78 57 77 94 72 75 51 61 66 55 ...
+##  $ MS   : int  47 68 57 40 66 78 62 82 54 66 ...</code></pre>
 <p>6.查詢欄位名/行名</p>
 <div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="資料結構.html#cb143-1" tabindex="-1"></a><span class="co"># 查詢欄位名  </span></span>
 <span id="cb143-2"><a href="資料結構.html#cb143-2" tabindex="-1"></a><span class="fu">colnames</span>(score) <span class="co"># 也可使用 names(score)</span></span></code></pre></div>
@@ -583,84 +583,84 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>data.frame，用中括弧[,]來找出行列內容,第一個引數代表rows數，第二個引數代表column數，第二個引數數字代表某欄位順序，也可以直接輸入變數名稱直接提取資料出來，此外data.frame+$+變數名稱，可以提取整欄資料</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="資料結構.html#cb150-1" tabindex="-1"></a>score[<span class="dv">3</span>,]  <span class="co">#提取第三位同學整筆資料</span></span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文 英文 數學
-## 3 甲班   女 仁善里   50   98   64</code></pre>
+## 3 甲班   女 興和里   51   77   57</code></pre>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="資料結構.html#cb152-1" tabindex="-1"></a>score[,<span class="dv">5</span>]  <span class="co">#提取第5欄資料，英文成績</span></span></code></pre></div>
-<pre><code>##  [1] 70 96 98 84 73 64 70 97 84 89 56 83 81 75 65 53 50 87 88 62 94 90 63 99 93
-## [26] 59 75 72 69 69</code></pre>
+<pre><code>##  [1]  78  57  77  94  72  75  51  61  66  55  68  72  83  78  89  61  50  63  95
+## [20]  55  96 100  51  75  89  54  50  76  54  59</code></pre>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="資料結構.html#cb154-1" tabindex="-1"></a>score[<span class="fu">c</span>(<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">18</span>,<span class="dv">15</span>),] <span class="co">#提取第9,2,18,15位同學整筆資料</span></span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文 數學
-## 9  甲班   男 興和里   79   84   84
-## 2  甲班   女 瑞興里   37   96   46
-## 18 乙班   男 仁善里   43   87   89
-## 15 乙班   男 復興里   42   65   47</code></pre>
+## 9  甲班   女 仁善里   80   66   54
+## 2  甲班   女 復興里   61   57   68
+## 18 乙班   男 仁善里   52   63   49
+## 15 乙班   女 瑞興里   53   89   71</code></pre>
 <div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="資料結構.html#cb156-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)] <span class="co">#提取第1,2,5欄資料(班級 性別 英文)</span></span></code></pre></div>
 <pre><code>##    班級 性別 英文
-## 1  甲班   女   70
-## 2  甲班   女   96
-## 3  甲班   女   98
-## 4  甲班   女   84
-## 5  甲班   男   73
-## 6  甲班   男   64
-## 7  甲班   女   70
-## 8  甲班   女   97
-## 9  甲班   男   84
-## 10 甲班   女   89
-## 11 乙班   女   56
-## 12 乙班   男   83
-## 13 乙班   男   81
-## 14 乙班   女   75
-## 15 乙班   男   65
-## 16 乙班   男   53
+## 1  甲班   男   78
+## 2  甲班   女   57
+## 3  甲班   女   77
+## 4  甲班   女   94
+## 5  甲班   女   72
+## 6  甲班   女   75
+## 7  甲班   男   51
+## 8  甲班   女   61
+## 9  甲班   女   66
+## 10 甲班   男   55
+## 11 乙班   女   68
+## 12 乙班   女   72
+## 13 乙班   男   83
+## 14 乙班   男   78
+## 15 乙班   女   89
+## 16 乙班   女   61
 ## 17 乙班   女   50
-## 18 乙班   男   87
-## 19 乙班   男   88
-## 20 乙班   女   62
-## 21 丙班   男   94
-## 22 丙班   女   90
-## 23 丙班   女   63
-## 24 丙班   男   99
-## 25 丙班   男   93
-## 26 丙班   男   59
-## 27 丙班   女   75
-## 28 丙班   女   72
-## 29 丙班   女   69
-## 30 丙班   女   69</code></pre>
+## 18 乙班   男   63
+## 19 乙班   男   95
+## 20 乙班   女   55
+## 21 丙班   女   96
+## 22 丙班   男  100
+## 23 丙班   女   51
+## 24 丙班   男   75
+## 25 丙班   男   89
+## 26 丙班   男   54
+## 27 丙班   男   50
+## 28 丙班   女   76
+## 29 丙班   女   54
+## 30 丙班   男   59</code></pre>
 <div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="資料結構.html#cb158-1" tabindex="-1"></a>score[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]  <span class="co">#指定某範圍的資料提取</span></span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文
-## 1 甲班   女 瑞興里   78
-## 2 甲班   女 瑞興里   37</code></pre>
+## 1 甲班   男 仁善里   42
+## 2 甲班   女 復興里   61</code></pre>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="資料結構.html#cb160-1" tabindex="-1"></a>score[,<span class="fu">c</span>(<span class="st">&quot;班級&quot;</span>,<span class="st">&quot;英文&quot;</span>)]  <span class="co"># 可直接鍵入變數名稱提取某欄位完整資料</span></span></code></pre></div>
 <pre><code>##    班級 英文
-## 1  甲班   70
-## 2  甲班   96
-## 3  甲班   98
-## 4  甲班   84
-## 5  甲班   73
-## 6  甲班   64
-## 7  甲班   70
-## 8  甲班   97
-## 9  甲班   84
-## 10 甲班   89
-## 11 乙班   56
-## 12 乙班   83
-## 13 乙班   81
-## 14 乙班   75
-## 15 乙班   65
-## 16 乙班   53
+## 1  甲班   78
+## 2  甲班   57
+## 3  甲班   77
+## 4  甲班   94
+## 5  甲班   72
+## 6  甲班   75
+## 7  甲班   51
+## 8  甲班   61
+## 9  甲班   66
+## 10 甲班   55
+## 11 乙班   68
+## 12 乙班   72
+## 13 乙班   83
+## 14 乙班   78
+## 15 乙班   89
+## 16 乙班   61
 ## 17 乙班   50
-## 18 乙班   87
-## 19 乙班   88
-## 20 乙班   62
-## 21 丙班   94
-## 22 丙班   90
-## 23 丙班   63
-## 24 丙班   99
-## 25 丙班   93
-## 26 丙班   59
-## 27 丙班   75
-## 28 丙班   72
-## 29 丙班   69
-## 30 丙班   69</code></pre>
+## 18 乙班   63
+## 19 乙班   95
+## 20 乙班   55
+## 21 丙班   96
+## 22 丙班  100
+## 23 丙班   51
+## 24 丙班   75
+## 25 丙班   89
+## 26 丙班   54
+## 27 丙班   50
+## 28 丙班   76
+## 29 丙班   54
+## 30 丙班   59</code></pre>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="資料結構.html#cb162-1" tabindex="-1"></a>score<span class="sc">$</span>班級      <span class="co"># $+變數名稱可以提取某變數完整資料</span></span></code></pre></div>
 <pre><code>##  [1] &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot; &quot;甲班&quot;
 ## [11] &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot; &quot;乙班&quot;
@@ -673,36 +673,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb164-2"><a href="資料結構.html#cb164-2" tabindex="-1"></a>addRow <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;甲班&quot;</span>  , <span class="st">&quot;女&quot;</span>, <span class="st">&quot;興和里&quot;</span> ,  <span class="st">&quot;42&quot;</span> ,  <span class="st">&quot;83&quot;</span> , <span class="st">&quot;57&quot;</span>)</span>
 <span id="cb164-3"><a href="資料結構.html#cb164-3" tabindex="-1"></a><span class="fu">rbind</span>(score,addRow)</span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文 數學
-## 1  甲班   女 瑞興里   78   70   40
-## 2  甲班   女 瑞興里   37   96   46
-## 3  甲班   女 仁善里   50   98   64
-## 4  甲班   女 復興里   32   84   42
-## 5  甲班   男 仁善里   67   73   68
-## 6  甲班   男 復興里   51   64   63
-## 7  甲班   女 瑞興里   32   70   86
-## 8  甲班   女 興和里   78   97   59
-## 9  甲班   男 興和里   79   84   84
-## 10 甲班   女 瑞興里   54   89   80
-## 11 乙班   女 瑞興里   46   56   84
-## 12 乙班   男 興和里   52   83   85
-## 13 乙班   男 仁善里   47   81   81
-## 14 乙班   女 仁善里   45   75   81
-## 15 乙班   男 復興里   42   65   47
-## 16 乙班   男 復興里   69   53   49
-## 17 乙班   女 瑞興里   46   50   49
-## 18 乙班   男 仁善里   43   87   89
-## 19 乙班   男 仁善里   48   88   73
-## 20 乙班   女 瑞興里   75   62   69
-## 21 丙班   男 瑞興里   34   94   76
-## 22 丙班   女 瑞興里   34   90   75
-## 23 丙班   女 瑞興里   67   63   90
-## 24 丙班   男 瑞興里   49   99   62
-## 25 丙班   男 興和里   56   93   62
-## 26 丙班   男 仁善里   34   59   55
-## 27 丙班   女 仁善里   56   75   45
-## 28 丙班   女 仁善里   70   72   44
-## 29 丙班   女 仁善里   61   69   72
-## 30 丙班   女 興和里   51   69   80
+## 1  甲班   男 仁善里   42   78   47
+## 2  甲班   女 復興里   61   57   68
+## 3  甲班   女 興和里   51   77   57
+## 4  甲班   女 仁善里   77   94   40
+## 5  甲班   女 復興里   51   72   66
+## 6  甲班   女 復興里   66   75   78
+## 7  甲班   男 瑞興里   43   51   62
+## 8  甲班   女 復興里   44   61   82
+## 9  甲班   女 仁善里   80   66   54
+## 10 甲班   男 興和里   74   55   66
+## 11 乙班   女 仁善里   32   68   67
+## 12 乙班   女 復興里   36   72   81
+## 13 乙班   男 仁善里   47   83   88
+## 14 乙班   男 興和里   67   78   44
+## 15 乙班   女 瑞興里   53   89   71
+## 16 乙班   女 復興里   70   61   71
+## 17 乙班   女 仁善里   73   50   65
+## 18 乙班   男 仁善里   52   63   49
+## 19 乙班   男 興和里   39   95   79
+## 20 乙班   女 興和里   34   55   51
+## 21 丙班   女 瑞興里   80   96   74
+## 22 丙班   男 仁善里   30  100   59
+## 23 丙班   女 興和里   73   51   57
+## 24 丙班   男 復興里   41   75   40
+## 25 丙班   男 仁善里   53   89   65
+## 26 丙班   男 復興里   66   54   88
+## 27 丙班   男 復興里   76   50   67
+## 28 丙班   女 復興里   77   76   82
+## 29 丙班   女 復興里   75   54   56
+## 30 丙班   男 瑞興里   66   59   79
 ## 31 甲班   女 興和里   42   83   57</code></pre>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="資料結構.html#cb166-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
 <span id="cb166-2"><a href="資料結構.html#cb166-2" tabindex="-1"></a></span>
@@ -710,23 +710,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb166-4"><a href="資料結構.html#cb166-4" tabindex="-1"></a>score <span class="ot">&lt;-</span> <span class="fu">cbind</span>(score,自然)</span>
 <span id="cb166-5"><a href="資料結構.html#cb166-5" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文 英文 數學 自然
-## 1 甲班   女 瑞興里   78   70   40   87
-## 2 甲班   女 瑞興里   37   96   46   65
-## 3 甲班   女 仁善里   50   98   64   57
-## 4 甲班   女 復興里   32   84   42   91
-## 5 甲班   男 仁善里   67   73   68   74
-## 6 甲班   男 復興里   51   64   63   63</code></pre>
+## 1 甲班   男 仁善里   42   78   47   85
+## 2 甲班   女 復興里   61   57   68   90
+## 3 甲班   女 興和里   51   77   57   64
+## 4 甲班   女 仁善里   77   94   40   77
+## 5 甲班   女 復興里   51   72   66   81
+## 6 甲班   女 復興里   66   75   78  100</code></pre>
 <p>善用$和賦值，也可以新增變數</p>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="資料結構.html#cb168-1" tabindex="-1"></a><span class="co">#增加欄位</span></span>
 <span id="cb168-2"><a href="資料結構.html#cb168-2" tabindex="-1"></a>score<span class="sc">$</span>社會 <span class="ot">&lt;-</span>  <span class="fu">sample</span>(<span class="dv">50</span><span class="sc">:</span><span class="dv">100</span>,<span class="dv">30</span>,<span class="at">replace =</span> T)</span>
 <span id="cb168-3"><a href="資料結構.html#cb168-3" tabindex="-1"></a><span class="fu">head</span>(score)</span></code></pre></div>
 <pre><code>##   班級 性別   居住 國文 英文 數學 自然 社會
-## 1 甲班   女 瑞興里   78   70   40   87   81
-## 2 甲班   女 瑞興里   37   96   46   65   78
-## 3 甲班   女 仁善里   50   98   64   57   60
-## 4 甲班   女 復興里   32   84   42   91   75
-## 5 甲班   男 仁善里   67   73   68   74   53
-## 6 甲班   男 復興里   51   64   63   63   62</code></pre>
+## 1 甲班   男 仁善里   42   78   47   85   93
+## 2 甲班   女 復興里   61   57   68   90   88
+## 3 甲班   女 興和里   51   77   57   64   92
+## 4 甲班   女 仁善里   77   94   40   77   56
+## 5 甲班   女 復興里   51   72   66   81  100
+## 6 甲班   女 復興里   66   75   78  100   96</code></pre>
 </div>
 <div id="三維結構-list" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> 三維結構 (list)<a href="資料結構.html#%E4%B8%89%E7%B6%AD%E7%B5%90%E6%A7%8B-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -748,16 +748,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] &quot;期中考試&quot;</code></pre>
 <div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="資料結構.html#cb175-1" tabindex="-1"></a>DT<span class="sc">$</span>Score  <span class="co">#使用$提取</span></span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文 數學 自然 社會
-## 1  甲班   女 瑞興里   78   70   40   87   81
-## 2  甲班   女 瑞興里   37   96   46   65   78
-## 3  甲班   女 仁善里   50   98   64   57   60
-## 4  甲班   女 復興里   32   84   42   91   75
-## 5  甲班   男 仁善里   67   73   68   74   53
-## 6  甲班   男 復興里   51   64   63   63   62
-## 7  甲班   女 瑞興里   32   70   86   67   51
-## 8  甲班   女 興和里   78   97   59   86   97
-## 9  甲班   男 興和里   79   84   84   83   54
-## 10 甲班   女 瑞興里   54   89   80   66   55</code></pre>
+## 1  甲班   男 仁善里   42   78   47   85   93
+## 2  甲班   女 復興里   61   57   68   90   88
+## 3  甲班   女 興和里   51   77   57   64   92
+## 4  甲班   女 仁善里   77   94   40   77   56
+## 5  甲班   女 復興里   51   72   66   81  100
+## 6  甲班   女 復興里   66   75   78  100   96
+## 7  甲班   男 瑞興里   43   51   62   74   51
+## 8  甲班   女 復興里   44   61   82   76   94
+## 9  甲班   女 仁善里   80   66   54   78  100
+## 10 甲班   男 興和里   74   55   66   84  100</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>DT[3] 和DT[[3]] 差別，list的DT第三個向度是data.frame，若是想向下繼續擷取行列內容時， 就需要兩個中括弧[[]]，先將data.frame提取出來，之後再用[]選擇想要行列擷取出來</li>
 </ol>
@@ -766,23 +766,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## NULL</code></pre>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="資料結構.html#cb179-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>##    性別
-## 1    女
+## 1    男
 ## 2    女
 ## 3    女
 ## 4    女
-## 5    男
-## 6    男
-## 7    女
+## 5    女
+## 6    女
+## 7    男
 ## 8    女
-## 9    男
-## 10   女</code></pre>
+## 9    女
+## 10   男</code></pre>
 <div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="資料結構.html#cb181-1" tabindex="-1"></a>DT[[<span class="dv">3</span>]][<span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>##    班級 性別   居住 國文 英文
-## 6  甲班   男 復興里   51   64
-## 7  甲班   女 瑞興里   32   70
-## 8  甲班   女 興和里   78   97
-## 9  甲班   男 興和里   79   84
-## 10 甲班   女 瑞興里   54   89</code></pre>
+## 6  甲班   女 復興里   66   75
+## 7  甲班   男 瑞興里   43   51
+## 8  甲班   女 復興里   44   61
+## 9  甲班   女 仁善里   80   66
+## 10 甲班   男 興和里   74   55</code></pre>
 </div>
 </div>
 <div id="特殊資料結構" class="section level2 hasAnchor" number="4.3">

@@ -51,10 +51,14 @@ plot(
 ```
 
 範例: 自動選擇適當的圖形類型
+
 ```{r plot-basic}
+# 圖形佈局
+par(mfrow = c(1, 2))  # 設定1行2列的圖形佈局
 # 基本散點圖
 x <- 1:10
 y <- x^2
+
 plot(x, y, main = "基本散點圖", xlab = "X軸", ylab = "Y軸")
 
 # 使用內建資料集
@@ -63,6 +67,7 @@ plot(cars$speed,  #X軸資料
      main = "汽車速度與煞車距離", #圖片標題
      xlab = "速度 (mph)",  #X軸標題
      ylab = "距離 (英尺)") #Y軸標題
+
 ```
 
 ### 全域參數設定 par()
@@ -71,16 +76,14 @@ plot() 可設定各別圖片的參數，但若想多個圖片有統一的樣式�
 
 ```{r message=FALSE, warning=FALSE}
 
-# 儲存當前參數設定
-old_par <- par()
-
 # 設定圖形參數
 par(
-  bg = "#FAEBD7",      # 背景色
+  mfrow = c(1, 2),       # 設定布局
+  bg = "bisque1",        # 背景色
   col = "darkblue",      # 預設顏色
   col.axis = "black",    # 座標軸顏色
   col.lab = "darkred",   # 標籤顏色
-  col.main = "navy",     # 標題顏色
+  col.main = "purple",     # 標題顏色
   font.axis = 2,         # 座標軸字體 (2=粗體)
   font.lab = 3,          # 標籤字體 (3=斜體)
   font.main = 4,         # 標題字體 (4=粗斜體)
@@ -93,19 +96,17 @@ par(
 )
 
 # 繪製圖形
-plot(1:10, (1:10)^2, 
-     main = "自訂參數的圖形",
-     xlab = "X軸標籤", 
-     ylab = "Y軸標籤")
+x <- 1:10
+y <- x^2
 
-plot(1:10, (1:10)^2, 
-     main = "自訂參數的圖形",
-     xlab = "X軸標籤", 
-     ylab = "Y軸標籤")
+plot(x, y, main = "基本散點圖", xlab = "X軸", ylab = "Y軸")
 
-# 恢復原始參數
-par(old_par)
-
+# 使用內建資料集
+plot(cars$speed,  #X軸資料
+     cars$dist,   #Y軸資料
+     main = "汽車速度與煞車距離", #圖片標題
+     xlab = "速度 (mph)",  #X軸標題
+     ylab = "距離 (英尺)") #Y軸標題
 ```
 
 ### 圖形類型設定
@@ -166,17 +167,17 @@ palette("default")  # 恢復預設調色盤
 
 ### 點形狀和線型
 
-1. 線型參數
+1.  線型參數
 
-  -   lty = 線條形狀 （1～20）
-  -   lwd = 線條尺寸
+-   lty = 線條形狀 （1～20）
+-   lwd = 線條尺寸
 
-2. 控制點參數
+2.  控制點參數
 
-  -   pch= 控制點形狀（1～25）
-  -   cex= 控制大小
+-   pch= 控制點形狀（1～25）
+-   cex= 控制大小
 
-3. 點與線之各類樣式
+3.  點與線之各類樣式
 
 ![](https://i.postimg.cc/15n6d8Y9/basic-Rnotes8-1.png)
 
@@ -290,7 +291,7 @@ barplot(counts, horiz = TRUE, main = "水平長條圖")
 counts2 <- table(mtcars$vs, mtcars$gear)
 barplot(counts2, main = "分組長條圖", 
         xlab = "檔位數", col = c("darkblue","red"),
-        legend = rownames(counts2))
+        legend = rownames(counts2), beside = TRUE)
 
 # 堆疊長條圖
 barplot(counts2, main = "堆疊長條圖", 

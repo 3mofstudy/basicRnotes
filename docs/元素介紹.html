@@ -425,9 +425,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="元素介紹.html#cb40-1" tabindex="-1"></a><span class="fu">Sys.Date</span>()  <span class="co">#當前日期  類似lubridate::today()     </span></span></code></pre></div>
 <pre><code>## [1] &quot;2025-11-15&quot;</code></pre>
 <div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="元素介紹.html#cb42-1" tabindex="-1"></a><span class="fu">date</span>()      <span class="co">#當前系統日期和時間  </span></span></code></pre></div>
-<pre><code>## [1] &quot;Sat Nov 15 13:22:05 2025&quot;</code></pre>
+<pre><code>## [1] &quot;Sat Nov 15 14:13:44 2025&quot;</code></pre>
 <div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="元素介紹.html#cb44-1" tabindex="-1"></a><span class="fu">Sys.time</span>()  <span class="co">#當前系統日期和時間  lubridate::now()</span></span></code></pre></div>
-<pre><code>## [1] &quot;2025-11-15 13:22:05 CST&quot;</code></pre>
+<pre><code>## [1] &quot;2025-11-15 14:13:44 CST&quot;</code></pre>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="元素介紹.html#cb46-1" tabindex="-1"></a><span class="fu">Sys.timezone</span>() <span class="co">#有關時區的信息將返回當前時區的名稱</span></span></code></pre></div>
 <pre><code>## [1] &quot;Asia/Taipei&quot;</code></pre>
 <p><strong>(2) as.Date 函數(文字轉日期)</strong></p>
@@ -580,11 +580,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p><strong>(6) 擷取特定時間格式</strong></p>
 <div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="元素介紹.html#cb79-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%H&quot;</span>) <span class="co">#輸出小時</span></span></code></pre></div>
-<pre><code>## [1] &quot;13&quot;</code></pre>
+<pre><code>## [1] &quot;14&quot;</code></pre>
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="元素介紹.html#cb81-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%M&quot;</span>) <span class="co">#輸出分鐘</span></span></code></pre></div>
-<pre><code>## [1] &quot;22&quot;</code></pre>
+<pre><code>## [1] &quot;13&quot;</code></pre>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="元素介紹.html#cb83-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.time</span>(),<span class="at">format=</span><span class="st">&quot;%S&quot;</span>) <span class="co">#輸出秒數</span></span></code></pre></div>
-<pre><code>## [1] &quot;05&quot;</code></pre>
+<pre><code>## [1] &quot;44&quot;</code></pre>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="元素介紹.html#cb85-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;%Y年%m月%d日&quot;</span>) </span></code></pre></div>
 <pre><code>## [1] &quot;2025年11月15日&quot;</code></pre>
 <div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="元素介紹.html#cb87-1" tabindex="-1"></a><span class="fu">format</span>(<span class="fu">Sys.Date</span>(),<span class="at">format=</span><span class="st">&quot;西元%Y年%m月%d日&quot;</span>)  </span></code></pre></div>

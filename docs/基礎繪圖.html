@@ -382,103 +382,104 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb268-29"><a href="基礎繪圖.html#cb268-29" tabindex="-1"></a>  font.sub,                        <span class="co"># 副標題字體</span></span>
 <span id="cb268-30"><a href="基礎繪圖.html#cb268-30" tabindex="-1"></a>  ...)                            <span class="co"># 其他圖形參數</span></span></code></pre></div>
 <p>範例: 自動選擇適當的圖形類型</p>
-<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="基礎繪圖.html#cb269-1" tabindex="-1"></a><span class="co"># 基本散點圖</span></span>
-<span id="cb269-2"><a href="基礎繪圖.html#cb269-2" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb269-3"><a href="基礎繪圖.html#cb269-3" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb269-4"><a href="基礎繪圖.html#cb269-4" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main =</span> <span class="st">&quot;基本散點圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="基礎繪圖.html#cb269-1" tabindex="-1"></a><span class="co"># 圖形佈局</span></span>
+<span id="cb269-2"><a href="基礎繪圖.html#cb269-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))  <span class="co"># 設定1行2列的圖形佈局</span></span>
+<span id="cb269-3"><a href="基礎繪圖.html#cb269-3" tabindex="-1"></a><span class="co"># 基本散點圖</span></span>
+<span id="cb269-4"><a href="基礎繪圖.html#cb269-4" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb269-5"><a href="基礎繪圖.html#cb269-5" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb269-6"><a href="基礎繪圖.html#cb269-6" tabindex="-1"></a></span>
+<span id="cb269-7"><a href="基礎繪圖.html#cb269-7" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main =</span> <span class="st">&quot;基本散點圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
+<span id="cb269-8"><a href="基礎繪圖.html#cb269-8" tabindex="-1"></a></span>
+<span id="cb269-9"><a href="基礎繪圖.html#cb269-9" tabindex="-1"></a><span class="co"># 使用內建資料集</span></span>
+<span id="cb269-10"><a href="基礎繪圖.html#cb269-10" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed,  <span class="co">#X軸資料</span></span>
+<span id="cb269-11"><a href="基礎繪圖.html#cb269-11" tabindex="-1"></a>     cars<span class="sc">$</span>dist,   <span class="co">#Y軸資料</span></span>
+<span id="cb269-12"><a href="基礎繪圖.html#cb269-12" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;汽車速度與煞車距離&quot;</span>, <span class="co">#圖片標題</span></span>
+<span id="cb269-13"><a href="基礎繪圖.html#cb269-13" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;速度 (mph)&quot;</span>,  <span class="co">#X軸標題</span></span>
+<span id="cb269-14"><a href="基礎繪圖.html#cb269-14" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;距離 (英尺)&quot;</span>) <span class="co">#Y軸標題</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/plot-basic-1.png" width="672" /></p>
-<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="基礎繪圖.html#cb270-1" tabindex="-1"></a><span class="co"># 使用內建資料集</span></span>
-<span id="cb270-2"><a href="基礎繪圖.html#cb270-2" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed,  <span class="co">#X軸資料</span></span>
-<span id="cb270-3"><a href="基礎繪圖.html#cb270-3" tabindex="-1"></a>     cars<span class="sc">$</span>dist,   <span class="co">#Y軸資料</span></span>
-<span id="cb270-4"><a href="基礎繪圖.html#cb270-4" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;汽車速度與煞車距離&quot;</span>, <span class="co">#圖片標題</span></span>
-<span id="cb270-5"><a href="基礎繪圖.html#cb270-5" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;速度 (mph)&quot;</span>,  <span class="co">#X軸標題</span></span>
-<span id="cb270-6"><a href="基礎繪圖.html#cb270-6" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;距離 (英尺)&quot;</span>) <span class="co">#Y軸標題</span></span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/plot-basic-2.png" width="672" /></p>
 </div>
 <div id="全域參數設定-par" class="section level3 hasAnchor" number="8.2.2">
 <h3><span class="header-section-number">8.2.2</span> 全域參數設定 par()<a href="基礎繪圖.html#%E5%85%A8%E5%9F%9F%E5%8F%83%E6%95%B8%E8%A8%AD%E5%AE%9A-par" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>plot() 可設定各別圖片的參數，但若想多個圖片有統一的樣式，可使用<code>par()</code>函數用於設定圖形的全域參數</p>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="基礎繪圖.html#cb271-1" tabindex="-1"></a><span class="co"># 儲存當前參數設定</span></span>
-<span id="cb271-2"><a href="基礎繪圖.html#cb271-2" tabindex="-1"></a>old_par <span class="ot">&lt;-</span> <span class="fu">par</span>()</span>
-<span id="cb271-3"><a href="基礎繪圖.html#cb271-3" tabindex="-1"></a></span>
-<span id="cb271-4"><a href="基礎繪圖.html#cb271-4" tabindex="-1"></a><span class="co"># 設定圖形參數</span></span>
-<span id="cb271-5"><a href="基礎繪圖.html#cb271-5" tabindex="-1"></a><span class="fu">par</span>(</span>
-<span id="cb271-6"><a href="基礎繪圖.html#cb271-6" tabindex="-1"></a>  <span class="at">bg =</span> <span class="st">&quot;#FAEBD7&quot;</span>,      <span class="co"># 背景色</span></span>
-<span id="cb271-7"><a href="基礎繪圖.html#cb271-7" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;darkblue&quot;</span>,      <span class="co"># 預設顏色</span></span>
-<span id="cb271-8"><a href="基礎繪圖.html#cb271-8" tabindex="-1"></a>  <span class="at">col.axis =</span> <span class="st">&quot;black&quot;</span>,    <span class="co"># 座標軸顏色</span></span>
-<span id="cb271-9"><a href="基礎繪圖.html#cb271-9" tabindex="-1"></a>  <span class="at">col.lab =</span> <span class="st">&quot;darkred&quot;</span>,   <span class="co"># 標籤顏色</span></span>
-<span id="cb271-10"><a href="基礎繪圖.html#cb271-10" tabindex="-1"></a>  <span class="at">col.main =</span> <span class="st">&quot;navy&quot;</span>,     <span class="co"># 標題顏色</span></span>
-<span id="cb271-11"><a href="基礎繪圖.html#cb271-11" tabindex="-1"></a>  <span class="at">font.axis =</span> <span class="dv">2</span>,         <span class="co"># 座標軸字體 (2=粗體)</span></span>
-<span id="cb271-12"><a href="基礎繪圖.html#cb271-12" tabindex="-1"></a>  <span class="at">font.lab =</span> <span class="dv">3</span>,          <span class="co"># 標籤字體 (3=斜體)</span></span>
-<span id="cb271-13"><a href="基礎繪圖.html#cb271-13" tabindex="-1"></a>  <span class="at">font.main =</span> <span class="dv">4</span>,         <span class="co"># 標題字體 (4=粗斜體)</span></span>
-<span id="cb271-14"><a href="基礎繪圖.html#cb271-14" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">1</span>,               <span class="co"># 標籤方向 (1=水平)</span></span>
-<span id="cb271-15"><a href="基礎繪圖.html#cb271-15" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">16</span>,              <span class="co"># 點形狀</span></span>
-<span id="cb271-16"><a href="基礎繪圖.html#cb271-16" tabindex="-1"></a>  <span class="at">cex =</span> <span class="fl">1.2</span>,             <span class="co"># 符號大小</span></span>
-<span id="cb271-17"><a href="基礎繪圖.html#cb271-17" tabindex="-1"></a>  <span class="at">cex.axis =</span> <span class="fl">0.9</span>,        <span class="co"># 座標軸文字大小</span></span>
-<span id="cb271-18"><a href="基礎繪圖.html#cb271-18" tabindex="-1"></a>  <span class="at">cex.lab =</span> <span class="fl">1.1</span>,         <span class="co"># 標籤文字大小</span></span>
-<span id="cb271-19"><a href="基礎繪圖.html#cb271-19" tabindex="-1"></a>  <span class="at">cex.main =</span> <span class="fl">1.3</span>         <span class="co"># 標題文字大小</span></span>
-<span id="cb271-20"><a href="基礎繪圖.html#cb271-20" tabindex="-1"></a>)</span>
-<span id="cb271-21"><a href="基礎繪圖.html#cb271-21" tabindex="-1"></a></span>
-<span id="cb271-22"><a href="基礎繪圖.html#cb271-22" tabindex="-1"></a><span class="co"># 繪製圖形</span></span>
-<span id="cb271-23"><a href="基礎繪圖.html#cb271-23" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, (<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">^</span><span class="dv">2</span>, </span>
-<span id="cb271-24"><a href="基礎繪圖.html#cb271-24" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;自訂參數的圖形&quot;</span>,</span>
-<span id="cb271-25"><a href="基礎繪圖.html#cb271-25" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;X軸標籤&quot;</span>, </span>
-<span id="cb271-26"><a href="基礎繪圖.html#cb271-26" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Y軸標籤&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="基礎繪圖.html#cb270-1" tabindex="-1"></a><span class="co"># 設定圖形參數</span></span>
+<span id="cb270-2"><a href="基礎繪圖.html#cb270-2" tabindex="-1"></a><span class="fu">par</span>(</span>
+<span id="cb270-3"><a href="基礎繪圖.html#cb270-3" tabindex="-1"></a>  <span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>),       <span class="co"># 設定布局</span></span>
+<span id="cb270-4"><a href="基礎繪圖.html#cb270-4" tabindex="-1"></a>  <span class="at">bg =</span> <span class="st">&quot;bisque1&quot;</span>,        <span class="co"># 背景色</span></span>
+<span id="cb270-5"><a href="基礎繪圖.html#cb270-5" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;darkblue&quot;</span>,      <span class="co"># 預設顏色</span></span>
+<span id="cb270-6"><a href="基礎繪圖.html#cb270-6" tabindex="-1"></a>  <span class="at">col.axis =</span> <span class="st">&quot;black&quot;</span>,    <span class="co"># 座標軸顏色</span></span>
+<span id="cb270-7"><a href="基礎繪圖.html#cb270-7" tabindex="-1"></a>  <span class="at">col.lab =</span> <span class="st">&quot;darkred&quot;</span>,   <span class="co"># 標籤顏色</span></span>
+<span id="cb270-8"><a href="基礎繪圖.html#cb270-8" tabindex="-1"></a>  <span class="at">col.main =</span> <span class="st">&quot;purple&quot;</span>,     <span class="co"># 標題顏色</span></span>
+<span id="cb270-9"><a href="基礎繪圖.html#cb270-9" tabindex="-1"></a>  <span class="at">font.axis =</span> <span class="dv">2</span>,         <span class="co"># 座標軸字體 (2=粗體)</span></span>
+<span id="cb270-10"><a href="基礎繪圖.html#cb270-10" tabindex="-1"></a>  <span class="at">font.lab =</span> <span class="dv">3</span>,          <span class="co"># 標籤字體 (3=斜體)</span></span>
+<span id="cb270-11"><a href="基礎繪圖.html#cb270-11" tabindex="-1"></a>  <span class="at">font.main =</span> <span class="dv">4</span>,         <span class="co"># 標題字體 (4=粗斜體)</span></span>
+<span id="cb270-12"><a href="基礎繪圖.html#cb270-12" tabindex="-1"></a>  <span class="at">las =</span> <span class="dv">1</span>,               <span class="co"># 標籤方向 (1=水平)</span></span>
+<span id="cb270-13"><a href="基礎繪圖.html#cb270-13" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">16</span>,              <span class="co"># 點形狀</span></span>
+<span id="cb270-14"><a href="基礎繪圖.html#cb270-14" tabindex="-1"></a>  <span class="at">cex =</span> <span class="fl">1.2</span>,             <span class="co"># 符號大小</span></span>
+<span id="cb270-15"><a href="基礎繪圖.html#cb270-15" tabindex="-1"></a>  <span class="at">cex.axis =</span> <span class="fl">0.9</span>,        <span class="co"># 座標軸文字大小</span></span>
+<span id="cb270-16"><a href="基礎繪圖.html#cb270-16" tabindex="-1"></a>  <span class="at">cex.lab =</span> <span class="fl">1.1</span>,         <span class="co"># 標籤文字大小</span></span>
+<span id="cb270-17"><a href="基礎繪圖.html#cb270-17" tabindex="-1"></a>  <span class="at">cex.main =</span> <span class="fl">1.3</span>         <span class="co"># 標題文字大小</span></span>
+<span id="cb270-18"><a href="基礎繪圖.html#cb270-18" tabindex="-1"></a>)</span>
+<span id="cb270-19"><a href="基礎繪圖.html#cb270-19" tabindex="-1"></a></span>
+<span id="cb270-20"><a href="基礎繪圖.html#cb270-20" tabindex="-1"></a><span class="co"># 繪製圖形</span></span>
+<span id="cb270-21"><a href="基礎繪圖.html#cb270-21" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb270-22"><a href="基礎繪圖.html#cb270-22" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb270-23"><a href="基礎繪圖.html#cb270-23" tabindex="-1"></a></span>
+<span id="cb270-24"><a href="基礎繪圖.html#cb270-24" tabindex="-1"></a><span class="fu">plot</span>(x, y, <span class="at">main =</span> <span class="st">&quot;基本散點圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
+<span id="cb270-25"><a href="基礎繪圖.html#cb270-25" tabindex="-1"></a></span>
+<span id="cb270-26"><a href="基礎繪圖.html#cb270-26" tabindex="-1"></a><span class="co"># 使用內建資料集</span></span>
+<span id="cb270-27"><a href="基礎繪圖.html#cb270-27" tabindex="-1"></a><span class="fu">plot</span>(cars<span class="sc">$</span>speed,  <span class="co">#X軸資料</span></span>
+<span id="cb270-28"><a href="基礎繪圖.html#cb270-28" tabindex="-1"></a>     cars<span class="sc">$</span>dist,   <span class="co">#Y軸資料</span></span>
+<span id="cb270-29"><a href="基礎繪圖.html#cb270-29" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;汽車速度與煞車距離&quot;</span>, <span class="co">#圖片標題</span></span>
+<span id="cb270-30"><a href="基礎繪圖.html#cb270-30" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;速度 (mph)&quot;</span>,  <span class="co">#X軸標題</span></span>
+<span id="cb270-31"><a href="基礎繪圖.html#cb270-31" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;距離 (英尺)&quot;</span>) <span class="co">#Y軸標題</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-86-1.png" width="672" /></p>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="基礎繪圖.html#cb272-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, (<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)<span class="sc">^</span><span class="dv">2</span>, </span>
-<span id="cb272-2"><a href="基礎繪圖.html#cb272-2" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;自訂參數的圖形&quot;</span>,</span>
-<span id="cb272-3"><a href="基礎繪圖.html#cb272-3" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;X軸標籤&quot;</span>, </span>
-<span id="cb272-4"><a href="基礎繪圖.html#cb272-4" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Y軸標籤&quot;</span>)</span>
-<span id="cb272-5"><a href="基礎繪圖.html#cb272-5" tabindex="-1"></a></span>
-<span id="cb272-6"><a href="基礎繪圖.html#cb272-6" tabindex="-1"></a><span class="co"># 恢復原始參數</span></span>
-<span id="cb272-7"><a href="基礎繪圖.html#cb272-7" tabindex="-1"></a><span class="fu">par</span>(old_par)</span></code></pre></div>
 </div>
 <div id="圖形類型設定" class="section level3 hasAnchor" number="8.2.3">
 <h3><span class="header-section-number">8.2.3</span> 圖形類型設定<a href="基礎繪圖.html#%E5%9C%96%E5%BD%A2%E9%A1%9E%E5%9E%8B%E8%A8%AD%E5%AE%9A" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>plot雖然可以自動選擇適當的圖形類型，但也可透過type參數可以指定不同的圖形類型：</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="基礎繪圖.html#cb273-1" tabindex="-1"></a><span class="co"># 建立範例資料</span></span>
-<span id="cb273-2"><a href="基礎繪圖.html#cb273-2" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
-<span id="cb273-3"><a href="基礎繪圖.html#cb273-3" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">sin</span>(time<span class="sc">/</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="fl">0.2</span>)</span>
-<span id="cb273-4"><a href="基礎繪圖.html#cb273-4" tabindex="-1"></a></span>
-<span id="cb273-5"><a href="基礎繪圖.html#cb273-5" tabindex="-1"></a><span class="co"># 不同的圖形類型</span></span>
-<span id="cb273-6"><a href="基礎繪圖.html#cb273-6" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))  <span class="co"># 設定2行3列的圖形佈局</span></span>
-<span id="cb273-7"><a href="基礎繪圖.html#cb273-7" tabindex="-1"></a></span>
-<span id="cb273-8"><a href="基礎繪圖.html#cb273-8" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;點圖 (type=&#39;p&#39;)&quot;</span>)</span>
-<span id="cb273-9"><a href="基礎繪圖.html#cb273-9" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;線圖 (type=&#39;l&#39;)&quot;</span>)</span>
-<span id="cb273-10"><a href="基礎繪圖.html#cb273-10" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&quot;點線圖 (type=&#39;b&#39;)&quot;</span>)</span>
-<span id="cb273-11"><a href="基礎繪圖.html#cb273-11" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">main =</span> <span class="st">&quot;重疊點線圖 (type=&#39;o&#39;)&quot;</span>)</span>
-<span id="cb273-12"><a href="基礎繪圖.html#cb273-12" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;h&quot;</span>, <span class="at">main =</span> <span class="st">&quot;垂直線圖 (type=&#39;h&#39;)&quot;</span>)</span>
-<span id="cb273-13"><a href="基礎繪圖.html#cb273-13" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;s&quot;</span>, <span class="at">main =</span> <span class="st">&quot;階梯圖 (type=&#39;s&#39;)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="基礎繪圖.html#cb271-1" tabindex="-1"></a><span class="co"># 建立範例資料</span></span>
+<span id="cb271-2"><a href="基礎繪圖.html#cb271-2" tabindex="-1"></a>time <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb271-3"><a href="基礎繪圖.html#cb271-3" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">sin</span>(time<span class="sc">/</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="fl">0.2</span>)</span>
+<span id="cb271-4"><a href="基礎繪圖.html#cb271-4" tabindex="-1"></a></span>
+<span id="cb271-5"><a href="基礎繪圖.html#cb271-5" tabindex="-1"></a><span class="co"># 不同的圖形類型</span></span>
+<span id="cb271-6"><a href="基礎繪圖.html#cb271-6" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))  <span class="co"># 設定2行3列的圖形佈局</span></span>
+<span id="cb271-7"><a href="基礎繪圖.html#cb271-7" tabindex="-1"></a></span>
+<span id="cb271-8"><a href="基礎繪圖.html#cb271-8" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;p&quot;</span>, <span class="at">main =</span> <span class="st">&quot;點圖 (type=&#39;p&#39;)&quot;</span>)</span>
+<span id="cb271-9"><a href="基礎繪圖.html#cb271-9" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;線圖 (type=&#39;l&#39;)&quot;</span>)</span>
+<span id="cb271-10"><a href="基礎繪圖.html#cb271-10" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;b&quot;</span>, <span class="at">main =</span> <span class="st">&quot;點線圖 (type=&#39;b&#39;)&quot;</span>)</span>
+<span id="cb271-11"><a href="基礎繪圖.html#cb271-11" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">main =</span> <span class="st">&quot;重疊點線圖 (type=&#39;o&#39;)&quot;</span>)</span>
+<span id="cb271-12"><a href="基礎繪圖.html#cb271-12" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;h&quot;</span>, <span class="at">main =</span> <span class="st">&quot;垂直線圖 (type=&#39;h&#39;)&quot;</span>)</span>
+<span id="cb271-13"><a href="基礎繪圖.html#cb271-13" tabindex="-1"></a><span class="fu">plot</span>(time, values, <span class="at">type =</span> <span class="st">&quot;s&quot;</span>, <span class="at">main =</span> <span class="st">&quot;階梯圖 (type=&#39;s&#39;)&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
-<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="基礎繪圖.html#cb274-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))  <span class="co"># 恢復單圖佈局</span></span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="基礎繪圖.html#cb272-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))  <span class="co"># 恢復單圖佈局</span></span></code></pre></div>
 </div>
 <div id="顏色設定" class="section level3 hasAnchor" number="8.2.4">
 <h3><span class="header-section-number">8.2.4</span> 顏色設定<a href="基礎繪圖.html#%E9%A1%8F%E8%89%B2%E8%A8%AD%E5%AE%9A" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>plot()中有多種方式指定顏色，可使用<code>col</code>參數 來呈現顏色：</p>
-<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="基礎繪圖.html#cb275-1" tabindex="-1"></a><span class="co"># 顏色示範</span></span>
-<span id="cb275-2"><a href="基礎繪圖.html#cb275-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb275-3"><a href="基礎繪圖.html#cb275-3" tabindex="-1"></a></span>
-<span id="cb275-4"><a href="基礎繪圖.html#cb275-4" tabindex="-1"></a><span class="co"># 1. 使用顏色名稱</span></span>
-<span id="cb275-5"><a href="基礎繪圖.html#cb275-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;purple&quot;</span>),</span>
-<span id="cb275-6"><a href="基礎繪圖.html#cb275-6" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;顏色名稱&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb275-7"><a href="基礎繪圖.html#cb275-7" tabindex="-1"></a></span>
-<span id="cb275-8"><a href="基礎繪圖.html#cb275-8" tabindex="-1"></a><span class="co"># 2. 使用RGB值</span></span>
-<span id="cb275-9"><a href="基礎繪圖.html#cb275-9" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, </span>
-<span id="cb275-10"><a href="基礎繪圖.html#cb275-10" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">rgb</span>(<span class="at">red=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">green=</span><span class="dv">0</span>, <span class="at">blue=</span><span class="dv">0</span>),</span>
-<span id="cb275-11"><a href="基礎繪圖.html#cb275-11" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;RGB顏色&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb275-12"><a href="基礎繪圖.html#cb275-12" tabindex="-1"></a></span>
-<span id="cb275-13"><a href="基礎繪圖.html#cb275-13" tabindex="-1"></a><span class="co"># 3. 使用十六進位值</span></span>
-<span id="cb275-14"><a href="基礎繪圖.html#cb275-14" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, </span>
-<span id="cb275-15"><a href="基礎繪圖.html#cb275-15" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;#FF0000&quot;</span>, <span class="st">&quot;#00FF00&quot;</span>, <span class="st">&quot;#0000FF&quot;</span>, <span class="st">&quot;#FFFF00&quot;</span>, <span class="st">&quot;#FF00FF&quot;</span>),</span>
-<span id="cb275-16"><a href="基礎繪圖.html#cb275-16" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;十六進位顏色&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb275-17"><a href="基礎繪圖.html#cb275-17" tabindex="-1"></a></span>
-<span id="cb275-18"><a href="基礎繪圖.html#cb275-18" tabindex="-1"></a><span class="co"># 4. 使用調色盤</span></span>
-<span id="cb275-19"><a href="基礎繪圖.html#cb275-19" tabindex="-1"></a><span class="fu">palette</span>(<span class="fu">rainbow</span>(<span class="dv">5</span>))</span>
-<span id="cb275-20"><a href="基礎繪圖.html#cb275-20" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb275-21"><a href="基礎繪圖.html#cb275-21" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;調色盤顏色&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="基礎繪圖.html#cb273-1" tabindex="-1"></a><span class="co"># 顏色示範</span></span>
+<span id="cb273-2"><a href="基礎繪圖.html#cb273-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb273-3"><a href="基礎繪圖.html#cb273-3" tabindex="-1"></a></span>
+<span id="cb273-4"><a href="基礎繪圖.html#cb273-4" tabindex="-1"></a><span class="co"># 1. 使用顏色名稱</span></span>
+<span id="cb273-5"><a href="基礎繪圖.html#cb273-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;red&quot;</span>,<span class="st">&quot;blue&quot;</span>,<span class="st">&quot;green&quot;</span>,<span class="st">&quot;yellow&quot;</span>,<span class="st">&quot;purple&quot;</span>),</span>
+<span id="cb273-6"><a href="基礎繪圖.html#cb273-6" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;顏色名稱&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb273-7"><a href="基礎繪圖.html#cb273-7" tabindex="-1"></a></span>
+<span id="cb273-8"><a href="基礎繪圖.html#cb273-8" tabindex="-1"></a><span class="co"># 2. 使用RGB值</span></span>
+<span id="cb273-9"><a href="基礎繪圖.html#cb273-9" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, </span>
+<span id="cb273-10"><a href="基礎繪圖.html#cb273-10" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">rgb</span>(<span class="at">red=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span><span class="sc">/</span><span class="dv">5</span>, <span class="at">green=</span><span class="dv">0</span>, <span class="at">blue=</span><span class="dv">0</span>),</span>
+<span id="cb273-11"><a href="基礎繪圖.html#cb273-11" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;RGB顏色&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb273-12"><a href="基礎繪圖.html#cb273-12" tabindex="-1"></a></span>
+<span id="cb273-13"><a href="基礎繪圖.html#cb273-13" tabindex="-1"></a><span class="co"># 3. 使用十六進位值</span></span>
+<span id="cb273-14"><a href="基礎繪圖.html#cb273-14" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, </span>
+<span id="cb273-15"><a href="基礎繪圖.html#cb273-15" tabindex="-1"></a>     <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;#FF0000&quot;</span>, <span class="st">&quot;#00FF00&quot;</span>, <span class="st">&quot;#0000FF&quot;</span>, <span class="st">&quot;#FFFF00&quot;</span>, <span class="st">&quot;#FF00FF&quot;</span>),</span>
+<span id="cb273-16"><a href="基礎繪圖.html#cb273-16" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;十六進位顏色&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb273-17"><a href="基礎繪圖.html#cb273-17" tabindex="-1"></a></span>
+<span id="cb273-18"><a href="基礎繪圖.html#cb273-18" tabindex="-1"></a><span class="co"># 4. 使用調色盤</span></span>
+<span id="cb273-19"><a href="基礎繪圖.html#cb273-19" tabindex="-1"></a><span class="fu">palette</span>(<span class="fu">rainbow</span>(<span class="dv">5</span>))</span>
+<span id="cb273-20"><a href="基礎繪圖.html#cb273-20" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="fu">rep</span>(<span class="dv">1</span>,<span class="dv">5</span>), <span class="at">pch=</span><span class="dv">16</span>, <span class="at">cex=</span><span class="dv">3</span>, <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb273-21"><a href="基礎繪圖.html#cb273-21" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;調色盤顏色&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-88-1.png" width="672" /></p>
-<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="基礎繪圖.html#cb276-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
-<span id="cb276-2"><a href="基礎繪圖.html#cb276-2" tabindex="-1"></a><span class="fu">palette</span>(<span class="st">&quot;default&quot;</span>)  <span class="co"># 恢復預設調色盤</span></span></code></pre></div>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="基礎繪圖.html#cb274-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb274-2"><a href="基礎繪圖.html#cb274-2" tabindex="-1"></a><span class="fu">palette</span>(<span class="st">&quot;default&quot;</span>)  <span class="co"># 恢復預設調色盤</span></span></code></pre></div>
 </div>
 <div id="點形狀和線型" class="section level3 hasAnchor" number="8.2.5">
 <h3><span class="header-section-number">8.2.5</span> 點形狀和線型<a href="基礎繪圖.html#%E9%BB%9E%E5%BD%A2%E7%8B%80%E5%92%8C%E7%B7%9A%E5%9E%8B" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -500,221 +501,221 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>點與線之各類樣式</li>
 </ol>
 <p><img src="https://i.postimg.cc/15n6d8Y9/basic-Rnotes8-1.png" /></p>
-<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="基礎繪圖.html#cb277-1" tabindex="-1"></a><span class="co"># 設定圖形佈局</span></span>
-<span id="cb277-2"><a href="基礎繪圖.html#cb277-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>))</span>
-<span id="cb277-3"><a href="基礎繪圖.html#cb277-3" tabindex="-1"></a></span>
-<span id="cb277-4"><a href="基礎繪圖.html#cb277-4" tabindex="-1"></a><span class="co"># 1. 基本折線圖</span></span>
-<span id="cb277-5"><a href="基礎繪圖.html#cb277-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb277-6"><a href="基礎繪圖.html#cb277-6" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>)</span>
-<span id="cb277-7"><a href="基礎繪圖.html#cb277-7" tabindex="-1"></a></span>
-<span id="cb277-8"><a href="基礎繪圖.html#cb277-8" tabindex="-1"></a><span class="fu">plot</span>(x, y1, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">pch =</span> <span class="dv">16</span>,</span>
-<span id="cb277-9"><a href="基礎繪圖.html#cb277-9" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;基本折線圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
-<span id="cb277-10"><a href="基礎繪圖.html#cb277-10" tabindex="-1"></a><span class="fu">grid</span>()  <span class="co"># 添加網格線</span></span>
-<span id="cb277-11"><a href="基礎繪圖.html#cb277-11" tabindex="-1"></a></span>
-<span id="cb277-12"><a href="基礎繪圖.html#cb277-12" tabindex="-1"></a><span class="co"># 2. 不同線型的折線圖</span></span>
-<span id="cb277-13"><a href="基礎繪圖.html#cb277-13" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
-<span id="cb277-14"><a href="基礎繪圖.html#cb277-14" tabindex="-1"></a></span>
-<span id="cb277-15"><a href="基礎繪圖.html#cb277-15" tabindex="-1"></a><span class="fu">plot</span>(x, y1, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb277-16"><a href="基礎繪圖.html#cb277-16" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;不同線型比較&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
-<span id="cb277-17"><a href="基礎繪圖.html#cb277-17" tabindex="-1"></a><span class="fu">lines</span>(x, y2, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb277-18"><a href="基礎繪圖.html#cb277-18" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;實線&quot;</span>, <span class="st">&quot;虛線&quot;</span>),</span>
-<span id="cb277-19"><a href="基礎繪圖.html#cb277-19" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">lty =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
-<span id="cb277-20"><a href="基礎繪圖.html#cb277-20" tabindex="-1"></a></span>
-<span id="cb277-21"><a href="基礎繪圖.html#cb277-21" tabindex="-1"></a><span class="co"># 3. 簡單散點圖</span></span>
-<span id="cb277-22"><a href="基礎繪圖.html#cb277-22" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb277-23"><a href="基礎繪圖.html#cb277-23" tabindex="-1"></a>x_scatter <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
-<span id="cb277-24"><a href="基礎繪圖.html#cb277-24" tabindex="-1"></a>y_scatter <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x_scatter <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">3</span>)</span>
-<span id="cb277-25"><a href="基礎繪圖.html#cb277-25" tabindex="-1"></a></span>
-<span id="cb277-26"><a href="基礎繪圖.html#cb277-26" tabindex="-1"></a><span class="fu">plot</span>(x_scatter, y_scatter, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">cex =</span> <span class="fl">1.2</span>,</span>
-<span id="cb277-27"><a href="基礎繪圖.html#cb277-27" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;簡單散點圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
-<span id="cb277-28"><a href="基礎繪圖.html#cb277-28" tabindex="-1"></a></span>
-<span id="cb277-29"><a href="基礎繪圖.html#cb277-29" tabindex="-1"></a><span class="co"># 4. 多組數據散點圖</span></span>
-<span id="cb277-30"><a href="基礎繪圖.html#cb277-30" tabindex="-1"></a>group1_x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
-<span id="cb277-31"><a href="基礎繪圖.html#cb277-31" tabindex="-1"></a>group1_y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
-<span id="cb277-32"><a href="基礎繪圖.html#cb277-32" tabindex="-1"></a>group2_x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span>
-<span id="cb277-33"><a href="基礎繪圖.html#cb277-33" tabindex="-1"></a>group2_y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span>
-<span id="cb277-34"><a href="基礎繪圖.html#cb277-34" tabindex="-1"></a></span>
-<span id="cb277-35"><a href="基礎繪圖.html#cb277-35" tabindex="-1"></a><span class="fu">plot</span>(group1_x, group1_y, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cex =</span> <span class="fl">1.2</span>,</span>
-<span id="cb277-36"><a href="基礎繪圖.html#cb277-36" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;兩組數據散點圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>,</span>
-<span id="cb277-37"><a href="基礎繪圖.html#cb277-37" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">11</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">11</span>))</span>
-<span id="cb277-38"><a href="基礎繪圖.html#cb277-38" tabindex="-1"></a><span class="fu">points</span>(group2_x, group2_y, <span class="at">pch =</span> <span class="dv">17</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">cex =</span> <span class="fl">1.2</span>)</span>
-<span id="cb277-39"><a href="基礎繪圖.html#cb277-39" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;組別A&quot;</span>, <span class="st">&quot;組別B&quot;</span>),</span>
-<span id="cb277-40"><a href="基礎繪圖.html#cb277-40" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb275-1"><a href="基礎繪圖.html#cb275-1" tabindex="-1"></a><span class="co"># 設定圖形佈局</span></span>
+<span id="cb275-2"><a href="基礎繪圖.html#cb275-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>), <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">1</span>))</span>
+<span id="cb275-3"><a href="基礎繪圖.html#cb275-3" tabindex="-1"></a></span>
+<span id="cb275-4"><a href="基礎繪圖.html#cb275-4" tabindex="-1"></a><span class="co"># 1. 基本折線圖</span></span>
+<span id="cb275-5"><a href="基礎繪圖.html#cb275-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb275-6"><a href="基礎繪圖.html#cb275-6" tabindex="-1"></a>y1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">12</span>)</span>
+<span id="cb275-7"><a href="基礎繪圖.html#cb275-7" tabindex="-1"></a></span>
+<span id="cb275-8"><a href="基礎繪圖.html#cb275-8" tabindex="-1"></a><span class="fu">plot</span>(x, y1, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb275-9"><a href="基礎繪圖.html#cb275-9" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;基本折線圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
+<span id="cb275-10"><a href="基礎繪圖.html#cb275-10" tabindex="-1"></a><span class="fu">grid</span>()  <span class="co"># 添加網格線</span></span>
+<span id="cb275-11"><a href="基礎繪圖.html#cb275-11" tabindex="-1"></a></span>
+<span id="cb275-12"><a href="基礎繪圖.html#cb275-12" tabindex="-1"></a><span class="co"># 2. 不同線型的折線圖</span></span>
+<span id="cb275-13"><a href="基礎繪圖.html#cb275-13" tabindex="-1"></a>y2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>)</span>
+<span id="cb275-14"><a href="基礎繪圖.html#cb275-14" tabindex="-1"></a></span>
+<span id="cb275-15"><a href="基礎繪圖.html#cb275-15" tabindex="-1"></a><span class="fu">plot</span>(x, y1, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb275-16"><a href="基礎繪圖.html#cb275-16" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;不同線型比較&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
+<span id="cb275-17"><a href="基礎繪圖.html#cb275-17" tabindex="-1"></a><span class="fu">lines</span>(x, y2, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb275-18"><a href="基礎繪圖.html#cb275-18" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;實線&quot;</span>, <span class="st">&quot;虛線&quot;</span>),</span>
+<span id="cb275-19"><a href="基礎繪圖.html#cb275-19" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">lty =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb275-20"><a href="基礎繪圖.html#cb275-20" tabindex="-1"></a></span>
+<span id="cb275-21"><a href="基礎繪圖.html#cb275-21" tabindex="-1"></a><span class="co"># 3. 簡單散點圖</span></span>
+<span id="cb275-22"><a href="基礎繪圖.html#cb275-22" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb275-23"><a href="基礎繪圖.html#cb275-23" tabindex="-1"></a>x_scatter <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span></span>
+<span id="cb275-24"><a href="基礎繪圖.html#cb275-24" tabindex="-1"></a>y_scatter <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> x_scatter <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">0</span>, <span class="dv">3</span>)</span>
+<span id="cb275-25"><a href="基礎繪圖.html#cb275-25" tabindex="-1"></a></span>
+<span id="cb275-26"><a href="基礎繪圖.html#cb275-26" tabindex="-1"></a><span class="fu">plot</span>(x_scatter, y_scatter, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">cex =</span> <span class="fl">1.2</span>,</span>
+<span id="cb275-27"><a href="基礎繪圖.html#cb275-27" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;簡單散點圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>)</span>
+<span id="cb275-28"><a href="基礎繪圖.html#cb275-28" tabindex="-1"></a></span>
+<span id="cb275-29"><a href="基礎繪圖.html#cb275-29" tabindex="-1"></a><span class="co"># 4. 多組數據散點圖</span></span>
+<span id="cb275-30"><a href="基礎繪圖.html#cb275-30" tabindex="-1"></a>group1_x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb275-31"><a href="基礎繪圖.html#cb275-31" tabindex="-1"></a>group1_y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb275-32"><a href="基礎繪圖.html#cb275-32" tabindex="-1"></a>group2_x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span>
+<span id="cb275-33"><a href="基礎繪圖.html#cb275-33" tabindex="-1"></a>group2_y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">15</span>, <span class="dv">8</span>, <span class="dv">1</span>)</span>
+<span id="cb275-34"><a href="基礎繪圖.html#cb275-34" tabindex="-1"></a></span>
+<span id="cb275-35"><a href="基礎繪圖.html#cb275-35" tabindex="-1"></a><span class="fu">plot</span>(group1_x, group1_y, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">cex =</span> <span class="fl">1.2</span>,</span>
+<span id="cb275-36"><a href="基礎繪圖.html#cb275-36" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;兩組數據散點圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X軸&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y軸&quot;</span>,</span>
+<span id="cb275-37"><a href="基礎繪圖.html#cb275-37" tabindex="-1"></a>     <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">11</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">11</span>))</span>
+<span id="cb275-38"><a href="基礎繪圖.html#cb275-38" tabindex="-1"></a><span class="fu">points</span>(group2_x, group2_y, <span class="at">pch =</span> <span class="dv">17</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">cex =</span> <span class="fl">1.2</span>)</span>
+<span id="cb275-39"><a href="基礎繪圖.html#cb275-39" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topleft&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;組別A&quot;</span>, <span class="st">&quot;組別B&quot;</span>),</span>
+<span id="cb275-40"><a href="基礎繪圖.html#cb275-40" tabindex="-1"></a>       <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">17</span>))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-89-1.png" width="672" /></p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="基礎繪圖.html#cb278-1" tabindex="-1"></a><span class="co"># 恢復單圖佈局</span></span>
-<span id="cb278-2"><a href="基礎繪圖.html#cb278-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="基礎繪圖.html#cb276-1" tabindex="-1"></a><span class="co"># 恢復單圖佈局</span></span>
+<span id="cb276-2"><a href="基礎繪圖.html#cb276-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="其他常見統計圖形" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> 其他常見統計圖形<a href="基礎繪圖.html#%E5%85%B6%E4%BB%96%E5%B8%B8%E8%A6%8B%E7%B5%B1%E8%A8%88%E5%9C%96%E5%BD%A2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="直方圖hist" class="section level3 hasAnchor" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> 直方圖<code>hist()</code><a href="基礎繪圖.html#%E7%9B%B4%E6%96%B9%E5%9C%96hist" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="基礎繪圖.html#cb279-1" tabindex="-1"></a><span class="co"># 直方圖</span></span>
-<span id="cb279-2"><a href="基礎繪圖.html#cb279-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb279-3"><a href="基礎繪圖.html#cb279-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">50</span>, <span class="at">sd=</span><span class="dv">10</span>)</span>
-<span id="cb279-4"><a href="基礎繪圖.html#cb279-4" tabindex="-1"></a></span>
-<span id="cb279-5"><a href="基礎繪圖.html#cb279-5" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb279-6"><a href="基礎繪圖.html#cb279-6" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">main =</span> <span class="st">&quot;預設直方圖&quot;</span>)</span>
-<span id="cb279-7"><a href="基礎繪圖.html#cb279-7" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">breaks =</span> <span class="dv">20</span>, <span class="at">main =</span> <span class="st">&quot;20個分組&quot;</span>, <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>)</span>
-<span id="cb279-8"><a href="基礎繪圖.html#cb279-8" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;機率密度&quot;</span>, <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</span>
-<span id="cb279-9"><a href="基礎繪圖.html#cb279-9" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(data), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)  <span class="co"># 添加密度曲線</span></span>
-<span id="cb279-10"><a href="基礎繪圖.html#cb279-10" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">main =</span> <span class="st">&quot;自訂顏色&quot;</span>, </span>
-<span id="cb279-11"><a href="基礎繪圖.html#cb279-11" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="基礎繪圖.html#cb277-1" tabindex="-1"></a><span class="co"># 直方圖</span></span>
+<span id="cb277-2"><a href="基礎繪圖.html#cb277-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb277-3"><a href="基礎繪圖.html#cb277-3" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean=</span><span class="dv">50</span>, <span class="at">sd=</span><span class="dv">10</span>)</span>
+<span id="cb277-4"><a href="基礎繪圖.html#cb277-4" tabindex="-1"></a></span>
+<span id="cb277-5"><a href="基礎繪圖.html#cb277-5" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb277-6"><a href="基礎繪圖.html#cb277-6" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">main =</span> <span class="st">&quot;預設直方圖&quot;</span>)</span>
+<span id="cb277-7"><a href="基礎繪圖.html#cb277-7" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">breaks =</span> <span class="dv">20</span>, <span class="at">main =</span> <span class="st">&quot;20個分組&quot;</span>, <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>)</span>
+<span id="cb277-8"><a href="基礎繪圖.html#cb277-8" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">probability =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;機率密度&quot;</span>, <span class="at">col =</span> <span class="st">&quot;lightgreen&quot;</span>)</span>
+<span id="cb277-9"><a href="基礎繪圖.html#cb277-9" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(data), <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)  <span class="co"># 添加密度曲線</span></span>
+<span id="cb277-10"><a href="基礎繪圖.html#cb277-10" tabindex="-1"></a><span class="fu">hist</span>(data, <span class="at">main =</span> <span class="st">&quot;自訂顏色&quot;</span>, </span>
+<span id="cb277-11"><a href="基礎繪圖.html#cb277-11" tabindex="-1"></a>     <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>, <span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-90-1.png" width="672" /></p>
-<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="基礎繪圖.html#cb280-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="基礎繪圖.html#cb278-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 </div>
 <div id="盒鬚圖-boxplot" class="section level3 hasAnchor" number="8.3.2">
 <h3><span class="header-section-number">8.3.2</span> 盒鬚圖 <code>boxplot()</code><a href="基礎繪圖.html#%E7%9B%92%E9%AC%9A%E5%9C%96-boxplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="基礎繪圖.html#cb281-1" tabindex="-1"></a><span class="co"># 盒鬚圖</span></span>
-<span id="cb281-2"><a href="基礎繪圖.html#cb281-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb281-3"><a href="基礎繪圖.html#cb281-3" tabindex="-1"></a></span>
-<span id="cb281-4"><a href="基礎繪圖.html#cb281-4" tabindex="-1"></a><span class="co"># 基本盒鬚圖</span></span>
-<span id="cb281-5"><a href="基礎繪圖.html#cb281-5" tabindex="-1"></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg, <span class="at">main =</span> <span class="st">&quot;單變量盒鬚圖&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;MPG&quot;</span>)</span>
-<span id="cb281-6"><a href="基礎繪圖.html#cb281-6" tabindex="-1"></a></span>
-<span id="cb281-7"><a href="基礎繪圖.html#cb281-7" tabindex="-1"></a><span class="co"># 分組盒鬚圖</span></span>
-<span id="cb281-8"><a href="基礎繪圖.html#cb281-8" tabindex="-1"></a><span class="fu">boxplot</span>(mpg <span class="sc">~</span> cyl, <span class="at">data =</span> mtcars, </span>
-<span id="cb281-9"><a href="基礎繪圖.html#cb281-9" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;按氣缸數分組的MPG&quot;</span>,</span>
-<span id="cb281-10"><a href="基礎繪圖.html#cb281-10" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;氣缸數&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;MPG&quot;</span>)</span>
-<span id="cb281-11"><a href="基礎繪圖.html#cb281-11" tabindex="-1"></a></span>
-<span id="cb281-12"><a href="基礎繪圖.html#cb281-12" tabindex="-1"></a><span class="co"># 水平盒鬚圖</span></span>
-<span id="cb281-13"><a href="基礎繪圖.html#cb281-13" tabindex="-1"></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;水平盒鬚圖&quot;</span>)</span>
-<span id="cb281-14"><a href="基礎繪圖.html#cb281-14" tabindex="-1"></a></span>
-<span id="cb281-15"><a href="基礎繪圖.html#cb281-15" tabindex="-1"></a><span class="co"># 帶顏色的盒鬚圖</span></span>
-<span id="cb281-16"><a href="基礎繪圖.html#cb281-16" tabindex="-1"></a><span class="fu">boxplot</span>(mpg <span class="sc">~</span> gear, <span class="at">data =</span> mtcars, <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="dv">3</span>),</span>
-<span id="cb281-17"><a href="基礎繪圖.html#cb281-17" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;帶顏色的盒鬚圖&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="基礎繪圖.html#cb279-1" tabindex="-1"></a><span class="co"># 盒鬚圖</span></span>
+<span id="cb279-2"><a href="基礎繪圖.html#cb279-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb279-3"><a href="基礎繪圖.html#cb279-3" tabindex="-1"></a></span>
+<span id="cb279-4"><a href="基礎繪圖.html#cb279-4" tabindex="-1"></a><span class="co"># 基本盒鬚圖</span></span>
+<span id="cb279-5"><a href="基礎繪圖.html#cb279-5" tabindex="-1"></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg, <span class="at">main =</span> <span class="st">&quot;單變量盒鬚圖&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;MPG&quot;</span>)</span>
+<span id="cb279-6"><a href="基礎繪圖.html#cb279-6" tabindex="-1"></a></span>
+<span id="cb279-7"><a href="基礎繪圖.html#cb279-7" tabindex="-1"></a><span class="co"># 分組盒鬚圖</span></span>
+<span id="cb279-8"><a href="基礎繪圖.html#cb279-8" tabindex="-1"></a><span class="fu">boxplot</span>(mpg <span class="sc">~</span> cyl, <span class="at">data =</span> mtcars, </span>
+<span id="cb279-9"><a href="基礎繪圖.html#cb279-9" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;按氣缸數分組的MPG&quot;</span>,</span>
+<span id="cb279-10"><a href="基礎繪圖.html#cb279-10" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;氣缸數&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;MPG&quot;</span>)</span>
+<span id="cb279-11"><a href="基礎繪圖.html#cb279-11" tabindex="-1"></a></span>
+<span id="cb279-12"><a href="基礎繪圖.html#cb279-12" tabindex="-1"></a><span class="co"># 水平盒鬚圖</span></span>
+<span id="cb279-13"><a href="基礎繪圖.html#cb279-13" tabindex="-1"></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;水平盒鬚圖&quot;</span>)</span>
+<span id="cb279-14"><a href="基礎繪圖.html#cb279-14" tabindex="-1"></a></span>
+<span id="cb279-15"><a href="基礎繪圖.html#cb279-15" tabindex="-1"></a><span class="co"># 帶顏色的盒鬚圖</span></span>
+<span id="cb279-16"><a href="基礎繪圖.html#cb279-16" tabindex="-1"></a><span class="fu">boxplot</span>(mpg <span class="sc">~</span> gear, <span class="at">data =</span> mtcars, <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="dv">3</span>),</span>
+<span id="cb279-17"><a href="基礎繪圖.html#cb279-17" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">&quot;帶顏色的盒鬚圖&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="基礎繪圖.html#cb282-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="基礎繪圖.html#cb280-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 </div>
 <div id="長條圖-barplot" class="section level3 hasAnchor" number="8.3.3">
 <h3><span class="header-section-number">8.3.3</span> 長條圖 <code>barplot()</code><a href="基礎繪圖.html#%E9%95%B7%E6%A2%9D%E5%9C%96-barplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="基礎繪圖.html#cb283-1" tabindex="-1"></a><span class="co"># 長條圖</span></span>
-<span id="cb283-2"><a href="基礎繪圖.html#cb283-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb283-3"><a href="基礎繪圖.html#cb283-3" tabindex="-1"></a></span>
-<span id="cb283-4"><a href="基礎繪圖.html#cb283-4" tabindex="-1"></a><span class="co"># 簡單長條圖</span></span>
-<span id="cb283-5"><a href="基礎繪圖.html#cb283-5" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">table</span>(mtcars<span class="sc">$</span>gear)</span>
-<span id="cb283-6"><a href="基礎繪圖.html#cb283-6" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">main =</span> <span class="st">&quot;簡單長條圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;檔位數&quot;</span>)</span>
-<span id="cb283-7"><a href="基礎繪圖.html#cb283-7" tabindex="-1"></a></span>
-<span id="cb283-8"><a href="基礎繪圖.html#cb283-8" tabindex="-1"></a><span class="co"># 水平長條圖</span></span>
-<span id="cb283-9"><a href="基礎繪圖.html#cb283-9" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">horiz =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;水平長條圖&quot;</span>)</span>
-<span id="cb283-10"><a href="基礎繪圖.html#cb283-10" tabindex="-1"></a></span>
-<span id="cb283-11"><a href="基礎繪圖.html#cb283-11" tabindex="-1"></a><span class="co"># 分組長條圖</span></span>
-<span id="cb283-12"><a href="基礎繪圖.html#cb283-12" tabindex="-1"></a>counts2 <span class="ot">&lt;-</span> <span class="fu">table</span>(mtcars<span class="sc">$</span>vs, mtcars<span class="sc">$</span>gear)</span>
-<span id="cb283-13"><a href="基礎繪圖.html#cb283-13" tabindex="-1"></a><span class="fu">barplot</span>(counts2, <span class="at">main =</span> <span class="st">&quot;分組長條圖&quot;</span>, </span>
-<span id="cb283-14"><a href="基礎繪圖.html#cb283-14" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;檔位數&quot;</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;red&quot;</span>),</span>
-<span id="cb283-15"><a href="基礎繪圖.html#cb283-15" tabindex="-1"></a>        <span class="at">legend =</span> <span class="fu">rownames</span>(counts2))</span>
-<span id="cb283-16"><a href="基礎繪圖.html#cb283-16" tabindex="-1"></a></span>
-<span id="cb283-17"><a href="基礎繪圖.html#cb283-17" tabindex="-1"></a><span class="co"># 堆疊長條圖</span></span>
-<span id="cb283-18"><a href="基礎繪圖.html#cb283-18" tabindex="-1"></a><span class="fu">barplot</span>(counts2, <span class="at">main =</span> <span class="st">&quot;堆疊長條圖&quot;</span>, </span>
-<span id="cb283-19"><a href="基礎繪圖.html#cb283-19" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;檔位數&quot;</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;red&quot;</span>),</span>
-<span id="cb283-20"><a href="基礎繪圖.html#cb283-20" tabindex="-1"></a>        <span class="at">legend =</span> <span class="fu">rownames</span>(counts2), <span class="at">beside =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="基礎繪圖.html#cb281-1" tabindex="-1"></a><span class="co"># 長條圖</span></span>
+<span id="cb281-2"><a href="基礎繪圖.html#cb281-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb281-3"><a href="基礎繪圖.html#cb281-3" tabindex="-1"></a></span>
+<span id="cb281-4"><a href="基礎繪圖.html#cb281-4" tabindex="-1"></a><span class="co"># 簡單長條圖</span></span>
+<span id="cb281-5"><a href="基礎繪圖.html#cb281-5" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">table</span>(mtcars<span class="sc">$</span>gear)</span>
+<span id="cb281-6"><a href="基礎繪圖.html#cb281-6" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">main =</span> <span class="st">&quot;簡單長條圖&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;檔位數&quot;</span>)</span>
+<span id="cb281-7"><a href="基礎繪圖.html#cb281-7" tabindex="-1"></a></span>
+<span id="cb281-8"><a href="基礎繪圖.html#cb281-8" tabindex="-1"></a><span class="co"># 水平長條圖</span></span>
+<span id="cb281-9"><a href="基礎繪圖.html#cb281-9" tabindex="-1"></a><span class="fu">barplot</span>(counts, <span class="at">horiz =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">&quot;水平長條圖&quot;</span>)</span>
+<span id="cb281-10"><a href="基礎繪圖.html#cb281-10" tabindex="-1"></a></span>
+<span id="cb281-11"><a href="基礎繪圖.html#cb281-11" tabindex="-1"></a><span class="co"># 分組長條圖</span></span>
+<span id="cb281-12"><a href="基礎繪圖.html#cb281-12" tabindex="-1"></a>counts2 <span class="ot">&lt;-</span> <span class="fu">table</span>(mtcars<span class="sc">$</span>vs, mtcars<span class="sc">$</span>gear)</span>
+<span id="cb281-13"><a href="基礎繪圖.html#cb281-13" tabindex="-1"></a><span class="fu">barplot</span>(counts2, <span class="at">main =</span> <span class="st">&quot;分組長條圖&quot;</span>, </span>
+<span id="cb281-14"><a href="基礎繪圖.html#cb281-14" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;檔位數&quot;</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;red&quot;</span>),</span>
+<span id="cb281-15"><a href="基礎繪圖.html#cb281-15" tabindex="-1"></a>        <span class="at">legend =</span> <span class="fu">rownames</span>(counts2), <span class="at">beside =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb281-16"><a href="基礎繪圖.html#cb281-16" tabindex="-1"></a></span>
+<span id="cb281-17"><a href="基礎繪圖.html#cb281-17" tabindex="-1"></a><span class="co"># 堆疊長條圖</span></span>
+<span id="cb281-18"><a href="基礎繪圖.html#cb281-18" tabindex="-1"></a><span class="fu">barplot</span>(counts2, <span class="at">main =</span> <span class="st">&quot;堆疊長條圖&quot;</span>, </span>
+<span id="cb281-19"><a href="基礎繪圖.html#cb281-19" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;檔位數&quot;</span>, <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;red&quot;</span>),</span>
+<span id="cb281-20"><a href="基礎繪圖.html#cb281-20" tabindex="-1"></a>        <span class="at">legend =</span> <span class="fu">rownames</span>(counts2), <span class="at">beside =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="基礎繪圖.html#cb284-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="基礎繪圖.html#cb282-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 </div>
 <div id="圓餅圖-pie" class="section level3 hasAnchor" number="8.3.4">
 <h3><span class="header-section-number">8.3.4</span> 圓餅圖 <code>pie()</code><a href="基礎繪圖.html#%E5%9C%93%E9%A4%85%E5%9C%96-pie" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="基礎繪圖.html#cb285-1" tabindex="-1"></a><span class="co"># 圓餅圖</span></span>
-<span id="cb285-2"><a href="基礎繪圖.html#cb285-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb285-3"><a href="基礎繪圖.html#cb285-3" tabindex="-1"></a></span>
-<span id="cb285-4"><a href="基礎繪圖.html#cb285-4" tabindex="-1"></a><span class="co"># 基本圓餅圖</span></span>
-<span id="cb285-5"><a href="基礎繪圖.html#cb285-5" tabindex="-1"></a>slices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">25</span>)</span>
-<span id="cb285-6"><a href="基礎繪圖.html#cb285-6" tabindex="-1"></a>lbls <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A部門&quot;</span>, <span class="st">&quot;B部門&quot;</span>, <span class="st">&quot;C部門&quot;</span>, <span class="st">&quot;D部門&quot;</span>)</span>
-<span id="cb285-7"><a href="基礎繪圖.html#cb285-7" tabindex="-1"></a><span class="fu">pie</span>(slices, <span class="at">labels =</span> lbls, <span class="at">main =</span> <span class="st">&quot;基本圓餅圖&quot;</span>)</span>
-<span id="cb285-8"><a href="基礎繪圖.html#cb285-8" tabindex="-1"></a></span>
-<span id="cb285-9"><a href="基礎繪圖.html#cb285-9" tabindex="-1"></a><span class="co"># 帶百分比的圓餅圖</span></span>
-<span id="cb285-10"><a href="基礎繪圖.html#cb285-10" tabindex="-1"></a>pct <span class="ot">&lt;-</span> <span class="fu">round</span>(slices<span class="sc">/</span><span class="fu">sum</span>(slices)<span class="sc">*</span><span class="dv">100</span>)</span>
-<span id="cb285-11"><a href="基礎繪圖.html#cb285-11" tabindex="-1"></a>lbls2 <span class="ot">&lt;-</span> <span class="fu">paste</span>(lbls, <span class="st">&quot; &quot;</span>, pct, <span class="st">&quot;%&quot;</span>, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
-<span id="cb285-12"><a href="基礎繪圖.html#cb285-12" tabindex="-1"></a><span class="fu">pie</span>(slices, <span class="at">labels =</span> lbls2, <span class="at">main =</span> <span class="st">&quot;帶百分比圓餅圖&quot;</span>)</span>
-<span id="cb285-13"><a href="基礎繪圖.html#cb285-13" tabindex="-1"></a></span>
-<span id="cb285-14"><a href="基礎繪圖.html#cb285-14" tabindex="-1"></a><span class="co"># 3D圓餅圖（需要plotrix套件）</span></span>
-<span id="cb285-15"><a href="基礎繪圖.html#cb285-15" tabindex="-1"></a><span class="co"># install.packages(&quot;plotrix&quot;)</span></span>
-<span id="cb285-16"><a href="基礎繪圖.html#cb285-16" tabindex="-1"></a><span class="fu">library</span>(plotrix)</span>
-<span id="cb285-17"><a href="基礎繪圖.html#cb285-17" tabindex="-1"></a><span class="fu">pie3D</span>(slices, <span class="at">labels =</span> lbls, <span class="at">explode =</span> <span class="fl">0.1</span>, <span class="at">main =</span> <span class="st">&quot;3D圓餅圖&quot;</span>)</span>
-<span id="cb285-18"><a href="基礎繪圖.html#cb285-18" tabindex="-1"></a></span>
-<span id="cb285-19"><a href="基礎繪圖.html#cb285-19" tabindex="-1"></a><span class="co"># 自訂顏色圓餅圖</span></span>
-<span id="cb285-20"><a href="基礎繪圖.html#cb285-20" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>)</span>
-<span id="cb285-21"><a href="基礎繪圖.html#cb285-21" tabindex="-1"></a><span class="fu">pie</span>(slices, <span class="at">labels =</span> lbls, <span class="at">col =</span> colors, <span class="at">main =</span> <span class="st">&quot;彩色圓餅圖&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="基礎繪圖.html#cb283-1" tabindex="-1"></a><span class="co"># 圓餅圖</span></span>
+<span id="cb283-2"><a href="基礎繪圖.html#cb283-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb283-3"><a href="基礎繪圖.html#cb283-3" tabindex="-1"></a></span>
+<span id="cb283-4"><a href="基礎繪圖.html#cb283-4" tabindex="-1"></a><span class="co"># 基本圓餅圖</span></span>
+<span id="cb283-5"><a href="基礎繪圖.html#cb283-5" tabindex="-1"></a>slices <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">25</span>)</span>
+<span id="cb283-6"><a href="基礎繪圖.html#cb283-6" tabindex="-1"></a>lbls <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;A部門&quot;</span>, <span class="st">&quot;B部門&quot;</span>, <span class="st">&quot;C部門&quot;</span>, <span class="st">&quot;D部門&quot;</span>)</span>
+<span id="cb283-7"><a href="基礎繪圖.html#cb283-7" tabindex="-1"></a><span class="fu">pie</span>(slices, <span class="at">labels =</span> lbls, <span class="at">main =</span> <span class="st">&quot;基本圓餅圖&quot;</span>)</span>
+<span id="cb283-8"><a href="基礎繪圖.html#cb283-8" tabindex="-1"></a></span>
+<span id="cb283-9"><a href="基礎繪圖.html#cb283-9" tabindex="-1"></a><span class="co"># 帶百分比的圓餅圖</span></span>
+<span id="cb283-10"><a href="基礎繪圖.html#cb283-10" tabindex="-1"></a>pct <span class="ot">&lt;-</span> <span class="fu">round</span>(slices<span class="sc">/</span><span class="fu">sum</span>(slices)<span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb283-11"><a href="基礎繪圖.html#cb283-11" tabindex="-1"></a>lbls2 <span class="ot">&lt;-</span> <span class="fu">paste</span>(lbls, <span class="st">&quot; &quot;</span>, pct, <span class="st">&quot;%&quot;</span>, <span class="at">sep=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb283-12"><a href="基礎繪圖.html#cb283-12" tabindex="-1"></a><span class="fu">pie</span>(slices, <span class="at">labels =</span> lbls2, <span class="at">main =</span> <span class="st">&quot;帶百分比圓餅圖&quot;</span>)</span>
+<span id="cb283-13"><a href="基礎繪圖.html#cb283-13" tabindex="-1"></a></span>
+<span id="cb283-14"><a href="基礎繪圖.html#cb283-14" tabindex="-1"></a><span class="co"># 3D圓餅圖（需要plotrix套件）</span></span>
+<span id="cb283-15"><a href="基礎繪圖.html#cb283-15" tabindex="-1"></a><span class="co"># install.packages(&quot;plotrix&quot;)</span></span>
+<span id="cb283-16"><a href="基礎繪圖.html#cb283-16" tabindex="-1"></a><span class="fu">library</span>(plotrix)</span>
+<span id="cb283-17"><a href="基礎繪圖.html#cb283-17" tabindex="-1"></a><span class="fu">pie3D</span>(slices, <span class="at">labels =</span> lbls, <span class="at">explode =</span> <span class="fl">0.1</span>, <span class="at">main =</span> <span class="st">&quot;3D圓餅圖&quot;</span>)</span>
+<span id="cb283-18"><a href="基礎繪圖.html#cb283-18" tabindex="-1"></a></span>
+<span id="cb283-19"><a href="基礎繪圖.html#cb283-19" tabindex="-1"></a><span class="co"># 自訂顏色圓餅圖</span></span>
+<span id="cb283-20"><a href="基礎繪圖.html#cb283-20" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>, <span class="st">&quot;green&quot;</span>, <span class="st">&quot;yellow&quot;</span>)</span>
+<span id="cb283-21"><a href="基礎繪圖.html#cb283-21" tabindex="-1"></a><span class="fu">pie</span>(slices, <span class="at">labels =</span> lbls, <span class="at">col =</span> colors, <span class="at">main =</span> <span class="st">&quot;彩色圓餅圖&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-93-1.png" width="672" /></p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="基礎繪圖.html#cb286-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="基礎繪圖.html#cb284-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 </div>
 </div>
 <div id="多圖佈局" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> 多圖佈局<a href="基礎繪圖.html#%E5%A4%9A%E5%9C%96%E4%BD%88%E5%B1%80" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="基礎多圖佈局" class="section level3 hasAnchor" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> 基礎多圖佈局<a href="基礎繪圖.html#%E5%9F%BA%E7%A4%8E%E5%A4%9A%E5%9C%96%E4%BD%88%E5%B1%80" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="基礎繪圖.html#cb287-1" tabindex="-1"></a><span class="co"># 基礎多圖佈局</span></span>
-<span id="cb287-2"><a href="基礎繪圖.html#cb287-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))  <span class="co"># 2行2列</span></span>
-<span id="cb287-3"><a href="基礎繪圖.html#cb287-3" tabindex="-1"></a></span>
-<span id="cb287-4"><a href="基礎繪圖.html#cb287-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">&quot;圖1&quot;</span>)</span>
-<span id="cb287-5"><a href="基礎繪圖.html#cb287-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>), <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;圖2&quot;</span>)</span>
-<span id="cb287-6"><a href="基礎繪圖.html#cb287-6" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">&quot;圖3&quot;</span>)</span>
-<span id="cb287-7"><a href="基礎繪圖.html#cb287-7" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">&quot;圖4&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="基礎繪圖.html#cb285-1" tabindex="-1"></a><span class="co"># 基礎多圖佈局</span></span>
+<span id="cb285-2"><a href="基礎繪圖.html#cb285-2" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))  <span class="co"># 2行2列</span></span>
+<span id="cb285-3"><a href="基礎繪圖.html#cb285-3" tabindex="-1"></a></span>
+<span id="cb285-4"><a href="基礎繪圖.html#cb285-4" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">&quot;圖1&quot;</span>)</span>
+<span id="cb285-5"><a href="基礎繪圖.html#cb285-5" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>), <span class="at">type =</span> <span class="st">&quot;l&quot;</span>, <span class="at">main =</span> <span class="st">&quot;圖2&quot;</span>)</span>
+<span id="cb285-6"><a href="基礎繪圖.html#cb285-6" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">rnorm</span>(<span class="dv">100</span>), <span class="at">main =</span> <span class="st">&quot;圖3&quot;</span>)</span>
+<span id="cb285-7"><a href="基礎繪圖.html#cb285-7" tabindex="-1"></a><span class="fu">boxplot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">&quot;圖4&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-94-1.png" width="672" /></p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="基礎繪圖.html#cb288-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))  <span class="co"># 恢復單圖</span></span></code></pre></div>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="基礎繪圖.html#cb286-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))  <span class="co"># 恢復單圖</span></span></code></pre></div>
 </div>
 <div id="自訂佈局" class="section level3 hasAnchor" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> 自訂佈局<a href="基礎繪圖.html#%E8%87%AA%E8%A8%82%E4%BD%88%E5%B1%80" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="基礎繪圖.html#cb289-1" tabindex="-1"></a><span class="co"># 自訂佈局</span></span>
-<span id="cb289-2"><a href="基礎繪圖.html#cb289-2" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb289-3"><a href="基礎繪圖.html#cb289-3" tabindex="-1"></a><span class="co"># 佈局解釋：</span></span>
-<span id="cb289-4"><a href="基礎繪圖.html#cb289-4" tabindex="-1"></a><span class="co"># [1,1] 表示第一個圖形佔據第一行的兩個位置</span></span>
-<span id="cb289-5"><a href="基礎繪圖.html#cb289-5" tabindex="-1"></a><span class="co"># [2,3] 表示第二行分為兩個位置，第二個和第三個圖形</span></span>
-<span id="cb289-6"><a href="基礎繪圖.html#cb289-6" tabindex="-1"></a></span>
-<span id="cb289-7"><a href="基礎繪圖.html#cb289-7" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">&quot;大圖 (佔據第一行)&quot;</span>)</span>
-<span id="cb289-8"><a href="基礎繪圖.html#cb289-8" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>), <span class="at">main =</span> <span class="st">&quot;小圖1&quot;</span>)</span>
-<span id="cb289-9"><a href="基礎繪圖.html#cb289-9" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>), <span class="at">main =</span> <span class="st">&quot;小圖2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="基礎繪圖.html#cb287-1" tabindex="-1"></a><span class="co"># 自訂佈局</span></span>
+<span id="cb287-2"><a href="基礎繪圖.html#cb287-2" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="dv">2</span>, <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb287-3"><a href="基礎繪圖.html#cb287-3" tabindex="-1"></a><span class="co"># 佈局解釋：</span></span>
+<span id="cb287-4"><a href="基礎繪圖.html#cb287-4" tabindex="-1"></a><span class="co"># [1,1] 表示第一個圖形佔據第一行的兩個位置</span></span>
+<span id="cb287-5"><a href="基礎繪圖.html#cb287-5" tabindex="-1"></a><span class="co"># [2,3] 表示第二行分為兩個位置，第二個和第三個圖形</span></span>
+<span id="cb287-6"><a href="基礎繪圖.html#cb287-6" tabindex="-1"></a></span>
+<span id="cb287-7"><a href="基礎繪圖.html#cb287-7" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">main =</span> <span class="st">&quot;大圖 (佔據第一行)&quot;</span>)</span>
+<span id="cb287-8"><a href="基礎繪圖.html#cb287-8" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>), <span class="at">main =</span> <span class="st">&quot;小圖1&quot;</span>)</span>
+<span id="cb287-9"><a href="基礎繪圖.html#cb287-9" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">rnorm</span>(<span class="dv">20</span>), <span class="at">main =</span> <span class="st">&quot;小圖2&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-95-1.png" width="672" /></p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="基礎繪圖.html#cb290-1" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)  <span class="co"># 恢復預設佈局</span></span></code></pre></div>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="基礎繪圖.html#cb288-1" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)  <span class="co"># 恢復預設佈局</span></span></code></pre></div>
 </div>
 </div>
 <div id="圖形註解與文字" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> 圖形註解與文字<a href="基礎繪圖.html#%E5%9C%96%E5%BD%A2%E8%A8%BB%E8%A7%A3%E8%88%87%E6%96%87%E5%AD%97" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="添加文字和標題" class="section level3 hasAnchor" number="8.5.1">
 <h3><span class="header-section-number">8.5.1</span> 添加文字和標題<a href="基礎繪圖.html#%E6%B7%BB%E5%8A%A0%E6%96%87%E5%AD%97%E5%92%8C%E6%A8%99%E9%A1%8C" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb291-1"><a href="基礎繪圖.html#cb291-1" tabindex="-1"></a><span class="co"># 圖形註解</span></span>
-<span id="cb291-2"><a href="基礎繪圖.html#cb291-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">main =</span> <span class="st">&quot;圖形註示例&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y&quot;</span>)</span>
-<span id="cb291-3"><a href="基礎繪圖.html#cb291-3" tabindex="-1"></a></span>
-<span id="cb291-4"><a href="基礎繪圖.html#cb291-4" tabindex="-1"></a><span class="co"># 添加點</span></span>
-<span id="cb291-5"><a href="基礎繪圖.html#cb291-5" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb291-6"><a href="基礎繪圖.html#cb291-6" tabindex="-1"></a></span>
-<span id="cb291-7"><a href="基礎繪圖.html#cb291-7" tabindex="-1"></a><span class="co"># 添加文字</span></span>
-<span id="cb291-8"><a href="基礎繪圖.html#cb291-8" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="st">&quot;中心點&quot;</span>, <span class="at">pos =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)  <span class="co"># pos=1 表示在點下方</span></span>
-<span id="cb291-9"><a href="基礎繪圖.html#cb291-9" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">2</span>, <span class="dv">8</span>, <span class="st">&quot;左上文字&quot;</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb291-10"><a href="基礎繪圖.html#cb291-10" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">8</span>, <span class="dv">2</span>, <span class="st">&quot;右下文字&quot;</span>, <span class="at">adj =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>)</span>
-<span id="cb291-11"><a href="基礎繪圖.html#cb291-11" tabindex="-1"></a></span>
-<span id="cb291-12"><a href="基礎繪圖.html#cb291-12" tabindex="-1"></a><span class="co"># 添加數學公式</span></span>
-<span id="cb291-13"><a href="基礎繪圖.html#cb291-13" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">5</span>, <span class="dv">9</span>, <span class="fu">expression</span>(<span class="fu">bar</span>(x) <span class="sc">==</span> <span class="fu">sum</span>(<span class="fu">frac</span>(x[i], n), i<span class="sc">==</span><span class="dv">1</span>, n)), <span class="at">cex =</span> <span class="fl">1.2</span>)</span>
-<span id="cb291-14"><a href="基礎繪圖.html#cb291-14" tabindex="-1"></a></span>
-<span id="cb291-15"><a href="基礎繪圖.html#cb291-15" tabindex="-1"></a><span class="co"># 添加圖例</span></span>
-<span id="cb291-16"><a href="基礎繪圖.html#cb291-16" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;類別 A&quot;</span>, <span class="st">&quot;類別 B&quot;</span>), </span>
-<span id="cb291-17"><a href="基礎繪圖.html#cb291-17" tabindex="-1"></a>       <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">1</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">title =</span> <span class="st">&quot;圖例&quot;</span>)</span>
-<span id="cb291-18"><a href="基礎繪圖.html#cb291-18" tabindex="-1"></a></span>
-<span id="cb291-19"><a href="基礎繪圖.html#cb291-19" tabindex="-1"></a><span class="co"># 添加網格</span></span>
-<span id="cb291-20"><a href="基礎繪圖.html#cb291-20" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="基礎繪圖.html#cb289-1" tabindex="-1"></a><span class="co"># 圖形註解</span></span>
+<span id="cb289-2"><a href="基礎繪圖.html#cb289-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">main =</span> <span class="st">&quot;圖形註示例&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb289-3"><a href="基礎繪圖.html#cb289-3" tabindex="-1"></a></span>
+<span id="cb289-4"><a href="基礎繪圖.html#cb289-4" tabindex="-1"></a><span class="co"># 添加點</span></span>
+<span id="cb289-5"><a href="基礎繪圖.html#cb289-5" tabindex="-1"></a><span class="fu">points</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb289-6"><a href="基礎繪圖.html#cb289-6" tabindex="-1"></a></span>
+<span id="cb289-7"><a href="基礎繪圖.html#cb289-7" tabindex="-1"></a><span class="co"># 添加文字</span></span>
+<span id="cb289-8"><a href="基礎繪圖.html#cb289-8" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">5</span>, <span class="dv">5</span>, <span class="st">&quot;中心點&quot;</span>, <span class="at">pos =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)  <span class="co"># pos=1 表示在點下方</span></span>
+<span id="cb289-9"><a href="基礎繪圖.html#cb289-9" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">2</span>, <span class="dv">8</span>, <span class="st">&quot;左上文字&quot;</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb289-10"><a href="基礎繪圖.html#cb289-10" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">8</span>, <span class="dv">2</span>, <span class="st">&quot;右下文字&quot;</span>, <span class="at">adj =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;darkgreen&quot;</span>)</span>
+<span id="cb289-11"><a href="基礎繪圖.html#cb289-11" tabindex="-1"></a></span>
+<span id="cb289-12"><a href="基礎繪圖.html#cb289-12" tabindex="-1"></a><span class="co"># 添加數學公式</span></span>
+<span id="cb289-13"><a href="基礎繪圖.html#cb289-13" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">5</span>, <span class="dv">9</span>, <span class="fu">expression</span>(<span class="fu">bar</span>(x) <span class="sc">==</span> <span class="fu">sum</span>(<span class="fu">frac</span>(x[i], n), i<span class="sc">==</span><span class="dv">1</span>, n)), <span class="at">cex =</span> <span class="fl">1.2</span>)</span>
+<span id="cb289-14"><a href="基礎繪圖.html#cb289-14" tabindex="-1"></a></span>
+<span id="cb289-15"><a href="基礎繪圖.html#cb289-15" tabindex="-1"></a><span class="co"># 添加圖例</span></span>
+<span id="cb289-16"><a href="基礎繪圖.html#cb289-16" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;bottomright&quot;</span>, <span class="at">legend =</span> <span class="fu">c</span>(<span class="st">&quot;類別 A&quot;</span>, <span class="st">&quot;類別 B&quot;</span>), </span>
+<span id="cb289-17"><a href="基礎繪圖.html#cb289-17" tabindex="-1"></a>       <span class="at">pch =</span> <span class="fu">c</span>(<span class="dv">16</span>, <span class="dv">1</span>), <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;red&quot;</span>, <span class="st">&quot;blue&quot;</span>), <span class="at">title =</span> <span class="st">&quot;圖例&quot;</span>)</span>
+<span id="cb289-18"><a href="基礎繪圖.html#cb289-18" tabindex="-1"></a></span>
+<span id="cb289-19"><a href="基礎繪圖.html#cb289-19" tabindex="-1"></a><span class="co"># 添加網格</span></span>
+<span id="cb289-20"><a href="基礎繪圖.html#cb289-20" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-96-1.png" width="672" /></p>
 </div>
 <div id="添加額外線條和形狀" class="section level3 hasAnchor" number="8.5.2">
 <h3><span class="header-section-number">8.5.2</span> 添加額外線條和形狀<a href="基礎繪圖.html#%E6%B7%BB%E5%8A%A0%E9%A1%8D%E5%A4%96%E7%B7%9A%E6%A2%9D%E5%92%8C%E5%BD%A2%E7%8B%80" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="基礎繪圖.html#cb292-1" tabindex="-1"></a><span class="co"># 線條和形狀</span></span>
-<span id="cb292-2"><a href="基礎繪圖.html#cb292-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">11</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">11</span>), </span>
-<span id="cb292-3"><a href="基礎繪圖.html#cb292-3" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;線條和形狀示例&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y&quot;</span>)</span>
-<span id="cb292-4"><a href="基礎繪圖.html#cb292-4" tabindex="-1"></a></span>
-<span id="cb292-5"><a href="基礎繪圖.html#cb292-5" tabindex="-1"></a><span class="co"># 添加水平線和垂直線</span></span>
-<span id="cb292-6"><a href="基礎繪圖.html#cb292-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)      <span class="co"># 水平線</span></span>
-<span id="cb292-7"><a href="基礎繪圖.html#cb292-7" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)     <span class="co"># 垂直線</span></span>
-<span id="cb292-8"><a href="基礎繪圖.html#cb292-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)      <span class="co"># 斜率為1的直線</span></span>
-<span id="cb292-9"><a href="基礎繪圖.html#cb292-9" tabindex="-1"></a></span>
-<span id="cb292-10"><a href="基礎繪圖.html#cb292-10" tabindex="-1"></a><span class="co"># 添加線段</span></span>
-<span id="cb292-11"><a href="基礎繪圖.html#cb292-11" tabindex="-1"></a><span class="fu">segments</span>(<span class="at">x0 =</span> <span class="dv">2</span>, <span class="at">y0 =</span> <span class="dv">2</span>, <span class="at">x1 =</span> <span class="dv">8</span>, <span class="at">y1 =</span> <span class="dv">8</span>, <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
-<span id="cb292-12"><a href="基礎繪圖.html#cb292-12" tabindex="-1"></a></span>
-<span id="cb292-13"><a href="基礎繪圖.html#cb292-13" tabindex="-1"></a><span class="co"># 添加箭頭</span></span>
-<span id="cb292-14"><a href="基礎繪圖.html#cb292-14" tabindex="-1"></a><span class="fu">arrows</span>(<span class="at">x0 =</span> <span class="dv">1</span>, <span class="at">y0 =</span> <span class="dv">9</span>, <span class="at">x1 =</span> <span class="dv">3</span>, <span class="at">y1 =</span> <span class="dv">7</span>, <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">length =</span> <span class="fl">0.1</span>)</span>
-<span id="cb292-15"><a href="基礎繪圖.html#cb292-15" tabindex="-1"></a></span>
-<span id="cb292-16"><a href="基礎繪圖.html#cb292-16" tabindex="-1"></a><span class="co"># 添加多邊形</span></span>
-<span id="cb292-17"><a href="基礎繪圖.html#cb292-17" tabindex="-1"></a><span class="fu">polygon</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">8</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="at">col =</span> <span class="st">&quot;pink&quot;</span>, <span class="at">border =</span> <span class="st">&quot;red&quot;</span>)</span>
-<span id="cb292-18"><a href="基礎繪圖.html#cb292-18" tabindex="-1"></a></span>
-<span id="cb292-19"><a href="基礎繪圖.html#cb292-19" tabindex="-1"></a><span class="co"># 添加矩形</span></span>
-<span id="cb292-20"><a href="基礎繪圖.html#cb292-20" tabindex="-1"></a><span class="fu">rect</span>(<span class="at">xleft =</span> <span class="dv">1</span>, <span class="at">ybottom =</span> <span class="dv">8</span>, <span class="at">xright =</span> <span class="dv">3</span>, <span class="at">ytop =</span> <span class="dv">10</span>, </span>
-<span id="cb292-21"><a href="基礎繪圖.html#cb292-21" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">border =</span> <span class="st">&quot;darkblue&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="基礎繪圖.html#cb290-1" tabindex="-1"></a><span class="co"># 線條和形狀</span></span>
+<span id="cb290-2"><a href="基礎繪圖.html#cb290-2" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;n&quot;</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">11</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">11</span>), </span>
+<span id="cb290-3"><a href="基礎繪圖.html#cb290-3" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;線條和形狀示例&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;X&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Y&quot;</span>)</span>
+<span id="cb290-4"><a href="基礎繪圖.html#cb290-4" tabindex="-1"></a></span>
+<span id="cb290-5"><a href="基礎繪圖.html#cb290-5" tabindex="-1"></a><span class="co"># 添加水平線和垂直線</span></span>
+<span id="cb290-6"><a href="基礎繪圖.html#cb290-6" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)      <span class="co"># 水平線</span></span>
+<span id="cb290-7"><a href="基礎繪圖.html#cb290-7" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">5</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)     <span class="co"># 垂直線</span></span>
+<span id="cb290-8"><a href="基礎繪圖.html#cb290-8" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)      <span class="co"># 斜率為1的直線</span></span>
+<span id="cb290-9"><a href="基礎繪圖.html#cb290-9" tabindex="-1"></a></span>
+<span id="cb290-10"><a href="基礎繪圖.html#cb290-10" tabindex="-1"></a><span class="co"># 添加線段</span></span>
+<span id="cb290-11"><a href="基礎繪圖.html#cb290-11" tabindex="-1"></a><span class="fu">segments</span>(<span class="at">x0 =</span> <span class="dv">2</span>, <span class="at">y0 =</span> <span class="dv">2</span>, <span class="at">x1 =</span> <span class="dv">8</span>, <span class="at">y1 =</span> <span class="dv">8</span>, <span class="at">col =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">lwd =</span> <span class="dv">3</span>)</span>
+<span id="cb290-12"><a href="基礎繪圖.html#cb290-12" tabindex="-1"></a></span>
+<span id="cb290-13"><a href="基礎繪圖.html#cb290-13" tabindex="-1"></a><span class="co"># 添加箭頭</span></span>
+<span id="cb290-14"><a href="基礎繪圖.html#cb290-14" tabindex="-1"></a><span class="fu">arrows</span>(<span class="at">x0 =</span> <span class="dv">1</span>, <span class="at">y0 =</span> <span class="dv">9</span>, <span class="at">x1 =</span> <span class="dv">3</span>, <span class="at">y1 =</span> <span class="dv">7</span>, <span class="at">col =</span> <span class="st">&quot;orange&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">length =</span> <span class="fl">0.1</span>)</span>
+<span id="cb290-15"><a href="基礎繪圖.html#cb290-15" tabindex="-1"></a></span>
+<span id="cb290-16"><a href="基礎繪圖.html#cb290-16" tabindex="-1"></a><span class="co"># 添加多邊形</span></span>
+<span id="cb290-17"><a href="基礎繪圖.html#cb290-17" tabindex="-1"></a><span class="fu">polygon</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">8</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>), <span class="at">col =</span> <span class="st">&quot;pink&quot;</span>, <span class="at">border =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb290-18"><a href="基礎繪圖.html#cb290-18" tabindex="-1"></a></span>
+<span id="cb290-19"><a href="基礎繪圖.html#cb290-19" tabindex="-1"></a><span class="co"># 添加矩形</span></span>
+<span id="cb290-20"><a href="基礎繪圖.html#cb290-20" tabindex="-1"></a><span class="fu">rect</span>(<span class="at">xleft =</span> <span class="dv">1</span>, <span class="at">ybottom =</span> <span class="dv">8</span>, <span class="at">xright =</span> <span class="dv">3</span>, <span class="at">ytop =</span> <span class="dv">10</span>, </span>
+<span id="cb290-21"><a href="基礎繪圖.html#cb290-21" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">border =</span> <span class="st">&quot;darkblue&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/unnamed-chunk-97-1.png" width="672" /></p>
 
 </div>
