@@ -1,1 +1,318 @@
 # data.table運用
+
+## 簡介
+
+`data.table`套件是R語言中用於數據處理的強大工具，它提供了`data.table`的高效能替代方案，特別適合處理大型數據集（例如1GB到100GB）。`data.table`在語法上具有簡潔且高效的特性，能夠在記憶體中快速完成數據整型操作。
+
+本章將介紹`data.table`的最常用函數，並重點說明如何在讀取與寫入大量數據時使用多個平行緒處理來加速操作。
+
+## data.table基礎
+
+### 安裝與載入
+
+```{r message=FALSE, warning=FALSE}
+library(data.table)             # 載入套件
+
+```
+
+### 基本語法
+
+`data.table`的通用格式為：DT[i, j, by]對於數據集DT，選取子集行i，通過by分組計算j
+
+這種語法可以理解為： 
+
+- i：選擇行（類似SQL中的WHERE） 
+
+- j：選擇列或進行計算（類似SQL中的SELECT） 
+
+- by：分組變量（類似SQL中的GROUP BY）
+
+## 常用函數與操作
+
+### 創建data.table
+
+```{r  message=FALSE, warning=FALSE}
+# 從頭創建data.table
+DT <- data.table(
+  ID = 1:5,
+  Name = c("John", "Mary", "James", "Linda", "Robert"),
+  Age = c(25, 32, 41, 29, 35),
+  Score = c(78, 92, 85, 67, 88)
+)
+
+# 從data.frame轉換
+setDT(DT)  # 直接轉換，比as.data.table更快[citation:7]
+
+# 複製data.table（防止直接修改原數據）
+DT_copy <- data.table::copy(DT)  # 防止原數據被改變[citation:7]
+
+```
+
+### 行選擇（i部分）
+
+```{r message=FALSE, warning=FALSE}
+# 基於數值位置選擇
+DT[3:5]  # 選擇第3到第5行
+
+# 基於條件選擇
+DT[Age > 30]  # 選擇年齡大於30的行
+DT[Name %in% c("John", "Mary")]  # 選擇姓名為John或Mary的行
+DT[Score %between% c(80, 90)]  # 選擇分數在80到90之間的行[citation:7]
+
+# 多條件組合
+DT[Age > 25 & Score > 80]  # 年齡大於25且分數大於80
+```
+
+### 列操作（j部分）
+
+```{r message=FALSE, warning=FALSE}
+# 選擇單列
+DT[, Name]  # 返回向量
+DT[, .(Name)]  # 返回data.table
+
+# 選擇多列
+DT[, .(Name, Score)]  # 選擇姓名和分數列
+DT[, c("Name", "Score")]  # 另一種寫法
+
+# 計算統計量
+DT[, mean(Score)]  # 計算平均分數
+DT[, .(Mean_Score = mean(Score), SD_Score = sd(Score))]  # 多個統計量
+
+# 使用特殊符號.N（計數）
+DT[, .N]  # 返回總行數[citation:1]
+DT[Age > 30, .N]  # 年齡大於30的人數
+```
+
+### 添加、修改和刪除列
+
+```{r message=FALSE, warning=FALSE}
+# 添加新列
+DT[, Grade := ifelse(Score >= 80, "A", "B")]  # 根據分數添加等級列
+
+# 同時添加多列
+DT[, `:=`(
+  Score_1 = Score / 10,
+  Score_2 = Score / 100,
+  AgeG1 = cut(Age, breaks = c(0, 30, 40, 100)),
+  AgeG2 = cut(Age, breaks = c(0, 30, 40, 100))
+)]
+
+# 修改列
+DT[, Grade := "A"]  # 將所有等級設為A
+
+# 刪除列
+DT[, Score_1 := NULL]  # 刪除等級列
+DT[, c("Score_2", "AgeG2") := NULL]  # 刪除多列
+```
+
+`:=`運算符直接在原數據上增加新列或替換舊列，無需額外賦值
+
+### 分組操作（by部分）
+
+```{r message=FALSE, warning=FALSE}
+# 基本分組計算
+DT[, .(Avg_Score = mean(Score)), by = AgeG1]  # 按年齡組計算平均分數
+
+# 多個分組變量
+DT[, .(Count = .N, Mean_Score = mean(Score)), by = .(AgeG1, Grade)]
+
+# 分組後取每組第一行和最後一行
+DT[, .SD[1], by = AgeG1]  # 每組第一行[citation:7]
+DT[, .SD[.N], by =AgeG1]  # 每組最後一行[citation:7]
+
+# 分組後排序
+DT[order(AgeG1, -Score)]  # 先按年齡組升序，再按分數降序
+
+```
+
+### 排序函數
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# 基本排序
+setorder(DT, Age)  # 按年齡升序
+setorder(DT, -Score)  # 按分數降序
+setorder(DT, AgeG1, -Score)  # 先按年齡組升序，再按分數降序[citation:7]
+
+# 使用frank進行排名
+DT[, Rank := frank(-Score, ties.method = "min")]  # 按分數排名（分數高者排名靠前）
+```
+
+## 高效數據讀寫與平行處理
+
+### 讀取大型數據文件
+
+`data.table`的`fread`函數是讀取大型數據文件的最佳工具，它自動使用多線程加速讀取過程：
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# 基本讀取
+large_data <- fread("data/large_data.csv")
+
+# 指定參數優化讀取
+large_data <- fread("data/large_data.csv",
+                   nThread = getDTthreads(),  # 使用所有可用線程
+                   showProgress = TRUE,       # 顯示進度條
+                   verbose = TRUE)            # 顯示詳細信息
+```
+
+### 寫入數據文件
+
+同樣地，`fwrite`函數也使用多線程技術加速數據寫入：
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# 基本寫入
+fwrite(large_data, "data/output/output_dataset.csv")
+
+# 指定參數優化寫入
+fwrite(large_data, "data/output/output_dataset.csv",
+      nThread = getDTthreads(),  # 使用所有可用線程
+      showProgress = TRUE)       # 顯示進度條
+```
+
+### 控制平行處理線程數
+
+`data.table`允許您控制和優化平行處理的線程數：
+
+```{r message=FALSE, warning=FALSE}
+# 查看當前線程數
+getDTthreads()
+
+# 設置線程數（通常設為可用核心數）
+setDTthreads(percent = 100)  # 使用100%的可用核心
+setDTthreads(threads = 8)    # 明確設置使用8個線程
+
+# 還原為默認設置
+setDTthreads(percent = 50)   # 使用50%的可用核心
+```
+
+### 實際應用範例
+
+以下是一個完整的實際應用範例，展示如何處理大型數據集：
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# 加載套件
+library(data.table)
+
+# 設置使用多線程（使用所有可用核心）
+setDTthreads(percent = 100)
+
+# 讀取大型CSV文件（自動使用多線程）
+start_time <- Sys.time()
+large_dt <- fread("data/large_data.csv",
+                 nThread = getDTthreads(),
+                 showProgress = TRUE)
+read_time <- Sys.time() - start_time
+print(paste("讀取時間：", read_time))
+
+# 數據處理
+# 1. 選擇需要的列
+processed_dt <- large_dt[, .(ID, Date, Amount, Category)]
+
+# 2. 過濾數據
+processed_dt <- processed_dt[Amount > 0 & !is.na(Category)]
+
+# 3. 添加新列
+processed_dt[, `:=`(
+  Year = year(Date),
+  Month = month(Date),
+  Amount_USD = Amount * 0.85  # 假設匯率轉換
+)]
+
+# 4. 分組匯總
+summary_dt <- processed_dt[, .(
+  Total_Amount = sum(Amount),
+  Avg_Amount = mean(Amount),
+  Transaction_Count = .N
+), by = .(Category, Year, Month)]
+
+# 5. 排序結果
+setorder(summary_dt, Year, Month, -Total_Amount)
+
+# 寫出處理後的數據（使用多線程）
+start_time <- Sys.time()
+fwrite(summary_dt, "data/summary_data.csv",
+      nThread = getDTthreads(),
+      showProgress = TRUE)
+write_time <- Sys.time() - start_time
+print(paste("寫入時間：", write_time))
+
+```
+
+## 進階技巧
+
+### 快速合併數據
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# 創建兩個範例數據表
+DT1 <- data.table(ID = 1:5, Name = c("A", "B", "C", "D", "E"))
+DT2 <- data.table(ID = 3:7, Score = c(78, 92, 85, 67, 88))
+
+# 合併數據
+merged_DT <- merge(DT1, DT2, by = "ID", all.x = TRUE)  # 左連接
+```
+
+### 非重複計數
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# 計算唯一值數量
+uniqueN(DT$Category)  # 相當於length(unique(DT$Category))但更快[citation:1]
+
+# 按組計算唯一值
+DT[, .(Unique_Count = uniqueN(Name)), by = Category]
+```
+
+### 條件判斷函數
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+# fifelse比base::ifelse更快
+DT[, Result := fifelse(Score >= 80, "Pass", "Fail")]
+
+# fcase類似SQL中的CASE WHEN
+DT[, Grade := fcase(
+  Score >= 90, "A",
+  Score >= 80, "B",
+  Score >= 70, "C",
+  default = "F"
+)][citation:1]
+```
+
+## 效能比較
+
+為了展示data.table的效能優勢，以下是一個簡單的比較範例：
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+library(data.table)
+library(microbenchmark)
+
+# 創建大型測試數據
+set.seed(123)
+n <- 1e6  # 100萬行
+large_df <- data.frame(
+  ID = 1:n,
+  Group = sample(letters, n, replace = TRUE),
+  Value1 = rnorm(n),
+  Value2 = rnorm(n)
+)
+
+large_dt <- as.data.table(large_df)
+
+# 比較分組計算速度
+mb_results <- microbenchmark(
+  data.table = large_dt[, .(Mean = mean(Value1)), by = Group],
+  data.frame = aggregate(Value1 ~ Group, data = large_df, FUN = mean),
+  times = 10
+)
+
+print(mb_results)
+```
+
+## 總結
+
+本章介紹了data.table套件的核心功能，重點包括：
+
+-   基本語法：DT[i, j, by]三段式操作
+-   常用函數：行選擇、列操作、分組計算、排序等
+-   高效讀寫：使用fread和fwrite進行多線程數據讀寫 -平行處理：通過setDTthreads控制線程數以優化效能
+
+`data.table`在處理大型數據集時表現出色，特別是當您充分利用其多線程讀寫能力時，可以大幅提升數據處理效率。對於需要處理GB級別數據的用戶來說，掌握`data.table`是非常值得的投資。
+
+在實際應用中，建議根據您的硬件配置調整線程數，並充分利用`fread`和`fwrite`的自動平行處理功能，這樣可以在I/O密集型操作中獲得最大效能提升。

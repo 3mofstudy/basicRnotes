@@ -52,7 +52,7 @@ plot(
 
 範例: 自動選擇適當的圖形類型
 
-```{r plot-basic}
+```{r plot-8.1}
 # 圖形佈局
 par(mfrow = c(1, 2))  # 設定1行2列的圖形佈局
 # 基本散點圖
@@ -74,7 +74,7 @@ plot(cars$speed,  #X軸資料
 
 plot() 可設定各別圖片的參數，但若想多個圖片有統一的樣式，可使用`par()`函數用於設定圖形的全域參數
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.2, message=FALSE, warning=FALSE}
 
 # 設定圖形參數
 par(
@@ -113,7 +113,7 @@ plot(cars$speed,  #X軸資料
 
 plot雖然可以自動選擇適當的圖形類型，但也可透過type參數可以指定不同的圖形類型：
 
-```{r}
+```{r plot-8.3, message=FALSE, warning=FALSE}
 
 # 建立範例資料
 time <- 1:20
@@ -137,7 +137,7 @@ par(mfrow = c(1, 1))  # 恢復單圖佈局
 
 plot()中有多種方式指定顏色，可使用`col`參數 來呈現顏色：
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.4, message=FALSE, warning=FALSE}
 # 顏色示範
 par(mfrow = c(2, 2))
 
@@ -181,7 +181,7 @@ palette("default")  # 恢復預設調色盤
 
 ![](https://i.postimg.cc/15n6d8Y9/basic-Rnotes8-1.png)
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.5, message=FALSE, warning=FALSE}
 # 設定圖形佈局
 par(mfrow = c(2, 2), mar = c(4, 4, 3, 1))
 
@@ -232,7 +232,7 @@ par(mfrow = c(1, 1))
 
 ### 直方圖`hist()`
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.6, message=FALSE, warning=FALSE}
 # 直方圖
 set.seed(123)
 data <- rnorm(1000, mean=50, sd=10)
@@ -251,7 +251,7 @@ par(mfrow = c(1, 1))
 
 ### 盒鬚圖 `boxplot()`
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.7, message=FALSE, warning=FALSE}
 # 盒鬚圖
 par(mfrow = c(2, 2))
 
@@ -276,7 +276,7 @@ par(mfrow = c(1, 1))
 
 ### 長條圖 `barplot()`
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.8, message=FALSE, warning=FALSE}
 # 長條圖
 par(mfrow = c(2, 2))
 
@@ -304,7 +304,7 @@ par(mfrow = c(1, 1))
 
 ### 圓餅圖 `pie()`
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.9, message=FALSE, warning=FALSE}
 # 圓餅圖
 par(mfrow = c(2, 2))
 
@@ -335,7 +335,7 @@ par(mfrow = c(1, 1))
 
 ### 基礎多圖佈局
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.10, message=FALSE, warning=FALSE}
 # 基礎多圖佈局
 par(mfrow = c(2, 2))  # 2行2列
 
@@ -350,7 +350,7 @@ par(mfrow = c(1, 1))  # 恢復單圖
 
 ### 自訂佈局
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.11, message=FALSE, warning=FALSE}
 # 自訂佈局
 layout(matrix(c(1,1,2,3), 2, 2, byrow = TRUE))
 # 佈局解釋：
@@ -369,7 +369,7 @@ layout(1)  # 恢復預設佈局
 
 ### 添加文字和標題
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.12, message=FALSE, warning=FALSE}
 # 圖形註解
 plot(1:10, 1:10, type = "n", main = "圖形註示例", xlab = "X", ylab = "Y")
 
@@ -395,7 +395,7 @@ grid()
 
 ### 添加額外線條和形狀
 
-```{r message=FALSE, warning=FALSE}
+```{r plot-8.13, message=FALSE, warning=FALSE}
 # 線條和形狀
 plot(1:10, type = "n", xlim = c(0, 11), ylim = c(0, 11), 
      main = "線條和形狀示例", xlab = "X", ylab = "Y")

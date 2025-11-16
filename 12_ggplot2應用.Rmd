@@ -1,1 +1,302 @@
 # ggplot2繪圖
+
+## 簡介
+
+在 R 語言的資料視覺化領域中，ggplot2 套件無疑是最受歡迎且功能最強大的選擇。它是由 Hadley Wickham 開發，基於 Leland Wilkinson 的**《圖形文法》（Grammar of Graphics）**概念所設計。
+
+這個文法的核心思想是：任何一張統計圖表都可以分解為幾個獨立的元件：
+
+-   **資料 (Data)：**：原始資料集，必須是 data.frame 格式。
+-   **美學映射 (Aesthetics, aes)：**：決定圖表的類型，例如點 (point)、線 (line)、長條 (bar)、箱型圖 (boxplot) 等。
+-   **統計轉換 (Statistics, stat)：**：在繪圖前對資料進行的統計計算（例如計算平均值、計數）。
+-   **尺度 (Scales)：**：控制美學映射的具體表現（例如 X 軸的範圍、顏色的選用）。
+-   **座標系統 (Coordinate System)：** 圖表的佈局（例如笛卡爾座標、極座標）。
+-   **分面 (Faceting)：** 將圖表依據某個變數分割成多個子圖。
+
+掌握了這七個元件，就能像組裝積木一樣，建立出任何想要的圖表。
+
+### 安裝與加載
+
+```{r message=FALSE, warning=FALSE}
+# 安裝ggplot2
+#install.packages("ggplot2")
+# 加載包
+library(ggplot2)
+```
+
+## 基本概念與語法
+
+### 核心組件
+
+ggplot2繪圖包含三個基本要素：
+
+-   **數據(Data)**：必須是data.frame格式，且最好是"整潔"(tidy)數據
+-   **映射(Mapping)**：數據變量與圖形屬性的對應關係，使用aes()定義
+-   **圖層(Layer)**：至少需要一個圖層來渲染觀察值，如geom_point()
+
+### 基本語法模板
+
+其標準模板如下：
+
+```{r eval=FALSE, message=FALSE, warning=FALSE}
+ggplot(data = 資料框, aes(x = 變數1, y = 變數2)) +
+  geom_xxx() +
+  labs(title = "...", x = "...", y = "...") +
+  theme_minimal()
+```
+
+使用 R 內建的 iris 資料集進行示範
+
+```{r plot12-1, message=FALSE, warning=FALSE}
+# 繪製花瓣長度 (Petal.Length) 與花瓣寬度 (Petal.Width) 的散點圖
+ggplot(data = iris) +
+  geom_point(
+    mapping = aes(x = Petal.Length, y = Petal.Width, color = Species)
+  ) +
+  labs(
+    title = "鳶尾花花瓣尺寸散點圖",
+    x = "花瓣長度 (公分)",
+    y = "花瓣寬度 (公分)",
+    color = "花卉種類"
+  )
+```
+
+語法邏輯：
+
+-   **ggplot()**：決定資料來源與 x、y 映射
+-   **geom_xxx()**：決定圖的類型
+-   **labs()**：設定標題、座標軸標籤
+-   **theme_xxx()**：設定版面風格
+
+### 常用幾何圖層（geom）
+
+以下整理所有 ggplot2 最常用的 geom：
+
+| 圖形類型 | 幾何函式               | 適用情境              |
+|----------|------------------------|-----------------------|
+| 散佈圖   | geom_point()           | 連續 × 連續           |
+| 折線圖   | geom_line()            | 時間序列              |
+| 長條圖   | geom_col()、geom_bar() | 類別變數比較          |
+| 直方圖   | geom_histogram()       | 單一連續變數          |
+| 密度圖   | geom_density()         | 分布比較              |
+| 盒鬚圖   | geom_boxplot()         | 類別 × 連續，比較分布 |
+| 次數統計 | geom_count()           | 有重複點的散佈圖      |
+
+#### 散點圖與平滑曲線
+
+```{r plot_12-1, message=FALSE, warning=FALSE}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class)) + 
+  geom_smooth(se = FALSE)
+```
+
+#### 柱狀圖
+
+```{r plot_12-2, message=FALSE, warning=FALSE}
+# 計數柱狀圖
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut))
+
+# 指定y值的柱狀圖
+demo <- data.frame(
+  category = c("A", "B", "C"),
+  value = c(20, 30, 40)
+)
+
+ggplot(data = demo) + 
+  geom_bar(mapping = aes(x = category, y = value), stat = "identity")
+
+```
+
+#### 箱形圖
+
+```{r plot_12-3, message=FALSE, warning=FALSE}
+# 箱形圖
+ggplot(data = iris) + 
+  geom_boxplot(mapping = aes(x = Species, y = Petal.Length))
+
+# 箱形圖加上抖動點
+ggplot(data = iris) + 
+  geom_boxplot(mapping = aes(x = Species, y = Petal.Length)) + 
+  geom_jitter(mapping = aes(x = Species, y = Petal.Length), width = 0.2)
+
+```
+
+#### 小提琴圖
+
+```{r plot_12-4, message=FALSE, warning=FALSE}
+# 小提琴圖
+ggplot(data = iris) + 
+  geom_violin(mapping = aes(x = Species, y = Petal.Length))
+
+```
+
+#### 密度圖
+
+```{r plot_12-5, message=FALSE, warning=FALSE}
+# 密度圖
+ggplot(data = iris) + 
+  geom_density(mapping = aes(x = Petal.Length, colour = Species))
+
+```
+
+### 分面系統
+
+分面(Facets)可將數據按分類變量分成多個子圖
+
+#### 單變量分面
+
+```{r plot_12-6, message=FALSE, warning=FALSE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+```
+
+#### 雙變量分面
+
+```{r plot_12-7, message=FALSE, warning=FALSE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_grid(drv ~ cyl)
+
+```
+
+注意事項：
+
+-   使用連續變量分面會將其轉換為因子，可能產生大量子圖
+
+-   分面適合類別較多的情況，但可能降低不同組別間的比較便利性
+
+### 標籤與標度
+
+#### 添加標籤
+
+```{r plot_12-8, message=FALSE, warning=FALSE}
+ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point(mapping = aes(color = Species)) + 
+  labs(
+    title = "鳶尾花萼片尺寸關係",
+    subtitle = "不同物種的比較",
+    x = "萼片長度", 
+    y = "萼片寬度",
+    caption = "數據來源: Iris數據集",
+    color = "物種"
+  )
+```
+
+#### 標度調整
+
+```{r plot_12-9, message=FALSE, warning=FALSE}
+library(scales)
+
+ggplot(data = iris, mapping = aes(x = Sepal.Length, y = Sepal.Width)) + 
+  geom_point() + 
+  scale_x_log10(labels = label_log()) + 
+  scale_y_continuous(limits = c(2, 5)) + 
+  labs(x = "萼片長度(對數尺度)", y = "萼片寬度")
+
+```
+
+### 坐標系統與主題
+
+#### 坐標系統
+
+```{r plot_12-10, message=FALSE, warning=FALSE}
+# 翻轉坐標軸
+ggplot(data = mpg) + 
+  geom_boxplot(mapping = aes(x = class, y = hwy)) + 
+  coord_flip()
+```
+
+#### 主題設置
+
+```{r plot_12-11, message=FALSE, warning=FALSE}
+# 使用內置主題
+p <- ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class))
+
+p + theme_bw()  # 黑白主題
+
+p + theme_minimal()  # 極簡主題
+
+```
+
+#### 圖例控制
+
+使用guides()函數控制圖例外觀
+
+```{r plot_12-12, message=FALSE, warning=FALSE}
+# 自定義圖例
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = factor(cyl))) + 
+  geom_point() + 
+  guides(color = guide_legend(
+    title = "氣缸數",
+    title.position = "top",
+    label.position = "left",
+    label.hjust = 1
+  ))
+```
+
+#### 實戰案例：探索Gapminder數據
+
+```{r plot_12-13, message=FALSE, warning=FALSE}
+# 如果沒有gapminder包，請先安裝: install.packages("gapminder")
+library(gapminder)
+
+# 提取2007年數據
+gapminder_2007 <- gapminder[gapminder$year == 2007, ]
+
+ggplot(data = gapminder_2007, 
+       mapping = aes(x = gdpPercap, y = lifeExp, size = pop, color = continent)) + 
+  geom_point(alpha = 0.7) + 
+  scale_x_log10(labels = label_dollar()) + 
+  labs(
+    title = "2007年各國人均GDP與預期壽命關係",
+    x = "人均GDP(對數尺度)", 
+    y = "出生時預期壽命(歲)",
+    size = "人口數量", 
+    color = "大洲"
+  ) + 
+  theme_minimal()
+```
+
+### 進階技巧
+
+#### 多圖層疊加
+
+```{r plot_12-14, message=FALSE, warning=FALSE}
+# 全局映射與局部映射
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class)) + 
+  geom_smooth(se = FALSE, color = "black") + 
+  facet_wrap(~ year)
+
+```
+
+#### 統計變換
+
+```{r plot_12-15, message=FALSE, warning=FALSE}
+# 使用統計變換
+ggplot(data = diamonds) + 
+  stat_summary(
+    mapping = aes(x = cut, y = depth),
+    fun.min = min,
+    fun.max = max,
+    fun = median
+  )
+
+```
+
+##  ggplot2 注意事項
+### 常見問題與解決方案
+
+-   **數據格式問題:**：確保數據是data.frame格式，且為整潔數據。
+-   **圖例不出現：**：檢查是否`aes()`內正確映射了圖形屬性。
+-   **點重疊嚴重：**：使用`geom_jitter()`或`geom_count()`解決。
+-   **尺度 (Scales)：**：控制美學映射的具體表現（例如 X 軸的範圍、顏色的選用）。
+-   **中文顯示問題：** 設置主題字體家族，如`theme(text = element_text(family = "Heiti"))`。
+-   **PDF輸出問題：** 確保安裝了`TinyTeX`或完整`LaTeX`發行版。
+
+### 總結
+
+ggplot2提供了強大而靈活的數據可視化功能。通過掌握數據映射、幾何對象、分面系統和標度控制等核心概念，你可以創建出高質量的統計圖形。建議進一步學習ggplot2的官方文檔和相關書籍以深入了解高級功能。
